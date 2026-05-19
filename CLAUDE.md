@@ -139,28 +139,59 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ## Tag Taxonomy
 
-> **Customize this section** for your domain. Replace the example tags below with your own. New tags MUST be added here before they are used on wiki pages. The lint script checks that all tags exist in this taxonomy.
+> New tags MUST be added here before they are used on wiki pages. The lint script checks that all tags exist in this taxonomy.
 
-### Example: AI Research Domain
+### 品种 / Instruments
 
-- **Topics**: deep-learning, nlp, computer-vision, reinforcement-learning, optimization, alignment, reasoning
-- **Methods**: training, fine-tuning, inference, evaluation, data-augmentation, feature-engineering
-- **Artifacts**: model, dataset, benchmark, framework, paper, architecture
-- **Meta**: comparison, controversy, prediction, timeline, definition
+- **品种**: 股票, 债券, 可转债, etf, reits, 期权, 期货, 基金, 货币基金, 逆回购
 
-### Example: Investment / Quant Finance Domain
+### 策略 / Strategies
 
-- **Strategies**: factor-investing, momentum, mean-reversion, statistical-arbitrage, portfolio-optimization
-- **Instruments**: equity, bond, futures, options, etf, crypto
-- **Analysis**: valuation, risk-management, backtesting, attribution, regime-detection
-- **Data**: fundamental, technical, alternative-data, high-frequency, macro
-- **Meta**: comparison, controversy, prediction, regulation, case-study
+- **策略**: 红利, 指数增强, 网格交易, 打新, 轮动, 定投, 套利, 趋势跟踪, 价值投资, 成长投资
+
+### 分析 / Analysis
+
+- **分析**: 估值, 基本面, 技术面, 宏观, 量化, 风险控制, 回测
+
+### 行业与主题 / Sectors & Themes
+
+- **行业**: 消费, 医药, 科技, 新能源, 金融, 地产, 制造
+- **主题**: 碳中和, 老龄化, 国产替代, 出海, ai应用
+
+### 基金 / Funds
+
+- **基金**: 指数基金, 主动基金, fof, qdii, 私募
+
+### 市场 / Markets
+
+- **市场**: a股, 港股, 美股, 债券市场, 商品
+
+### 视角与格式 / Perspective & Format
+
+- **视角**: 入门, 进阶, 实战, 学术, 历史
+- **格式**: 深度研究, 快讯, 教程, 观点, 数据, 访谈
+
+### 来源 / Source Type
+
+- **来源**: 券商研报, 公众号, 雪球, 书籍, 官方文件
+
+### 交易阶段 / Trading Phase
+
+- **阶段**: 建仓, 持仓, 调仓, 止盈, 止损
+
+### 大类 / Portfolio
+
+- **大类**: 资产配置, 组合管理, 税务规划
+
+### 元标签 / Meta
+
+- **元**: 比较, 争议, 预测, 案例, 定义, 政策法规, 时间线
 
 ### Rules
 
 - Every tag on a page must appear in the taxonomy above
 - If a new tag is needed, add it here first, then use it on pages
-- Tags are lowercase, hyphenated (e.g. `deep-learning` not `Deep Learning`)
+- Tags are lowercase, hyphenated (e.g. `指数增强` not `指数 增强`, `etf` not `ETF`)
 - The lint script will flag any tag not in this taxonomy
 
 ## Writing Style
