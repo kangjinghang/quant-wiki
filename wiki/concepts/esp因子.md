@@ -5,7 +5,7 @@ type: concept
 summary: "Earnings Surprise Percent，直接衡量业绩超预期幅度的因子。年报用公布值与一致预期之差除以一致预期；季报用公布前后分析师预测变化之差除以公布前预期。"
 tags: [量化, 因子, 基本面, a股]
 sources:
-  - "季度超预期再构建及业绩超预期因子分析"
+  - "[[季度超预期再构建及业绩超预期因子分析]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-20
