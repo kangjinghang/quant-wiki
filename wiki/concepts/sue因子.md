@@ -5,7 +5,7 @@ type: concept
 summary: "Standardized Unexpected Earnings，在 ESP 基础上除以分析师预测的标准差进行标准化，考虑分析师分歧度。表现优于 ESP 因子。"
 tags: [量化, 因子, 基本面, a股]
 sources:
-  - "raw/articles/[201806060856]季度超预期再构建及业绩超预期因子分析.md"
+  - "季度超预期再构建及业绩超预期因子分析"
 origin: agent-compiled
 status: developing
 created: 2026-05-20
