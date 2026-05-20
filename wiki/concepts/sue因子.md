@@ -58,7 +58,7 @@ $$SUE_{i,q} = \frac{\hat{AE}_{i,q} - \hat{BE}_{i,q}}{\sigma_{i,q}}$$
 
 ## Related Pages / 关联页面
 
-- [[ESP因子]] — SUE 的基础版本
+- [[esp因子]] — SUE 的基础版本
 - [[业绩超预期]] — 核心概念
 - [[一致预期]] — 因子计算输入
 - [[盈余惯性]] — SUE 发现的市场现象

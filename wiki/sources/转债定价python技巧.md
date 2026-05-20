@@ -3,7 +3,6 @@ title: "转债定价Python技巧"
 type: source
 summary: "中金固收（杨冰、房铎、姬江帆）实现BS、二叉树、Monte-Carlo三种转债定价模型，附完整Python代码，并讨论各模型在A股转债实战中的适用性。"
 tags: [可转债, 量化, a股, 券商研报]
-  - "raw/articles/[201811221706]中金固收可转债说没用也有点用的转债定价顺便聊聊转债研究员的Python技.md"
 origin: agent-compiled
 status: developing
 created: 2026-05-20
