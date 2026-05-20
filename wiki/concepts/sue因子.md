@@ -17,7 +17,7 @@ review_by: ""
 
 ## Definition / 定义
 
-SUE（Standardized Unexpected Earnings，标准化超预期）因子在 ESP 的基础上，除以分析师预测的标准差（分歧度）进行标准化处理。其核心思想是：当分析师分歧度较大时，超预期的"含金量"应被打折扣。
+SUE（Standardized Unexpected Earnings，标准化超预期）因子在[[esp因子|ESP]]的基础上，除以分析师预测的标准差（分歧度）进行标准化处理。其核心思想是：当分析师分歧度较大时，[[业绩超预期]]的"含金量"应被打折扣。
 
 ## How It Works / 工作原理
 

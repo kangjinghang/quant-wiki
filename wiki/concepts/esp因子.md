@@ -17,7 +17,7 @@ review_by: ""
 
 ## Definition / 定义
 
-ESP（Earnings Surprise Percent，超预期幅度）因子直接衡量公司业绩超预期的幅度。正值为超预期，负值为低于预期。
+ESP（Earnings Surprise Percent，超预期幅度）因子直接衡量公司[[业绩超预期]]的幅度。正值为超预期，负值为低于预期。与[[sue因子]]相比，ESP不考虑分析师分歧度。
 
 ## How It Works / 工作原理
 

@@ -23,22 +23,34 @@ The wiki is the product. Chat is just the interface.
 
 When a new source is added to `raw/`:
 
-1. Read the source file
-2. Discuss key takeaways with the user
-3. Create a source summary page:
+**Phase 1: Read & Discuss (must complete before writing any pages)**
+
+1. Read the source file in full
+2. Present a structured summary to the user:
+   - **Core thesis**: What is this source arguing or reporting? (2–3 sentences)
+   - **New concepts/entities**: Which ideas, methods, or entities appear that don't yet have wiki pages?
+   - **Relations to existing pages**: Which existing wiki pages does this source confirm, contradict, or extend? Be specific — cite page names.
+   - **Claims to verify**: Which factual claims need cross-referencing with other sources?
+   - **Proposed actions**: Which pages to create, which to update, which tags to apply
+3. Wait for user confirmation before proceeding. The user may redirect — skip certain pages, merge concepts, or request different emphasis.
+
+**Phase 2: Write Pages**
+
+4. Create a source summary page:
    ```
    # --raw-path links this wiki page back to the original immutable file in raw/
    python scripts/create_page.py . source "<title>" --raw-path "raw/<path>"
    ```
    Then edit the generated file to fill content
-4. For each new concept or entity mentioned, create a page:
+5. For each new concept or entity confirmed in step 3, create a page:
    ```
    python scripts/create_page.py . <type> "<name>"
    ```
-5. Cascade-update all existing concept/entity/synthesis pages that are relevant
-6. Update `wiki/index.md` — add new pages under the correct section
-7. Append a log entry to `log/{date}.md`
-8. Update `hot.md` with the latest activity
+6. Cascade-update all existing concept/entity/synthesis pages that are relevant
+7. Update `wiki/index.md` — add new pages under the correct section
+8. Append a log entry to `log/{date}.md`
+9. Update `hot.md` with the latest activity
+10. Update `wiki/overview.md` — revise the narrative overview to reflect new content. Ensure every new concept is mentioned in context with `[[wikilink]]`. This is NOT a table of contents — it's a synthetic narrative that a reader can read top-to-bottom to understand the entire knowledge base.
 
 A single source may touch 10–15 wiki pages. That is expected and correct.
 
@@ -206,6 +218,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - **Formulas**: use **KaTeX** (`$inline$` or `$$block$$`)
 - **Provenance markers**: on pages that synthesize 3+ sources, append `^[raw/path/to/source.md]` at the end of paragraphs whose claims come from a specific source. This lets readers trace each claim without re-reading the raw file. Single-source pages don't need this — the `sources` frontmatter is sufficient.
 - **Managed blocks**: never edit content between `<!-- human:start -->` and `<!-- human:end -->` markers. These sections contain the user's own notes. The LLM may write above and below, but must preserve these blocks exactly as they are.
+- **Inline wikilinks**: The first mention of any concept, entity, or source that has its own wiki page MUST be a `[[wikilink]]` embedded in the prose — not just listed in Related Pages. This applies to ALL page types (source, concept, entity, synthesis, overview). Related Pages sections supplement inline links, they do not replace them.
 
 ## Notes for the LLM
 
