@@ -154,7 +154,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ### 分析 / Analysis
 
-- **分析**: 估值, 基本面, 技术面, 宏观, 量化, 因子, 风险控制, 回测
+- **分析**: 估值, 基本面, 技术面, 资金面, 宏观, 量化, 因子, 风险控制, 回测
 
 ### 行业与主题 / Sectors & Themes
 
