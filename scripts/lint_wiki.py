@@ -22,8 +22,8 @@ Checks:
   11. Filename case — wiki page filenames must be all lowercase
   12. Source pages shouldn't have a sources field
   13. overview.md exists — wiki/overview.md must be present
-  14. Inline wikilink density — pages with >= 50 words of body should have at least 1 inline wikilink
-  15. Frontmatter sanitization — auto-fix code-fence wrappers, `frontmatter:` prefixes, invalid wikilink lists
+  14. Inline wikilink density — pages with >= 80 words of body should have at least 2 inline wikilinks
+  15. Non-ASCII filename — concept/entity pages should use Chinese filenames, not pure-ASCII
 
 Exit codes:
   0 — no issues found
@@ -46,10 +46,6 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)(?:[|#][^\]]*)?\]\]")
 LOG_FILENAME_RE = re.compile(r"^(\d{4})-(\d{2})-(\d{2})\.md$")
 FRONTMATTER_RE = re.compile(r"^---\n(.*?)\n---\n", re.DOTALL)
-WIKILINK_LIST_IN_FM_RE = re.compile(
-    r"^(\s*[A-Za-z_][\w-]*\s*:\s*)(\[\[[^\]]+\]\](?:\s*,\s*\[\[[^\]]+\]\])+)\s*$",
-    re.MULTILINE,
-)
 
 # Required audit frontmatter fields
 AUDIT_REQUIRED_FIELDS = {
@@ -59,70 +55,6 @@ AUDIT_REQUIRED_FIELDS = {
 VALID_SEVERITIES = {"info", "suggest", "warn", "error"}
 VALID_STATUSES = {"open", "resolved"}
 VALID_SOURCES = {"obsidian-plugin", "web-viewer", "manual"}
-
-
-# ── Sanitize helpers (ported from llm_wiki's ingest-sanitize.ts) ────────────
-
-
-def _strip_outer_code_fence(content: str) -> str:
-    """Strip ```yaml/```md/```markdown/``` wrapper when it wraps the whole doc."""
-    open_match = re.match(r"^```(?:yaml|md|markdown)?[ \t]*\r?\n", content)
-    if not open_match:
-        return content
-    after_open = content[open_match.end():]
-    # Closing fence: a final ``` on its own line, optionally followed by whitespace/newlines
-    close_match = re.search(r"\r?\n```[ \t]*\r?\n?\s*$", after_open)
-    if not close_match:
-        return content
-    return after_open[:close_match.start()] + "\n"
-
-
-def _strip_frontmatter_key_prefix(content: str) -> str:
-    """Strip a stray `frontmatter:` line before the real --- block."""
-    m = re.match(r"^[ \t]*frontmatter\s*:\s*\r?\n(?=[ \t]*---\s*\r?\n)", content)
-    if not m:
-        return content
-    return content[m.end():]
-
-
-def _repair_wikilink_lists_in_frontmatter(content: str) -> str:
-    """Fix `key: [[a]], [[b]]` inside the frontmatter block to valid YAML."""
-    fm_match = re.match(r"^(---\s*\r?\n)([\s\S]*?)(\r?\n---\s*(?:\r?\n|$))", content)
-    if not fm_match:
-        return content
-
-    open_delim, fm_body, close_delim = fm_match.group(1), fm_match.group(2), fm_match.group(3)
-    body = content[fm_match.end():]
-
-    repaired_lines = []
-    for line in fm_body.split("\n"):
-        m = WIKILINK_LIST_IN_FM_RE.match(line)
-        if m:
-            prefix = m.group(1)
-            items = ", ".join(
-                f'"{s.strip()}"'
-                for s in m.group(2).split(",")
-                if s.strip()
-            )
-            repaired_lines.append(f"{prefix}[{items}]")
-        else:
-            repaired_lines.append(line)
-
-    return open_delim + "\n".join(repaired_lines) + close_delim + body
-
-
-def sanitize_frontmatter(content: str) -> str:
-    """Clean up LLM-generated frontmatter before it hits disk.
-
-    Fixes three recurring shapes:
-      1. Whole page wrapped in ```yaml ... ``` code fence
-      2. Stray `frontmatter:` key before the real --- block
-      3. Invalid wikilink lists: `related: [[a]], [[b]]`
-    """
-    content = _strip_outer_code_fence(content)
-    content = _strip_frontmatter_key_prefix(content)
-    content = _repair_wikilink_lists_in_frontmatter(content)
-    return content
 
 
 def load_pages(wiki_dir: Path) -> dict[str, Path]:
@@ -427,10 +359,10 @@ def lint(root: str) -> int:
     elif audit_targets_to_check:
         print("✅ All open-audit targets exist")
 
-    # ── Pass 8: raw_path existence + hash auto-fix ────────────────────────
+    # ── Pass 8: raw_path existence + hash verification ────────────────────
     import hashlib as _hashlib
     missing_raw: list[tuple[str, str]] = []
-    hash_fixed: list[str] = []
+    hash_mismatch: list[tuple[str, str]] = []
     for md_file in all_wiki_files:
         text = md_file.read_text(encoding="utf-8")
         fm = parse_frontmatter(text)
@@ -446,9 +378,9 @@ def lint(root: str) -> int:
                     stored_hash = str(fm["raw_hash"]).strip('"').strip("'")
                     actual_hash = _hashlib.sha256(raw_full.read_bytes()).hexdigest()
                     if stored_hash and stored_hash != actual_hash:
-                        new_text = text.replace(stored_hash, actual_hash)
-                        md_file.write_text(new_text, encoding="utf-8")
-                        hash_fixed.append(str(md_file.relative_to(root_path)))
+                        hash_mismatch.append(
+                            (str(md_file.relative_to(root_path)), raw_rel)
+                        )
     if missing_raw:
         print(f"\n🟡 Source pages with missing raw_path ({len(missing_raw)}):")
         for page, raw in missing_raw:
@@ -456,10 +388,11 @@ def lint(root: str) -> int:
         issues += len(missing_raw)
     else:
         print("✅ All source raw_path references exist")
-    if hash_fixed:
-        print(f"\n🔧 Auto-fixed raw_hash ({len(hash_fixed)}):")
-        for page in hash_fixed:
-            print(f"   {page}")
+    if hash_mismatch:
+        print(f"\n🟡 raw_hash mismatch — source file changed since ingest ({len(hash_mismatch)}):")
+        for page, raw in hash_mismatch:
+            print(f"   {page} ← {raw}")
+        issues += len(hash_mismatch)
     else:
         print("✅ All raw_hash values match current source files")
     # Check: source pages with raw_path but missing raw_hash
@@ -569,9 +502,9 @@ def lint(root: str) -> int:
         print("✅ overview.md exists")
 
     # ── Pass 14: Inline wikilink density ─────────────────────────────
-    # Pages with >= 50 words of body content should have at least 1 inline [[wikilink]]
+    # Pages with >= 80 words of body content should have at least 2 inline [[wikilink]]s
     # in their body (outside of Related Pages / Sources sections and frontmatter).
-    low_density: list[tuple[str, int]] = []
+    low_density: list[tuple[str, int, int]] = []
     for md_file in all_wiki_files:
         if md_file.name in ("index.md", "overview.md"):
             continue
@@ -588,46 +521,44 @@ def lint(root: str) -> int:
         body_clean = re.sub(r"<!-- human:start -->.*?<!-- human:end -->", "", body_clean, flags=re.DOTALL)
         # Count words (rough: split on whitespace, filter short tokens)
         words = [w for w in body_clean.split() if len(w) > 1]
-        if len(words) < 50:
+        if len(words) < 80:
             continue
         # Count inline wikilinks in the cleaned body
         inline_links = re.findall(r"\[\[([^\]]+)\]\]", body_clean)
-        if len(inline_links) == 0:
-            low_density.append((rel, len(words)))
+        inline_link_count = len(inline_links)
+        if inline_link_count < 2:
+            low_density.append((rel, len(words), inline_link_count))
     if low_density:
-        print(f"\n⚠️  {len(low_density)} page(s) with no inline wikilinks in body (>= 50 words):")
-        for path, wc in low_density:
-            print(f"   {path} ({wc} words, 0 inline links)")
+        print(f"\n⚠️  {len(low_density)} page(s) with fewer than 2 inline wikilinks in body (>= 80 words):")
+        for path, wc, lc in low_density:
+            print(f"   {path} ({wc} words, {lc} inline links)")
         issues += len(low_density)
     else:
         print("✅ All pages with substantial body content have inline wikilinks")
 
-    # ── Pass 15: frontmatter sanitization (auto-fix) ─────────────────────
-    sanitize_fixed: list[tuple[str, str]] = []
+    # ── Pass 15: Non-ASCII filename for concept/entity pages ──────────
+    # Concept and entity pages should use Chinese filenames, not pure-ASCII English.
+    # Source pages are exempt (raw article titles may be English).
+    ascii_names: list[str] = []
     for md_file in all_wiki_files:
-        if md_file.name in ("index.md", "overview.md"):
+        rel = str(md_file.relative_to(wiki_path))
+        parts = rel.replace("\\", "/").split("/")
+        if len(parts) < 2:
             continue
-        text = md_file.read_text(encoding="utf-8")
-        cleaned = sanitize_frontmatter(text)
-        if cleaned != text:
-            rel = str(md_file.relative_to(root_path))
-            # Identify which fixes applied
-            fixes: list[str] = []
-            if _strip_outer_code_fence(text) != text:
-                fixes.append("code-fence wrapper")
-            after_fence = _strip_outer_code_fence(text)
-            if _strip_frontmatter_key_prefix(after_fence) != after_fence:
-                fixes.append("frontmatter: prefix")
-            if _repair_wikilink_lists_in_frontmatter(after_fence) != after_fence:
-                fixes.append("wikilink list format")
-            md_file.write_text(cleaned, encoding="utf-8")
-            sanitize_fixed.append((rel, ", ".join(fixes)))
-    if sanitize_fixed:
-        print(f"\n🔧 Auto-fixed frontmatter ({len(sanitize_fixed)}):")
-        for path, fix in sanitize_fixed:
-            print(f"   {path} — {fix}")
+        subdir = parts[0]  # concepts, entities, sources, etc.
+        if subdir not in ("concepts", "entities"):
+            continue
+        stem = md_file.stem
+        # Pure ASCII = all characters are in range 0-127
+        if stem.isascii() and stem:
+            ascii_names.append(rel)
+    if ascii_names:
+        print(f"\n⚠️  {len(ascii_names)} concept/entity page(s) with pure-ASCII (English) filenames:")
+        for name in ascii_names:
+            print(f"   {name} — use Chinese filename instead")
+        issues += len(ascii_names)
     else:
-        print("✅ No frontmatter sanitization issues")
+        print("✅ All concept/entity pages have non-ASCII (Chinese) filenames")
 
     # ── Summary ─────────────────────────────────────────────────────────────
     print(f"\n{'─'*40}")

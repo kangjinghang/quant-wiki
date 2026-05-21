@@ -10,7 +10,7 @@ updated: 2026-05-20
 source_type: 券商研报
 source_language: zh
 raw_path: "raw/articles/[201811221706]中金固收可转债说没用也有点用的转债定价顺便聊聊转债研究员的Python技.md"
-raw_hash: "92627fc4a3a2b5a06b793b7d9f210d6d1a6eab03332cd6c12af745c616d5ed54"
+raw_hash: "7fa45f1aca0ee15e344ddd0644392ec25f4cee8198a20ceab4818a62c1163646"
 ---
 
 # 转债定价Python技巧
