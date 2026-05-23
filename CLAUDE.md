@@ -38,9 +38,19 @@ When a new source is added to `raw/`:
    ```
 4. Cascade-update all existing concept/entity/synthesis pages that are relevant
 5. Update `wiki/index.md` — add new pages under the correct section
-6. Append a log entry to `log/{date}.md`
+6. Update `wiki/overview.md` — revise the narrative overview to reflect new content. Ensure every new concept is mentioned in context with `[[wikilink]]`. This is NOT a table of contents — it's a synthetic narrative that a reader can read top-to-bottom to understand the entire knowledge base.
 7. Update `hot.md` with the latest activity
-8. Update `wiki/overview.md` — revise the narrative overview to reflect new content. Ensure every new concept is mentioned in context with `[[wikilink]]`. This is NOT a table of contents — it's a synthetic narrative that a reader can read top-to-bottom to understand the entire knowledge base.
+8. Run `ingest_finish.py` to write log and commit — this replaces manual log writing and git commands:
+   ```
+   python scripts/ingest_finish.py . \
+     --title "<title>" \
+     --source "raw/<path>" \
+     --created "wiki/sources/a.md,wiki/concepts/b.md" \
+     --updated "wiki/entities/c.md" \
+     --notes "key concepts summary"
+   ```
+   The script automatically appends to `log/{date}.md` and runs `git add + commit`.
+   Do NOT manually write log entries or run git add/commit after this step.
 9. Briefly report what was done (files created/updated, key concepts added)
 
 A single source may touch 10–15 wiki pages. That is expected and correct.
