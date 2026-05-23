@@ -36,7 +36,17 @@ When a new source is added to `raw/`:
    ```
    python scripts/create_page.py . <type> "<name>"
    ```
-4. Cascade-update all existing concept/entity/synthesis pages that are relevant
+4. Cascade-update all existing concept/entity/synthesis pages that are relevant:
+   - **Frontmatter updates** (sources, tags, related) — use `merge_frontmatter.py`:
+     ```
+     python scripts/merge_frontmatter.py wiki/entities/<name>.md \
+       --sources "[[新文章1]],[[新文章2]]" \
+       --tags "新标签" \
+       --related "[[关联页面]]"
+     ```
+     One Bash call per page handles all frontmatter array merging with deduplication.
+     Do NOT use Edit to append items to frontmatter arrays — use the script instead.
+   - **Body updates** (summary, timeline, related pages section, etc.) — use Edit as usual.
 5. Update `wiki/index.md` — add new pages under the correct section
 6. Update `wiki/overview.md` — revise the narrative overview to reflect new content. Ensure every new concept is mentioned in context with `[[wikilink]]`. This is NOT a table of contents — it's a synthetic narrative that a reader can read top-to-bottom to understand the entire knowledge base.
 7. Update `hot.md` with the latest activity
@@ -223,7 +233,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ## Notes for the LLM
 
-- **Batch edits to the same file.** Plan all changes to a file before editing, then apply them in ONE Edit call. Do NOT make multiple consecutive Edit calls to the same file — each Edit is a separate API call that re-sends the entire conversation context. For example, if an entity page needs a new source link, timeline entry, and related page link, compute all three changes upfront and issue one Edit with a larger replacement block.
+- **Use merge_frontmatter.py for frontmatter array fields.** When updating entity/concept pages, do NOT Edit frontmatter to add sources/tags/related. Instead, call `python scripts/merge_frontmatter.py <page> --sources "..." --tags "..." --related "..."`. The script handles dedup and updates the `updated` date. Only use Edit for body content changes (summary, timeline, related pages section, etc.).
 - Depth: adjust based on the question — brief for overviews, detailed for deep-dives
 - When uncertain about a fact, note it explicitly rather than guessing; flag it for audit
 - Never overwrite pages with `origin: self-written` — these contain the user's own thinking
