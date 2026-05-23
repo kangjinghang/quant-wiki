@@ -17,7 +17,7 @@ review_by: ""
 
 ## Definition / 定义
 
-Barra CNE5（China Equity Model Version 5）是MSCI Barra于2012年6月发布的中国权益市场多因子风险模型。该模型将证券收益率分解为**共同因子收益**和**特异性收益**两部分：共同因子包含国家因子、行业因子（申万行业分类）和10个风格因子（Beta、Book-to-Price、Earnings Yield、Growth、Leverage、Liquidity、Momentum、Non-linear Size、Residual Volatility、Size），不能被共同因子解释的部分为特异性收益率（与共同因子正交）。2018年8月MSCI发布了升级版本CNE6。
+Barra CNE5（China Equity Model Version 5）是MSCI Barra于2012年6月发布的中国权益市场多因子风险模型。该模型将证券收益率分解为**共同因子收益**和**特异性收益**两部分：共同因子包含国家因子、行业因子（申万行业分类）和10个风格因子（Beta、Book-to-Price、Earnings Yield、Growth、Leverage、Liquidity、Momentum、Non-linear Size、Residual Volatility、Size，其中Size即[[市值因子]]），不能被共同因子解释的部分为特异性收益率（与共同因子正交）。2018年8月MSCI发布了升级版本CNE6。[[中银量化]]团队郭策在[[有关barra中国权益cne5模型的思考上]]中对模型技术细节进行了深度解读。
 
 ## How It Works / 工作原理
 
