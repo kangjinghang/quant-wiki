@@ -85,7 +85,9 @@ def main() -> int:
 
     if log_path.exists():
         existing = log_path.read_text(encoding="utf-8")
-        log_path.write_text(existing + entry, encoding="utf-8")
+        # Ensure blank line separation between entries
+        separator = "" if existing.endswith("\n\n") else "\n"
+        log_path.write_text(existing + separator + entry, encoding="utf-8")
     else:
         log_path.write_text(f"# {today}\n\n{entry}", encoding="utf-8")
 
