@@ -223,6 +223,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ## Notes for the LLM
 
+- **Batch edits to the same file.** Plan all changes to a file before editing, then apply them in ONE Edit call. Do NOT make multiple consecutive Edit calls to the same file — each Edit is a separate API call that re-sends the entire conversation context. For example, if an entity page needs a new source link, timeline entry, and related page link, compute all three changes upfront and issue one Edit with a larger replacement block.
 - Depth: adjust based on the question — brief for overviews, detailed for deep-dives
 - When uncertain about a fact, note it explicitly rather than guessing; flag it for audit
 - Never overwrite pages with `origin: self-written` — these contain the user's own thinking
