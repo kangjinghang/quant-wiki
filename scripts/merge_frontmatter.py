@@ -71,10 +71,10 @@ def _extract_existing_list_items(raw_fm: str, field: str) -> list[str]:
     in_field = False
     for line in raw_fm.split("\n"):
         stripped = line.strip()
-        if stripped.startswith(f"{field}:"):
+        if re.match(rf"^{re.escape(field)}:", stripped):
             in_field = True
             # Check if inline format: field: [a, b]
-            inline_match = re.match(rf"^{field}:\s*\[(.+)\]\s*$", stripped)
+            inline_match = re.match(rf"^{re.escape(field)}:\s*\[(.+)\]\s*$", stripped)
             if inline_match:
                 return [item.strip().strip('"').strip("'") for item in inline_match.group(1).split(",")]
             # If field: with nothing after, it's an empty list
@@ -98,7 +98,7 @@ def merge_array_field(raw_fm: str, field: str, new_items: list[str]) -> str:
     Skips items that already exist (deduplication).
     Returns the updated raw frontmatter string.
     """
-    if field not in raw_fm:
+    if not re.search(rf"^{re.escape(field)}:", raw_fm, re.MULTILINE):
         return raw_fm
 
     existing = _extract_existing_list_items(raw_fm, field)
@@ -116,13 +116,13 @@ def merge_array_field(raw_fm: str, field: str, new_items: list[str]) -> str:
     for line in lines:
         stripped = line.strip()
 
-        if stripped.startswith(f"{field}:"):
+        if re.match(rf"^{re.escape(field)}:", stripped):
             in_field = True
             # Determine indentation
             field_indent = line[:len(line) - len(line.lstrip())]
 
             # Check inline format: field: [a, b]
-            inline_match = re.match(rf"^{field}:\s*\[(.+)\]\s*$", stripped)
+            inline_match = re.match(rf"^{re.escape(field)}:\s*\[(.+)\]\s*$", stripped)
             if inline_match:
                 existing_inline = [item.strip().strip('"').strip("'") for item in inline_match.group(1).split(",")]
                 all_items = existing_inline + to_add
