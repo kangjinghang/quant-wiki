@@ -62,8 +62,12 @@ class TestMergeArrayField:
         """Skip items that already exist in inline format."""
         raw_fm = 'title: "Test"\ntags: [a, b]\n'
         result = merge_array_field(raw_fm, "tags", ["a", "c"])
-        assert result.count("a") == 1
-        assert "c" in result
+        # Check the inline array specifically — "a" appears once in the array value
+        import re
+        match = re.search(r"tags:\s*\[(.+?)\]", result)
+        assert match is not None
+        items = [item.strip() for item in match.group(1).split(",")]
+        assert items == ["a", "b", "c"]
 
     def test_no_changes_returns_same(self):
         """When all items already exist, return unchanged."""
