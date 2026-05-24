@@ -3,7 +3,7 @@ title: "brinson归因分析"
 title_zh: "Brinson归因模型"
 type: concept
 summary: "Brinson归因模型（Brinson Attribution Model）是一种将投资组合超额收益拆解为行业配置贡献、个股选择贡献和交互效应贡献的经典归因方法。在沪深300指数增强基金分析中，验证了行业配置收益与超额收益呈明显正相关。"
-tags: [量化, 基金, 分析]
+tags: [量化, 基金, 因子]
 origin: agent-compiled
 status: seed
 created: 2026-05-24
