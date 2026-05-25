@@ -12,5 +12,5 @@ Ingest a source file into the wiki.
 Then follow the ingest workflow defined in CLAUDE.md — execute immediately without pausing for confirmation:
 1. Read the source file in full
 2. Create source summary page with `--raw-path` AND `--compute-hash`, concept/entity pages, cascade updates
-3. Update wiki/index.md, log/{date}.md, hot.md, wiki/overview.md
+3. Update wiki/index.md, log/{date}.md, wiki/overview.md
 4. Briefly report what was done

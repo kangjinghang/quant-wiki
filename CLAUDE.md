@@ -118,7 +118,6 @@ Without this loop, errors in the wiki compound silently. With it, the wiki gets 
 ```
 wiki-root/
 ├── CLAUDE.md            ← this file
-├── questions.md         ← open research questions queue
 ├── raw/                 ← immutable source documents
 │   ├── articles/
 │   ├── papers/
@@ -229,7 +228,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - **Body text**: write summaries and analysis in Chinese
 - **Technical terms**: keep original English; annotate Chinese on first appearance (e.g. Transformer（变换器）, Attention（注意力机制）)
 - **Section headings**: bilingual — `English / 中文` (e.g. `## Definition / 定义`)
-- **Contradictions**: present both views with citations; do not arbitrate. Add to `questions.md` if unresolved.
+- **Contradictions**: present both views with citations; do not arbitrate. Add to the Open Questions section of `wiki/index.md` if unresolved.
 - **Diagrams**: use **Mermaid** syntax
 - **Formulas**: use **KaTeX** (`$inline$` or `$$block$$`)
 - **Provenance markers**: on pages that synthesize 3+ sources, append `^[raw/path/to/source.md]` at the end of paragraphs whose claims come from a specific source. This lets readers trace each claim without re-reading the raw file. Single-source pages don't need this — the `sources` frontmatter is sufficient.
