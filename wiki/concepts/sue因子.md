@@ -3,16 +3,16 @@ title: "SUE因子"
 title_zh: "SUE因子（标准化超预期）"
 type: concept
 summary: "Standardized Unexpected Earnings，在 ESP 基础上除以分析师预测的标准差进行标准化，考虑分析师分歧度。表现优于 ESP 因子。"
-tags: [量化, 因子, 基本面, a股]
+tags: [量化, 因子, 基本面, a股, 策略, 实战]
 sources:
   - "[[季度超预期再构建及业绩超预期因子分析]]"
+  - "[[业绩超预期plus组合的构建]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-20
-updated: 2026-05-20
+updated: 2026-05-26
 review_by: ""
 ---
-
 # SUE因子 / Standardized Unexpected Earnings
 
 ## Definition / 定义
@@ -67,6 +67,10 @@ $$SUE_{i,q} = \frac{\hat{AE}_{i,q} - \hat{BE}_{i,q}}{\sigma_{i,q}}$$
 ## Sources / 来源
 
 - [[季度超预期再构建及业绩超预期因子分析]]
+
+## 多报告融合改进
+
+[[开源金工]]在2021年提出[[多报告融合]]方法改进SUE因子，将业绩预告、业绩快报和定期报告按披露时间整合，同月取最新数据。融合后SUE因子多头年化21.56%，多空对冲夏普3.46。融合后的SUE因子成为[[超预期plus组合]]的核心因子之一。
 
 ## Notes / 笔记
 
