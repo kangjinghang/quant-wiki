@@ -36,12 +36,12 @@ When a new source is added to `raw/`:
 2. Read the extraction JSON (`wiki/meta/extract-<slug>.json`). Based on the JSON:
    - Create a source summary page:
      ```
-     python scripts/create_page.py . source "<title>" --raw-path "raw/<path>" --compute-hash
+     python scripts/create_page.py . source "<title>" --raw-path "raw/<path>" --compute-hash --summary "summary text" --content "body content"
      ```
-     Then edit to fill content using the extraction JSON. Do NOT read the original raw article — the JSON has all the information needed.
+     Use `--summary` and `--content` to fill the page in one call. Do NOT read the original raw article — the JSON has all the information needed.
    - For each concept/entity with `is_new=true` or `existing_page=null`: create a new page
      ```
-     python scripts/create_page.py . <type> "<name>"
+     python scripts/create_page.py . <type> "<name>" --summary "summary" --content "body"
      ```
    - For each entity with `existing_page` set: cascade-update (see step 3)
 3. Cascade-update all existing concept/entity/synthesis pages that are relevant:
@@ -68,7 +68,7 @@ When a new source is added to `raw/`:
    ```
    The script automatically appends to `log/{date}.md` and runs `git add + commit`.
    Do NOT manually write log entries or run git add/commit after this step.
-8. Briefly report what was done (files created/updated, key concepts added). Do NOT run `extract_knowledge.py` again — stop here and let the user `/clear` for the next article.
+7. Briefly report what was done (files created/updated, key concepts added). Do NOT run `extract_knowledge.py` again — stop here and let the user `/clear` for the next article.
 
 A single source may touch 10–15 wiki pages. That is expected and correct.
 
