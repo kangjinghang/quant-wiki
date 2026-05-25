@@ -54,7 +54,13 @@ When a new source is added to `raw/`:
      ```
      One Bash call per page handles all frontmatter array merging with deduplication.
      Do NOT use Edit to append items to frontmatter arrays — use the script instead.
-   - **Body updates** (summary, timeline, related pages section, etc.) — use Edit as usual.
+   - **Body updates** (related pages section, timeline entries) — also use `merge_frontmatter.py` with `--related-pages` and `--timeline` flags:
+     ```
+     python scripts/merge_frontmatter.py wiki/entities/<name>.md \
+       --related-pages "[[Foo]] — desc1||[[Bar]] — desc2" \
+       --timeline "2021.06：《Title》（Authors）——desc"
+     ```
+     Entries are `||`-separated. The script handles dedup and section creation. Combine with frontmatter flags in a single call to avoid `file_modified_since_read` errors.
 4. Update `wiki/index.md` — add new pages under the correct section
 5. Append to `wiki/overview.md` — add a new `###` section **before** the `## 开放问题` line. **NEVER Read, Grep, or otherwise inspect overview.md.** Use a single Edit call with `old_string="\n## 开放问题"` and `new_string="\n### <heading>\n<content>\n\n## 开放问题"`. Each section should cover the newly ingested concepts with `[[wikilink]]` references. This is NOT a table of contents — it's a synthetic narrative that a reader can read top-to-bottom to understand the entire knowledge base.
 6. Run `ingest_finish.py` to write log and commit — this replaces manual log writing and git commands:
@@ -237,7 +243,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ## Notes for the LLM
 
-- **Use merge_frontmatter.py for frontmatter array fields.** When updating entity/concept pages, do NOT Edit frontmatter to add sources/tags/related. Instead, call `python scripts/merge_frontmatter.py <page> --sources "..." --tags "..." --related "..."`. The script handles dedup and updates the `updated` date. Only use Edit for body content changes (summary, timeline, related pages section, etc.).
+- **Use merge_frontmatter.py for frontmatter array fields and body section updates.** When updating entity/concept pages, do NOT Edit frontmatter to add sources/tags/related. Instead, call `python scripts/merge_frontmatter.py <page> --sources "..." --tags "..." --related "..."`. The script also handles body section updates via `--related-pages` and `--timeline` flags — use these instead of separate Edit calls to avoid `file_modified_since_read` errors.
 - **Use extract_knowledge.py as the first step of every ingest.** Run it before reading the source file. It produces a JSON with concepts, entities, tags, and key findings. Use the JSON to plan page creation/updates. If it fails, fall back to reading the source file directly.
 - Depth: adjust based on the question — brief for overviews, detailed for deep-dives
 - When uncertain about a fact, note it explicitly rather than guessing; flag it for audit
