@@ -56,7 +56,7 @@ When a new source is added to `raw/`:
      Do NOT use Edit to append items to frontmatter arrays — use the script instead.
    - **Body updates** (summary, timeline, related pages section, etc.) — use Edit as usual.
 4. Update `wiki/index.md` — add new pages under the correct section
-5. Append to `wiki/overview.md` — add a new `###` section **before** the `## 开放问题` line. Do NOT read overview.md first. Use Edit to find `\n## 开放问题` and insert the new section before it. Each section should cover the newly ingested concepts with `[[wikilink]]` references. This is NOT a table of contents — it's a synthetic narrative that a reader can read top-to-bottom to understand the entire knowledge base.
+5. Append to `wiki/overview.md` — add a new `###` section **before** the `## 开放问题` line. **NEVER Read, Grep, or otherwise inspect overview.md.** Use a single Edit call with `old_string="\n## 开放问题"` and `new_string="\n### <heading>\n<content>\n\n## 开放问题"`. Each section should cover the newly ingested concepts with `[[wikilink]]` references. This is NOT a table of contents — it's a synthetic narrative that a reader can read top-to-bottom to understand the entire knowledge base.
 6. Run `ingest_finish.py` to write log and commit — this replaces manual log writing and git commands:
    ```
    python scripts/ingest_finish.py . \
