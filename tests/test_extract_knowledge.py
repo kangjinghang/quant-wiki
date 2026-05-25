@@ -1,6 +1,7 @@
 """Tests for extract_knowledge.py script."""
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -47,17 +48,25 @@ class TestLoadApiConfig:
             assert config["model"] == "test-model"
 
     def test_missing_settings_file(self):
-        """Return None when settings file doesn't exist."""
-        config = load_api_config(Path("/nonexistent/settings.json"))
+        """Return None when settings file doesn't exist and no env vars set."""
+        import unittest.mock
+        with unittest.mock.patch.dict("os.environ", {}, clear=True):
+            # Also remove any ANTHROPIC_* keys that might exist
+            env = {k: v for k, v in os.environ.items() if not k.startswith("ANTHROPIC_")}
+            with unittest.mock.patch.dict("os.environ", env, clear=True):
+                config = load_api_config(Path("/nonexistent/settings.json"))
         assert config is None
 
     def test_missing_env_field(self):
-        """Return None when settings has no env field."""
+        """Return None when settings has no env field and no env vars set."""
         import tempfile
+        import unittest.mock
         with tempfile.TemporaryDirectory() as tmp:
             settings_path = Path(tmp) / "settings.json"
             settings_path.write_text('{"model": "opus"}', encoding="utf-8")
-            config = load_api_config(settings_path)
+            env = {k: v for k, v in os.environ.items() if not k.startswith("ANTHROPIC_")}
+            with unittest.mock.patch.dict("os.environ", env, clear=True):
+                config = load_api_config(settings_path)
             assert config is None
 
 

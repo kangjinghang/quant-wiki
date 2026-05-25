@@ -4,7 +4,7 @@ title_zh: "ESG因子"
 type: concept
 summary: "基于ESG（环境、社会、治理）评分构建的选股因子。行业市值中性化后，ESG综合得分因子在A股不同股票池中IC均统计显著，IC衰减缓慢（滞后12期仍显著），一阶自相关系数高（>0.95），适合低换手率策略。"
 tags: [因子, esg, a股, 另类数据]
-sources: ["[[ESG投资可以产生Alpha吗]]"]
+sources: ["[[ESG投资可以产生Alpha吗]]", "[[ESG可以用于行业轮动吗]]"]
 origin: agent-compiled
 status: developing
 created: 2026-05-25
@@ -64,10 +64,13 @@ top组合年化8.09%、夏普0.41；bottom组合表现最差。从top到bottom�
 - [[ESG投资可以产生Alpha吗]] — 来源报告
 - [[基本面量化]] — 相关研究方向
 - [[另类数据]] — ESG因子属于非财务另类数据维度
+- [[行业ESG因子]] — ESG因子在行业层面的扩展应用
+- [[ESG行业轮动策略]] — 基于行业ESG因子构建的行业轮动策略
 
 ## Sources / 来源
 
 - [[ESG投资可以产生Alpha吗]] — [[招商定量]]任瞳、麦元勋，2021.04
+- [[ESG可以用于行业轮动吗]] — [[招商定量]]任瞳、麦元勋，2021.05
 
 ## Notes / 笔记
 
