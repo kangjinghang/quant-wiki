@@ -1,0 +1,38 @@
+---
+title: "Jarrod W. Wilcox"
+title_zh: 
+type: entity
+summary: "PB-ROE模型的提出者（1984），从预期收益角度推导出ln(PB)与预期ROE的线性关系，为A股风格轮动研究中的动态风格划分提供理论基础。"
+tags: []
+sources: []
+origin: agent-compiled
+status: seed
+created: 2026-05-26
+updated: 2026-05-26
+entity_type: ""
+review_by: ""
+---
+## Overview / 概述
+
+Jarrod W. Wilcox于1984年提出PB-ROE框架，从预期收益角度推导出ln(PB)与预期ROE的线性关系。该框架为后续的[[PB-ROE动态风格划分]]提供了理论基础，被应用于A股[[成长价值风格轮动]]研究中。
+
+## PB-ROE框架核心思想
+
+从预期收益角度出发，推导ln(PB)与预期ROE的线性关系：
+
+807\ln(PB) = \alpha + \beta \cdot E(ROE)807
+
+这一关系说明，在合理定价下，PB与ROE应呈正相关关系。偏离这一关系的残差反映了市场对特定行业/个股的估值偏好偏差。
+
+## 影响与应用
+
+Wilcox的PB-ROE框架被广泛应用于：
+- 个股估值合理性判断
+- 行业风格动态划分
+- [[开源风格轮动策略]]的基础框架
+
+## Related Pages
+
+- [[PB-ROE动态风格划分]] — 基于Wilcox理论的应用
+- [[成长价值风格轮动]] — 风格轮动核心概念
+- [[估值]] — 估值方法论
