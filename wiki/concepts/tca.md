@@ -1,0 +1,32 @@
+---
+title: "tca"
+title_zh: 
+type: concept
+summary: "Transaction Cost Analysis（交易成本分析），评价算法交易优劣的框架，核心指标包括子单冲击成本和子单委托权重动态调整的正确率。"
+tags: []
+sources: []
+origin: agent-compiled
+status: seed
+created: 2026-05-27
+updated: 2026-05-27
+review_by: ""
+---
+## Definition / 定义
+
+TCA（Transaction Cost Analysis，交易成本分析）是评价[[算法交易]]执行质量的系统性分析框架。由[[张红庆]]在丽海弘金的实践中系统应用。
+
+## 核心指标
+
+1. **子单冲击成本**：衡量每笔子单对市场价格的冲击程度
+2. **子单委托权重动态调整正确率**：评估算法在不同时段调整委托权重的能力
+
+## 应用场景
+
+- 评估H-VWAP → D-VWAP → A-VWAP的算法演进效果
+- [[短期Alpha预测]]融入A-VWAP后，n=30时获取约14bps超额收益
+- 从[[张红庆高频交易成交数据的挖掘与基于机器学习的策略优化]]中提出
+
+## Related
+
+- [[算法交易]] — TCA评估的对象
+- [[短期Alpha预测]] — 融入算法交易后提升TCA绩效

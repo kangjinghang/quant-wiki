@@ -1,0 +1,140 @@
+{
+  "title": "张红庆：高频交易成交数据的挖掘与基于机器学习的策略优化",
+  "summary": "丽海弘金CTO张红庆在开源证券2022年资本市场峰会量化分论坛的发言纪要，详细探讨了A股市场高频交易现状、算法交易（VWAP）的演进与TCA绩效分析，以及基于机器学习（特别是多时间序列和聚类模型）的日内T0交易策略优化。报告指出量化交易目前占全市场日交易量约30%，并分享了通过引入pattern盈利性聚类引擎将日内选股相关系数提升至0.68的创新实践。",
+  "concepts": [
+    {
+      "name": "算法交易",
+      "description": "包含H-VWAP（历史成交量加权）、D-VWAP（动态预测加权）和A-VWAP（融入短期Alpha方向预测）三种演进方向，通过TCA（交易成本分析）评估绩效，核心在于子单权重的动态调整与方向判断。",
+      "is_new": false
+    },
+    {
+      "name": "tca",
+      "description": "Transaction Cost Analysis（交易成本分析），用于评价算法交易优劣的框架，核心指标包括子单冲击成本和子单委托权重动态调整的正确率。",
+      "is_new": true
+    },
+    {
+      "name": "日内程序化交易",
+      "description": "分为单时间序列（STS，如趋势跟随、节点反转）和多时间序列（MTS，如板块联动）两类模型，目前AI模型日均收益约7bps、胜率60%，低于手工交易的20bps和70%胜率。",
+      "is_new": true
+    },
+    {
+      "name": "多时间序列模型",
+      "description": "Multi-Time Series（MTS）模型，用于捕捉板块联动等多标的联动效应，相比单时间序列模型能显著拓宽券池宽度、提升日均收益率和胜率。",
+      "is_new": true
+    },
+    {
+      "name": "聚类选券引擎",
+      "description": "将过去t到t-n个bin的绩效数据作为时间序列输入聚类引擎，通过pattern盈利性寻找次日最优交易标的，能将选股相关系数提升至0.68，实现约70%的日交易胜率。",
+      "is_new": true
+    },
+    {
+      "name": "短期Alpha预测",
+      "description": "Short Alpha，用于A-VWAP算法和日内交易中，每3秒（1个Snapshot）给出一个价格方向判断，在n=30时能获取约14bps的超额收益。",
+      "is_new": true
+    }
+  ],
+  "entities": [
+    {
+      "name": "张红庆",
+      "type": "person",
+      "description": "丽海弘金科技有限公司副总经理、CTO，高中全国奥数一等奖，16年通信行业经验，6年量化金融科技经验，本次演讲嘉宾。",
+      "existing_page": "wiki/entities/张红庆.md"
+    },
+    {
+      "name": "丽海弘金",
+      "type": "organization",
+      "description": "金证股份旗下量化金融科技公司，专注量化交易平台开发与策略服务，其机构柜台目前日承载交易量超1000亿。",
+      "existing_page": "wiki/entities/丽海弘金.md"
+    },
+    {
+      "name": "金证股份",
+      "type": "organization",
+      "description": "国内金融IT龙头，承担A股50%交易量系统建设，丽海弘金的母公司。",
+      "existing_page": "wiki/entities/金证股份.md"
+    },
+    {
+      "name": "开源金工",
+      "type": "organization",
+      "description": "开源证券金融工程研究团队（魏建榕首席），本次资本市场峰会量化分论坛的主办方。",
+      "existing_page": "wiki/entities/开源金工.md"
+    },
+    {
+      "name": "魏建榕",
+      "type": "person",
+      "description": "开源金工首席分析师，本次峰会量化分论坛主办人，张红庆在演讲中特别肯定了其基于高频数据生产EOD因子的研究。",
+      "existing_page": "wiki/entities/魏建榕.md"
+    },
+    {
+      "name": "盛少成",
+      "type": "person",
+      "description": "开源金工团队成员，本次发言纪要的整理者之一。",
+      "existing_page": "wiki/entities/盛少成.md"
+    }
+  ],
+  "tags": [
+    "high-frequency",
+    "ai应用",
+    "量化",
+    "策略",
+    "观点"
+  ],
+  "key_findings": [
+    "A股量化交易（私募量化约1万亿+公募量化约1万亿）目前日均交易量占比约为30%（约3000亿），而非市场传言的50%。",
+    "算法交易（Algo）的演进路径为H-VWAP -> D-VWAP -> A-VWAP，A-VWAP通过融入Short Alpha方向判断，在n=30时能获取约14bps的超额收益。",
+    "日内交易中，AI程序化交易（日均7bps，胜率60%）目前仍不及优秀手工交易员（日均20bps，胜率70%），因为市场是开放式博弈环境。",
+    "通过引入基于时间序列的聚类模型替代传统的截面z-score选股，可以将历史绩效与次日PnL的相关系数提升至0.68，实现约70%的日交易胜率。",
+    "高频交易策略的优化不仅依赖金工模型（如MTS多时间序列突破），还高度依赖IT系统能力（如降低tick to order延迟以提高本方价成交占比）。"
+  ],
+  "relations": [
+    {
+      "from": "张红庆",
+      "to": "丽海弘金",
+      "type": "employed_by"
+    },
+    {
+      "from": "丽海弘金",
+      "to": "金证股份",
+      "type": "subsidiary_of"
+    },
+    {
+      "from": "张红庆",
+      "to": "算法交易",
+      "type": "researched"
+    },
+    {
+      "from": "张红庆",
+      "to": "日内程序化交易",
+      "type": "researched"
+    },
+    {
+      "from": "张红庆",
+      "to": "多时间序列模型",
+      "type": "developed"
+    },
+    {
+      "from": "张红庆",
+      "to": "聚类选券引擎",
+      "type": "developed"
+    },
+    {
+      "from": "开源金工",
+      "to": "张红庆",
+      "type": "invited_speaker"
+    },
+    {
+      "from": "算法交易",
+      "to": "tca",
+      "type": "evaluated_by"
+    },
+    {
+      "from": "日内程序化交易",
+      "to": "多时间序列模型",
+      "type": "utilizes"
+    },
+    {
+      "from": "日内程序化交易",
+      "to": "聚类选券引擎",
+      "type": "optimized_by"
+    }
+  ]
+}
