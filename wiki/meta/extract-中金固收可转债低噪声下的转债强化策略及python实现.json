@@ -1,0 +1,93 @@
+{
+  "title": "低噪声下的转债强化策略及Python实现",
+  "summary": "中金固收团队提出基于离散小波变换（DWT）的转债正股趋势降噪方法，将价格序列拆解为低频趋势项与高频噪声项，并提取4个关键点进行24种排列组合的形态分类。在此基础上叠加EasyBall策略，筛选出处于上行趋势的转债品种，回测显示该强化策略能显著提升EasyBall的收益表现并过滤下行趋势品种的损害。",
+  "concepts": [
+    {
+      "name": "离散小波变换",
+      "description": "Discrete Wavelet Transform (DWT)，一种将价格时间序列信号拆解为低频趋势项和高频噪声项的信号处理技术，本文选用haar法进行迭代滤波。",
+      "is_new": true
+    },
+    {
+      "name": "转债趋势形态识别",
+      "description": "基于DWT降噪后提取的4个关键点进行24种排列组合，将正股走势简易划分为上行趋势、下行趋势与横盘震荡三类形态的量化分类方法。",
+      "is_new": true
+    },
+    {
+      "name": "EasyBall强化策略",
+      "description": "在简易双低（EasyBall）策略的基础上，叠加正股上行趋势形态识别进行二次过滤的转债强化策略，回测显示能显著过滤下行趋势品种带来的损害。",
+      "is_new": true
+    }
+  ],
+  "entities": [
+    {
+      "name": "中金固收",
+      "type": "organization",
+      "description": "中金公司固定收益研究团队，本文作者包括杨冰、房铎、罗凡、陈健恒。",
+      "existing_page": "wiki/entities/中金固收.md"
+    },
+    {
+      "name": "杨冰",
+      "type": "person",
+      "description": "中金固收核心分析员，本文第一作者，SAC执业证书编号S0080515120002。",
+      "existing_page": "wiki/entities/杨冰.md"
+    },
+    {
+      "name": "房铎",
+      "type": "person",
+      "description": "中金固收分析员，本文联合作者，SAC执业证书编号S0080519110001。",
+      "existing_page": "wiki/entities/房铎.md"
+    },
+    {
+      "name": "罗凡",
+      "type": "person",
+      "description": "中金固收分析师，本文联合作者，SAC执业证书编号S0080120070107。",
+      "existing_page": "wiki/entities/罗凡.md"
+    },
+    {
+      "name": "陈健恒",
+      "type": "person",
+      "description": "中金固收资深分析师，本文联合作者，SAC执业证书编号S0080511030011。",
+      "existing_page": "wiki/entities/陈健恒.md"
+    }
+  ],
+  "tags": [
+    "可转债",
+    "技术面",
+    "趋势跟踪",
+    "python",
+    "实战"
+  ],
+  "key_findings": [
+    "利用离散小波变换（DWT haar法）对正股前128个交易日数据进行5次迭代滤波，可将原始价格序列降维至4个关键点，从而实现高效的趋势形态分类。",
+    "将24种排列组合划分为上行、下行与震荡三类趋势形态，其中上行趋势包含6种模式（如[1,2,3,4]、[1,2,4,3]等）。",
+    "在EasyBall（双低）策略基础上叠加正股上行趋势过滤，回测显示能显著提升组合收益；而处于下行趋势的转债即便满足双低条件，依然会损害组合表现。",
+    "2021年9月转债市场调整后，股市情绪指标与成交额明显下滑，正股层面的风险已解除不少，此时应重点关注估值不高且形态完好的转债品种。"
+  ],
+  "relations": [
+    {
+      "from": "中金固收",
+      "to": "离散小波变换",
+      "type": "proposed_method"
+    },
+    {
+      "from": "离散小波变换",
+      "to": "转债趋势形态识别",
+      "type": "enables"
+    },
+    {
+      "from": "转债趋势形态识别",
+      "to": "EasyBall强化策略",
+      "type": "core_component_of"
+    },
+    {
+      "from": "杨冰",
+      "to": "EasyBall强化策略",
+      "type": "authored"
+    },
+    {
+      "from": "房铎",
+      "to": "EasyBall强化策略",
+      "type": "authored"
+    }
+  ]
+}
