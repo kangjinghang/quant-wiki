@@ -1,0 +1,139 @@
+{
+  "title": "被遗忘的Theta",
+  "summary": "中金固收2021年11月关于可转债高估值环境下时间损耗（Theta）与不对称性（Gamma）深度分析的报告。报告指出，常态化高估值会显著增加转债的自然耗散成本并压低不对称回报，建议在高估值环境下减少平衡性品种配置，并提供了基于Theta和Gamma的Python量化择券策略。",
+  "concepts": [
+    {
+      "name": "theta时间损耗",
+      "description": "期权价值相对时间的一阶导数，表征转债价值随时间的自然流失速度，高估值环境下该损耗会非线性拔升，尤其对平衡性品种影响最大。",
+      "is_new": true
+    },
+    {
+      "name": "gamma不对称性",
+      "description": "转债Delta随正股价格变化的幅度，衡量转债“涨多跌少”的不对称回报能力，高估值环境会压低Gamma水平，削弱转债的配置价值。",
+      "is_new": true
+    },
+    {
+      "name": "转债高估值常态化影响",
+      "description": "市场接受高估值维持的预期下，转债面临自然耗散成本加大和不对称回报降低的双重隐性压力，而非仅仅面临未来估值压缩的风险。",
+      "is_new": true
+    },
+    {
+      "name": "隐含波动率",
+      "description": "通过Black-Scholes模型反推的转债波动率，在无赎回可行性及无卖空机制的“双高”妖债中会失去传统定价意义。",
+      "is_new": false
+    },
+    {
+      "name": "easyball强化策略",
+      "description": "基于转债估值出发的选券策略，通过计算Theta和Gamma数值结果进行量化增强，在高估值市场阶段表现优于传统EasyBall，且更易与其他策略结合。",
+      "is_new": false
+    },
+    {
+      "name": "转股溢价率",
+      "description": "转债最常用的估值指标，随着到期日临近，无论股性还是债性，转股溢价率或债底溢价率总有一个要基本归零。",
+      "is_new": false
+    }
+  ],
+  "entities": [
+    {
+      "name": "中金固收",
+      "type": "organization",
+      "description": "中金公司固定收益研究团队，本文探讨了转债高估值常态化下的Theta损耗与Gamma不对称性减弱问题，并提供了Python量化实现代码。",
+      "existing_page": "wiki/entities/中金固收.md"
+    },
+    {
+      "name": "杨冰",
+      "type": "person",
+      "description": "中金固收核心分析员，本文关于转债Theta与Gamma深度解析的核心作者。",
+      "existing_page": "wiki/entities/杨冰.md"
+    },
+    {
+      "name": "房铎",
+      "type": "person",
+      "description": "中金固收分析员，参与转债Theta与Gamma择券策略研究。",
+      "existing_page": "wiki/entities/房铎.md"
+    },
+    {
+      "name": "罗凡",
+      "type": "person",
+      "description": "中金固收分析师，参与转债高估值环境下的时间损耗研究。",
+      "existing_page": "wiki/entities/罗凡.md"
+    },
+    {
+      "name": "陈健恒",
+      "type": "person",
+      "description": "中金固收资深分析师，参与转债Theta与Gamma策略研究报告。",
+      "existing_page": "wiki/entities/陈健恒.md"
+    },
+    {
+      "name": "横河转债",
+      "type": "instrument",
+      "description": "曾触及600元高价的经典“双高”妖债案例，在无赎回可行性、无卖空机制下溢价率和隐含波动率失去传统定价意义。",
+      "existing_page": null
+    },
+    {
+      "name": "国贸转债",
+      "type": "instrument",
+      "description": "临近到期赎回的转债案例，展示了随着到期日临近转股溢价率必然压缩至基本归零的规律。",
+      "existing_page": null
+    }
+  ],
+  "tags": [
+    "可转债",
+    "convertible-bond",
+    "回测",
+    "backtesting",
+    "python",
+    "实战",
+    "深度研究"
+  ],
+  "key_findings": [
+    "常态化高估值的核心风险不在于未来估值压缩，而在于更高的时间自然损耗和更低的不对称回报",
+    "高估值对平衡性品种影响最大，从第2年开始Theta绝对值快速拔升，最后两年以年化10%以上速度蒸发价值",
+    "转债不是时间的“朋友”，而是用时间损耗购买不对称性，高估值直接损伤这种不对称性",
+    "Black-Scholes恒等式揭示转债回报来源于正股超额回报、实际弹性大于隐含波动率、以及估值自身变动三个维度",
+    "高估值环境下择券建议：配置两端（股性或债性）优于中间（平衡性），且需关注剩余期限进入4年以内的品种溢价率压缩风险",
+    "基于Theta和Gamma的量化策略与EasyBall有强相似性，但在高估值市场阶段表现更优，且具备与其他策略结合的数值化优势"
+  ],
+  "relations": [
+    {
+      "from": "中金固收",
+      "to": "theta时间损耗",
+      "type": "提出概念"
+    },
+    {
+      "from": "中金固收",
+      "to": "gamma不对称性",
+      "type": "提出概念"
+    },
+    {
+      "from": "theta时间损耗",
+      "to": "转股溢价率",
+      "type": "线性相关"
+    },
+    {
+      "from": "gamma不对称性",
+      "to": "隐含波动率",
+      "type": "反向影响"
+    },
+    {
+      "from": "easyball强化策略",
+      "to": "theta时间损耗",
+      "type": "策略增强"
+    },
+    {
+      "from": "easyball强化策略",
+      "to": "gamma不对称性",
+      "type": "策略增强"
+    },
+    {
+      "from": "横河转债",
+      "to": "隐含波动率",
+      "type": "定价失效案例"
+    },
+    {
+      "from": "国贸转债",
+      "to": "theta时间损耗",
+      "type": "极端案例"
+    }
+  ]
+}

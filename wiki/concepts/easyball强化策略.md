@@ -7,6 +7,7 @@ tags: []
   - "可转债"
 sources: []
   - "[[低噪声下的转债强化策略及python实现]]"
+  - "[[被遗忘的theta]]"
 origin: agent-compiled
 status: seed
 created: 2026-05-27
@@ -42,3 +43,8 @@ EasyBall强化策略是在[[双低策略|EasyBall（双低）]]基础策略之�
 ## 来源
 
 [[中金固收]]（杨冰、房铎、罗凡、陈健恒）《[[低噪声下的转债强化策略及Python实现]]》2021年10月
+
+## Related Pages / 关联页面
+
+- [[theta时间损耗]] — Theta/Gamma量化增强EasyBall策略
+- [[gamma不对称性]] — Gamma数值化择券扩展EasyBall策略
