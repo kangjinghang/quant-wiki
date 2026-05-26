@@ -7,10 +7,9 @@ tags: [量化, 基金, 因子]
 origin: agent-compiled
 status: seed
 created: 2026-05-24
-updated: 2026-05-24
+updated: 2026-05-26
 review_by: ""
 ---
-
 # Brinson归因分析
 
 ## Definition / 定义
@@ -46,6 +45,9 @@ $$R_{active} = R_{allocation} + R_{selection} + R_{interaction}$$
 - [[行业量化配置在沪深300增强上的应用]] — 本文核心应用场景
 - [[行业动量]] — 行业轮动信号
 
+- [[分赛道精选持仓]] — 基于Brison归因的分赛道精选持仓
+- [[虚实净值差]] — 筛选配置型基金的前置条件
+- [[分层增强策略]] — 在精选持仓基础上构建增强组合
 ## Sources / 来源
 
 - [[行业量化配置在沪深300增强上的应用]] — 开源金工 2021.02
