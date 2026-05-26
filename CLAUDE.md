@@ -195,22 +195,38 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ## Tag Taxonomy
 
-> **Customize this section** for your domain. Replace the example tags below with your own. New tags MUST be added here before they are used on wiki pages. The lint script checks that all tags exist in this taxonomy.
+> New tags MUST be added here before they are used on wiki pages. The lint script checks that all tags exist in this taxonomy.
 
-### Example: AI Research Domain
+### 策略 / Strategies
 
-- **Topics**: deep-learning, nlp, computer-vision, reinforcement-learning, optimization, alignment, reasoning
-- **Methods**: training, fine-tuning, inference, evaluation, data-augmentation, feature-engineering
-- **Artifacts**: model, dataset, benchmark, framework, paper, architecture
-- **Meta**: comparison, controversy, prediction, timeline, definition
+- **因子投资**: factor-investing, 因子, 量化, 指数增强, ai应用
+- **策略类型**: 策略, momentum, mean-reversion, portfolio-optimization, 套利, 打新
+- **投资风格**: 价值投资, 成长投资, 主动基金
+- **资产配置**: 资产配置, 组合管理, 调仓, 建仓
 
-### Example: Investment / Quant Finance Domain
+### 工具与品种 / Instruments
 
-- **Strategies**: factor-investing, momentum, mean-reversion, statistical-arbitrage, portfolio-optimization
-- **Instruments**: equity, bond, futures, options, etf, crypto
-- **Analysis**: valuation, risk-management, backtesting, attribution, regime-detection
-- **Data**: fundamental, technical, alternative-data, high-frequency, macro
-- **Meta**: comparison, controversy, prediction, regulation, case-study
+- **权益**: equity, a股, 股票, 指数基金
+- **固收**: bond, 债券, 债券市场
+- **基金**: 基金
+- **可转债**: 可转债, convertible-bond
+- **衍生品**: 期权, etf
+
+### 分析方法 / Analysis
+
+- **基本面**: 基本面, 估值, valuation, 宏观
+- **技术面**: 技术面, 趋势跟踪
+- **回测与风控**: 回测, backtesting, 风险控制, attribution, regime-detection
+- **资金面**: 资金面, 轮动
+- **另类数据**: 另类数据, high-frequency
+- **ESG**: esg
+- **政策法规**: 政策法规
+
+### 内容类型 / Content Type
+
+- **来源**: 券商研报, 公众号, 学术
+- **深度**: 入门, 定义, 实战, 深度研究, 教程, 案例, 观点
+- **元**: 比较
 
 ### Rules
 
