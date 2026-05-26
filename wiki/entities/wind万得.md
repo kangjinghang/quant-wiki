@@ -1,5 +1,5 @@
 ---
-title: "wind"
+title: "Wind万得"
 title_zh: 
 type: entity
 summary: "Wind万得，中国领先的金融数据服务商，提供Level 2数据、资金流向计算等金融数据服务。"
