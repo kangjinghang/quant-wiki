@@ -12,7 +12,7 @@ source_type: "公众号"
 source_language: "zh"
 raw_path: "raw/articles/[202003071508]APM因子模型的进阶版.md"
 review_by: ""
-raw_hash: "e4395be43782cad4fced357ad1dda1f49917d040789c45b1657300c160366662"
+raw_hash: "707319248f9728054612171b0df2173b9a357a8aa8c8ae3a0fbce072517546a0"
 ---
 
 # APM因子模型的进阶版
