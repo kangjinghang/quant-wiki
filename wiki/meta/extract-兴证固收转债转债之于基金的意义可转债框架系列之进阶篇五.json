@@ -1,0 +1,146 @@
+{
+  "title": "转债之于基金的意义—可转债框架系列之进阶篇（五）",
+  "summary": "本文系统梳理了公募基金参与转债市场的历史脉络与现状，指出公募基金一直是转债市场最有优势的主流参与者。报告详细分析了转债资产对机构和投资经理管理规模扩容的显著助推作用，并简述了私募机构通过举牌等方式参与转债市场的情况。",
+  "concepts": [
+    {
+      "name": "固收-基金",
+      "description": "以固收打底、转债/股票增强的基金产品，2017年后随着转债市场扩容，此类产品规模显著提升，头部机构如易方达、广发等深度受益。",
+      "is_new": false
+    },
+    {
+      "name": "转债一级半市场",
+      "description": "私募机构通过大宗交易承接配售转债的市场，报告指出私募在一级半、举牌、日内高频交易等方面具有自身优势，是转债市场不可忽视的力量。",
+      "is_new": false
+    },
+    {
+      "name": "转债基金策略识别",
+      "description": "报告将高转债仓位的基金划分为类转债型基金（如博时信用债券、易方达双债增强），指出这类产品在转债牛市中规模快速扩张。",
+      "is_new": false
+    }
+  ],
+  "entities": [
+    {
+      "name": "兴证固收",
+      "type": "organization",
+      "description": "兴业证券固定收益研究团队（黄伟平、左大勇），可转债框架系列基础篇与进阶篇的作者。",
+      "existing_page": "wiki/entities/兴证固收.md"
+    },
+    {
+      "name": "黄伟平",
+      "type": "person",
+      "description": "兴证固收首席分析师，可转债框架系列研究报告核心作者。",
+      "existing_page": "wiki/entities/黄伟平.md"
+    },
+    {
+      "name": "左大勇",
+      "type": "person",
+      "description": "兴证固收分析师，参与可转债框架系列研究。",
+      "existing_page": "wiki/entities/左大勇.md"
+    },
+    {
+      "name": "蔡琨",
+      "type": "person",
+      "description": "兴证固收分析师，参与可转债框架系列研究。",
+      "existing_page": "wiki/entities/蔡琨.md"
+    },
+    {
+      "name": "常月",
+      "type": "person",
+      "description": "兴证固收分析师，参与可转债框架系列研究。",
+      "existing_page": "wiki/entities/常月.md"
+    },
+    {
+      "name": "易方达基金",
+      "type": "organization",
+      "description": "国内头部公募基金，2021Q2公募基金转债总持仓约270亿，是转债市场持仓最大的机构，旗下多只二级债基和类转债基金深度参与转债。",
+      "existing_page": null
+    },
+    {
+      "name": "兴全基金",
+      "type": "organization",
+      "description": "国内老牌公募基金，2004年发行了市场上第一只转债基金兴全可转债，是市场中最早深度参与转债的机构，培养了一批优秀的转债投资人。",
+      "existing_page": null
+    },
+    {
+      "name": "张清华",
+      "type": "person",
+      "description": "易方达基金经理，管理的基金持仓转债154.14亿元（截至21Q2），代表作易方达安心回报长期深度参与转债市场，是固收+的优秀代表。",
+      "existing_page": null
+    },
+    {
+      "name": "张翼飞",
+      "type": "person",
+      "description": "安信基金基金经理，与李君共同管理多只基金，持仓转债接近百亿（截至21Q2），基金对转债的持仓基本都在30%以上。",
+      "existing_page": null
+    },
+    {
+      "name": "过钧",
+      "type": "person",
+      "description": "博时基金基金经理，其转债持仓市值几乎全部来自于管理的类转债型二级债基——博时信用债券。",
+      "existing_page": null
+    },
+    {
+      "name": "睿郡资产",
+      "type": "organization",
+      "description": "上海睿郡资产是持有转债最高的私募机构之一，持有转债市值在10亿以上（主要是海澜转债），在举牌和高频交易方面具有自身优势。",
+      "existing_page": null
+    },
+    {
+      "name": "林园投资",
+      "type": "organization",
+      "description": "深圳林园投资是积极参与转债的头部私募机构，2021年曾先后举牌乐普转2、宝莱转债、瀛通转债、翔鹭转债等多只转债。",
+      "existing_page": null
+    }
+  ],
+  "tags": [
+    "可转债",
+    "基金",
+    "债券市场",
+    "券商研报",
+    "深度研究"
+  ],
+  "key_findings": [
+    "公募基金一直是转债市场最大的参与者和最有优势的机构，2004年债基发展之初转债就作为核心策略存在。",
+    "2017年再融资新规后转债市场进入高速扩容的黄金时期，截至21Q2存量转债总市值达7347.12亿。",
+    "转债投资成为固收管理人重要的突破口，优秀的转债管理业绩有助于机构和基金经理快速提升管理规模。",
+    "截至21Q2，易方达公募基金转债总持仓约270亿，广发、博时、安信、富国等机构持仓也超百亿。",
+    "私募机构通过举牌等方式积极参与转债市场，在一级半、举牌、日内高频交易等方面具有自身优势。"
+  ],
+  "relations": [
+    {
+      "from": "兴证固收",
+      "to": "可转债",
+      "type": "research_focus"
+    },
+    {
+      "from": "易方达基金",
+      "to": "固收-基金",
+      "type": "product_development"
+    },
+    {
+      "from": "张清华",
+      "to": "易方达基金",
+      "type": "employed_by"
+    },
+    {
+      "from": "张翼飞",
+      "to": "安信基金",
+      "type": "employed_by"
+    },
+    {
+      "from": "过钧",
+      "to": "博时基金",
+      "type": "employed_by"
+    },
+    {
+      "from": "睿郡资产",
+      "to": "转债一级半市场",
+      "type": "participates_in"
+    },
+    {
+      "from": "林园投资",
+      "to": "可转债",
+      "type": "invests_in"
+    }
+  ]
+}
