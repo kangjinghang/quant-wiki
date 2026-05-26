@@ -1,0 +1,127 @@
+{
+  "title": "分析师目标价的Alpha信息",
+  "summary": "开源金工团队基于朝阳永续分析师预期数据库，深入剖析了分析师预测目标价的Alpha来源（信息领先、预测非对称、关注效应）及行为学特征。通过从正负向偏差、时效性和关注度三个维度改进，构造了WTR、MTR和CTR因子，合成的TR_ICIR因子多空年化收益达14.9%，信息比率1.401。",
+  "concepts": [
+    {
+      "name": "一致预期目标收益率因子",
+      "description": "基于分析师给出的股票目标价格与当前价格计算的预期收益率，2017年以来出现明显的有效性滑坡与回撤。",
+      "is_new": true
+    },
+    {
+      "name": "加权预期收益率因子",
+      "description": "WTR因子，根据报告发布后股价走势是否验证分析师判断来赋予不同权重，多头端表现较好，年化收益14.4%。",
+      "is_new": true
+    },
+    {
+      "name": "调整预期收益率因子",
+      "description": "MTR因子，选用加权预期收益率因子的同比变化构造，反映分析师预期变化的短期冲击，空头端收益贡献明显，多空IR达1.772。",
+      "is_new": true
+    },
+    {
+      "name": "关注度修正预期收益率因子",
+      "description": "CTR因子，将WTR因子排序值与分析师关注度排序值相乘，捕捉短期关注度提升带来的正向溢价，年化收益14.4%。",
+      "is_new": true
+    },
+    {
+      "name": "tr-icir因子",
+      "description": "利用ICIR加权方法合成WTR、MTR和CTR三个单因子，多空年化收益14.9%，信息比率1.401，月度胜率67.4%。",
+      "is_new": true
+    },
+    {
+      "name": "预测非对称",
+      "description": "分析师极少发布减持或卖出评级，目标价低于现价的报告仅占3%，这种不对称性使得空头端Alpha强于多头端。",
+      "is_new": true
+    },
+    {
+      "name": "关注度溢价",
+      "description": "覆盖个股的机构和分析师数量越多，市场关注度越高，股票在历史上的表现显著优于低关注度股票。",
+      "is_new": true
+    }
+  ],
+  "entities": [
+    {
+      "name": "开源金工",
+      "type": "organization",
+      "description": "开源证券金融工程研究团队，本文研究发布方，专注于实证行为金融学与市场微观结构研究。",
+      "existing_page": "wiki/entities/开源金工.md"
+    },
+    {
+      "name": "魏建榕",
+      "type": "person",
+      "description": "开源证券金融工程首席分析师，本文第一作者，因子切割论提出者。",
+      "existing_page": "wiki/entities/魏建榕.md"
+    },
+    {
+      "name": "苏良",
+      "type": "person",
+      "description": "开源证券金融工程研究员，本文联系人，研究方向为因子研究与量化基金。",
+      "existing_page": null
+    },
+    {
+      "name": "朝阳永续",
+      "type": "dataset",
+      "description": "国内金融数据服务商，提供本文核心数据源——分析师预期数据库（覆盖2006年至2021年）。",
+      "existing_page": null
+    }
+  ],
+  "tags": [
+    "因子",
+    "量化",
+    "基本面",
+    "另类数据",
+    "深度研究"
+  ],
+  "key_findings": [
+    "分析师目标价包含基本面以外的情感信息，其预测行为存在“乐观未必冲高，悲观大概率走低”的非对称性。",
+    "分析师更倾向于预测高成长股票的目标价格，且目标收益率会受到市场动量的正向影响，包含非理性因素。",
+    "原始一致预期目标收益率因子自2017年以来出现大幅回撤和有效性断层。",
+    "通过时效性（WTR）、预期偏差（MTR）和关注效应（CTR）三维度改进合成的TR_ICIR因子，多空对冲年化收益达14.9%，信息比率1.401，显著优于原始因子。"
+  ],
+  "relations": [
+    {
+      "from": "开源金工",
+      "to": "tr-icir因子",
+      "type": "proposed"
+    },
+    {
+      "from": "魏建榕",
+      "to": "tr-icir因子",
+      "type": "researched"
+    },
+    {
+      "from": "苏良",
+      "to": "tr-icir因子",
+      "type": "researched"
+    },
+    {
+      "from": "朝阳永续",
+      "to": "一致预期目标收益率因子",
+      "type": "provides_data_for"
+    },
+    {
+      "from": "加权预期收益率因子",
+      "to": "tr-icir因子",
+      "type": "component_of"
+    },
+    {
+      "from": "调整预期收益率因子",
+      "to": "tr-icir因子",
+      "type": "component_of"
+    },
+    {
+      "from": "关注度修正预期收益率因子",
+      "to": "tr-icir因子",
+      "type": "component_of"
+    },
+    {
+      "from": "预测非对称",
+      "to": "调整预期收益率因子",
+      "type": "theoretical_basis_for"
+    },
+    {
+      "from": "关注度溢价",
+      "to": "关注度修正预期收益率因子",
+      "type": "theoretical_basis_for"
+    }
+  ]
+}
