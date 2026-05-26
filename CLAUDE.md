@@ -200,7 +200,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 ### 策略 / Strategies
 
 - **因子投资**: factor-investing, 因子, 量化, 指数增强, ai应用
-- **策略类型**: 策略, momentum, mean-reversion, portfolio-optimization, 套利, 打新
+- **策略类型**: 策略, momentum, mean-reversion, portfolio-optimization, 套利, 打新, 行业轮动
 - **投资风格**: 价值投资, 成长投资, 主动基金
 - **资产配置**: 资产配置, 组合管理, 调仓, 建仓
 
