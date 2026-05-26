@@ -261,10 +261,8 @@ def main() -> int:
     settings_path = Path.home() / ".claude" / "settings.json"
     config = load_api_config(settings_path)
     if config is None:
-        print(f"ERROR: Could not load API config", file=sys.stderr)
-        print(f"  Checked: {settings_path} (env block) and process environment variables", file=sys.stderr)
-        print("  Required: ANTHROPIC_AUTH_TOKEN, ANTHROPIC_BASE_URL, ANTHROPIC_DEFAULT_OPUS_MODEL", file=sys.stderr)
-        print("  Set them in settings.json env block or as environment variables", file=sys.stderr)
+        print(f"ERROR: Could not load API config from {settings_path}", file=sys.stderr)
+        print("Ensure settings.json has env.ANTHROPIC_AUTH_TOKEN, ANTHROPIC_BASE_URL, ANTHROPIC_DEFAULT_OPUS_MODEL", file=sys.stderr)
         return 1
 
     # Read inputs
