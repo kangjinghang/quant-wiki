@@ -1,0 +1,116 @@
+{
+  "title": "举足轻重的争议数据--ESG系列研究之一",
+  "summary": "本文探讨了ESG评级体系中纳入争议数据的重要性，指出国内ESG信息披露存在整体披露率低、定量数据少、回避负面指标等问题，而争议数据能有效补充这些缺失。实证表明，纳入争议数据的高频ESG因子在中证500股票池中具有显著的正向选股与负向排雷能力，年化收益率和夏普比率均有明显提升。",
+  "concepts": [
+    {
+      "name": "争议数据",
+      "description": "反映企业ESG相关负面事件（如环境处罚、财务造假等）的数据，具有高频、广覆盖、负向信息丰富的特点，是对传统ESG披露信息的有效补充。",
+      "is_new": true
+    },
+    {
+      "name": "高频ESG因子",
+      "description": "结合传统年度ESG评分与高频更新的争议数据得分（按3:1比例加权）构建的选股因子，引入争议数据后在中证500多头端年化收益率提升至10.09%，夏普比率提升至0.98。",
+      "is_new": true
+    },
+    {
+      "name": "ESG信息披露",
+      "description": "企业通过社会责任报告、年报等渠道主动披露的环境、社会和治理信息，目前A股存在披露率低、定量数据少、回避负面指标及第三方认证不足等质量问题。",
+      "is_new": true
+    }
+  ],
+  "entities": [
+    {
+      "name": "光大金工",
+      "type": "organization",
+      "description": "光大证券金融工程研究团队（王威、祁嫣然），专注于ESG评级体系、争议数据应用及因子选股能力研究。",
+      "existing_page": "wiki/entities/光大金工.md"
+    },
+    {
+      "name": "祁嫣然",
+      "type": "person",
+      "description": "光大金工首席分析师，ESG系列研究及北向资金多维度拆解报告作者。",
+      "existing_page": "wiki/entities/祁嫣然.md"
+    },
+    {
+      "name": "妙盈科技",
+      "type": "organization",
+      "description": "提供A股ESG底层数据（包含披露信息与争议事件数据）的金融科技公司，数据覆盖全体A股达98.15%。",
+      "existing_page": null
+    },
+    {
+      "name": "MSCI",
+      "type": "organization",
+      "description": "国际主流ESG评级机构，其评级体系持续监测争议事件，并通过扣减关键事项得分来反映企业的ESG风险管理能力。",
+      "existing_page": null
+    },
+    {
+      "name": "汤森路透",
+      "type": "organization",
+      "description": "国际主流ESG评级机构，采用两阶段评估法，单独计算ESG争议评分（ESGC），动态反映企业丑闻或处罚等负面事件的影响。",
+      "existing_page": null
+    },
+    {
+      "name": "华证ESG",
+      "type": "organization",
+      "description": "国内ESG评级机构，其指标体系中仅有环境类违规事件能直接反映争议事件，社会与治理类争议事件只能通过三级指标间接衡量。",
+      "existing_page": null
+    },
+    {
+      "name": "嘉实基金",
+      "type": "organization",
+      "description": "国内头部公募基金，其ESG评级体系二级指标中未设立负面事件指标，负面争议事件只能通过个别三级指标反馈。",
+      "existing_page": "wiki/entities/嘉实基金.md"
+    },
+    {
+      "name": "王威",
+      "type": "person",
+      "description": "光大金工分析师，ESG系列研究报告核心作者。",
+      "existing_page": null
+    }
+  ],
+  "tags": [
+    "esg",
+    "factor",
+    "valuation",
+    "alternative-data",
+    "backtesting"
+  ],
+  "key_findings": [
+    "国内ESG信息披露质量整体较差：近70%的指标披露率低于12.5%，企业倾向于回避负面指标披露，且第三方认证严重不足。",
+    "争议数据具有显著的股价冲击效应：争议事件对股价产生持续负面影响（T+1日最明显），且导致后续成交量显著下降。",
+    "高频ESG因子表现优异：引入争议数据后，因子年化收益率由8.35%提升至10.09%，夏普比率由0.72上升至0.98，在中证500股票池空头端排雷能力尤为显著。",
+    "高频ESG因子收益部分来源于行业暴露：进行行业中性处理后，因子在各股票池中的表现均出现明显下滑。"
+  ],
+  "relations": [
+    {
+      "from": "光大金工",
+      "to": "高频ESG因子",
+      "type": "proposes"
+    },
+    {
+      "from": "光大金工",
+      "to": "争议数据",
+      "type": "studies"
+    },
+    {
+      "from": "妙盈科技",
+      "to": "争议数据",
+      "type": "provides"
+    },
+    {
+      "from": "高频ESG因子",
+      "to": "争议数据",
+      "type": "incorporates"
+    },
+    {
+      "from": "嘉实基金",
+      "to": "ESG信息披露",
+      "type": "underutilizes"
+    },
+    {
+      "from": "祁嫣然",
+      "to": "光大金工",
+      "type": "member_of"
+    }
+  ]
+}
