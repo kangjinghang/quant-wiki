@@ -4,7 +4,7 @@ title_zh: "ESG因子"
 type: concept
 summary: "基于ESG（环境、社会、治理）评分构建的选股因子。行业市值中性化后，ESG综合得分因子在A股不同股票池中IC均统计显著，IC衰减缓慢（滞后12期仍显著），一阶自相关系数高（>0.95），适合低换手率策略。"
 tags: [因子, esg, a股, 另类数据, 量化]
-sources: [[ESG投资可以产生Alpha吗]], [[ESG可以用于行业轮动吗]], [[中银量化主题选股系列基于esg视角的量化选股增强策略]]
+sources: ["[[ESG投资可以产生Alpha吗]]", "[[ESG可以用于行业轮动吗]]", "[[中银量化主题选股系列基于esg视角的量化选股增强策略]]"]
 origin: agent-compiled
 status: developing
 created: 2026-05-25

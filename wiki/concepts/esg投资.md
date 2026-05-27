@@ -4,7 +4,7 @@ title_zh: "ESG投资"
 type: concept
 summary: "环境（Environmental）、社会（Social）和公司治理（Governance）投资理念的简称，也称可持续的社会责任投资（SRI）。不单以财务绩效评价上市公司，而是将环境、社会和治理因素纳入投资决策过程。"
 tags: [esg, 策略, 另类数据, 资产配置, 深度研究, 观点, 量化]
-sources: [[ESG投资可以产生Alpha吗]], [[ESG可以用于行业轮动吗]], [[国君配置资产配置研究进入二次成长期长期配置研究思考与展望]], [[中银量化主题选股系列基于esg视角的量化选股增强策略]]
+sources: ["[[ESG投资可以产生Alpha吗]]", "[[ESG可以用于行业轮动吗]]", "[[国君配置资产配置研究进入二次成长期长期配置研究思考与展望]]", "[[中银量化主题选股系列基于esg视角的量化选股增强策略]]"]
 origin: agent-compiled
 status: developing
 created: 2026-05-25
