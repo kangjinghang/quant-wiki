@@ -3,15 +3,14 @@ title: "ESG投资"
 title_zh: "ESG投资"
 type: concept
 summary: "环境（Environmental）、社会（Social）和公司治理（Governance）投资理念的简称，也称可持续的社会责任投资（SRI）。不单以财务绩效评价上市公司，而是将环境、社会和治理因素纳入投资决策过程。"
-tags: [esg, 策略, 另类数据]
-sources: ["[[ESG投资可以产生Alpha吗]]", "[[ESG可以用于行业轮动吗]]"]
+tags: [esg, 策略, 另类数据, 资产配置, 深度研究, 观点]
+sources: [[ESG投资可以产生Alpha吗]], [[ESG可以用于行业轮动吗]], [[国君配置资产配置研究进入二次成长期长期配置研究思考与展望]]
 origin: agent-compiled
 status: developing
 created: 2026-05-25
-updated: 2026-05-25
+updated: 2026-05-27
 review_by: ""
 ---
-
 # ESG投资
 
 ## Definition / 定义
@@ -55,6 +54,11 @@ ESG投资在A股市场的量化应用处于早期阶段。[[招商定量]]的研
 - [[ESG行业轮动策略]] — 基于行业ESG得分的行业轮动策略
 - [[基本面量化]] — 相关研究方向
 
+- [[ESG投资流程重塑]] — ESG重塑投资决策全流程的新理念
+- [[Parnassus Investments]] — 美国ESG投资先驱实践
+- [[华夏基金]] — 国内头部公募基金ESG实践
+- [[CPPIB]] — 加拿大养老基金可再生能源布局
+- [[GPFG]] — 挪威全球养老基金气候投资
 ## Sources / 来源
 
 - [[ESG投资可以产生Alpha吗]] — [[招商定量]]任瞳、麦元勋，2021.04

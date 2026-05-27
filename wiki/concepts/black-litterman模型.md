@@ -3,17 +3,17 @@ title: "black-litterman模型"
 title_zh: "Black-Litterman模型"
 type: concept
 summary: "Black-Litterman模型（BL模型），在贝叶斯框架下融合先验收益率与投资者观点形成后验分布，解决均值方差模型对收益率输入高度敏感的问题。既可用于资产配置，也可用于多因子模型中的因子权重优化。"
-tags: [量化, 资产配置, 策略, 因子]
+tags: [量化, 资产配置, 策略, 因子, 宏观, 深度研究]
 sources:
   - "[[资产配置风险平价与bl模型]]"
   - "[[主观观点如何融入量化因子模型]]"
+  - "[[国君配置资产配置研究进入二次成长期长期配置研究思考与展望]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-05-27
 review_by: ""
 ---
-
 # Black-Litterman模型
 
 ## Definition / 定义
@@ -83,6 +83,8 @@ $$\mu_{BL} = [(\tau\Sigma)^{-1} + P^T\Omega^{-1}P]^{-1}[(\tau\Sigma)^{-1}\Pi + P
 - [[因子动量]] — 主观观点的来源之一
 - [[方正金工]] — 提出RPBL改进和因子权重应用的团队
 
+- [[资产配置演进四阶段]] — 将B-L模型归为理论与现实碰壁期代表
+- [[配置三要素]] — 弱者思维与B-L模型贝叶斯框架的关联
 ## Sources / 来源
 
 - [[资产配置风险平价与bl模型]] — 方正金工（宋家骥、严佳炜）2019.12
