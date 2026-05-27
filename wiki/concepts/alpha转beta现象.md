@@ -4,11 +4,13 @@ title_zh:
 type: concept
 summary: "随着市场参与者不断挖掘和认知，过去能够获取超额收益的Alpha因子最终会演变为被广泛认知的结构化Beta。"
 tags: []
+  - "因子"
 sources: []
+  - "[[回望激宕20年a股因子收益变迁]]"
 origin: agent-compiled
 status: seed
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-05-27
 review_by: ""
 ---
 ## Definition / 定义
@@ -33,3 +35,8 @@ Alpha转Beta现象（Alpha-to-Beta Transition）描述的是：随着市场参�
 - [[杨超基本面研究和增强策略开源量化论坛]] — 杨超提出的Alpha转Beta框架
 - [[因子拥挤度]] — 因子拥挤加速Alpha转Beta过程
 - [[过拟合与稳健性]] — 因子时效性与稳健性的张力
+
+## Related Pages / 关联页面
+
+- [[Alpha与风险因子转换]] — 更一般化的Alpha与风险因子双向转换框架
+- [[小市值效应]] — 小市值效应是Alpha转风险因子的典型案例
