@@ -4,11 +4,13 @@ title_zh:
 type: entity
 summary: "Wind万得，中国领先的金融数据服务商，提供Level 2数据、资金流向计算等金融数据服务。"
 tags: []
+  - "债券"
 sources: []
+  - "[[如何高频识别债基的信用踩雷情况]]"
 origin: agent-compiled
 status: seed
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-05-28
 entity_type: ""
 review_by: ""
 ---
@@ -24,3 +26,9 @@ Wind（万得）是中国领先的金融数据服务商，为机构投资者提�
 
 - [[资金流向因子]]：基于Wind Level 2数据构建
 - [[高频因子]]：高频数据基础设施
+
+## Related Pages / 关联页面
+
+- [[最大回撤法]] — 滚动回撤筛选疑似违约债券
+- [[中债估值数据处理]] — 剥离非信用因素的估值预处理
+- [如何高频识别债基的信用踩雷情况]] — 中银债基深度系列之四
