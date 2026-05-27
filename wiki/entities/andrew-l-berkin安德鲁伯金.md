@@ -1,5 +1,5 @@
 ---
-title: "andrew-l-berkin"
+title: "Andrew L. Berkin"
 title_zh: 
 type: entity
 summary: "海外学者，2021年发表《When and Why Does Momentum Work—and Not Work?》，系统研究动量因子成因及失效机制。被招商定量琢璞系列引荐。"
