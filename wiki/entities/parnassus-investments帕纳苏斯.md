@@ -1,5 +1,5 @@
 ---
-title: "Parnassus Investments"
+title: "Parnassus Investments帕纳苏斯"
 title_zh: 
 type: entity
 summary: "美国较早践行ESG投资理念的主动投资公司（成立于1984年），采用负面剔除与优质筛选等ESG整合策略，管理规模超460亿美元。"

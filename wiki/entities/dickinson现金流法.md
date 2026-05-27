@@ -1,5 +1,5 @@
 ---
-title: "Dickinson"
+title: "Dickinson现金流法"
 title_zh: 
 type: entity
 summary: "学者，2011年提出利用经营/投资/融资现金流净额正负性划分企业生命周期的现金流符号法，是华安金工企业生命周期系列研究的核心方法论来源"
