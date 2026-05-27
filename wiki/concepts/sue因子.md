@@ -3,15 +3,16 @@ title: "SUE因子"
 title_zh: "SUE因子（标准化超预期）"
 type: concept
 summary: "Standardized Unexpected Earnings，在 ESP 基础上除以分析师预测的标准差进行标准化，考虑分析师分歧度。表现优于 ESP 因子。"
-tags: [量化, 因子, 基本面, a股, 策略, 实战]
+tags: [量化, 因子, 基本面, a股, 策略, 实战, 行业轮动]
 sources:
   - "[[季度超预期再构建及业绩超预期因子分析]]"
   - "[[业绩超预期plus组合的构建]]"
   - "[[大消费板块的轮动与选股]]"
+  - "[[如何基于PEAD超预期因子构建行业轮动策略行业配置研究系列02]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-20
-updated: 2026-05-26
+updated: 2026-05-27
 review_by: ""
 ---
 # SUE因子 / Standardized Unexpected Earnings
@@ -66,6 +67,7 @@ $$SUE_{i,q} = \frac{\hat{AE}_{i,q} - \hat{BE}_{i,q}}{\sigma_{i,q}}$$
 - [[业绩超预期因子体系]] — 综合分析
 
 - [[单季度营业收入SUE]] — 营收维度超预期因子
+- [[行业超预期复合因子]] — 12个超预期单因子等权合成行业轮动复合因子
 ## Sources / 来源
 
 - [[季度超预期再构建及业绩超预期因子分析]]
