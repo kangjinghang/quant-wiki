@@ -1,5 +1,5 @@
 ---
-title: "kinlaw-w"
+title: "kinlaw-w金洛"
 title_zh: 
 type: entity
 summary: "Kinlaw W，海外学者，推荐文献《Crowded Trades: Implications for Sector Rotation and Factor Timing》的作者，提出资产集中度与相对估值双指标拥挤交易识别方法。"
