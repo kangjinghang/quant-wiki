@@ -1,0 +1,113 @@
+{
+  "title": "拥挤交易对行业轮动和因子择时的启示",
+  "summary": "招商定量任瞳团队推荐的文献《Crowded Trades: Implications for Sector Rotation and Factor Timing》深度解析。文章提出结合资产集中度（识别拥挤交易与泡沫形成）和相对估值（识别泡沫破裂抛售点）的双指标体系，成功应用于美国市场的行业轮动与因子择时策略，均获得显著的超额收益。",
+  "concepts": [
+    {
+      "name": "拥挤交易",
+      "description": "动用大量资金买卖特定资产导致价格发生重大变化的现象，通常在没有基本面变化的情况下引发资产泡沫。",
+      "is_new": true
+    },
+    {
+      "name": "资产集中度",
+      "description": "通过主成分分析（PCA）和吸收比衡量一组资产在更广泛市场内回报可变性的驱动程度，用于识别拥挤交易和泡沫的形成。",
+      "is_new": true
+    },
+    {
+      "name": "相对估值",
+      "description": "将资产的估值（如市净率P/B）进行历史标准化和横截面相对化处理，用于区分泡沫上升期和泡沫抛售期。",
+      "is_new": true
+    },
+    {
+      "name": "泡沫识别象限模型",
+      "description": "利用资产集中度和相对估值双指标构建的四象限模型，将市场状态划分为无泡沫、泡沫上升期和泡沫抛售期。",
+      "is_new": false
+    },
+    {
+      "name": "行业轮动",
+      "description": "基于拥挤度和相对估值双指标构建的行业轮动策略，做多泡沫上升期行业、做空泡沫抛售期行业，在美国市场相对标普500获得4.2%年化超额收益。",
+      "is_new": false
+    },
+    {
+      "name": "因子择时",
+      "description": "利用拥挤度和相对估值指标判断因子的泡沫状态并进行动态配置，策略表现优于静态因子投资组合及标普500指数。",
+      "is_new": true
+    }
+  ],
+  "entities": [
+    {
+      "name": "招商定量",
+      "type": "organization",
+      "description": "招商证券定量研究团队（任瞳、周靖明），发布“琢璞”系列报告引荐海外前沿量化文献。",
+      "existing_page": "wiki/entities/招商定量.md"
+    },
+    {
+      "name": "任瞳",
+      "type": "person",
+      "description": "招商定量首席分析师，本报告分析师之一。",
+      "existing_page": "wiki/entities/任瞳.md"
+    },
+    {
+      "name": "周靖明",
+      "type": "person",
+      "description": "招商定量分析师，本报告分析师之一。",
+      "existing_page": null
+    },
+    {
+      "name": "Kinlaw W",
+      "type": "person",
+      "description": "推荐文献《Crowded Trades: Implications for Sector Rotation and Factor Timing》的作者。",
+      "existing_page": null
+    }
+  ],
+  "tags": [
+    "券商研报",
+    "观点",
+    "行业轮动",
+    "因子",
+    "估值",
+    "风控"
+  ],
+  "key_findings": [
+    "单独使用资产集中度或相对估值指标不足以精准判断泡沫破裂，但两者结合可以有效识别行业和因子泡沫的上升期与抛售期。",
+    "高集中度且非高高估值的行业/因子处于“泡沫上升期”，表现最好；高集中度且高高估值的行业/因子处于“泡沫抛售期”，表现最差。",
+    "基于双指标的行业轮动策略在美国市场年化超额收益达4.2%且风险更低；因子择时策略年化表现优于静态因子组合9.0%。",
+    "传统的拥挤度刻画方式（如估值差、融券利用率、配对相关性等）存在高拥挤度不必然对应未来低收益的缺陷，集中度结合相对估值的方法提供了更好的解决方案。"
+  ],
+  "relations": [
+    {
+      "from": "招商定量",
+      "to": "拥挤交易",
+      "type": "studies"
+    },
+    {
+      "from": "资产集中度",
+      "to": "拥挤交易",
+      "type": "measures"
+    },
+    {
+      "from": "相对估值",
+      "to": "泡沫识别象限模型",
+      "type": "used_in"
+    },
+    {
+      "from": "资产集中度",
+      "to": "泡沫识别象限模型",
+      "type": "used_in"
+    },
+    {
+      "from": "泡沫识别象限模型",
+      "to": "行业轮动",
+      "type": "drives"
+    },
+    {
+      "from": "泡沫识别象限模型",
+      "to": "因子择时",
+      "type": "drives"
+    },
+    {
+      "from": "任瞳",
+      "to": "招商定量",
+      "type": "works_at"
+    }
+  ]
+}
