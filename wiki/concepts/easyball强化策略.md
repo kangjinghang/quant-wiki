@@ -5,9 +5,11 @@ type: concept
 summary: "在EasyBall（双低）策略基础上，叠加DWT降噪后的正股上行趋势形态识别进行二次过滤的转债强化策略，回测显著提升收益并过滤下行趋势品种"
 tags: []
   - "可转债"
+  - "策略"
 sources: []
   - "[[低噪声下的转债强化策略及python实现]]"
   - "[[被遗忘的theta]]"
+  - "[[偏债策略不佳之惑与破解尝试]]"
 origin: agent-compiled
 status: seed
 created: 2026-05-27
@@ -48,3 +50,5 @@ EasyBall强化策略是在[[双低策略|EasyBall（双低）]]基础策略之�
 
 - [[theta时间损耗]] — Theta/Gamma量化增强EasyBall策略
 - [[gamma不对称性]] — Gamma数值化择券扩展EasyBall策略
+
+- [[偏债策略增强]] — 多因子增强偏债策略，卡玛比例1.17仍不及EasyBall约1.3
