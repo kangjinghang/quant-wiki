@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202205301456]华安金工FOF赋能绝对收益基金组合构建实战上量化绝对收益之路系列之二.md"
 review_by: ""
-raw_hash: "4769ecea461b24a4da0ebe65ea8c639a3453933e376fd87756b764db996b45ea"
+raw_hash: "4fa97ccdf4f659e7ddd10e7db90e698274d6694b0dab34727fb754d5bb8fb1c8"
 ---
 ## 核心内容
 
