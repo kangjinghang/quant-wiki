@@ -199,7 +199,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ### 策略 / Strategies
 
-- **因子投资**: factor-investing, 因子, 量化, 指数增强, ai应用, 量化基本面
+- **因子投资**: factor-investing, 因子, 量化, 指数增强, ai应用, 量化基本面, 多因子模型
 - **策略类型**: 策略, momentum, mean-reversion, portfolio-optimization, 套利, 打新, 行业轮动, 风格轮动
 - **投资风格**: 价值投资, 成长投资, 主动基金
 - **资产配置**: 资产配置, 组合管理, 调仓, 建仓
@@ -217,7 +217,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - **基本面**: 基本面, 估值, valuation, 宏观
 - **技术面**: 技术面, 趋势跟踪, 择时
 - **回测与风控**: 回测, backtesting, 风险控制, attribution, regime-detection
-- **资金面**: 资金面, 轮动
+- **资金面**: 资金面, 轮动, 北向资金流
 - **另类数据**: 另类数据, high-frequency
 - **ESG**: esg
 - **政策法规**: 政策法规
