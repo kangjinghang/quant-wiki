@@ -13,7 +13,7 @@ review_by: ""
 ---
 ## 定义 / Definition
 
-[[IC_IR加权]]（IC Information Ratio Weighting）是一种多因子合成方法，以因子的ICIR作为权重来加权合成复合因子，同时考虑了因子的预测能力（IC均值）和稳定性（IC标准差）。
+[[ic-ir加权]]（IC Information Ratio Weighting）是一种多因子合成方法，以因子的ICIR作为权重来加权合成复合因子，同时考虑了因子的预测能力（IC均值）和稳定性（IC标准差）。
 
 ## 计算方法
 
