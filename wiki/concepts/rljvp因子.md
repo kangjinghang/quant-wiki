@@ -3,7 +3,7 @@ title: "RLJVP因子"
 title_zh: 
 type: concept
 summary: "大程上下行跳跃波动不对称因子的归一化指标，反映大幅跳跃中多空方向的不对称性。"
-tags: [high-frequency, factor-investing, a-share, 券商研报, 深度研究]
+tags: [high-frequency, factor-investing, a股, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
 status: seed
@@ -27,4 +27,4 @@ RLJVP因子是大程上下行跳跃波动不对称因子的归一化形式。它
 
 ## 来源 / Sources
 
-- [[基于股价跳跃模型的因子研究高频数据因子研究系列九]]
+- [[基于股价跳跃模型的因子研究-高频数据因子研究系列九]]

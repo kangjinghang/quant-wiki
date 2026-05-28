@@ -3,7 +3,7 @@ title: "SRLJV因子"
 title_zh: 
 type: concept
 summary: "小程上下行跳跃波动不对称因子的归一化指标，反映微小跳跃中多空方向的不对称性，风格相关性极低。"
-tags: [high-frequency, factor-investing, a-share, 券商研报, 深度研究]
+tags: [high-frequency, factor-investing, a股, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
 status: seed
@@ -27,4 +27,4 @@ SRLJV因子是小程上下行跳跃波动不对称因子的归一化形式。与
 
 ## 来源 / Sources
 
-- [[基于股价跳跃模型的因子研究高频数据因子研究系列九]]
+- [[基于股价跳跃模型的因子研究-高频数据因子研究系列九]]

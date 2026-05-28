@@ -3,7 +3,7 @@ title: "SRJV因子"
 title_zh: 
 type: concept
 summary: "小程跳跃波动因子，衡量股价微小跳跃的波动水平，周度因子（SRJV_week）在实证中表现出极高的IC和多空收益。"
-tags: [high-frequency, factor-investing, a-share, 券商研报, 深度研究]
+tags: [high-frequency, factor-investing, a股, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
 status: seed
@@ -27,4 +27,4 @@ SRJV因子（Small Realized Jump Volatility）即小程跳跃波动因子，代�
 
 ## 来源 / Sources
 
-- [[基于股价跳跃模型的因子研究高频数据因子研究系列九]]
+- [[基于股价跳跃模型的因子研究-高频数据因子研究系列九]]

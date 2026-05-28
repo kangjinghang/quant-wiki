@@ -3,7 +3,7 @@ title: "RJVP因子"
 title_zh: 
 type: concept
 summary: "上下行跳跃波动不对称因子的归一化指标，反映正向跳跃与负向跳跃的相对强弱，具有优异的多空预测能力。"
-tags: [high-frequency, factor-investing, a-share, 券商研报, 深度研究]
+tags: [high-frequency, factor-investing, a股, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
 status: seed
@@ -23,8 +23,8 @@ RJVP因子是上下行跳跃波动不对称因子的归一化版本。它通过�
 
 - [[跳跃波动因子]]
 - [[RLJVP因子]]
-- [[已实现波动率]]
+- 已实现波动率（Realized Volatility）
 
 ## 来源 / Sources
 
-- [[基于股价跳跃模型的因子研究高频数据因子研究系列九]]
+- [[基于股价跳跃模型的因子研究-高频数据因子研究系列九]]
