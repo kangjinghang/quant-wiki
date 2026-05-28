@@ -16,7 +16,7 @@ The wiki is the product. Chat is just the interface.
 
 - **Raw is immutable.** Never modify files in `raw/`. They are the source of truth for error correction.
 - **Origin matters.** Pages with `origin: self-written` must never be overwritten by the LLM. Read them, reference them, but do not edit them.
-- **Session startup.** At the start of every session, read this file (`CLAUDE.md`), then `wiki/index.md`. This orients you to the wiki's current state without scanning every page.
+- **Session startup.** At the start of every session, read this file (`CLAUDE.md`), then `wiki/index-summary.md`. This orients you to the wiki's current state without scanning every page.
 - **Commit after every ingest.** Use git to version every change. This enables rollback if an ingest goes wrong.
 
 ## Operations
