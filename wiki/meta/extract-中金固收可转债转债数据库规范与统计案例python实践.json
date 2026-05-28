@@ -1,0 +1,93 @@
+{
+  "title": "转债数据库规范与统计案例：Python实践",
+  "summary": "中金固收团队针对可转债投研中数据既复杂又标准的特点，提出了一套基于Python的定制化数据库构建规范。文章详细介绍了如何利用面向对象编程（OOP）设计集成变量（class）来装载、调用和更新转债日频及面板数据，并提供了剔除异常样本及计算常用统计指标（如均价、溢价率、隐含波动率）的矩阵化运算实践代码。",
+  "concepts": [
+    {
+      "name": "转债数据库规范",
+      "description": "针对转债数据涉及正股联动、条款处理等复杂性，设计的以易用、实用为核心的高度定制化投研数据库架构。",
+      "is_new": true
+    },
+    {
+      "name": "集成变量设计",
+      "description": "使用Python class将散落的转债数据表（价格、成交额、溢价率等）封装为统一的字典（DB）对象，并重载__getitem__和__getattr__以实现便捷调用。",
+      "is_new": true
+    },
+    {
+      "name": "转债异常样本过滤",
+      "description": "通过换手率异常（>100%）、价格过高（>135元）及高溢价率（>35%）三个维度构建过滤矩阵，剔除干扰统计结果的“双高”及非交易样本。",
+      "is_new": true
+    }
+  ],
+  "entities": [
+    {
+      "name": "中金固收",
+      "type": "organization",
+      "description": "中金公司固定收益研究团队，本文作者包括杨冰、房铎、罗凡、陈健恒，系统分享了转债量化投研的Python底层数据处理架构。",
+      "existing_page": "wiki/entities/中金固收.md"
+    },
+    {
+      "name": "杨冰",
+      "type": "person",
+      "description": "中金固收核心分析员，本文第一作者，SAC执业证书编号S0080515120002。",
+      "existing_page": "wiki/entities/杨冰.md"
+    },
+    {
+      "name": "房铎",
+      "type": "person",
+      "description": "中金固收分析员，本文联合作者，SAC执业证书编号S0080519110001。",
+      "existing_page": "wiki/entities/房铎.md"
+    },
+    {
+      "name": "罗凡",
+      "type": "person",
+      "description": "中金固收分析师，本文联合作者，SAC执业证书编号S0080522070003。",
+      "existing_page": "wiki/entities/罗凡.md"
+    },
+    {
+      "name": "陈健恒",
+      "type": "person",
+      "description": "中金固收资深分析师，本文联合作者，SAC执业证书编号S0080511030011。",
+      "existing_page": "wiki/entities/陈健恒.md"
+    },
+    {
+      "name": "Wind",
+      "type": "tool",
+      "description": "万得金融数据终端，本文示例中用于提取转债发行列表、日频行情及面板数据的核心API接口。",
+      "existing_page": "wiki/entities/wind万得.md"
+    }
+  ],
+  "tags": [
+    "可转债",
+    "python",
+    "量化",
+    "实战"
+  ],
+  "key_findings": [
+    "转债投研数据库应优先考虑定制化与易用性，而非照搬标准软件开发的规范性，采用集成变量封装散落数据表是高效的做法。",
+    "通过构建“是否交易”和“是否非异常”两个状态矩阵，可以有效解决转债因停牌或“双高”导致统计失真的问题。",
+    "在进行转债指标统计（如计算平价90~110元转债平均溢价率）时，应尽量避免使用循环，充分利用Pandas的矩阵运算（apply/applymap）以提升计算效率。",
+    "转债数据更新需区分纵向时间序列更新与横向新券纳入，对于非日频的面板数据（如条款、评级）建议独立存储并随新券发行动态拼接。"
+  ],
+  "relations": [
+    {
+      "from": "中金固收",
+      "to": "转债数据库规范",
+      "type": "proposed"
+    },
+    {
+      "from": "杨冰",
+      "to": "转债数据库规范",
+      "type": "authored"
+    },
+    {
+      "from": "转债数据库规范",
+      "to": "可转债",
+      "type": "applies_to"
+    },
+    {
+      "from": "集成变量设计",
+      "to": "转债异常样本过滤",
+      "type": "enables"
+    }
+  ]
+}
