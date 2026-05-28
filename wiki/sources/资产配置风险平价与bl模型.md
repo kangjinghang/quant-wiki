@@ -12,7 +12,7 @@ source_type: "券商研报"
 source_language: "中文"
 raw_path: "raw/articles/[201912031552]方正金工资产配置研究系列之一通过风险平价与BlackLitterman打.md"
 review_by: ""
-raw_hash: "1c0c52a25b28370ff2f6c3899441800e6d45e613474e64f8dd71cfca2c79fe5b"
+raw_hash: "a4a8710258e3adf3fbdbce33d87c1c87d6cb7176fd8f1cb5ab1589debe334235"
 ---
 
 # 资产配置风险平价与BL模型
