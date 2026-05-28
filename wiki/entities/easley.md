@@ -1,0 +1,40 @@
+---
+title: "Easley"
+title_zh: 
+type: entity
+summary: "学者，1996年提出经典的PIN（信息优势交易概率）模型，开创了信息不对称直接度量的先河。"
+tags: []
+sources: []
+origin: agent-compiled
+status: seed
+created: 2026-05-28
+updated: 2026-05-28
+entity_type: ""
+review_by: ""
+---
+## 简介
+
+Easley是金融市场微观结构领域的学者，最为人知的贡献是1996年与合作者提出PIN（Probability of Informed Trading）模型。
+
+## 主要贡献
+
+### PIN模型
+
+1996年提出经典的[[信息优势交易概率]]（PIN）模型，用于直接度量市场中知情交易者的占比。该模型假设市场中存在知情交易者和不知情交易者两类参与者，通过分析交易数据中的买卖不平衡来推断信息不对称程度。
+
+PIN模型的后续演进包括：
+- VPIN（Volume-synchronized PIN）
+- VWPIN（Volume-weighted PIN）
+- [[DPIN因子]]（Dynamic PIN）
+
+## 影响力
+
+PIN模型是市场微观结构研究的基础工具之一，广泛应用于：
+- 度量市场信息不对称程度
+- 构建量化选股因子
+- 评估市场质量
+
+## 相关概念
+
+- [[信息优势交易概率]] — 核心理论贡献
+- [[DPIN因子]] — PIN模型的动态化演进
