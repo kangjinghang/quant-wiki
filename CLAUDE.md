@@ -192,7 +192,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 - **来源**: 券商研报, 公众号, 学术
 - **深度**: 入门, 定义, 实战, 深度研究, 教程, 案例, 观点
-- **元**: 比较
+- **元**: 比较, python, 无监督学习
 
 ### Rules
 

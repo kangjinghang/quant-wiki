@@ -27,7 +27,7 @@ $$Factor_{adj} = Factor_{raw} - \beta_0 - \beta_1 \cdot Industry - \beta_2 \cdot
 ## 相关概念
 
 - [[多因子模型]]
-- [[估值因子]]
+- [[估值变动因子]]
 - [[市值行业中性化]]
 
 ## 来源
