@@ -34,6 +34,7 @@ When a new source is added to `raw/`:
    This auto-finds the first unprocessed article (no source page) and calls the LLM API independently.
    Output: `wiki/meta/extract-<slug>.json`
    Do NOT manually search for unprocessed articles (grep, ls, comm) — `--next` handles everything.
+   **Do NOT ask the user which article to process.** Just run `--next` and process whichever article it returns. No `AskUserQuestion`, no listing, no choosing.
    If exit code ≠ 0 (all articles processed or API error), report to user and stop, or fall back to reading the source file directly.
 2. Read the extraction JSON (`wiki/meta/extract-<slug>.json`). Based on the JSON:
    - Create a source summary page:
