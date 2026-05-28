@@ -120,6 +120,33 @@ def load_api_config(settings_path: Path) -> dict | None:
     return {"api_key": api_key, "base_url": base_url, "model": model}
 
 
+def extract_page_names(index_text: str) -> str:
+    """Extract existing page names from index.md, grouped by category.
+
+    Returns a compact summary (~5KB) instead of the full index (~107KB).
+    The LLM only needs page names to determine is_new / existing_page.
+    """
+    categories: dict[str, list[str]] = {}
+    current = None
+    for line in index_text.splitlines():
+        header = re.match(r"^##\s+(.+)$", line)
+        if header:
+            current = header.group(1).strip()
+            if current not in categories:
+                categories[current] = []
+        elif current:
+            for name in re.findall(r"\[\[([^\]]+)\]\]", line):
+                categories[current].append(name)
+
+    parts = []
+    for cat in ("Sources", "Concepts", "Entities"):
+        names = categories.get(cat)
+        if names:
+            parts.append(f"## 已有 {cat}\n" + "\n".join(f"- [[{n}]]" for n in names))
+
+    return "\n\n".join(parts) if parts else "(empty wiki)"
+
+
 # Sections to extract from CLAUDE.md (in order)
 _CLAUDE_MD_SECTIONS = [
     "Naming Conventions",
@@ -298,7 +325,8 @@ def main() -> int:
     claude_md_rules = extract_claude_md_sections(claude_md)
 
     index_path = wiki_root / "wiki" / "index.md"
-    wiki_index = index_path.read_text(encoding="utf-8") if index_path.exists() else "(no index.md found)"
+    wiki_index_full = index_path.read_text(encoding="utf-8") if index_path.exists() else ""
+    wiki_index = extract_page_names(wiki_index_full) if wiki_index_full else "(no index.md found)"
 
     # Build prompt
     system_prompt = "你是一个知识架构师。阅读以下文章，根据 wiki 规则提取结构化信息。输出纯 JSON，不要 markdown 代码块包裹。"

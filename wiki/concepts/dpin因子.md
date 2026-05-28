@@ -17,7 +17,7 @@ DPIN（Dynamic Probability of Informed Trading）因子是基于日内高频量�
 
 ## 理论基础
 
-DPIN因子源自[[信息优势交易概率]]（PIN）模型的理论框架。[[Easley]]等人于1996年提出PIN模型，用于度量市场中知情交易者的占比。后续演进包括VPIN、VWPIN等模型，本文在此基础上构建了DPIN模型。
+DPIN因子源自[[信息优势交易概率]]（PIN）模型的理论框架。[[伊萨利]]等人于1996年提出PIN模型，用于度量市场中知情交易者的占比。后续演进包括VPIN、VWPIN等模型，本文在此基础上构建了DPIN模型。
 
 ## 因子体系
 
