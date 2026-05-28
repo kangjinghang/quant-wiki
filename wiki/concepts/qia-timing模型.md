@@ -13,7 +13,7 @@ review_by: ""
 ---
 ## 定义 / Definition
 
-QIA-Timing模型（Quantitative Industry Allocation-Timing）是国泰君安量化配置团队在[[QIA模型]]基础上，叠加自身独有的[[择时]]体系，形成的“行业配置+择时”复合模拟策略模型。
+QIA-Timing模型（Quantitative Industry Allocation-Timing）是国泰君安量化配置团队在[[QIA模型]]基础上，叠加自身独有的择时体系，形成的“行业配置+择时”复合模拟策略模型。
 
 ## 方法/机制 / Methodology
 
@@ -28,11 +28,11 @@ QIA-Timing模型（Quantitative Industry Allocation-Timing）是国泰君安量�
 ## 相关概念 / Related Concepts
 
 - [[QIA模型]]
-- [[择时]]
+- 择时
 - [[资产配置]]
 - [[下跌能量模型]]
 - [[动态估值布林带模型]]
 
 ## 来源 / Sources
 
-- [[当量化行业配置插上择时的翅膀——国君配置QIA-Timing模拟策略介绍]]
+- [[当量化行业配置插上择时的翅膀-国君配置qia-timing模拟策略介绍]]
