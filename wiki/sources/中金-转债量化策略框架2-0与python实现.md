@@ -3,14 +3,15 @@ title: "【中金】转债量化策略框架2.0与Python实现"
 title_zh: 
 type: source
 summary: "本文是中金固收团队发布的转债量化策略框架2.0版本，详细介绍了如何利用Python实现各类转债量化策略的测算与回测。文章不仅复盘了EasyBall、低溢价、正股因子等简单策略的长期表现，还推出了策略合成与赎回剔除等新功能，以提升策略的实战适应性和收益风险比。"
-tags: []
+tags: [可转债, 量化, python, 回测, 策略]
+raw_hash: "07e5a27377c3"
 origin: agent-compiled
 status: seed
 created: 2026-05-28
 updated: 2026-05-28
 source_type: ""
 source_language: ""
-raw_path: ""
+raw_path: "raw/articles/[202208141421]中金转债量化策略框架20与Python实现.md"
 review_by: ""
 ---
 ## 核心内容
