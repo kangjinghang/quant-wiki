@@ -29,8 +29,13 @@ class TestDeriveSlug:
 
 
 class TestLoadApiConfig:
-    def test_reads_settings(self):
-        """Load config from a valid settings.json."""
+    def test_reads_settings(self, monkeypatch):
+        """Load config from a valid settings.json when no env vars set."""
+        monkeypatch.delenv("ANTHROPIC_AUTH_TOKEN", raising=False)
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        monkeypatch.delenv("ANTHROPIC_BASE_URL", raising=False)
+        monkeypatch.delenv("ANTHROPIC_DEFAULT_OPUS_MODEL", raising=False)
+        monkeypatch.delenv("ANTHROPIC_MODEL", raising=False)
         import tempfile
         with tempfile.TemporaryDirectory() as tmp:
             settings = {
