@@ -1,0 +1,138 @@
+{
+  "title": "从小单资金流行为到股票关联网络",
+  "summary": "开源金工通过小单资金流的行为协同性构建股票关联网络，并据此开发了Traction-SI牵引因子。该因子通过衡量个股真实收益与预期收益的预期差，展现出稳健的选股能力，多空组合年化收益达13.9%。文章还探讨了稀疏网络、平滑处理及规模协同等因子改进方向，并验证了其与基金持仓网络牵引因子的合成增强效果。",
+  "concepts": [
+    {
+      "name": "小单资金流关联网络",
+      "description": "基于小单资金流（4万以下挂单）在个股间入场与离场时间点的同向协同性，以同向比例为关联度指标构建的股票关联网络。",
+      "is_new": true
+    },
+    {
+      "name": "同向比例",
+      "description": "衡量两只股票小单净流入行为协同性强弱的指标，定义为过去一段时间内两股票小单净流入同向（同净流入或同净流出）的交易日占比。",
+      "is_new": true
+    },
+    {
+      "name": "Traction-SI因子",
+      "description": "小单资金流关联网络牵引因子，通过放大高关联股票涨跌幅权重重构个股预期收益基准，并提取真实收益与预期收益的预期差构建而成，经过反转、市值、行业中性化处理。",
+      "is_new": true
+    },
+    {
+      "name": "Traction45p-SI因子",
+      "description": "Traction-SI因子的改进版，通过剔除关联度低于45%的关联线进行稀疏化处理，以提高因子有效性。",
+      "is_new": true
+    },
+    {
+      "name": "Traction5d-SI因子",
+      "description": "Traction-SI因子的改进版，采用滚动5日小单累计净流入数据计算同向比例，以增强数据的连续性和因子的稳定性。",
+      "is_new": true
+    },
+    {
+      "name": "TractionCorr-SI因子",
+      "description": "综合考虑小单净流入方向协同与规模协同的改进牵引因子，基于小单净流入成交占比计算余弦相似度作为关联度指标。",
+      "is_new": true
+    },
+    {
+      "name": "Traction-F因子",
+      "description": "基于基金持仓行为构建的股票关联网络牵引因子，与Traction-SI因子相关性低，两者合成后能显著提升多空收益。",
+      "is_new": false
+    },
+    {
+      "name": "Traction-LI因子",
+      "description": "基于大单净流入同向比例构建的股票关联网络牵引因子，其多空收益和选股效果弱于基于小单的Traction-SI因子。",
+      "is_new": true
+    },
+    {
+      "name": "Traction-SIO因子",
+      "description": "基于小单净流入反向协同比例构建的牵引因子，表现弱于基于同向协同的Traction-SI因子。",
+      "is_new": true
+    }
+  ],
+  "entities": [
+    {
+      "name": "开源金工",
+      "type": "organization",
+      "description": "开源证券金融工程团队，致力于提供原创、深度的量化研究，发布了本篇关于小单资金流与股票关联网络的研究报告。",
+      "existing_page": "wiki/entities/开源金工.md"
+    },
+    {
+      "name": "魏建榕",
+      "type": "person",
+      "description": "开源证券金融工程首席分析师，专注量化投资研究10余年，在实证行为金融学、市场微观结构等研究领域取得了多项原创性成果。",
+      "existing_page": "wiki/entities/魏建榕.md"
+    },
+    {
+      "name": "王志豪",
+      "type": "person",
+      "description": "开源证券金融工程分析师，研究领域为行业轮动、因子模型，为本报告的联系人。",
+      "existing_page": "wiki/entities/王志豪.md"
+    }
+  ],
+  "tags": [
+    "因子",
+    "量化",
+    "资金面",
+    "另类数据",
+    "券商研报",
+    "深度研究"
+  ],
+  "key_findings": [
+    "同行业或同板块的股票间小单资金流同向比例显著高于市场平均，且行业划分越细，同向比例越高。",
+    "小单同向比例指标具有延续性，衰减速度慢，且同向比例越高的股票对，未来日收益率的相关性（R2）也越高。",
+    "Traction-SI因子表现稳健，RankIC均值3.98%，RankICIR 2.74，多空组合年化收益13.91%，年化IR 2.99，且与常见因子保持较低相关性。",
+    "通过稀疏化处理（剔除关联度低于45%的连线）构建的Traction45p-SI因子能显著提升回测表现，多空组合最大回撤降至3.86%。",
+    "Traction-SI因子与基于基金持仓的Traction-F因子相关性仅为13%，两者合成后多空组合年化收益提升至18.48%，年化IR达3.26。"
+  ],
+  "relations": [
+    {
+      "from": "开源金工",
+      "to": "小单资金流关联网络",
+      "type": "proposed / developed"
+    },
+    {
+      "from": "开源金工",
+      "to": "Traction-SI因子",
+      "type": "proposed / developed"
+    },
+    {
+      "from": "魏建榕",
+      "to": "开源金工",
+      "type": "leads"
+    },
+    {
+      "from": "王志豪",
+      "to": "开源金工",
+      "type": "member of"
+    },
+    {
+      "from": "小单资金流关联网络",
+      "to": "同向比例",
+      "type": "measured by"
+    },
+    {
+      "from": "Traction-SI因子",
+      "to": "小单资金流关联网络",
+      "type": "derived from"
+    },
+    {
+      "from": "Traction45p-SI因子",
+      "to": "Traction-SI因子",
+      "type": "optimized variant of"
+    },
+    {
+      "from": "Traction5d-SI因子",
+      "to": "Traction-SI因子",
+      "type": "optimized variant of"
+    },
+    {
+      "from": "TractionCorr-SI因子",
+      "to": "Traction-SI因子",
+      "type": "optimized variant of"
+    },
+    {
+      "from": "Traction-F因子",
+      "to": "Traction-SI因子",
+      "type": "complements"
+    }
+  ]
+}
