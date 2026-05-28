@@ -22,4 +22,4 @@ Parsons和Sabbatucci是金融学学者，在2018年于《The Review of Financial
 
 ## 来源
 
-- [[基于地理关联度因子研究--多因子Alpha系列报告之四十三]]
+- [[基于地理关联度因子研究-多因子alpha系列报告之-四十三]]
