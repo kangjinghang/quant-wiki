@@ -10,7 +10,7 @@ created: 2026-05-28
 updated: 2026-05-28
 source_type: ""
 source_language: ""
-raw_path: ""
+raw_path: "raw/articles/[202207301742]国君配置打造一站式主动行业配置体系国君配置加权AIATiming策略介绍.md"
 review_by: ""
 ---
 ## 核心内容
@@ -42,7 +42,7 @@ review_by: ""
 - [[板块配置轮盘]]
 - [[行业轮动]]
 - [[多因子模型]]
-- 宏观择时
+- [[宏观择时]]
 
 ## 来源
 
