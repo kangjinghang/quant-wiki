@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202207301742]国君配置打造一站式主动行业配置体系国君配置加权AIATiming策略介绍.md"
 review_by: ""
-raw_hash: "6cf5bdf076b09057aaedfcc6a8f68a45aae6f454eea86d1601e8183f4f02a67d"
+raw_hash: "e1f60ac3b5ecc325d0812998da6e017d1658713c5fbd866983c6c6a0add7e02a"
 ---
 ## 核心内容
 

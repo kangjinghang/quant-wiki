@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202204291200]招商定量基于ETF的行业轮动策略实践.md"
 review_by: ""
-raw_hash: "d09d4171f7f26eee316dc52e1922c540fa67b2cf4571520f8e9789f4b4160c73"
+raw_hash: "32c1589143690db4e5fe072884df7eb5152f51e3d982f5d47a3085988d669a6b"
 ---
 ## 核心思想
 

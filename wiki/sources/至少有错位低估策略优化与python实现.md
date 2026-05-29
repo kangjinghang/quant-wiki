@@ -12,7 +12,7 @@ source_type: "券商研报"
 source_language: "zh"
 raw_path: "raw/articles/[202104181424]中金固收可转债至少有错位低估策略优化与Python实现.md"
 review_by: ""
-raw_hash: "9aedc037216ed0cb4b78f6cb39e23f6a87e35e7a49490709a0749c71c8014c32"
+raw_hash: "e5b393010f2210634f91cfa9ed869840f329f07c0cbf483915bcdbd2515c53a2"
 ---
 
 # 至少有"错位"：低估策略优化与Python实现

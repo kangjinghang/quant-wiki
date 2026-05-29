@@ -12,7 +12,7 @@ source_type: 公众号
 source_language: zh
 raw_path: "raw/articles/[202003021456]A股行业动量的精细结构.md"
 review_by: ""
-raw_hash: "a81eef51df94faeb4cc6fb8ffd116f38629d2e9a118bcd0583ed897b8c1f28dd"
+raw_hash: "1a92a04884e6be83715f886cdf1f6bbe2efd2d0c3079660fa1162214ba90a9c1"
 ---
 
 # A股行业动量的精细结构

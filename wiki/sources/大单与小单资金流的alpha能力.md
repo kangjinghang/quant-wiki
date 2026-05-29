@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202106021611]大单与小单资金流的alpha能力开源金工.md"
 review_by: ""
-raw_hash: "10b9d0bc1a8f0213f109a56969c1a90c0c78b15664ebf12df5b6170395b4aac9"
+raw_hash: "577d4a9429d1df8211fe06237359bd58874667b339b5ab7319c6de8dd87960db"
 ---
 ## 核心观点
 
