@@ -450,6 +450,7 @@ def main() -> int:
         text = page_path.read_text(encoding="utf-8")
         # Find dead wikilinks and strip brackets
         def _replace_dead(m):
+            nonlocal fixed_count
             target = m.group(1)
             # Check with alias: [[slug|display]] → target is slug
             slug = target.split("|")[0].strip() if "|" in target else target.strip()

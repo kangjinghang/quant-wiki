@@ -922,6 +922,10 @@
 - [[Bollinger带]]
 - [[Keltner通道]]
 - [[Donchian通道]]
+- [[估值包络]]
+- [[百分比带]]
+- [[Bomar带]]
+- [[Hurst指标]]
 
 ## Entities
 - [[华创金工]]
