@@ -3,7 +3,7 @@ title: "时间差Alpha"
 title_zh: 
 type: concept
 summary: "指由日内分钟收益率在时间轴上的涨跌分布位置差异所蕴含的选股信息，其本质是收益率结构和低波效应的综合。"
-tags: [high-frequency, factor-investing, a-share, quantitative]
+tags: [high-frequency, factor-investing]
 sources: []
 origin: agent-compiled
 status: seed
@@ -31,4 +31,4 @@ review_by: ""
 
 ## 来源 / Sources
 
-- [[日内分钟收益率的时序特征逻辑讨论与因子增强]]
+- [[日内分钟收益率的时序特征-逻辑讨论与因子增强]]
