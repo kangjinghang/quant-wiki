@@ -10,8 +10,9 @@ created: 2026-05-31
 updated: 2026-05-31
 source_type: ""
 source_language: ""
-raw_path: ""
+raw_path: "raw/articles/[202211121445]中金转债事件驱动化学反应与Python实现转债年度展望系列2.md"
 review_by: ""
+raw_hash: "d430095bb8ef4135e4d771a0fe3859df09aab27174b2743be0c77f2aae12484a"
 ---
 ## 核心内容
 

@@ -349,6 +349,29 @@ def fill_missing_raw_path(source_page: Path, raw_path: str | None, wiki_root: Pa
     return True
 
 
+def find_raw_path_for_extract(wiki_root: Path, extract_path: str | Path) -> str | None:
+    """Find the raw article path corresponding to an extract JSON file.
+
+    The extract filename is extract-{derive_slug}.json where derive_slug
+    strips [timestamp] prefix from the raw article filename.
+    """
+    extract_stem = Path(extract_path).stem
+    if not extract_stem.startswith("extract-"):
+        return None
+
+    slug = extract_stem[8:]  # Remove "extract-" prefix
+    raw_dir = wiki_root / "raw" / "articles"
+    if not raw_dir.exists():
+        return None
+
+    for article in sorted(raw_dir.glob("*.md")):
+        article_slug = re.sub(r"^\[\d+\]", "", article.stem).lower()
+        if article_slug == slug:
+            return f"raw/articles/{article.name}"
+
+    return None
+
+
 def _find_existing_page(wiki_root: Path, page_type: str, name: str) -> Path | None:
     """Find an existing page by name."""
     subdir = type_to_dir(page_type)
@@ -390,15 +413,8 @@ def main() -> int:
     created_pages: list[str] = []
     updated_pages: list[str] = []
 
-    # 1. Determine raw_path
-    raw_path = None
-    raw_dir = wiki_root / "raw" / "articles"
-    if raw_dir.exists():
-        for article in sorted(raw_dir.glob("*.md")):
-            # Match by checking if title is in filename
-            if title and title[:10] in article.stem:
-                raw_path = f"raw/articles/{article.name}"
-                break
+    # 1. Determine raw_path from extract filename (robust against title special chars)
+    raw_path = find_raw_path_for_extract(wiki_root, extract_path)
 
     # 2. Create source page
     source_content = data.get("source_content", "")

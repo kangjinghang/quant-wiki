@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from create_pages_from_extract import fix_dead_wikilinks, fill_missing_raw_path, normalize_wikilinks
+from create_pages_from_extract import fix_dead_wikilinks, fill_missing_raw_path, normalize_wikilinks, find_raw_path_for_extract
 
 
 class TestFixDeadWikilinks:
@@ -180,3 +180,58 @@ class TestNormalizeWikilinks:
         text = "[[foo]] ok\n"
         result = normalize_wikilinks(text, existing)
         assert result == text
+
+
+class TestFindRawPathForExtract:
+    def test_finds_matching_article_by_slug(self, tmp_path):
+        """Match raw article via extract filename slug (strips [timestamp])."""
+        raw_dir = tmp_path / "raw" / "articles"
+        raw_dir.mkdir(parents=True)
+        raw_file = raw_dir / "[202211121445]test-article-name.md"
+        raw_file.write_text("content", encoding="utf-8")
+
+        extract_name = "extract-test-article-name.json"
+        result = find_raw_path_for_extract(tmp_path, extract_name)
+        assert result == "raw/articles/[202211121445]test-article-name.md"
+
+    def test_finds_chinese_article(self, tmp_path):
+        """Match raw article with Chinese filename and timestamp prefix."""
+        raw_dir = tmp_path / "raw" / "articles"
+        raw_dir.mkdir(parents=True)
+        raw_file = raw_dir / "[202211121445]中金转债事件驱动化学反应与Python实现转债年度展望系列2.md"
+        raw_file.write_text("content", encoding="utf-8")
+
+        extract_name = "extract-中金转债事件驱动化学反应与python实现转债年度展望系列2.json"
+        result = find_raw_path_for_extract(tmp_path, extract_name)
+        assert result is not None
+        assert "中金转债" in result
+        assert "[202211121445]" in result
+
+    def test_returns_none_when_no_match(self, tmp_path):
+        """Return None when no raw article matches the extract slug."""
+        raw_dir = tmp_path / "raw" / "articles"
+        raw_dir.mkdir(parents=True)
+        (raw_dir / "[202210281436]other-article.md").write_text("content", encoding="utf-8")
+
+        result = find_raw_path_for_extract(tmp_path, "extract-nonexistent.json")
+        assert result is None
+
+    def test_returns_none_for_non_extract_filename(self, tmp_path):
+        """Return None when filename doesn't start with 'extract-'."""
+        result = find_raw_path_for_extract(tmp_path, "other-file.json")
+        assert result is None
+
+    def test_returns_none_when_raw_dir_missing(self, tmp_path):
+        """Return None when raw/articles/ directory doesn't exist."""
+        result = find_raw_path_for_extract(tmp_path, "extract-test.json")
+        assert result is None
+
+    def test_works_with_path_object(self, tmp_path):
+        """Accept Path object as extract_path."""
+        raw_dir = tmp_path / "raw" / "articles"
+        raw_dir.mkdir(parents=True)
+        raw_file = raw_dir / "[202301010000]my-article.md"
+        raw_file.write_text("content", encoding="utf-8")
+
+        result = find_raw_path_for_extract(tmp_path, Path("extract-my-article.json"))
+        assert result == "raw/articles/[202301010000]my-article.md"
