@@ -932,8 +932,8 @@
 - [[道带宽度]]
 - [[真实盈余管理]]
 - [[异常经营现金流因子]]
-- [[Roychowdhury模型]]
-- [[Cohen模型]]
+- [[roychowdhury模型]]
+- [[cohen模型]]
 - [[现金流操纵模型]]
 - [[应计项目盈余管理]]
 
@@ -1078,6 +1078,7 @@
 - [[andrew-l-berkin安德鲁伯金]]
 - [[Jegadeesh和Titman]]
 - [[ken-french数据库]]
+- [[roychowdhury]]
 - [[赵索]]
 - [[李祥文]]
 - [[陶金]]
