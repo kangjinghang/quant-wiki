@@ -3,7 +3,7 @@ title: "Kenneth R. Ahern"
 title_zh: 
 type: entity
 summary: "知名金融学者，其发表的《Network Centrality and the Cross Section of Stock Returns》深入探讨了供应链网络中心性对股票收益的影响。"
-tags: [供应链中心性, 供应链网络, 另类数据, 量化, 券商研报]
+tags: [另类数据, 量化, 券商研报, 深度研究, 基本面]
 sources: []
 origin: agent-compiled
 status: seed
@@ -14,7 +14,7 @@ review_by: ""
 ---
 ## 简介 / Introduction
 
-[[Kenneth R. Ahern]]（肯尼思·阿亨）是金融学领域的知名学者，其主要研究集中在公司金融、并购重组以及供应链网络等交叉领域。他在供应链网络如何影响资产定价方面做出了开创性的贡献，其理论被广泛应用于现代量化投资的基本面研究中。
+[[kenneth-r-ahern肯尼思阿亨|Kenneth R. Ahern]]（肯尼思·阿亨）是金融学领域的知名学者，其主要研究集中在公司金融、并购重组以及供应链网络等交叉领域。他在供应链网络如何影响资产定价方面做出了开创性的贡献，其理论被广泛应用于现代量化投资的基本面研究中。
 
 ## 代表作 / Key Works
 
