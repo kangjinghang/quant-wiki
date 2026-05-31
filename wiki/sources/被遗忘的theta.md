@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202111141423]中金固收可转债被遗忘的Theta.md"
 review_by: ""
-raw_hash: "b63ff162709217f298699314fd9c3c941bcbd5125a3e220cc6df0865040f1177"
+raw_hash: "06154ba1e57793c4b0ed800c6d84cbc4d80043f83a0245fd6ad3cc00bfe8bccb"
 ---
 ## 核心观点
 

@@ -12,7 +12,7 @@ source_type: "公众号"
 source_language: "zh"
 raw_path: "raw/articles/[202011101842]有关Barra中国权益CNE5模型的思考下公众号.md"
 review_by: ""
-raw_hash: "3b489fecb82c6b907a8e9ee4f9c34692de31a11d0ef06c00de8f0e18eac73880"
+raw_hash: "21153ac927c8ae3f7750b619771992b8ef7eb6a11f266e11ec1116347be13a09"
 ---
 
 # 有关Barra中国权益CNE5模型的思考下
