@@ -27,8 +27,8 @@ raw_hash: "7e9a50ed33cf0f210f5fe92df428b652fb3008c62e90c050a2efc234ae684b1d"
 
 ## 相关概念
 
-- [[FinBERT模型]]
-- [[Adapter-BERT]]
+- [[finbert模型]]
+- [[adapter-bert模型]]
 - [[文本情感分析]]
 - [[XGBoost模型]]
 - [[自然语言处理]]

@@ -28,10 +28,10 @@ BERT（Bidirectional Encoder Representations from Transformers）是Google于201
 
 ## 相关概念
 
-- [[Transformer]]
+- [[transformer模型]]
 - [[预训练语言模型]]
 - [[自然语言处理]]
 
 ## 来源
 
-- [[NLP综述：勾勒AI语义理解的轨迹]]
+- [[nlp综述-勾勒ai语义理解的轨迹]]

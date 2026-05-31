@@ -18,23 +18,23 @@ raw_hash: "d29c2734bc122f3cdf46f5f71a103b2c24ebbb99684af2413bd31a5e35bd4df1"
 
 本文将NLP发展历史划分为三个阶段，并详细介绍了各阶段的代表模型：
 1. **第一阶段：传统统计语言模型**。以N-gram和NNLM为代表。N-gram基于马尔可夫假设计算文本概率，但存在无法建模长程依赖和词语相似性的缺陷；NNLM首次引入深度学习，并产生了“词向量”这一重要副产物。
-2. **第二阶段：Word2Vec词向量时代**。以CBOW和Skip-gram模型为代表，简化了网络结构，引入了Hierarchical Softmax和Negative Sampling优化训练，使得大规模语料训练成为现实，开启了NLP领域的迁移学习思潮。
-3. **第三阶段：预训练语言模型**。以ELMo、GPT、BERT和XLNet为代表。ELMo实现了动态词向量；GPT首次将[[Transformer]]应用于语言模型；[[BERT模型]]集大成，实现了真正的双向语义理解；XLNet则通过排列组合语言模型结合了自回归和自编码的优点。
+2. **第二阶段：[[word2vec模型]]词向量时代**。以CBOW和Skip-gram模型为代表，简化了网络结构，引入了Hierarchical Softmax和Negative Sampling优化训练，使得大规模语料训练成为现实，开启了NLP领域的迁移学习思潮。
+3. **第三阶段：预训练语言模型**。以ELMo、GPT、BERT和XLNet为代表。ELMo实现了动态词向量；GPT首次将[[transformer模型]]应用于语言模型；[[bert模型]]集大成，实现了真正的双向语义理解；XLNet则通过排列组合语言模型结合了自回归和自编码的优点。
 
 ## 关键发现
 
 - 金融文本数据的结构化程度越来越高，曾经的“另类数据”已逐渐成为标配。
-- [[Word2Vec]]不仅提供了分布式词向量，更重要的是开启了NLP中“迁移学习”的全新训练方式。
-- [[BERT模型]]通过Masked Language Model (MLM)和Next Sentence Prediction (NSP)任务，站在了前人模型的肩膀上，在多项NLP任务中取得了SOTA效果。
+- [[word2vec模型]]不仅提供了分布式词向量，更重要的是开启了NLP中“迁移学习”的全新训练方式。
+- [[bert模型]]通过Masked Language Model (MLM)和Next Sentence Prediction (NSP)任务，站在了前人模型的肩膀上，在多项NLP任务中取得了SOTA效果。
 - 预训练模型在金融领域的应用（如FinBERT）前景广阔，但针对金融文本的预处理（如截断策略）仍需特别设计。
 
 ## 相关概念
 
 - [[自然语言处理]]
 - [[词向量]]
-- [[Word2Vec]]
-- [[Transformer]]
-- [[BERT模型]]
+- [[word2vec模型]]
+- [[transformer模型]]
+- [[bert模型]]
 - [[预训练语言模型]]
 - [[迁移学习]]
 

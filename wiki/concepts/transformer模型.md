@@ -26,8 +26,8 @@ Transformer是2017年Google在论文《Attention is All You Need》中提出的�
 
 - [[注意力机制]]
 - [[深度学习]]
-- [[BERT模型]]
+- [[bert模型]]
 
 ## 来源
 
-- [[NLP综述：勾勒AI语义理解的轨迹]]
+- [[nlp综述-勾勒ai语义理解的轨迹]]
