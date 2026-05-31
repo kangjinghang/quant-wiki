@@ -247,6 +247,40 @@ def _cascade_update(
     return True
 
 
+def normalize_wikilinks(text: str, existing_pages: set[str]) -> str:
+    """Normalize wikilinks to match actual page filenames (slug case).
+
+    Converts [[Bollinger带]] → [[bollinger带]] when the file is bollinger带.md.
+    Preserves alias syntax: [[Slug|Display]] → [[slug|Display]].
+    Leaves links to non-existent pages unchanged.
+    """
+    # Build lookup: lowercase slug → actual stem
+    slug_to_stem = {stem.lower(): stem for stem in existing_pages}
+
+    def _normalize(m):
+        inner = m.group(1)
+        if "|" in inner:
+            slug, display = inner.split("|", 1)
+        else:
+            slug = inner
+            display = None
+
+        slug_stripped = slug.strip()
+        # Use slugify for consistent comparison
+        slugified = slugify(slug_stripped)
+
+        # Find the actual stem that matches
+        if slugified in slug_to_stem and slug_stripped != slug_to_stem[slugified]:
+            actual = slug_to_stem[slugified]
+            if display:
+                return f"[[{actual}|{display}]]"
+            return f"[[{actual}]]"
+        return m.group(0)
+
+    result = re.sub(r'\[\[([^\]]+)\]\]', _normalize, text)
+    return result
+
+
 def fix_dead_wikilinks(wiki_dir: str, page_paths: list[str]) -> int:
     """Remove brackets from wikilinks pointing to non-existent pages.
 
@@ -267,6 +301,10 @@ def fix_dead_wikilinks(wiki_dir: str, page_paths: list[str]) -> int:
             continue
         text = page_path.read_text(encoding="utf-8")
 
+        # First normalize case
+        text_norm = normalize_wikilinks(text, existing_pages)
+
+        # Then strip dead links
         def _replace_dead(m):
             nonlocal fixed_count
             target = m.group(1)
@@ -276,7 +314,7 @@ def fix_dead_wikilinks(wiki_dir: str, page_paths: list[str]) -> int:
             fixed_count += 1
             return target
 
-        new_text = re.sub(r'\[\[([^\]]+)\]\]', _replace_dead, text)
+        new_text = re.sub(r'\[\[([^\]]+)\]\]', _replace_dead, text_norm)
         if new_text != text:
             page_path.write_text(new_text, encoding="utf-8")
             print(f"  Fixed dead wikilinks: {page_path.name}")

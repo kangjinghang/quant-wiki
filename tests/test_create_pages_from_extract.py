@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from create_pages_from_extract import fix_dead_wikilinks, fill_missing_raw_path
+from create_pages_from_extract import fix_dead_wikilinks, fill_missing_raw_path, normalize_wikilinks
 
 
 class TestFixDeadWikilinks:
@@ -129,3 +129,54 @@ class TestFillMissingRawPath:
 
         result = fill_missing_raw_path(source, None, tmp_path)
         assert result is False
+
+
+class TestNormalizeWikilinks:
+    def test_lowercases_english_wikilinks_to_match_filename(self):
+        """[[Bollinger带]] should become [[bollinger带]] when file is bollinger带.md."""
+        existing = {"bollinger带", "lightgbm模型", "fama与french"}
+        text = "See [[Bollinger带]] and [[LightGBM模型]] and [[Fama与French]].\n"
+        result = normalize_wikilinks(text, existing)
+        assert "[[bollinger带]]" in result
+        assert "[[lightgbm模型]]" in result
+        assert "[[fama与french]]" in result
+        assert "[[Bollinger带]]" not in result
+
+    def test_preserves_already_correct_links(self):
+        """Links already matching filenames should be unchanged."""
+        existing = {"foo", "bar"}
+        text = "See [[foo]] and [[bar]].\n"
+        result = normalize_wikilinks(text, existing)
+        assert result == text
+
+    def test_preserves_alias_links(self):
+        """[[slug|Display]] should normalize slug part only."""
+        existing = {"bollinger带"}
+        text = "[[Bollinger带|Bollinger Band]] is useful.\n"
+        result = normalize_wikilinks(text, existing)
+        assert "[[bollinger带|Bollinger Band]]" in result
+
+    def test_leaves_unknown_links_unchanged(self):
+        """Links to pages not in existing should be left alone."""
+        existing = {"foo"}
+        text = "See [[SomeRandomPage]] here.\n"
+        result = normalize_wikilinks(text, existing)
+        assert "[[SomeRandomPage]]" in result
+
+    def test_handles_mixed_case_with_special_chars(self):
+        """Slug mismatch with hyphens and uppercase."""
+        existing = {"bollinger带"}
+        text = "[[Bollinger Band模型]] works.\n"
+        result = normalize_wikilinks(text, existing)
+        # slugify("Bollinger Band模型") = "bollinger-band模型", not in existing → unchanged
+        # But [[Bollinger带]] should normalize
+        text2 = "[[Bollinger带]] works.\n"
+        result2 = normalize_wikilinks(text2, existing)
+        assert "[[bollinger带]]" in result2
+
+    def test_no_changes_returns_same_string(self):
+        """When all links are correct, return identical content."""
+        existing = {"foo"}
+        text = "[[foo]] ok\n"
+        result = normalize_wikilinks(text, existing)
+        assert result == text
