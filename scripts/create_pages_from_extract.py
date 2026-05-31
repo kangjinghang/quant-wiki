@@ -247,6 +247,70 @@ def _cascade_update(
     return True
 
 
+def fix_dead_wikilinks(wiki_dir: str, page_paths: list[str]) -> int:
+    """Remove brackets from wikilinks pointing to non-existent pages.
+
+    Args:
+        wiki_dir: Path to the wiki/ directory.
+        page_paths: List of page file paths to scan.
+
+    Returns:
+        Number of dead wikilinks fixed.
+    """
+    wiki_path = Path(wiki_dir)
+    existing_pages = {p.stem for p in wiki_path.rglob("*.md")}
+
+    fixed_count = 0
+    for page_str in page_paths:
+        page_path = Path(page_str)
+        if not page_path.exists():
+            continue
+        text = page_path.read_text(encoding="utf-8")
+
+        def _replace_dead(m):
+            nonlocal fixed_count
+            target = m.group(1)
+            slug = target.split("|")[0].strip() if "|" in target else target.strip()
+            if slug in existing_pages or slug.lower() in existing_pages:
+                return m.group(0)
+            fixed_count += 1
+            return target
+
+        new_text = re.sub(r'\[\[([^\]]+)\]\]', _replace_dead, text)
+        if new_text != text:
+            page_path.write_text(new_text, encoding="utf-8")
+            print(f"  Fixed dead wikilinks: {page_path.name}")
+    if fixed_count:
+        print(f"  Fixed {fixed_count} dead wikilinks across {len(page_paths)} pages")
+    return fixed_count
+
+
+def fill_missing_raw_path(source_page: Path, raw_path: str | None, wiki_root: Path) -> bool:
+    """Fill empty raw_path on an existing source page and add raw_hash.
+
+    Returns True if the page was updated, False otherwise.
+    """
+    if not raw_path or not source_page.exists():
+        return False
+
+    text = source_page.read_text(encoding="utf-8")
+    if not re.search(r'^raw_path:\s*""?\s*$', text, re.MULTILINE):
+        return False
+
+    text = re.sub(r'^raw_path:\s*".*"$', f'raw_path: "{raw_path}"', text, count=1, flags=re.MULTILINE)
+    if "raw_hash:" not in text:
+        raw_full = wiki_root / raw_path
+        if raw_full.exists():
+            raw_hash = hashlib.sha256(raw_full.read_bytes()).hexdigest()
+            parts = text.split("---", 2)
+            if len(parts) >= 3:
+                text = "---" + parts[1].rstrip() + f'\nraw_hash: "{raw_hash}"\n---' + parts[2]
+
+    source_page.write_text(text, encoding="utf-8")
+    print(f"  Fixed raw_path: {source_page.name}")
+    return True
+
+
 def _find_existing_page(wiki_root: Path, page_type: str, name: str) -> Path | None:
     """Find an existing page by name."""
     subdir = type_to_dir(page_type)
@@ -300,6 +364,9 @@ def main() -> int:
 
     # 2. Create source page
     source_content = data.get("source_content", "")
+    source_slug = slugify(title) if title else ""
+    source_path = wiki_root / "wiki" / "sources" / f"{source_slug}.md" if source_slug else None
+
     if title and source_content:
         result = _create_page(
             wiki_root, template_dir, "source", title,
@@ -309,6 +376,10 @@ def main() -> int:
         if result:
             created_pages.append(f"source: {result.name}")
             print(f"  Created source: {result}")
+
+    # Fix raw_path on existing source page if empty
+    if source_path and raw_path:
+        fill_missing_raw_path(source_path, raw_path, wiki_root)
 
     # 3. Create new concept pages
     for concept in concepts:
@@ -435,35 +506,12 @@ def main() -> int:
 
     # 8. Fix dead wikilinks in newly created/updated pages
     wiki_dir = wiki_root / "wiki"
-    existing_pages = {p.stem for p in wiki_dir.rglob("*.md")}
     all_touched = list(dict.fromkeys(
         [str(Path(p)) for p in
          [wiki_root / c.split(": ", 1)[-1] for c in created_pages if ": " in c] +
          [wiki_root / u for u in updated_pages]]
     ))
-
-    fixed_count = 0
-    for page_str in all_touched:
-        page_path = Path(page_str)
-        if not page_path.exists():
-            continue
-        text = page_path.read_text(encoding="utf-8")
-        # Find dead wikilinks and strip brackets
-        def _replace_dead(m):
-            nonlocal fixed_count
-            target = m.group(1)
-            # Check with alias: [[slug|display]] → target is slug
-            slug = target.split("|")[0].strip() if "|" in target else target.strip()
-            if slug in existing_pages or slug.lower() in existing_pages:
-                return m.group(0)  # valid link, keep
-            fixed_count += 1
-            return target  # strip brackets
-        new_text = re.sub(r'\[\[([^\]]+)\]\]', _replace_dead, text)
-        if new_text != text:
-            page_path.write_text(new_text, encoding="utf-8")
-            print(f"  Fixed dead wikilinks: {page_path.name}")
-    if fixed_count:
-        print(f"  Fixed {fixed_count} dead wikilinks across {len(all_touched)} pages")
+    fix_dead_wikilinks(str(wiki_dir), all_touched)
 
     # Summary
     print(f"\nDone. Created {len(created_pages)} pages, updated {len(updated_pages)} pages.")
