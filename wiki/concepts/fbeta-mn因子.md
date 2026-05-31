@@ -31,4 +31,4 @@ fBeta_MN因子（Market Negative）是[[半贝塔拆解]]体系中的一个细�
 
 ## 来源 / Sources
 
-- [[基于semibeta的因子研究多因子alpha系列报告之四十五]]
+- [[基于semibeta的因子研究-多因子alpha系列报告之-四十五]]
