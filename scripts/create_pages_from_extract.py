@@ -433,6 +433,37 @@ def main() -> int:
         summary_path.write_text(summary_content, encoding="utf-8")
         print(f"  Updated: {summary_path}")
 
+    # 8. Fix dead wikilinks in newly created/updated pages
+    wiki_dir = wiki_root / "wiki"
+    existing_pages = {p.stem for p in wiki_dir.rglob("*.md")}
+    all_touched = list(dict.fromkeys(
+        [str(Path(p)) for p in
+         [wiki_root / c.split(": ", 1)[-1] for c in created_pages if ": " in c] +
+         [wiki_root / u for u in updated_pages]]
+    ))
+
+    fixed_count = 0
+    for page_str in all_touched:
+        page_path = Path(page_str)
+        if not page_path.exists():
+            continue
+        text = page_path.read_text(encoding="utf-8")
+        # Find dead wikilinks and strip brackets
+        def _replace_dead(m):
+            target = m.group(1)
+            # Check with alias: [[slug|display]] → target is slug
+            slug = target.split("|")[0].strip() if "|" in target else target.strip()
+            if slug in existing_pages or slug.lower() in existing_pages:
+                return m.group(0)  # valid link, keep
+            fixed_count += 1
+            return target  # strip brackets
+        new_text = re.sub(r'\[\[([^\]]+)\]\]', _replace_dead, text)
+        if new_text != text:
+            page_path.write_text(new_text, encoding="utf-8")
+            print(f"  Fixed dead wikilinks: {page_path.name}")
+    if fixed_count:
+        print(f"  Fixed {fixed_count} dead wikilinks across {len(all_touched)} pages")
+
     # Summary
     print(f"\nDone. Created {len(created_pages)} pages, updated {len(updated_pages)} pages.")
     return 0
