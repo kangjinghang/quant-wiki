@@ -1013,7 +1013,7 @@
 - [[大小单综合资金流因子]]
 - [[FinBERT模型]]
 - [[Adapter-BERT]]
-- [[forecast_adj_txt_bert因子]]
+- [[forecast-adj-txt-bert因子]]
 
 ## Entities
 - [[华创金工]]
