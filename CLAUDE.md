@@ -187,13 +187,13 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - **回测与风控**: 回测, backtesting, 风险控制, attribution, regime-detection
 - **资金面**: 资金面, 轮动, 北向资金流, 固收量化
 - **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研
-- **机器学习**: 机器学习, 集成学习, 深度学习, 大语言模型, xgboost模型, 强化学习
+- **机器学习**: 机器学习, 集成学习, 深度学习, 神经网络, 大语言模型, xgboost模型, 强化学习
 - **ESG**: esg
 - **政策法规**: 政策法规
 
 ### 内容类型 / Content Type
 
-- **来源**: 券商研报, brokerage-report, 公众号, 学术
+- **来源**: 券商研报, brokerage-report, 公众号, 学术, 华泰金工
 - **深度**: 入门, 定义, 实战, 深度研究, deep-research, 教程, 案例, 观点
 - **元**: 比较, python, 无监督学习
 
