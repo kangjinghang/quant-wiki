@@ -134,6 +134,17 @@ def main() -> int:
 
     overview_path.write_text(content, encoding="utf-8")
     print(f"Updated: {overview_path}")
+
+    # Warn if overview.md is getting too large
+    line_count = content.count("\n") + 1
+    size_kb = len(content.encode("utf-8")) // 1024
+    if line_count > 2000 or size_kb > 300:
+        print(
+            f"  ⚠️  overview.md is large ({line_count} lines, {size_kb}KB). "
+            "Consider consolidating older sections into topic-specific syntheses.",
+            file=sys.stderr,
+        )
+
     return 0
 
 

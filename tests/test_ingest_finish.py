@@ -236,3 +236,57 @@ class TestLogDeduplication:
         assert "## Ingest: Article Alpha" in content
         assert "## Ingest: Article Beta" in content
         assert content.count("## Ingest:") == 2
+
+
+class TestExtractArchive:
+    """Test that extract JSON is archived after successful ingest."""
+
+    def test_archives_extract_json(self, tmp_path):
+        """Extract JSON moves to meta/archive/ after ingest."""
+        import subprocess
+
+        SCRIPT = Path(__file__).resolve().parent.parent / "scripts" / "ingest_finish.py"
+
+        # Set up meta dir with .last-extract pointing to an extract file
+        meta_dir = tmp_path / "wiki" / "meta"
+        meta_dir.mkdir(parents=True)
+        extract_file = meta_dir / "extract-test-article.json"
+        extract_file.write_text('{"title": "Test"}', encoding="utf-8")
+        (meta_dir / ".last-extract").write_text("wiki/meta/extract-test-article.json", encoding="utf-8")
+
+        log_dir = tmp_path / "log"
+        log_dir.mkdir(parents=True)
+
+        proc = subprocess.run(
+            [sys.executable, str(SCRIPT), str(tmp_path),
+             "--title", "Test Article", "--source", "raw/test.md", "--no-commit"],
+            capture_output=True, text=True,
+        )
+        assert proc.returncode == 0, proc.stderr
+        assert "Archived" in proc.stdout
+
+        # Original file should be gone
+        assert not extract_file.exists()
+        # Archive should contain the file
+        archive_dir = meta_dir / "archive"
+        assert archive_dir.exists()
+        assert (archive_dir / "extract-test-article.json").exists()
+
+    def test_no_archive_when_no_last_extract(self, tmp_path):
+        """No error when .last-extract doesn't exist."""
+        import subprocess
+
+        SCRIPT = Path(__file__).resolve().parent.parent / "scripts" / "ingest_finish.py"
+
+        meta_dir = tmp_path / "wiki" / "meta"
+        meta_dir.mkdir(parents=True)
+        log_dir = tmp_path / "log"
+        log_dir.mkdir(parents=True)
+
+        proc = subprocess.run(
+            [sys.executable, str(SCRIPT), str(tmp_path),
+             "--title", "Test", "--source", "raw/test.md", "--no-commit"],
+            capture_output=True, text=True,
+        )
+        assert proc.returncode == 0, proc.stderr
+        assert "Archived" not in proc.stdout

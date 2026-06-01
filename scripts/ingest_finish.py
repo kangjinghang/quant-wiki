@@ -163,6 +163,18 @@ def main() -> int:
         subprocess.run(["git", "commit", "-m", f"ingest: {args.title}"], cwd=str(wiki_root), check=True)
         print(f"Committed: ingest: {args.title}")
 
+    # Archive extract JSON after successful ingest
+    last_extract_path = wiki_root / "wiki" / "meta" / ".last-extract"
+    if last_extract_path.exists():
+        rel_extract = last_extract_path.read_text(encoding="utf-8").strip()
+        extract_file = wiki_root / rel_extract
+        if extract_file.exists():
+            archive_dir = wiki_root / "wiki" / "meta" / "archive"
+            archive_dir.mkdir(parents=True, exist_ok=True)
+            dest = archive_dir / extract_file.name
+            extract_file.rename(dest)
+            print(f"Archived: {extract_file.name} → meta/archive/")
+
     return 0
 
 
