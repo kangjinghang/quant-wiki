@@ -1255,7 +1255,7 @@
 - [[微观结构恶化]]
 - [[锚定效应]]
 - [[母子线]]
-- [[code-interpreter]]
+- [[code-interpreter工具]]
 - [[arima模型]]
 
 ## Entities
@@ -1454,7 +1454,7 @@
 - [[罗星辰]]
 - [[中银金工]]
 - [[陈梦珂]]
-- [[python]]
+- [[python语言]]
 - [[张晗]]
 
 ## Syntheses
