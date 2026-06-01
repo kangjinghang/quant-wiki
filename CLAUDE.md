@@ -187,7 +187,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - **回测与风控**: 回测, backtesting, 风险控制, attribution, regime-detection
 - **资金面**: 资金面, 轮动, 北向资金流, 固收量化
 - **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研
-- **机器学习**: 机器学习, 集成学习, 深度学习, xgboost模型
+- **机器学习**: 机器学习, 集成学习, 深度学习, xgboost模型, 强化学习
 - **ESG**: esg
 - **政策法规**: 政策法规
 
