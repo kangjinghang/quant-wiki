@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202204261946]国君配置如何基于PEAD超预期因子构建行业轮动策略行业配置研究系列02.md"
 review_by: ""
-raw_hash: "d35ee44532822c5f9f8143a586c2aa447aa446467a6f8c89d270de5069f65937"
+raw_hash: "ed1a0b5e9d0a964792e215e575f691183e9f1569ec8d74ad59d397ffb94beba2"
 ---
 ## 核心思路
 

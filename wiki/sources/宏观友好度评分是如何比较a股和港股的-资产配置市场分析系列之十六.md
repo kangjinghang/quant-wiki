@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202212091121]国君配置宏观友好度评分是如何比较A股和港股的资产配置市场分析系列之十六.md"
 review_by: ""
-raw_hash: "d5d57c4b4219c28d61f7015ea7b6aca5f6b013872f0b33f04ff2dae5c63b8832"
+raw_hash: "a078e0841c27ba8c0201607e72cd39feb7e78ada8328089bb07d2483620244d1"
 ---
 ## 核心内容
 
