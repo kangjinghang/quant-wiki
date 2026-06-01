@@ -183,7 +183,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 ### 分析方法 / Analysis
 
 - **基本面**: 基本面, 估值, valuation, 宏观, 盈余管理
-- **技术面**: 技术面, 趋势跟踪, 择时
+- **技术面**: 技术面, 趋势跟踪, 择时, 量价关系
 - **回测与风控**: 回测, backtesting, 风险控制, attribution, regime-detection
 - **资金面**: 资金面, 轮动, 北向资金流
 - **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研
