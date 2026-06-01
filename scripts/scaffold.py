@@ -18,6 +18,12 @@ import sys
 from datetime import date, datetime
 from pathlib import Path
 
+# Ensure stdout/stderr handle Unicode on Windows (GBK console default)
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if sys.stderr and hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 
 def scaffold(root: str, title: str) -> None:
     root_path = Path(root).resolve()

@@ -688,6 +688,10 @@ def lint(root: str) -> int:
         print("⚠️  wiki/index.md not found — skipping duplicate index check")
 
     # ── Pass 18: case-insensitive duplicate index entries ─────────────────
+    # On macOS (APFS) and Windows (NTFS), [[PEAD效应]] and [[pead效应]] point to
+    # the SAME file. This check catches index.md entries that differ only in case.
+    # IMPORTANT: Fix by deduplicating index.md ONLY. Do NOT delete files — they
+    # are the same inode on case-insensitive filesystems.
     if index_path.exists():
         index_text = index_path.read_text(encoding="utf-8")
         section_pattern2 = re.compile(r"^##\s+(.+)$", re.MULTILINE)
@@ -706,6 +710,7 @@ def lint(root: str) -> int:
                     case_dup_issues.append((sec_name, unique_variants))
         if case_dup_issues:
             print(f"\n🟡 Case-insensitive duplicate index entries ({len(case_dup_issues)}):")
+            print("   ⚠️  Fix: deduplicate index.md entries ONLY. Do NOT delete files (case-insensitive FS: macOS/Windows).", file=sys.stderr)
             for sec, variants in case_dup_issues:
                 print(f"   ## {sec}: {' / '.join(variants)}")
             issues += len(case_dup_issues)

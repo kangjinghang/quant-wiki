@@ -25,6 +25,12 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
+# Ensure stdout/stderr handle Unicode on Windows (GBK console default)
+if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if sys.stderr and hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 from create_page import load_template, fill_template, fill_fm_field, type_to_dir
 from slug_utils import slugify, derive_slug
 from extract_knowledge import load_api_config

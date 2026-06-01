@@ -226,3 +226,4 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - When uncertain about a fact, note it explicitly rather than guessing; flag it for audit
 - Never overwrite pages with `origin: self-written` — these contain the user's own thinking
 - When the wiki doesn't cover a topic, say so and suggest what raw sources to look for
+- **Case-insensitive filesystem warning (macOS/Windows):** On macOS (APFS) and Windows (NTFS), filenames differing only in case (e.g. `PEAD效应.md` vs `pead效应.md`) are the SAME file. NEVER delete one variant — you will delete both. When the lint reports case-insensitive duplicate index entries, fix by deduplicating `index.md` entries ONLY. Do NOT delete or rename files based on case differences.
