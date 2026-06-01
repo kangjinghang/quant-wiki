@@ -41,6 +41,19 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+
+def count_words(text: str) -> int:
+    """Count words in mixed Chinese/English text.
+
+    Chinese characters are counted individually (each hanzi = 1 word).
+    English/ASCII tokens are counted after whitespace splitting (len > 1).
+    """
+    hanzi = len(re.findall(r'[\u4e00-\u9fff]', text))
+    # Remove Chinese characters then count remaining whitespace-separated tokens
+    remainder = re.sub(r'[\u4e00-\u9fff]', ' ', text)
+    ascii_words = len([w for w in remainder.split() if len(w) > 1])
+    return hanzi + ascii_words
+
 # Ensure stdout handles Unicode on Windows (GBK console default)
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -594,15 +607,15 @@ def lint(root: str) -> int:
             "", body, flags=re.DOTALL,
         )
         body_clean = re.sub(r"<!-- human:start -->.*?<!-- human:end -->", "", body_clean, flags=re.DOTALL)
-        # Count words (rough: split on whitespace, filter short tokens)
-        words = [w for w in body_clean.split() if len(w) > 1]
-        if len(words) < 80:
+        # Count words (handles Chinese chars individually)
+        words = count_words(body_clean)
+        if words < 80:
             continue
         # Count inline wikilinks in the cleaned body
         inline_links = re.findall(r"\[\[([^\]]+)\]\]", body_clean)
         inline_link_count = len(inline_links)
         if inline_link_count < 2:
-            low_density.append((rel, len(words), inline_link_count))
+            low_density.append((rel, words, inline_link_count))
     if low_density:
         print(f"\n⚠️  {len(low_density)} page(s) with fewer than 2 inline wikilinks in body (>= 80 words):")
         for path, wc, lc in low_density:
@@ -746,10 +759,10 @@ def lint(root: str) -> int:
         if len(parts) < 3:
             continue
         body = parts[2].strip()
-        words = [w for w in body.split() if len(w) > 1]
-        if len(words) < 15:
+        wc = count_words(body)
+        if wc < 15:
             rel = str(md_file.relative_to(root_path))
-            thin_pages.append((rel, len(words)))
+            thin_pages.append((rel, wc))
     if thin_pages:
         print(f"\n🟡 Thin pages (< 15 words of body, {len(thin_pages)}):")
         for path, wc in thin_pages:

@@ -14,7 +14,7 @@ review_by: ""
 ---
 ## 简介
 
-Parsons和Sabbatucci是金融学学者，在2018年于《The Review of Financial Studies》发表论文《Geographic Lead-Lag Effects》，首次提出地理关联公司的概念，并实证检验了地理关联公司股票的平均收益对目标股票未来收益的预测能力。
+Parsons和Sabbatucci是金融学学者，在2018年于《The Review of Financial Studies》发表论文《Geographic Lead-Lag Effects》，首次提出地理关联公司的概念，并实证检验了[[地理关联度|地理关联公司]]股票的平均收益对目标股票未来收益的预测能力，揭示了地理距离对[[领先滞后效应]]的影响。
 
 ## 代表作
 
