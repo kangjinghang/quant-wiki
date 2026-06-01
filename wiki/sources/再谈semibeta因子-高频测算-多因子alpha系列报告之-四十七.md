@@ -30,8 +30,8 @@ raw_hash: "fdb05c03336a021d2f2011c8fcc3e8aefc4ab46745e88d1bf995af30ec1db9e2"
 - [[半贝塔拆解]]
 - [[高频因子]]
 - [[多因子模型]]
-- [[beta因子|Beta因子]]
+- Beta因子（传统市场风险度量）
 
-## 来源
+## 相关来源
 
-- [[再谈semibeta因子高频测算]]
+- [[基于semibeta的因子研究-多因子alpha系列报告之-四十五]] — 低频SemiBeta因子的前期研究
