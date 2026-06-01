@@ -1219,7 +1219,7 @@
 - [[宏观景气行业配置]]
 - [[宏观择时]]
 - [[高频宏观因子]]
-- [[factor-mimicking]]
+- [[factor-mimicking因子模拟]]
 - [[宏观风险配置模型]]
 
 ## Entities
