@@ -48,6 +48,29 @@ def _auto_fix_wikilinks(text: str) -> str:
     return text
 
 
+def normalize_wikilink_slugs(text: str) -> str:
+    """Normalize wikilink targets to match slugify conventions.
+
+    Converts [[Foo Bar]] → [[foo-bar]], [[修正2.0]] → [[修正2-0]].
+    Preserves alias syntax: [[Slug|Display]] → [[slug|Display]].
+    This prevents dead links caused by LLM using dots/spaces instead of hyphens.
+    """
+    def _normalize_target(m):
+        inner = m.group(1)
+        if "|" in inner:
+            raw_target, display = inner.split("|", 1)
+        else:
+            raw_target = inner
+            display = None
+
+        normalized = slugify(raw_target.strip())
+        if display:
+            return f"[[{normalized}|{display}]]"
+        return f"[[{normalized}]]"
+
+    return re.sub(r'\[\[([^\]]+)\]\]', _normalize_target, text)
+
+
 def _create_page(
     wiki_root: Path,
     template_dir: Path,
@@ -97,6 +120,7 @@ def _create_page(
 
     # Replace body with content
     content = _auto_fix_wikilinks(content)
+    content = normalize_wikilink_slugs(content)
     if content:
         parts = filled.split("---", 2)
         if len(parts) >= 3:

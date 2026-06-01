@@ -235,3 +235,45 @@ class TestFindRawPathForExtract:
 
         result = find_raw_path_for_extract(tmp_path, Path("extract-my-article.json"))
         assert result == "raw/articles/[202301010000]my-article.md"
+
+
+class TestNormalizeWikilinkSlugs:
+    """Test that wikilinks in generated content are slug-normalized."""
+
+    def test_dot_becomes_hyphen_in_wikilink(self):
+        """[[修正超预期股票池2.0]] should become [[修正超预期股票池2-0]]."""
+        from create_pages_from_extract import normalize_wikilink_slugs
+        text = "See [[修正超预期股票池2.0]] for details."
+        result = normalize_wikilink_slugs(text)
+        assert "[[修正超预期股票池2-0]]" in result
+        assert "[[修正超预期股票池2.0]]" not in result
+
+    def test_preserves_already_slugified(self):
+        """Already correct slugs are unchanged."""
+        from create_pages_from_extract import normalize_wikilink_slugs
+        text = "See [[修正超预期股票池2-0]] and [[alpha-strategy]]."
+        result = normalize_wikilink_slugs(text)
+        assert result == text
+
+    def test_preserves_alias_links(self):
+        """[[slug|Display]] — only slug part is normalized."""
+        from create_pages_from_extract import normalize_wikilink_slugs
+        text = "[[修正超预期股票池2.0|Plus 2.0 组合]] is useful."
+        result = normalize_wikilink_slugs(text)
+        assert "[[修正超预期股票池2-0|Plus 2.0 组合]]" in result
+
+    def test_no_wikilinks_returns_same(self):
+        """Plain text without wikilinks is unchanged."""
+        from create_pages_from_extract import normalize_wikilink_slugs
+        text = "No links here."
+        result = normalize_wikilink_slugs(text)
+        assert result == text
+
+    def test_multiple_links_all_normalized(self):
+        """All wikilinks in a block are normalized."""
+        from create_pages_from_extract import normalize_wikilink_slugs
+        text = "[[Foo Bar]] and [[Hello World!]] and [[修正超预期股票池2.0]]."
+        result = normalize_wikilink_slugs(text)
+        assert "[[foo-bar]]" in result
+        assert "[[hello-world]]" in result
+        assert "[[修正超预期股票池2-0]]" in result
