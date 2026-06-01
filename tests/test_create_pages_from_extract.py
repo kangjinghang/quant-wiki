@@ -277,3 +277,45 @@ class TestNormalizeWikilinkSlugs:
         assert "[[foo-bar]]" in result
         assert "[[hello-world]]" in result
         assert "[[修正超预期股票池2-0]]" in result
+
+
+class TestIndexEntriesSlugified:
+    """Test that entries written to index.md use slugified wikilinks."""
+
+    def test_concept_entry_uses_slug(self):
+        """Concept name is slugified in index entry."""
+        from create_pages_from_extract import build_index_entries
+        concepts = [{"name": "转债Smart Beta框架", "description": "可转债Smart Beta策略框架"}]
+        entities = []
+        entries = build_index_entries("转债Smart Beta", concepts, entities, "test summary text")
+        concept_entries = entries["concept"]
+        assert len(concept_entries) == 1
+        # Wikilink target must be slugified
+        assert "[[转债smart-beta框架]]" in concept_entries[0]
+        assert "[[转债Smart Beta框架]]" not in concept_entries[0]
+
+    def test_entity_entry_uses_slug(self):
+        """Entity name is slugified in index entry."""
+        from create_pages_from_extract import build_index_entries
+        concepts = []
+        entities = [{"name": "OpenAI", "description": "AI research company"}]
+        entries = build_index_entries("Test Source", concepts, entities, "summary")
+        entity_entries = entries["entity"]
+        assert len(entity_entries) == 1
+        assert "[[openai]]" in entity_entries[0]
+
+    def test_source_entry_uses_slug(self):
+        """Source title is slugified in index entry."""
+        from create_pages_from_extract import build_index_entries
+        entries = build_index_entries("浅谈策略适用性与Smart Beta", [], [], "a summary")
+        source_entries = entries["source"]
+        assert len(source_entries) == 1
+        assert "[[浅谈策略适用性与smart-beta]]" in source_entries[0]
+
+    def test_empty_returns_empty_lists(self):
+        """No concepts/entities returns empty lists."""
+        from create_pages_from_extract import build_index_entries
+        entries = build_index_entries("Test", [], [], "summary")
+        assert entries["concept"] == []
+        assert entries["entity"] == []
+        assert len(entries["source"]) == 1

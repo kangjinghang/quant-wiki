@@ -397,6 +397,38 @@ def find_raw_path_for_extract(wiki_root: Path, extract_path: str | Path) -> str 
     return None
 
 
+def build_index_entries(
+    title: str,
+    concepts: list[dict],
+    entities: list[dict],
+    summary: str,
+) -> dict[str, list[str]]:
+    """Build index entry strings with slugified wikilink targets.
+
+    Returns a dict with keys "source", "concept", "entity", "synthesis"
+    mapping to lists of entry strings like "[[slug]] — description".
+    """
+    entries_map: dict[str, list[str]] = {"source": [], "concept": [], "entity": [], "synthesis": []}
+
+    if title:
+        source_slug = slugify(title)
+        entries_map["source"].append(f"[[{source_slug}]] — {summary[:80]}")
+
+    for concept in concepts:
+        name = concept.get("name", "")
+        desc = concept.get("description", "")
+        if name:
+            entries_map["concept"].append(f"[[{slugify(name)}]] — {desc}")
+
+    for entity in entities:
+        name = entity.get("name", "")
+        desc = entity.get("description", "")
+        if name:
+            entries_map["entity"].append(f"[[{slugify(name)}]] — {desc}")
+
+    return entries_map
+
+
 def _find_existing_page(wiki_root: Path, page_type: str, name: str) -> Path | None:
     """Find an existing page by name."""
     subdir = type_to_dir(page_type)
@@ -556,19 +588,7 @@ def main() -> int:
     if index_path.exists():
         index_content = index_path.read_text(encoding="utf-8")
 
-        entries_map = {"source": [], "concept": [], "entity": [], "synthesis": []}
-        if title:
-            entries_map["source"].append(f"{source_wikilink} — {summary[:80]}")
-        for concept in concepts:
-            name = concept.get("name", "")
-            desc = concept.get("description", "")
-            if name:
-                entries_map["concept"].append(f"[[{name}]] — {desc}")
-        for entity in entities:
-            name = entity.get("name", "")
-            desc = entity.get("description", "")
-            if name:
-                entries_map["entity"].append(f"[[{name}]] — {desc}")
+        entries_map = build_index_entries(title, concepts, entities, summary)
 
         for section_name, entries in entries_map.items():
             if entries:
