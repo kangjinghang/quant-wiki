@@ -146,13 +146,16 @@ def main() -> int:
 
     if log_path.exists():
         existing = log_path.read_text(encoding="utf-8")
-        # Ensure blank line separation between entries
-        separator = "" if existing.endswith("\n\n") else "\n"
-        log_path.write_text(existing + separator + entry, encoding="utf-8")
+        # Deduplication: skip if same title already logged today
+        if f"## Ingest: {args.title}" in existing:
+            print(f"SKIP (duplicate log entry): {args.title}")
+        else:
+            separator = "" if existing.endswith("\n\n") else "\n"
+            log_path.write_text(existing + separator + entry, encoding="utf-8")
+            print(f"Log entry written to {log_path}")
     else:
         log_path.write_text(f"# {today}\n\n{entry}", encoding="utf-8")
-
-    print(f"Log entry written to {log_path}")
+        print(f"Log entry written to {log_path}")
 
     # Git commit
     if not args.no_commit:
