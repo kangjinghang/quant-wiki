@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202303121429]中金可转债浅谈策略适用性与SmartBeta.md"
 review_by: ""
-raw_hash: "b0926de9c80764819e7ee0d908bb3b9c5688c0d12fa97c8d9e9ff2b4149f1eb7"
+raw_hash: "2f2bee1720c2c6b4b5360421a3edcdd42b5036abcaa53c548fa05ff8024c3d29"
 ---
 ## 核心内容
 

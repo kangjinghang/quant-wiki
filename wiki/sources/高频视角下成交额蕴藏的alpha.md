@@ -12,7 +12,7 @@ source_type: 公众号
 source_language: zh
 raw_path: "raw/articles/[202006121707]华安金工高频视角下成交额蕴藏的Alpha市场微观结构剖析之七.md"
 review_by: ""
-raw_hash: "0407af0e88e49fa9158fab9b29ae20a098343cb9b44afb8a18c1f9847e49f321"
+raw_hash: "54a080099a24ca70ae2d17c0a52bb292ca7ff6b576561368f27ea0b351156881"
 ---
 
 # 高频视角下成交额蕴藏的Alpha

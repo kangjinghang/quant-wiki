@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202206011737]国君配置基于PEAD效应的超预期因子选股效果如何权益配置因子研究系列01.md"
 review_by: ""
-raw_hash: "704d69fcfc5d0f6cbfc710b73e28a9c3cdd382e3274d54dd1c924951e0570898"
+raw_hash: "53ff5f5be00ef71b08eee984d3eef0a69a0547587b379ad6df1b78cedb19cf23"
 ---
 ## 研究背景
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202212181805]大小单资金流alpha探究20变量精筛与高频测算开源金工.md"
 review_by: ""
-raw_hash: "6c4d101661d997fb6d0f13cee0384265b3e69b6b6a6f9ebb366102ab1d1e401b"
+raw_hash: "648a493a99e110e67b297bd1425fcd4c1bacc1939352e996f306aab1ebbb8875"
 ---
 ## 核心内容
 本文是开源金工对前期大小单资金流研究的全面升级。研究从“变量精筛”和“高频测算”两个维度出发，分别对大单残差、小单残差和散户羊群效应三大因子进行了深度改进。
