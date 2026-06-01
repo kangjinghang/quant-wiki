@@ -10,7 +10,8 @@ import pytest
 # Add scripts/ to path so we can import functions
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
-from extract_knowledge import load_api_config, extract_claude_md_sections, build_extraction_prompt, parse_llm_response, derive_slug, resolve_article_path
+from extract_knowledge import load_api_config, extract_claude_md_sections, build_extraction_prompt, parse_llm_response, resolve_article_path
+from slug_utils import derive_slug
 
 
 class TestDeriveSlug:
@@ -98,6 +99,7 @@ class TestLoadApiConfig:
         monkeypatch.setenv("ANTHROPIC_AUTH_TOKEN", "env-key")
         monkeypatch.setenv("ANTHROPIC_BASE_URL", "https://env.api.test.com")
         monkeypatch.delenv("ANTHROPIC_DEFAULT_OPUS_MODEL", raising=False)
+        monkeypatch.delenv("ANTHROPIC_MODEL", raising=False)
         config = load_api_config(settings_path)
         assert config is not None
         assert config["api_key"] == "env-key"

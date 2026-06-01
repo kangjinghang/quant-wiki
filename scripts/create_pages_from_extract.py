@@ -25,7 +25,8 @@ import urllib.request
 from datetime import date
 from pathlib import Path
 
-from create_page import slugify, load_template, fill_template, fill_fm_field, type_to_dir
+from create_page import load_template, fill_template, fill_fm_field, type_to_dir
+from slug_utils import slugify, derive_slug
 from extract_knowledge import load_api_config
 from merge_frontmatter import (
     parse_frontmatter, merge_array_field,
@@ -365,7 +366,7 @@ def find_raw_path_for_extract(wiki_root: Path, extract_path: str | Path) -> str 
         return None
 
     for article in sorted(raw_dir.glob("*.md")):
-        article_slug = re.sub(r"^\[\d+\]", "", article.stem).lower()
+        article_slug = derive_slug(f"raw/articles/{article.name}")
         if article_slug == slug:
             return f"raw/articles/{article.name}"
 

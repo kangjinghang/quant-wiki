@@ -25,6 +25,8 @@ import urllib.request
 import urllib.error
 from pathlib import Path
 
+from slug_utils import derive_slug
+
 
 def resolve_article_path(wiki_root: Path, *, use_next: bool = False, raw_article: str = "") -> str | None:
     """Resolve which article to process.
@@ -59,17 +61,6 @@ def resolve_article_path(wiki_root: Path, *, use_next: bool = False, raw_article
             return rel_path
 
     return None
-
-
-def derive_slug(raw_path: str) -> str:
-    """Derive a URL-safe slug from the raw article filename.
-
-    Strips [timestamp] prefix and .md extension, lowercases.
-    """
-    name = Path(raw_path).stem
-    # Remove [YYYYMMDDHHMM] prefix
-    name = re.sub(r"^\[\d+\]", "", name)
-    return name.lower()
 
 
 def _first(*values: str | None) -> str | None:
