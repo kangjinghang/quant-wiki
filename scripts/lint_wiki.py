@@ -794,7 +794,7 @@ def lint(root: str) -> int:
         if fm is None:
             continue
         status = str(fm.get("status", "")).strip().strip('"').strip("'")
-        if status == "seed":
+        if status in ("seed", ""):
             continue
         existing_items = _eli(raw_fm, "sources")
         if not existing_items:
