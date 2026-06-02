@@ -87,6 +87,7 @@ def _create_page(
     raw_path: str | None = None,
     compute_hash: bool = False,
     tags: list[str] | None = None,
+    sources: list[str] | None = None,
 ) -> Path | None:
     """Create a single wiki page. Returns path or None if it already exists."""
     slug = slugify(title)
@@ -123,6 +124,15 @@ def _create_page(
     # Fill summary
     if summary:
         filled = fill_fm_field(filled, "summary", f'"{summary}"')
+
+    # Fill sources (so new pages are never created with sources: [])
+    if sources:
+        parts = filled.split("---", 2)
+        if len(parts) >= 3:
+            raw_fm = parts[1]
+            body_part = parts[2]
+            raw_fm = merge_array_field(raw_fm, "sources", sources)
+            filled = "---" + raw_fm + "---" + body_part
 
     # Replace body with content
     content = _auto_fix_wikilinks(content)
@@ -510,6 +520,7 @@ def main() -> int:
         result = _create_page(
             wiki_root, template_dir, "concept", name,
             summary=desc, content=page_content, tags=tags,
+            sources=[source_wikilink],
         )
         if result:
             created_pages.append(f"concept: {result.name}")
@@ -527,6 +538,7 @@ def main() -> int:
         result = _create_page(
             wiki_root, template_dir, "entity", name,
             summary=desc, content=page_content, tags=tags,
+            sources=[source_wikilink],
         )
         if result:
             created_pages.append(f"entity: {result.name}")
