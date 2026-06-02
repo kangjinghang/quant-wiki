@@ -6,7 +6,7 @@ summary: "动量理论研究的里程碑式学者，1993年在《Journal of Fina
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 entity_type: ""

@@ -6,7 +6,7 @@ summary: "针对港股市场特殊性改良的宏观友好度评分，由中国�
 tags: [宏观, 资产配置, 择时, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

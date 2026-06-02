@@ -6,7 +6,7 @@ summary: "选择到期收益率（YTM）最高的若干可转债持仓，作为�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
 updated: 2026-05-26
 review_by: ""

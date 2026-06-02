@@ -6,7 +6,7 @@ summary: "标准化的单季度营业收入超预期因子，用于衡量企业�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
 updated: 2026-05-26
 review_by: ""

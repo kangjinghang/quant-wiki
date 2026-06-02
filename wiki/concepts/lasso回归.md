@@ -6,7 +6,7 @@ summary: "一种带L1正则化的线性回归方法，通过对系数施加绝�
 tags: [回测, 量化]
 sources: ["[[行业轮动逻辑的标签化应用-重构轮动框架-中观量化系列报告之四]]"]
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

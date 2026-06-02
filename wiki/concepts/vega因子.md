@@ -6,7 +6,7 @@ summary: "期权定价中衡量隐含波动率变化对期权价格影响的希�
 tags: [可转债, 量化, 券商研报, 中金固收]
 sources: [[详解进阶策略-希腊字母与easyball-plus]]
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

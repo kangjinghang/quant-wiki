@@ -6,7 +6,7 @@ summary: "国内ESG评级机构，其指标体系中仅有环境类违规事件�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
 updated: 2026-05-26
 entity_type: ""

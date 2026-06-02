@@ -6,7 +6,7 @@ summary: "以[[均衡估值因子]]（BET）为锚，结合历史价值和成长
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

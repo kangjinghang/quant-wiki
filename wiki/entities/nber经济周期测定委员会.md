@@ -6,7 +6,7 @@ summary: "美国国家经济研究局下属的负责审定美国经济周期的�
 tags: [宏观, 资产配置, 深度研究, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 entity_type: ""

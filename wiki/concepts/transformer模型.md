@@ -7,7 +7,7 @@ tags: [机器学习, 另类数据, 深度研究, 券商研报, 深度学习, 神
 sources: []
   - "[[transformer架构下的量价选股策略-chatgpt核心算法应用于量化投资]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-02
 review_by: ""

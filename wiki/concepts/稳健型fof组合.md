@@ -6,7 +6,7 @@ summary: "以'稳增长'为目标的FOF组合策略，剔除高风险基金，�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

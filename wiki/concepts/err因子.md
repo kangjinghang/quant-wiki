@@ -6,7 +6,7 @@ summary: "极端收益率反转因子，由日内最极端收益与其前1分钟
 tags: [因子, 反转因子, 动量, 高频量价因子, 量化, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

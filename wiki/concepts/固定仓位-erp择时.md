@@ -6,7 +6,7 @@ summary: "设定固定权益仓位30%，结合过去三年[[股权风险溢价�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

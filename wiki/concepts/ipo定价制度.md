@@ -6,7 +6,7 @@ summary: "A股新股发行定价机制，经历了审批制（行政定价）、
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

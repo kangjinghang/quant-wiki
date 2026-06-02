@@ -6,7 +6,7 @@ summary: "MTE Factor（主力交易情绪因子），基于分钟单笔成交金
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

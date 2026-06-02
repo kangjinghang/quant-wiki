@@ -6,7 +6,7 @@ summary: "核心利润TTM同比增长率的季度环比变化，属于成长能�
 tags: [行业轮动, 因子, 量化, 基本面]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""

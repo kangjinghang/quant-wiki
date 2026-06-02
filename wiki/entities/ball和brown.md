@@ -6,7 +6,7 @@ summary: "芝加哥大学学者，1968年首次提出PEAD（盈余公告后价�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 entity_type: ""

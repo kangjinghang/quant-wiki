@@ -6,7 +6,7 @@ summary: "将股票ESG因子先进行行业中性化，再以流通市值加权�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
 updated: 2026-05-26
 review_by: ""

@@ -6,7 +6,7 @@ summary: "衡量当前分析师预测ROE在过去一段时间序列中所处位�
 tags: [行业轮动, 多因子模型, 分析师预期因子, 量化, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""

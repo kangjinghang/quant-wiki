@@ -6,7 +6,7 @@ summary: "学者，2011年提出利用经营/投资/融资现金流净额正负�
 tags: [基本面, 量化, 学术]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 entity_type: ""

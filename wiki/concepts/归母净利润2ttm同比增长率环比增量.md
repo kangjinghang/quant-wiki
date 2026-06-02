@@ -6,7 +6,7 @@ summary: "基于业绩预告、快报与正式财报三种报表构造的利润�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

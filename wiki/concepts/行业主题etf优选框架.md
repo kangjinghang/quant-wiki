@@ -6,7 +6,7 @@ summary: "一种将行业主题ETF投资拆解为“选指数”（细分领域�
 tags: [etf, 行业轮动, 择时, 券商研报, 国泰君安配置团队, 资金面, 基本面]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

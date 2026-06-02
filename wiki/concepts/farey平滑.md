@@ -6,7 +6,7 @@ summary: "来自拓扑数论中的时间序列降噪方法，对逐点商序列�
 tags: [技术面, 回测, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""

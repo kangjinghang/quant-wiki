@@ -6,7 +6,7 @@ summary: "一种基于恒生AH股溢价指数（HSAHP.HI）的跨市场交易策
 tags: [资产配置, 宏观, 策略, a股, equity, 回测, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

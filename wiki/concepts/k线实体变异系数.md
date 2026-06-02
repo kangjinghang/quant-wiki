@@ -6,12 +6,11 @@ summary: "计算连续n个交易日K线实体长度的变异系数，用于识�
 tags: [技术面, 可转债, 风险控制]
 sources: ["[[为了不后悔关于转债正股的体检]]"]
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-24
 updated: 2026-05-24
 review_by: ""
 ---
-
 # K线实体变异系数
 
 ## Definition / 定义

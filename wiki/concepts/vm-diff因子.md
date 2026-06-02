@@ -6,7 +6,7 @@ summary: "利用股价切割日内分钟收益波动率构建的因子，是理�
 tags: [因子投资, 高频量价因子, 机器学习, 资金面, 开源金工, 深度研究, 量价关系]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

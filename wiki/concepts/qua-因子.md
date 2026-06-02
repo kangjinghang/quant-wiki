@@ -6,7 +6,7 @@ summary: "QUA Factor（分位数因子），基于分钟级单笔成交金额归
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

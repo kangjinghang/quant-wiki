@@ -6,7 +6,7 @@ summary: "一套针对中国银行业和证券业构建的，兼顾子行业差�
 tags: [esg, 券商研报, 深度研究, 基本面]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

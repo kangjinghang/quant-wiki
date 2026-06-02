@@ -6,7 +6,7 @@ summary: "企业通过社会责任报告、年报等渠道主动披露的环境�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
 updated: 2026-05-26
 review_by: ""

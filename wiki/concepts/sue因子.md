@@ -11,7 +11,7 @@ sources:
   - "[[如何基于PEAD超预期因子构建行业轮动策略行业配置研究系列02]]"
   - "[[基于pead效应的超预期因子选股效果如何-权益配置因子研究系列01]]"
 origin: agent-compiled
-status: developing
+status: mature
 created: 2026-05-20
 updated: 2026-05-28
 review_by: ""

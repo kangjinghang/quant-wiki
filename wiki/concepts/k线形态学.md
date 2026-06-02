@@ -7,7 +7,7 @@ tags: [技术面, 趋势跟踪, 券商研报, 入门, 华泰金工, 择时]
 sources: []
   - "[[形态学研究之二-如何利用形态信号进行市场择时]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-02
 review_by: ""

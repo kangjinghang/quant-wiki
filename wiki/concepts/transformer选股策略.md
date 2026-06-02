@@ -6,7 +6,7 @@ summary: "以个股涨跌幅和换手率为输入，利用Transformer模型预�
 tags: [深度学习, 神经网络, 大语言模型, 技术面, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

@@ -6,7 +6,7 @@ summary: "环境（Environmental）、社会（Social）和公司治理（Govern
 tags: [esg, 策略, 另类数据, 资产配置, 深度研究, 观点, 量化]
 sources: ["[[ESG投资可以产生Alpha吗]]", "[[ESG可以用于行业轮动吗]]", "[[国君配置资产配置研究进入二次成长期长期配置研究思考与展望]]", "[[中银量化主题选股系列基于esg视角的量化选股增强策略]]"]
 origin: agent-compiled
-status: developing
+status: mature
 created: 2026-05-25
 updated: 2026-05-27
 review_by: ""

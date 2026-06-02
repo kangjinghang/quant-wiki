@@ -6,7 +6,7 @@ summary: "由Marc Chaikin和Bob Brogan在1980年代早期创造的第一种自�
 tags: [技术面, 趋势跟踪, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-31
 updated: 2026-05-31
 review_by: ""

@@ -6,7 +6,7 @@ summary: "广泛使用的通用编程语言，在量化研究和数据科学领�
 tags: [python]
 sources: [[个券入库-机器能帮我们做到哪一步]]
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 entity_type: ""

@@ -6,7 +6,7 @@ summary: "华泰金工提出的基于FinBERT编码的分析师盈利预测调整
 tags: [机器学习, 另类数据, 深度研究, 券商研报, ai应用, 量化]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

@@ -6,7 +6,7 @@ summary: "设定股票/债券风险贡献比例为95%/5%，结合过去三年[[�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

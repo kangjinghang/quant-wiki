@@ -6,7 +6,7 @@ summary: "一种结合企业实质性表现得分与信息披露透明度得分�
 tags: [esg, 券商研报, 深度研究, 基本面]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

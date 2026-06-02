@@ -6,7 +6,7 @@ summary: "小程跳跃波动因子，衡量股价微小跳跃的波动水平，�
 tags: [high-frequency, factor-investing, a股, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""

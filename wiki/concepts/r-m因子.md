@@ -6,7 +6,7 @@ summary: "盈利预期上调股票池内动量与反转合成因子。反转维�
 tags: [因子投资, 因子, 量化, 券商研报, 深度研究, ai应用]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

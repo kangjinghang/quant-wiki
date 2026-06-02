@@ -6,7 +6,7 @@ summary: "利用二叉树模型计算转债平价价值变动对转债价值变�
 tags: [可转债, convertible-bond, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

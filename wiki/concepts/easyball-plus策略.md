@@ -6,7 +6,7 @@ summary: "结合EasyBall低估值粗选与正股动量因子的可转债进阶�
 tags: [可转债, 量化, 动量, xgboost模型, 券商研报, 中金固收, 深度研究, python]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

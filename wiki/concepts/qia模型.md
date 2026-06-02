@@ -6,7 +6,7 @@ summary: "国泰君安量化配置团队研发的量化行业配置模型，综�
 tags: [行业轮动, 多因子模型, 择时, 券商研报, 深度研究, 量化]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

@@ -6,7 +6,7 @@ summary: "Weight of Evidence，对数财务危机风险概率，衡量特定分�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

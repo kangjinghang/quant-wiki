@@ -6,7 +6,7 @@ summary: "知名金融学者，其发表的《Network Centrality and the Cross S
 tags: [另类数据, 量化, 券商研报, 深度研究, 基本面]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-31
 updated: 2026-05-31
 entity_type: ""

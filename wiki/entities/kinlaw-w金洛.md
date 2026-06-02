@@ -6,7 +6,7 @@ summary: "Kinlaw W，海外学者，推荐文献《Crowded Trades: Implications 
 tags: [学术]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 entity_type: ""

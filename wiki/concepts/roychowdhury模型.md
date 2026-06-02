@@ -6,7 +6,7 @@ summary: "由Roychowdhury (2006)提出的真实盈余管理计量模型，通过
 tags: [因子投资, 基本面, 回测, 券商研报, 深度研究, 盈余管理]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-31
 updated: 2026-05-31
 review_by: ""

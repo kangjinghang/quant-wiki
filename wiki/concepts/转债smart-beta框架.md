@@ -6,7 +6,7 @@ summary: "基于股市牛熊状态与行情分化程度，动态切换低价防�
 tags: [可转债, 策略, 动量, 量化, 回测]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

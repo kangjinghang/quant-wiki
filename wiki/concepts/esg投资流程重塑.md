@@ -6,7 +6,7 @@ summary: "ESG不仅是支持低碳转型的行业投资，更是一种重塑资�
 tags: [esg, 资产配置, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""

@@ -6,7 +6,7 @@ summary: "即买入卖出金额比，用作资金流动力学中衡量主力资�
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""

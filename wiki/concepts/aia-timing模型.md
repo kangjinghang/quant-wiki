@@ -7,7 +7,7 @@ tags: [行业轮动, 多因子模型, 宏观, 择时, 券商研报, 深度研究
 sources: []
   - "[[行业轮动-何为趋势投资的正确打开方式-aia-timing策略中动量因子为何重要及如何把握]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-06-01
 review_by: ""

@@ -6,7 +6,7 @@ summary: "一种基于双低（低价格+低溢价率）进行可转债粗选的
 tags: [可转债, 量化, 券商研报, 中金固收]
 sources: [[详解进阶策略-希腊字母与easyball-plus]]
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

@@ -11,7 +11,7 @@ sources:
   - "[[板块配置轮盘之初探]]"
   - "[[手把手教你实现black-litterman模型-大类资产配置量化模型研究系列之二]]"
 origin: agent-compiled
-status: developing
+status: mature
 created: 2026-05-21
 updated: 2026-06-01
 review_by: ""

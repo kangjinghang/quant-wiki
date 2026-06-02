@@ -6,7 +6,7 @@ summary: "由J. M. Hurst在1970年代提出，利用等宽的曲线通道来解�
 tags: [技术面, 趋势跟踪, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-31
 updated: 2026-05-31
 review_by: ""

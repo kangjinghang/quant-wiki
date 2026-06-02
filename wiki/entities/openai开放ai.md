@@ -6,7 +6,7 @@ summary: "一家美国人工智能研究实验室，是GPT系列模型和ChatGPT
 tags: [深度学习, 机器学习, 强化学习, 券商研报, 观点]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 entity_type: ""

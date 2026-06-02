@@ -6,7 +6,7 @@ summary: "一种带残差连接的图注意力网络，通过分别挖掘股票�
 tags: [ai应用, 量化, 深度研究, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

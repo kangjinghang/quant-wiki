@@ -6,7 +6,7 @@ summary: "在ETF跟踪标的指数视角下，先对投资标的进行聚类以�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""

@@ -7,7 +7,7 @@ tags: [多因子模型, 机器学习, 集成学习, 因子投资, 量化, 无监
 sources: []
   - "[[如何基于-集成学习-技术优化多因子复合框架]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""

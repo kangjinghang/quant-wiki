@@ -6,7 +6,7 @@ summary: "学者，在2018年发表论文《Geographic Lead-Lag Effects》，提
 tags: [因子投资, 多因子模型, 量化, 因子, 另类数据, 深度研究, 券商研报, 回测, backtesting, equity, a股]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-29
 updated: 2026-05-29
 entity_type: ""

@@ -6,7 +6,7 @@ summary: "Information Value，衡量连续变量离散化后各分箱的信息�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

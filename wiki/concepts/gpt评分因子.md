@@ -6,7 +6,7 @@ summary: "基于ChatGPT对分析师研报标题的情感评分构建的量化选
 tags: [大语言模型, 另类数据, 文本情感分析, 券商研报, 华安金工, 深度研究, 因子投资, 业绩超预期]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

@@ -6,7 +6,7 @@ summary: "以穿越牛熊为目标的FOF组合策略，放宽波动回撤控制�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""

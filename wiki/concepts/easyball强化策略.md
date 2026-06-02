@@ -11,7 +11,7 @@ sources: []
   - "[[被遗忘的theta]]"
   - "[[偏债策略不佳之惑与破解尝试]]"
 origin: agent-compiled
-status: seed
+status: mature
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""

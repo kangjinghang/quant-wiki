@@ -6,7 +6,7 @@ summary: "一种借助计算机程序确定经济变量拐点的非参数方法�
 tags: [宏观, 资产配置, 深度研究, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""

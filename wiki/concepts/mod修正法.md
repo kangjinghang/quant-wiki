@@ -6,7 +6,7 @@ summary: "一种通过截面回归剥离资金流与同期涨跌幅相关性（�
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""

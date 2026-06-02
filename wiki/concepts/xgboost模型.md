@@ -9,7 +9,7 @@ sources: []
   - "[[弹性-余波和代偿-转债下半年展望及6月十大转债]]"
   - "[[详解进阶策略-希腊字母与easyball-plus]]"
 origin: agent-compiled
-status: developing
+status: mature
 created: 2026-06-01
 updated: 2026-06-02
 review_by: ""

@@ -8,7 +8,7 @@ tags: []
 sources: []
   - "[[回望激宕20年a股因子收益变迁]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
 updated: 2026-05-27
 review_by: ""

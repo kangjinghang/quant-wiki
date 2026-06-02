@@ -6,7 +6,7 @@ summary: "基于风险溢价视角构建的统一动量反转因子，通过风�
 tags: [券商研报, 因子投资, 动量, 反转因子, 高频量价因子, 指数增强, 量化, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

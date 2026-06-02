@@ -6,7 +6,7 @@ summary: "基于广义主力资金并经过MOD修正法处理的净流入率因�
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""

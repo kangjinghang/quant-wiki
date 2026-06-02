@@ -6,7 +6,7 @@ summary: "学术界广泛使用的金融市场基准数据库，提供美股及�
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 entity_type: ""

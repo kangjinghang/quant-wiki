@@ -7,7 +7,7 @@ tags: []
 sources:
   - "[[中银资配专题解开a股风格轮动的秘密上篇]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""

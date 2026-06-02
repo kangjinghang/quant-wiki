@@ -6,7 +6,7 @@ summary: "结合传统年度ESG评分与高频更新的争议数据得分（按3
 tags: []
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
 updated: 2026-05-26
 review_by: ""

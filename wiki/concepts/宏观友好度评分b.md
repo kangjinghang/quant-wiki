@@ -6,7 +6,7 @@ summary: "针对利率债市场构建的宏观环境综合评分指标，通过�
 tags: [宏观, 资产配置, 股债轮动, 债券市场, 券商研报, 深度研究]
 sources: []
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""
