@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202304110820]行业轮动何为趋势投资的正确打开方式AIATiming策略中动量因子为何重.md"
 review_by: ""
-raw_hash: "ed224f60f96a795c2ab217daed80be4344e0432fccbb54dd226266f4ef2bf792"
+raw_hash: "ae02ab1f21e639a463358b01385dc668f05565fcd798e85728540b1064642b31"
 ---
 ## 核心内容
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202303171030]光大金工北向资金的Alpha因子梳理与回测之一.md"
 review_by: ""
-raw_hash: "1e289377af8e78d0ec1f4dd5d0097a7c4acd6b80cd436cb29f60bae39eabaa4b"
+raw_hash: "3091c80be3e4d2dae62aa7c69cbec2d78dcfa7b06b880944211100aca503cd0a"
 ---
 ## 核心内容
 

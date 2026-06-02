@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202202071943]中银量化主题选股系列基于ESG视角的量化选股增强策略.md"
 review_by: ""
-raw_hash: "fb15d56f283819dfea06b605056ba25f3a830f50e85de44090b759a4452a23a2"
+raw_hash: "871a266ec272ecb5622259f3205c495868812b41128b7395f7f0b73d75b2d092"
 ---
 ## 核心发现
 

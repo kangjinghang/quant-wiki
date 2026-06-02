@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202305151619]国君配置金工行业轮动模型的ETF组合落地方法研究行业配置研究系列08.md"
 review_by: ""
-raw_hash: "b28f94a8a05c70d62f662a0b93e5b0801b001d15914aa24aa78e2e36fba441e2"
+raw_hash: "4844c3168cd7fdbd12b94a0743781b079f8f39aff294a729f41a4da53c9c9db9"
 ---
 ## 核心内容
 

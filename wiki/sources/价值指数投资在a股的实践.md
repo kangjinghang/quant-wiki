@@ -12,7 +12,7 @@ source_type: "公众号"
 source_language: "zh"
 raw_path: "raw/articles/[201910151430]方正金工价值指数投资在A股的实践.md"
 review_by: ""
-raw_hash: "46a1b89a6cad8ffc95ed99af86662b8be278c0a8be948859b3f0fd5b5bd438ab"
+raw_hash: "36aa92c08b25ce80712ca1d8fc1b206d2badc6ca02775dfa82aad3c9216b9170"
 ---
 
 # 价值指数投资在A股的实践

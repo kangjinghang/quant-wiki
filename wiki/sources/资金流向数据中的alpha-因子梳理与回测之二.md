@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202303171030]光大金工资金流向数据中的Alpha因子梳理与回测之二.md"
 review_by: ""
-raw_hash: "061acbf76d1e3bf04098a26e7c954302e9e73690e55add8e39848f7e43edf559"
+raw_hash: "bd8e3315950e490c94bc433350eee2a567edd61f527ed0866b4fcaaa6f5ee124"
 ---
 ## 核心内容
 
