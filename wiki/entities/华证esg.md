@@ -1,16 +1,19 @@
 ---
+
 title: "华证ESG"
 title_zh: 
 type: entity
 summary: "国内ESG评级机构，其指标体系中仅有环境类违规事件能直接反映争议事件，社会与治理类争议事件只能通过三级指标间接衡量。"
 tags: []
 sources: []
+  - "[[举足轻重的争议数据esg系列研究之一]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-26
 updated: 2026-05-26
 entity_type: ""
 review_by: ""
+
 ---
 ## 简介 / Overview
 

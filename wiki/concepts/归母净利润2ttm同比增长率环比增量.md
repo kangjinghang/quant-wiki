@@ -1,15 +1,18 @@
 ---
+
 title: "归母净利润2TTM同比增长率环比增量"
 title_zh: 
 type: concept
 summary: "基于业绩预告、快报与正式财报三种报表构造的利润同比增长率环比增速类指标，为改进模型新增的有效成长因子。"
 tags: []
 sources: []
+  - "[[如何使用业绩预告和业绩快报改进景气度行业轮动模型-行业配置研究系列04]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义
 

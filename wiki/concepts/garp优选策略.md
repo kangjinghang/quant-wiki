@@ -1,15 +1,18 @@
 ---
+
 title: "GARP优选策略"
 title_zh: 
 type: concept
 summary: "以[[均衡估值因子]]（BET）为锚，结合历史价值和成长指标筛选GARP股票池，再通过多因子均衡选股构建的权益组合策略。年化收益34.25%，夏普比1.18，兼具进攻性和防御性，适用于[[固收加产品风险分级|均衡型（R3）]]固收+产品。"
 tags: []
 sources: []
+  - "[[固收-组合构建白皮书-大时代的小尝试-中-量化绝对收益之路系列之三]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义 / Definition
 

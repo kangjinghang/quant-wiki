@@ -1,15 +1,18 @@
 ---
+
 title: "HK宏观友好度评分"
 title_zh: 
 type: concept
 summary: "针对港股市场特殊性改良的宏观友好度评分，由中国库存周期友好度评分和美国金融周期友好度评分加权合成。"
 tags: [宏观, 资产配置, 择时, 券商研报, 深度研究]
 sources: []
+  - "[[宏观友好度评分是如何比较a股和港股的-资产配置市场分析系列之十六]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""
+
 ---
 ## 定义 / Definition
 

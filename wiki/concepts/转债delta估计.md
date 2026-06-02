@@ -1,15 +1,18 @@
 ---
+
 title: "转债DELTA估计"
 title_zh: 
 type: concept
 summary: "利用二叉树模型计算转债平价价值变动对转债价值变动的影响，平价130以上DELTA接近1，但在深度虚值区域因信用利差设定存在偏误可能。"
 tags: [可转债, convertible-bond, 券商研报, 深度研究]
 sources: []
+  - "[[可转债定价与套利策略初探-固收量化系列研究之三]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义
 

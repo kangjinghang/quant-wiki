@@ -1,15 +1,18 @@
 ---
+
 title: "均衡型FOF组合"
 title_zh: 
 type: concept
 summary: "以穿越牛熊为目标的FOF组合策略，放宽波动回撤控制，允许一定信用下沉，约束股票/债券风险贡献为95%/5%，引入更大幅度择时，2013年以来年化收益9.03%，是典型固收+产品。"
 tags: []
 sources: []
+  - "[[fof赋能绝对收益基金组合构建实战上量化绝对收益之路系列之二]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义 / Definition
 

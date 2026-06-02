@@ -1,15 +1,18 @@
 ---
+
 title: "ERR因子"
 title_zh: 
 type: concept
 summary: "极端收益率反转因子，由日内最极端收益与其前1分钟收益率排序合成的高频选股因子，具有高信息比率和低最大回撤的特征。"
 tags: [因子, 反转因子, 动量, 高频量价因子, 量化, 券商研报, 深度研究]
 sources: []
+  - "[[日内极端收益前后的反转特性与因子构建]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""
+
 ---
 ## 定义 / Definition
 

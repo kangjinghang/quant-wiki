@@ -1,15 +1,18 @@
 ---
+
 title: "ESG信息披露"
 title_zh: 
 type: concept
 summary: "企业通过社会责任报告、年报等渠道主动披露的环境、社会和治理信息，目前A股存在披露率低、定量数据少、回避负面指标及第三方认证不足等质量问题。"
 tags: []
 sources: []
+  - "[[举足轻重的争议数据esg系列研究之一]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-26
 updated: 2026-05-26
 review_by: ""
+
 ---
 ## Definition / 定义
 

@@ -1,15 +1,18 @@
 ---
+
 title: "行业ESG因子"
 title_zh: 
 type: concept
 summary: "将股票ESG因子先进行行业中性化，再以流通市值加权合成的行业层面ESG得分，用于行业比较与轮动。ESG得分和社会得分在中信一级行业和二级行业均具有显著IC值。"
 tags: []
 sources: []
+  - "[[esg可以用于行业轮动吗]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-26
 updated: 2026-05-26
 review_by: ""
+
 ---
 ## Definition / 定义
 

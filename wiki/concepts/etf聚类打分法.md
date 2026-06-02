@@ -1,15 +1,18 @@
 ---
+
 title: "ETF聚类打分法"
 title_zh: 
 type: concept
 summary: "在ETF跟踪标的指数视角下，先对投资标的进行聚类以剔除同质化资产，再构建ETF组合的策略，能有效降低收益波动率和最大回撤。"
 tags: []
 sources: []
+  - "[[基于etf的行业轮动策略实践]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""
+
 ---
 ## Definition / 定义
 

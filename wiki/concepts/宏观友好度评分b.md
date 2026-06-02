@@ -1,15 +1,18 @@
 ---
+
 title: "宏观友好度评分B"
 title_zh: 
 type: concept
 summary: "针对利率债市场构建的宏观环境综合评分指标，通过滞胀、滞销和货币缺口指标加权合成，用于解释和预判债市牛熊趋势。"
 tags: [宏观, 资产配置, 股债轮动, 债券市场, 券商研报, 深度研究]
 sources: []
+  - "[[债市牛熊背后的周期线索-宏观友好度b-股债资产轮动研究系列之一]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""
+
 ---
 ## 定义 / Definition
 

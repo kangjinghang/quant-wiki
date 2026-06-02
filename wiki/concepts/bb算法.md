@@ -1,15 +1,18 @@
 ---
+
 title: "BB算法"
 title_zh: 
 type: concept
 summary: "一种借助计算机程序确定经济变量拐点的非参数方法，通过识别局部极值点并施加期限和幅度限制来划分经济周期。"
 tags: [宏观, 资产配置, 深度研究, 券商研报]
 sources: []
+  - "[[经济周期-定义-概念与划分]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""
+
 ---
 ## 定义 / Definition
 

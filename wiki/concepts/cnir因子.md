@@ -1,15 +1,18 @@
 ---
+
 title: "CNIR因子"
 title_zh: 
 type: concept
 summary: "基于广义主力资金并经过MOD修正法处理的净流入率因子，具有高IR、低回撤和独立Alpha源的特征。"
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
 sources: []
+  - "[[大小单重定标与资金流因子改进]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""
+
 ---
 ## 定义 / Definition
 CNIR因子（Combined Net Inflow Rate）是一种改进型的资金流因子。它通过合并超大单、大单和中单计算“广义主力资金”的净流入率，并采用MOD修正法剥离价格反转效应的影响。

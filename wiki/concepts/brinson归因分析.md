@@ -1,4 +1,6 @@
 ---
+
+
 title: "brinson归因分析"
 title_zh: "Brinson归因模型"
 type: concept
@@ -9,6 +11,8 @@ status: developing
 created: 2026-05-24
 updated: 2026-06-02
 review_by: ""
+
+
 ---
 # Brinson归因分析
 

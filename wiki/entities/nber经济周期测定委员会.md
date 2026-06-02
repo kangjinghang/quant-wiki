@@ -1,16 +1,19 @@
 ---
+
 title: "NBER经济周期测定委员会"
 title_zh: 
 type: entity
 summary: "美国国家经济研究局下属的负责审定美国经济周期的官方委员会，其公布的经济周期划分具有极高的权威性。"
 tags: [宏观, 资产配置, 深度研究, 券商研报]
 sources: []
+  - "[[经济周期-定义-概念与划分]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-01
 updated: 2026-06-01
 entity_type: ""
 review_by: ""
+
 ---
 ## 简介
 

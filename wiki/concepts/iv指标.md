@@ -1,15 +1,18 @@
 ---
+
 title: "IV指标"
 title_zh: 
 type: concept
 summary: "Information Value，衡量连续变量离散化后各分箱的信息含量，用于评价财务指标对危机风险的预测能力并确定最优分箱数量。"
 tags: []
 sources: []
+  - "[[高质量股票池构造体系ⅱ事件型风险研究]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义 / Definition
 

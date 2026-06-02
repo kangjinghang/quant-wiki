@@ -1,15 +1,18 @@
 ---
+
 title: "MOD修正法"
 title_zh: 
 type: concept
 summary: "一种通过截面回归剥离资金流与同期涨跌幅相关性（反转效应）以提纯资金流Alpha的因子修正方法。"
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
 sources: []
+  - "[[大小单重定标与资金流因子改进]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""
+
 ---
 ## 定义 / Definition
 MOD修正法（Momentum-Orthogonal Decomposition）是一种处理资金流数据的方法，旨在剥离资金流与同期涨跌幅之间的正相关关系，从而剔除反转因子的负面影响，提取更为纯净的资金流Alpha信息。

@@ -1,15 +1,18 @@
 ---
+
 title: "forecast_adj_txt_bert因子"
 title_zh: 
 type: concept
 summary: "华泰金工提出的基于FinBERT编码的分析师盈利预测调整文本因子，通过提取研报的CLS层向量结合XGBoost训练构建，相比词频版因子具有显著的超额收益提升。"
 tags: [机器学习, 另类数据, 深度研究, 券商研报, ai应用, 量化]
 sources: []
+  - "[[再探文本fadt选股]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-01
 updated: 2026-06-01
 review_by: ""
+
 ---
 ## 定义 / Definition
 

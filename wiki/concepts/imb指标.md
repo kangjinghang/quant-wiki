@@ -1,15 +1,18 @@
 ---
+
 title: "IMB指标"
 title_zh: 
 type: concept
 summary: "即买入卖出金额比，用作资金流动力学中衡量主力资金买卖不平衡程度的代理变量。"
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
 sources: []
+  - "[[大小单重定标与资金流因子改进]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-29
 updated: 2026-05-29
 review_by: ""
+
 ---
 ## 定义 / Definition
 IMB指标（Imbalance of Money Flow）是指买入金额与卖出金额的比值，用于衡量特定类别资金（如大单或小单）在交易过程中的买卖不平衡程度。

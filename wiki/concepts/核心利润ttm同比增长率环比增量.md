@@ -1,15 +1,18 @@
 ---
+
 title: "核心利润TTM同比增长率环比增量"
 title_zh: 
 type: concept
 summary: "核心利润TTM同比增长率的季度环比变化，属于成长能力类因子，用于捕捉行业核心盈利增长加速度。"
 tags: [行业轮动, 因子, 量化, 基本面]
 sources: []
+  - "[[如何基于景气度构建行业轮动策略行业配置研究系列01]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""
+
 ---
 ## Definition / 定义
 

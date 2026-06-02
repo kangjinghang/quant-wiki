@@ -1,4 +1,6 @@
 ---
+
+
 title: "EVL因子"
 title_zh: "EVL因子"
 type: concept
@@ -9,6 +11,8 @@ status: developing
 created: 2026-05-21
 updated: 2026-06-02
 review_by: ""
+
+
 ---
 # EVL因子 / Extra-Large Order Residual Factor
 

@@ -1,15 +1,18 @@
 ---
+
 title: "Bomar带"
 title_zh: 
 type: concept
 summary: "由Marc Chaikin和Bob Brogan在1980年代早期创造的第一种自适应交易带，利用历史数据的分位数动态确定上下轨。"
 tags: [技术面, 趋势跟踪, 券商研报, 深度研究]
 sources: []
+  - "[[通道技术之历史沿革-直接法vs间接法-通道技术面面观系列之01]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-31
 updated: 2026-05-31
 review_by: ""
+
 ---
 ## 定义 / Definition
 

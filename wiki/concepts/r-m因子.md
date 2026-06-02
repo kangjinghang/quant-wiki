@@ -1,15 +1,18 @@
 ---
+
 title: "R_M因子"
 title_zh: 
 type: concept
 summary: "盈利预期上调股票池内动量与反转合成因子。反转维度使用理想反转因子的0部分，动量维度包含长端动量、分析师关联动量和事件收益动量。动量类因子正序排列、反转类因子逆序排列后排序相加合成。在盈利预期上调股票池内多空对冲ICIR为1.30。"
 tags: [因子投资, 因子, 量化, 券商研报, 深度研究, ai应用]
 sources: []
+  - "[[如何基于盈利预期调整构建优选组合]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义 / Definition
 

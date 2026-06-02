@@ -1,16 +1,19 @@
 ---
+
 title: "ken-french数据库"
 title_zh: 
 type: entity
 summary: "学术界广泛使用的金融市场基准数据库，提供美股及全球市场从1927年至今的因子收益率、规模、价值等核心数据。"
 tags: []
 sources: []
+  - "[[动量为什么会阶段性失效]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-27
 updated: 2026-05-27
 entity_type: ""
 review_by: ""
+
 ---
 ## Overview
 

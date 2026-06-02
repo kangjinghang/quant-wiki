@@ -1,15 +1,18 @@
 ---
+
 title: "WOE指标"
 title_zh: 
 type: concept
 summary: "Weight of Evidence，对数财务危机风险概率，衡量特定分箱内正常样本与异常样本比例的差异，作为财务指标的打分标准。"
 tags: []
 sources: []
+  - "[[高质量股票池构造体系ⅱ事件型风险研究]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义 / Definition
 
