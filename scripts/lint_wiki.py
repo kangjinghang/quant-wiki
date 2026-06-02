@@ -29,6 +29,7 @@ Checks:
   18. Case-insensitive duplicate entries — [[PEAD效应]] and [[pead效应]] coexisting in same section
   19. Cross-directory slug collisions — same filename in different wiki subdirectories
   20. Thin pages — pages with fewer than 15 words of body content
+  21. Non-seed empty sources — concept/entity pages with status != seed but sources empty
 
 Exit codes:
   0 — no issues found
@@ -770,6 +771,41 @@ def lint(root: str) -> int:
         issues += len(thin_pages)
     else:
         print("✅ No thin pages")
+
+    # ── Pass 21: non-seed pages with empty sources ───────────────────────────
+    # Concept/entity pages with status != seed should have sources populated.
+    # This catches pipeline regressions where _create_page() fails to pass sources.
+    from merge_frontmatter import _extract_existing_list_items as _eli
+    empty_sources_non_seed: list[tuple[str, str]] = []  # (rel_path, status)
+    for md_file in all_wiki_files:
+        rel = str(md_file.relative_to(wiki_path))
+        parts = rel.replace("\\", "/").split("/")
+        if len(parts) < 2:
+            continue
+        subdir = parts[0]
+        if subdir not in ("concepts", "entities"):
+            continue
+        text = md_file.read_text(encoding="utf-8")
+        text_parts = text.split("---", 2)
+        if len(text_parts) < 3:
+            continue
+        raw_fm = text_parts[1]
+        fm = parse_frontmatter(text)
+        if fm is None:
+            continue
+        status = str(fm.get("status", "")).strip().strip('"').strip("'")
+        if status == "seed":
+            continue
+        existing_items = _eli(raw_fm, "sources")
+        if not existing_items:
+            empty_sources_non_seed.append((str(md_file.relative_to(root_path)), status))
+    if empty_sources_non_seed:
+        print(f"\n🟡 Non-seed pages with empty sources ({len(empty_sources_non_seed)}):")
+        for path, status in empty_sources_non_seed:
+            print(f"   {path} (status: {status})")
+        issues += len(empty_sources_non_seed)
+    else:
+        print("✅ No non-seed pages with empty sources")
 
     # ── Summary ─────────────────────────────────────────────────────────────
     print(f"\n{'─'*40}")
