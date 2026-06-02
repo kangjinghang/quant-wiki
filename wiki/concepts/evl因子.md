@@ -7,10 +7,9 @@ tags: [量化, 因子, a股]
 origin: agent-compiled
 status: developing
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-06-02
 review_by: ""
 ---
-
 # EVL因子 / Extra-Large Order Residual Factor
 
 ## Definition / 定义

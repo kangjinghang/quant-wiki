@@ -5,10 +5,11 @@ type: concept
 summary: "以红利和低波因子为基石，引入[[负面清单机制]]剔除尾部风险，并叠加价值和盈利因子增强，采用波动率倒数加权的稳健型权益组合构建方案。由[[华安金工]]提出，自2013年以来年化收益17.51%。"
 tags: []
 sources: []
+  - "[[固收组合构建白皮书-大时代的小尝试-上-量化绝对收益之路系列之一]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

@@ -5,10 +5,11 @@ type: concept
 summary: "基于CRR二叉树法构建的整体式可转债定价模型，考虑了强赎、回售条款及信用利差修正，定价误差中位数约5元，优于BSM/BAW解析解法。"
 tags: [可转债, convertible-bond, 券商研报, 深度研究]
 sources: []
+  - "[[可转债定价与套利策略初探-固收量化系列研究之三]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义

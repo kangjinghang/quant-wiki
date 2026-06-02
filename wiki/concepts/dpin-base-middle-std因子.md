@@ -5,10 +5,11 @@ type: concept
 summary: "刻画日内知情交易概率分散度的因子，在全市场测试中IC均值为0.061，多空策略年化收益率达44.3%。"
 tags: []
 sources: []
+  - "[[日内价量数据因子化研究]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## Definition / 定义

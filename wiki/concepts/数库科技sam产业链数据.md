@@ -5,8 +5,9 @@ type: concept
 summary: "由数库科技提供的在GICS分类基础上扩充至十二层的标准化主营业务数据，解决了上市公司业务披露口径不一的问题。"
 tags: [factor-investing, momentum, mean-reversion, a-share, valuation, alternative-data, brokerage-report, deep-research]
 sources: []
+  - "[[基于主营业务拆分收益差的选股因子]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

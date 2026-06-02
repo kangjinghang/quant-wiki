@@ -5,8 +5,9 @@ type: concept
 summary: "特异性已实现波动率不确定性因子，基于特异性收益的高频数据计算，反映个股自身波动率变动的稳定性。"
 tags: [因子投资, 高频量价因子, 回测, 券商研报, 深度研究, 东北金工]
 sources: []
+  - "[[基于高频数据的风险不确定性因子-因子选股系列之五]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

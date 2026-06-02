@@ -5,8 +5,9 @@ type: concept
 summary: "特异性风险不确定性合成因子，由特异性已实现波动率、左尾和右尾风险不确定性因子等权合成，具有优异且稳健的选股表现。"
 tags: [因子投资, 高频量价因子, 回测, 券商研报, 深度研究, 东北金工]
 sources: []
+  - "[[基于高频数据的风险不确定性因子-因子选股系列之五]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

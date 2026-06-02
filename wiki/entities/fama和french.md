@@ -5,10 +5,11 @@ type: entity
 summary: "著名金融学者，1992年提出三因素模型（市场、市值、估值），2015年扩展为包含盈利和投资因子的五因素模型，是多因子模型的理论基础。"
 tags: []
 sources: []
+  - "[[因子模型理论与实践及因子检验的实证-因子选股系列之一]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 entity_type: ""
 review_by: ""
 ---

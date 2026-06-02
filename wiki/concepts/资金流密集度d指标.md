@@ -5,10 +5,12 @@ type: concept
 summary: "回溯过去20个交易日，异常净流入个数减去异常净流出个数的差值，D>0代表异常净流入密集区，多出现在市场下跌末期和上涨初期，用于过滤知情交易者的择时噪音。"
 tags: []
 sources: []
+  - "[[知情交易者背后的择时信息]]"
+  - "[[量化私募行为的蛛丝马迹龙虎榜营业部的新视角]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义

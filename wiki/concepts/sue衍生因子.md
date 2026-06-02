@@ -5,10 +5,11 @@ type: concept
 summary: "将SUE因子计算公式中的净利润替换为营业收入、ROE、ROA等财务指标计算得出的衍生因子。其中ROE和ROA计算的衍生因子效果显著优于其他指标，与SUE因子相关性约0.8。"
 tags: []
 sources: []
+  - "[[基于pead效应的超预期因子选股效果如何-权益配置因子研究系列01]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义

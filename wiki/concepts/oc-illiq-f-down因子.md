@@ -5,8 +5,9 @@ type: concept
 summary: "结合了日内收益、弹性网络预测和下跌日半非流动性三大改进的终极非流动性因子。"
 tags: [因子投资, 量价关系, 回测, 券商研报, 深度研究, 机器学习]
 sources: []
+  - "[[青出于蓝-系列研究之六-如何对非流动性因子进行改进]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

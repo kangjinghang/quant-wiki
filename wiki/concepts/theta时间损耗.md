@@ -5,10 +5,11 @@ type: concept
 summary: "期权价值相对时间的一阶导数，表征转债价值随时间的自然流失速度，高估值环境下该损耗会非线性拔升，尤其对平衡性品种影响最大。"
 tags: []
 sources: []
+  - "[[被遗忘的theta]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

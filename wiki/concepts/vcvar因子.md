@@ -5,13 +5,17 @@ type: concept
 summary: "Volume-weighted Conditional Value at Risk（成交量加权条件风险价值）因子。基于CVaR模型对日内分钟线收益率序列进行尾部风险度量，引入VWAR成交量加权降低成交稀疏时段噪声。正交化后全A IC达0.0701，在沪深300和中证500成分股内仍有效。"
 tags: [量化, 因子, 回测]
 sources: []
+  - "[[a股行业动量的精细结构]]"
+  - "[[信息提纯寻找高质量反转因子]]"
+  - "[[市场微观结构剖析系列之分钟线的尾部特征]]"
+  - "[[聪明钱因子模型的20版本]]"
+  - "[[量价关系的高频乐章]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-21
-updated: 2026-05-21
+updated: 2026-06-02
 review_by: ""
 ---
-
 # VCVaR因子
 
 ## Definition / 定义

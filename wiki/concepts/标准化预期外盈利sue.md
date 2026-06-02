@@ -5,10 +5,11 @@ type: concept
 summary: "标准化预期外盈利（Standardized Unexpected Earnings），将实际盈利与预期盈利的差值进行标准化处理得到的因子，是PEAD效应最直接的量化度量。单季度净利润计算效果最优。"
 tags: [因子, 量化, a股]
 sources: []
+  - "[[基于pead效应的超预期因子选股效果如何-权益配置因子研究系列01]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义

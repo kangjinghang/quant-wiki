@@ -5,10 +5,11 @@ type: concept
 summary: "基于机构调研期间分析师一致预期EPS的季度环比变化率构建的因子，反映分析师根据调研信息对盈利预测的调整。"
 tags: [另类数据, 机器学习, 深度研究, 券商研报, 金股组合, 反转因子, 分析师预期因子, xgboost模型, 机构调研]
 sources: []
+  - "[[电子行业etf投资方法解析-指数配置研究系列二]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

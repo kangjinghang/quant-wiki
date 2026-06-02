@@ -5,8 +5,10 @@ type: concept
 summary: "一种适合处理和预测时间序列中间隔和延迟相对较长的重要事件的循环神经网络（RNN）变体，本文用于预测市场波动率。"
 tags: [固收量化, 机器学习, 深度学习, 行业轮动, 券商研报, 中金固收]
 sources: []
+  - "[[固收-能否走出低波动的回响]]"
+  - "[[弹性-余波和代偿-转债下半年展望及6月十大转债]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

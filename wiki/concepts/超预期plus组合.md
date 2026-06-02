@@ -5,10 +5,12 @@ type: concept
 summary: "在超预期股票池内等权合成SUE、OER、JUMP、理想反转和小单残差五因子构建的精选组合，持仓30只股票多头年化43.13%，对冲夏普3.6，月度胜率超80%。"
 tags: []
 sources: []
+  - "[[业绩超预期plus组合2-0-基于预期调整的修正]]"
+  - "[[业绩超预期plus组合的构建]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-06-02
 review_by: ""
 ---
 ## Definition / 定义

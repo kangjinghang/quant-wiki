@@ -5,10 +5,11 @@ type: concept
 summary: "在QIA行业配置模型基础上，叠加国君配置团队独有的择时体系，形成的“行业配置+择时”复合模拟策略模型。"
 tags: [行业轮动, 多因子模型, 择时, 券商研报, 深度研究, 量化]
 sources: []
+  - "[[行业轮动模型的etf组合落地方法研究-行业配置研究系列08]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

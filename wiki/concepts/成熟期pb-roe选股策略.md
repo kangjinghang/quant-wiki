@@ -5,10 +5,11 @@ type: concept
 summary: "针对成熟期企业应用PB-ROE估值框架，结合成长超预期因子增强的全市场选股策略，年化超额23.58%"
 tags: [基本面, 量化, 因子, 深度研究, 券商研报, 价值投资, 估值]
 sources: []
+  - "[[企业生命周期理论如何运用在选股中]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

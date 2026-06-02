@@ -5,8 +5,9 @@ type: concept
 summary: "使用日内绝对收益替代日间绝对收益构建的非流动性因子，消除了隔夜信息驱动价格变动带来的时间不匹配问题。"
 tags: [因子投资, 量价关系, 回测, 券商研报, 深度研究, 机器学习]
 sources: []
+  - "[[青出于蓝-系列研究之六-如何对非流动性因子进行改进]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

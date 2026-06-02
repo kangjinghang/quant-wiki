@@ -5,10 +5,11 @@ type: concept
 summary: "在小单卖出、大单买入的非预期收益为正的切片中构建的DPIN均值因子，在全市场周度调仓下IC均值为0.044，多头相对中证800年化超额23.4%。"
 tags: []
 sources: []
+  - "[[日内价量数据因子化研究]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## Definition / 定义

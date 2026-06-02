@@ -5,10 +5,11 @@ type: concept
 summary: "门控循环单元（GRU）是一种常用的时序神经网络，能够有效处理和记忆时间序列数据，被广泛应用于处理股票量价K线数据。"
 tags: [深度学习, 神经网络, 高频量价因子, 指数增强, 券商研报, 华泰金工]
 sources: []
+  - "[[神经网络多频率因子挖掘模型]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

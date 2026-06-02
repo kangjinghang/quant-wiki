@@ -5,10 +5,12 @@ type: concept
 summary: "盈余公告后价格漂移效应（Post-Earnings Announcement Drift），最早由Ball和Brown（1968）发现，指超预期盈利的股票在公告后持续上涨、超预期亏损的股票持续下跌的现象，是超预期因子的理论基石。"
 tags: []
 sources: []
+  - "[[中银量化多因子-六-价值盲区掘金因子-纳入市场定价效率]]"
+  - "[[基于pead效应的超预期因子选股效果如何-权益配置因子研究系列01]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义

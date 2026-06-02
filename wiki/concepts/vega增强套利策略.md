@@ -5,10 +5,11 @@ type: concept
 summary: "通过筛选正股短期历史波动率更高的转债，间接增厚组合的VEGA暴露，提升套利策略收益弹性，费后年化收益率达17.97%。"
 tags: [可转债, convertible-bond, 套利, 回测, backtesting, 券商研报, 深度研究]
 sources: []
+  - "[[可转债定价与套利策略初探-固收量化系列研究之三]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义

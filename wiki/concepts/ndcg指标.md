@@ -5,8 +5,9 @@ type: concept
 summary: "归一化折损累计增益，一种常用于评估排序学习模型性能的指标，能够综合考虑排序结果的质量和位置因素。"
 tags: [机器学习, 行业轮动, 券商研报, 华创金工, 排序学习, ltr, 集成学习, 量化]
 sources: []
+  - "[[基于排序学习的行业轮动模型]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

@@ -5,10 +5,11 @@ type: concept
 summary: "信息比率，用于衡量宏观因子事件对资产未来收益率影响的显著性，IR绝对值越大说明该事件对资产收益的预测能力越强。"
 tags: []
 sources: []
+  - "[[基于宏观因子事件的资产配置策略]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-06-02
 review_by: ""
 ---
 ## Definition / 定义

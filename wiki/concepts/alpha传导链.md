@@ -5,10 +5,11 @@ type: concept
 summary: "描述日内极端收益发生前后，分钟级收益率相关性传导导致反转与动量特性交替出现的现象。"
 tags: [因子, 反转因子, 动量, 高频量价因子, 量化, 券商研报, 深度研究]
 sources: []
+  - "[[日内极端收益前后的反转特性与因子构建]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

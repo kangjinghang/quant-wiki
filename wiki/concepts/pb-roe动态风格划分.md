@@ -5,10 +5,11 @@ type: concept
 summary: "在行业截面上将ln(PB)与预期ROE进行回归，根据真实PB与隐含PB的差值动态划分成长行业（高估组）与价值行业（低估组），克服了传统固定标签的后视镜偏差。"
 tags: []
 sources: []
+  - "[[企业生命周期理论如何运用在选股中]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-26
-updated: 2026-05-26
+updated: 2026-06-02
 review_by: ""
 ---
 ## Definition / 定义

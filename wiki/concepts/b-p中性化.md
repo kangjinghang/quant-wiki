@@ -5,10 +5,11 @@ type: concept
 summary: "在传统的市值与行业中性化基础上，引入账面市值比（B/P）作为控制变量，以剔除估值差异对基本面因子Alpha驱动力的影响。"
 tags: [多因子模型, 因子, 量化, 无监督学习, 回测, 券商研报, 深度研究]
 sources: []
+  - "[[财报因子构建框架初探]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition

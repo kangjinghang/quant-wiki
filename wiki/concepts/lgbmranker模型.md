@@ -5,8 +5,9 @@ type: concept
 summary: "基于LightGBM的排序学习模型，专门用于处理排序任务，通过引入排序相关的损失函数和评估指标，在量化投资中常用于构建行业轮动或多因子选股策略。"
 tags: [机器学习, 行业轮动, 券商研报, 华创金工, 排序学习, ltr, 集成学习, 量化]
 sources: []
+  - "[[基于排序学习的行业轮动模型]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

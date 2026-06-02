@@ -5,8 +5,9 @@ type: concept
 summary: "通过构建资产组合使其收益率走势与宏观指标走势高度相关的方法，分为自上而下和自下而上两种路线。"
 tags: [华泰金工, 行业轮动, 宏观, 择时, 回测, 券商研报, 因子投资, 因子, 量化, 基本面]
 sources: []
+  - "[[行业配置策略-高频宏观因子]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""

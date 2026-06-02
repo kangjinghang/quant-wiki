@@ -5,10 +5,11 @@ type: entity
 summary: "万得提供的基于90天内分析师预测数据计算的市场一致预期指标，用于合成预期景气度。"
 tags: []
 sources: []
+  - "[[估值泡沫保护的高景气行业轮动策略]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-06-02
 entity_type: ""
 review_by: ""
 ---

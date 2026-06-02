@@ -5,10 +5,11 @@ type: concept
 summary: "在计算基金月度行业持仓比例时，为解决普通回归中仓位系统性偏高和多重共线性问题而采用的带L1范数惩罚项和时间衰减权重的回归模型。"
 tags: [行业轮动, 资金面, 回测, 券商研报, 深度研究]
 sources: []
+  - "[[基金持仓还原在行业轮动上的应用-行业配置研究系列07]]"
 origin: agent-compiled
-status: seed
+status: developing
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-06-02
 review_by: ""
 ---
 ## 定义 / Definition
