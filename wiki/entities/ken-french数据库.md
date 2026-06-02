@@ -1,5 +1,4 @@
 ---
-
 title: "ken-french数据库"
 title_zh: 
 type: entity

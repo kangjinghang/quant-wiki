@@ -1,5 +1,4 @@
 ---
-
 title: "ResGAT模型"
 title_zh: 
 type: concept

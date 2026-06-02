@@ -5,11 +5,13 @@ type: concept
 summary: "来自拓扑数论中的时间序列降噪方法，对逐点商序列进行m阶平滑处理。与简单移动平均不同，Farey平滑保持了分子分母的加总比值而非比值的平均，在数学上等价于Farey序列的递归性质。"
 tags: [技术面, 回测, 券商研报]
 sources: []
+  - "[[国君配置论指数的价值守恒律从换手率相对于收益率的通道效应说起]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""
+
 ---
 ## Definition / 定义
 

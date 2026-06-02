@@ -5,11 +5,13 @@ type: concept
 summary: "ESG不仅是支持低碳转型的行业投资，更是一种重塑资管机构投资决策全流程的新理念，纳入ESG因素不仅不降低收益，反而能有效降低下行标准差。"
 tags: [esg, 资产配置, 深度研究]
 sources: []
+  - "[[国君配置资产配置研究进入二次成长期长期配置研究思考与展望]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-27
 updated: 2026-05-27
 review_by: ""
+
 ---
 ## 概述 / Overview
 

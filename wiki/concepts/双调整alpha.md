@@ -1,5 +1,4 @@
 ---
-
 title: "双调整Alpha"
 title_zh: 
 type: concept

@@ -1,5 +1,4 @@
 ---
-
 title: "Bomar带"
 title_zh: 
 type: concept

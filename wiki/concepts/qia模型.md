@@ -1,5 +1,4 @@
 ---
-
 title: "QIA模型"
 title_zh: 
 type: concept

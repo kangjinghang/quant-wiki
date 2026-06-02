@@ -1,5 +1,4 @@
 ---
-
 title: "ball和brown"
 title_zh: 
 type: entity

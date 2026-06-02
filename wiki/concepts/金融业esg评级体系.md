@@ -1,5 +1,4 @@
 ---
-
 title: "金融业ESG评级体系"
 title_zh: 
 type: concept

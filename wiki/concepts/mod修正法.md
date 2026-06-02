@@ -1,5 +1,4 @@
 ---
-
 title: "MOD修正法"
 title_zh: 
 type: concept

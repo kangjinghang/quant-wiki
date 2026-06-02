@@ -5,11 +5,13 @@ type: concept
 summary: "基于基金持仓行为构建的股票关联网络牵引因子，与Traction-SI因子相关性仅13%，两者合成后多空组合年化收益显著提升。"
 tags: []
 sources: []
+  - "[[从小单资金流行为到股票关联网络]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## Definition / 定义
 

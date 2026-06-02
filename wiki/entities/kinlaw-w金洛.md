@@ -5,12 +5,14 @@ type: entity
 summary: "Kinlaw W，海外学者，推荐文献《Crowded Trades: Implications for Sector Rotation and Factor Timing》的作者，提出资产集中度与相对估值双指标拥挤交易识别方法。"
 tags: [学术]
 sources: []
+  - "[[拥挤交易对行业轮动和因子择时的启示]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-27
 updated: 2026-05-27
 entity_type: ""
 review_by: ""
+
 ---
 ## 简介
 

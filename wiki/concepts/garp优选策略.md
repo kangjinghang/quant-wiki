@@ -1,5 +1,4 @@
 ---
-
 title: "GARP优选策略"
 title_zh: 
 type: concept

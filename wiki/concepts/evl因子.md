@@ -1,16 +1,20 @@
 ---
-
-
 title: "EVL因子"
 title_zh: "EVL因子"
 type: concept
 summary: "EVL因子（Extra-Large Order Residual Factor），从超大单成交占比因子中通过线性回归剔除大单占比因子得到的残差因子。衡量超大单交易的"超额"活跃程度，市值中性化后ICIR达2.39。"
 tags: [量化, 因子, a股]
+sources:
+  - "[[主动买卖因子的正确用法]]"
+  - "[[交易者行为与市值风格]]"
+  - "[[大单与小单资金流的alpha能力]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-21
 updated: 2026-06-02
 review_by: ""
+
+
 
 
 ---

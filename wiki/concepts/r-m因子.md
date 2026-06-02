@@ -1,5 +1,4 @@
 ---
-
 title: "R_M因子"
 title_zh: 
 type: concept

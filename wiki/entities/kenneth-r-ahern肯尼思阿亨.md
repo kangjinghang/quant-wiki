@@ -5,12 +5,14 @@ type: entity
 summary: "知名金融学者，其发表的《Network Centrality and the Cross Section of Stock Returns》深入探讨了供应链网络中心性对股票收益的影响。"
 tags: [另类数据, 量化, 券商研报, 深度研究, 基本面]
 sources: []
+  - "[[蓝海启航系列研究之七-供应链中心性初探]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-31
 updated: 2026-05-31
 entity_type: ""
 review_by: ""
+
 ---
 ## 简介 / Introduction
 

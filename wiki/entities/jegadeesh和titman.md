@@ -1,5 +1,4 @@
 ---
-
 title: "jegadeesh和titman"
 title_zh: 
 type: entity

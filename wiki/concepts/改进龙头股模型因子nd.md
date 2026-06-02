@@ -1,5 +1,4 @@
 ---
-
 title: "改进龙头股模型因子ND"
 title_zh: 
 type: concept

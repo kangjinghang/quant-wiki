@@ -1,5 +1,4 @@
 ---
-
 title: "行业ESG因子"
 title_zh: 
 type: concept

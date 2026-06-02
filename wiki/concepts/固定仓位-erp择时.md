@@ -5,11 +5,13 @@ type: concept
 summary: "设定固定权益仓位30%，结合过去三年[[股权风险溢价择时|ERP]]分位数进行加减仓的资产配置方案，适用于[[固收加产品风险分级|进取型（R4）]]固收+组合。年化收益14.44%，夏普比1.61，是进取型组合最佳的资产配置方案。"
 tags: []
 sources: []
+  - "[[固收-组合构建白皮书-大时代的小尝试-中-量化绝对收益之路系列之三]]"
 origin: agent-compiled
 status: developing
 created: 2026-05-28
 updated: 2026-05-28
 review_by: ""
+
 ---
 ## 定义 / Definition
 

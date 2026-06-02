@@ -5,11 +5,13 @@ type: concept
 summary: "基于风险溢价视角构建的统一动量反转因子，通过风险指标加权日度超额收益，将动量与反转效应统一在同一框架下。"
 tags: [券商研报, 因子投资, 动量, 反转因子, 高频量价因子, 指数增强, 量化, 深度研究]
 sources: []
+  - "[[umr2-0-风险溢价视角下的动量反转统一框架再升级]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""
+
 ---
 ## 定义 / Definition
 

@@ -5,11 +5,13 @@ type: concept
 summary: "基于ChatGPT对分析师研报标题的情感评分构建的量化选股因子，包括等权、指数衰减加权和波动因子，属于新型另类因子。"
 tags: [大语言模型, 另类数据, 文本情感分析, 券商研报, 华安金工, 深度研究, 因子投资, 业绩超预期]
 sources: []
+  - "[[chatgpt与研报文本情绪的碰撞]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""
+
 ---
 ## 定义 / Definition
 GPT评分因子是利用 [[大语言模型]] ChatGPT对金融文本（如分析师盈余点评标题）进行情感分析，并将提取的连续情感得分转化为可量化操作的投资因子。该因子与传统大类因子相关性较低，被视为一种新型 [[另类数据]] 因子。

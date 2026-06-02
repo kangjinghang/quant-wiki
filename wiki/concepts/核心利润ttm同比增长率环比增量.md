@@ -1,5 +1,4 @@
 ---
-
 title: "核心利润TTM同比增长率环比增量"
 title_zh: 
 type: concept

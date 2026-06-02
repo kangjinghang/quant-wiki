@@ -5,12 +5,14 @@ type: entity
 summary: "一家美国人工智能研究实验室，是GPT系列模型和ChatGPT的开发者。"
 tags: [深度学习, 机器学习, 强化学习, 券商研报, 观点]
 sources: []
+  - "[[华泰金工-gpt-量化投资]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-01
 updated: 2026-06-01
 entity_type: ""
 review_by: ""
+
 ---
 ## 简介
 

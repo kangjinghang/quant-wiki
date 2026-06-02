@@ -1,5 +1,4 @@
 ---
-
 title: "RLJVP因子"
 title_zh: 
 type: concept

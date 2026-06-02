@@ -1,5 +1,4 @@
 ---
-
 title: "BB算法"
 title_zh: 
 type: concept

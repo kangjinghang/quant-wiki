@@ -1,5 +1,4 @@
 ---
-
 title: "SRJV因子"
 title_zh: 
 type: concept

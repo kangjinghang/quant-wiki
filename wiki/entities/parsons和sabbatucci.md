@@ -1,5 +1,4 @@
 ---
-
 title: "Parsons和Sabbatucci"
 title_zh: 
 type: entity

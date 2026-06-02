@@ -1,5 +1,4 @@
 ---
-
 title: "ETF简单打分法"
 title_zh: 
 type: concept

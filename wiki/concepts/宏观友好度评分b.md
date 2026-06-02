@@ -1,5 +1,4 @@
 ---
-
 title: "宏观友好度评分B"
 title_zh: 
 type: concept

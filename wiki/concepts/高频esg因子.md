@@ -1,5 +1,4 @@
 ---
-
 title: "高频ESG因子"
 title_zh: 
 type: concept

@@ -5,11 +5,13 @@ type: concept
 summary: "指利用ChatGPT对分析师盈余点评标题进行情感评分，将评分大于9分的样本定义为业绩超预期的股票池。"
 tags: [大语言模型, 另类数据, 文本情感分析, 券商研报, 华安金工, 深度研究, 因子投资, 业绩超预期]
 sources: []
+  - "[[chatgpt与研报文本情绪的碰撞]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""
+
 ---
 ## 定义 / Definition
 GPT超预期是一种利用 [[大语言模型]] 刻画上市公司业绩超预期状态的方法。具体而言，通过ChatGPT对分析师发布的盈余点评标题进行1-10分的情感评分，将评分大于9分的样本定义为“GPT超预期”样本。

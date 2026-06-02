@@ -5,11 +5,13 @@ type: concept
 summary: "以个股涨跌幅和换手率为输入，利用Transformer模型预测股票涨跌概率并指导月度调仓的量化选股策略。"
 tags: [深度学习, 神经网络, 大语言模型, 技术面, 券商研报]
 sources: []
+  - "[[transformer架构下的量价选股策略-chatgpt核心算法应用于量化投资]]"
 origin: agent-compiled
 status: developing
 created: 2026-06-02
 updated: 2026-06-02
 review_by: ""
+
 ---
 ## 定义 / Definition
 Transformer选股策略是将自然语言处理领域的核心算法引入量化投资的一种创新尝试。该策略将股票市场的历史交易数据转化为序列模型，利用深度学习强大的特征提取能力预测股票未来的涨跌概率。

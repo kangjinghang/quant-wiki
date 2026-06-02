@@ -1,5 +1,4 @@
 ---
-
 title: "IMB指标"
 title_zh: 
 type: concept

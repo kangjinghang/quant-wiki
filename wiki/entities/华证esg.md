@@ -1,5 +1,4 @@
 ---
-
 title: "华证ESG"
 title_zh: 
 type: entity
