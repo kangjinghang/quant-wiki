@@ -31,7 +31,7 @@ raw_hash: "0cab6cd7fc37e3f4d66236f3f8658dfddc43cea991e1e2f49aac09f997dc67f6"
 
 ## 相关概念
 
-- [[循环神经网络]]
+- 循环神经网络（RNN）
 - [[注意力机制]]
 - [[transformer模型]]
 - [[预训练语言模型]]
