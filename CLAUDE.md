@@ -168,7 +168,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 ### 策略 / Strategies
 
 - **因子投资**: 因子投资, factor-investing, 因子, 量化, 指数增强, ai应用, 量化基本面, 多因子模型, 分析师预期因子, 反转因子, 高频量价因子, 聪明钱因子, 宏观因子
-- **策略类型**: 策略, momentum, 动量, mean-reversion, portfolio-optimization, 套利, 打新, 行业轮动, 风格轮动, 金股组合, 拥挤度复合因子, 大小盘风格轮动, 成长价值风格轮动, 事件驱动策略, 概念主题投资
+- **策略类型**: 策略, momentum, 动量, mean-reversion, portfolio-optimization, 套利, 打新, 行业轮动, 风格轮动, 金股组合, 拥挤度复合因子, 大小盘风格轮动, 成长价值风格轮动, 事件驱动策略, 概念主题投资, 业绩超预期
 - **投资风格**: 价值投资, 成长投资, 主动基金
 - **资产配置**: 资产配置, 组合管理, 组合优化, 调仓, 建仓, 股债轮动, 风险平价, black-litterman模型, 均值方差模型
 
@@ -186,14 +186,14 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - **技术面**: 技术面, 趋势跟踪, 择时, 量价关系
 - **回测与风控**: 回测, backtesting, 风险控制, attribution, regime-detection
 - **资金面**: 资金面, 轮动, 北向资金流, 固收量化
-- **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研
+- **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研, 文本情感分析
 - **机器学习**: 机器学习, 集成学习, 深度学习, 神经网络, 大语言模型, xgboost模型, 强化学习, 排序学习, ltr
 - **ESG**: esg
 - **政策法规**: 政策法规
 
 ### 内容类型 / Content Type
 
-- **来源**: 券商研报, brokerage-report, 公众号, 学术, 华泰金工, 中金固收, 东北金工, 开源金工, 国泰君安配置团队, 华创金工, 中银量化, 光大金工
+- **来源**: 券商研报, brokerage-report, 公众号, 学术, 华泰金工, 中金固收, 东北金工, 开源金工, 国泰君安配置团队, 华创金工, 中银量化, 光大金工, 华安金工
 - **深度**: 入门, 定义, 实战, 深度研究, deep-research, 教程, 案例, 观点
 - **元**: 比较, python, 无监督学习
 
