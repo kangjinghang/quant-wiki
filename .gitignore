@@ -1,6 +1,7 @@
 .obsidian/
 .claude/*
 !.claude/commands/
+!.claude/settings.json
 *.tmp
 __pycache__/
 .DS_Store
