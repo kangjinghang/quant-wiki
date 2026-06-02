@@ -193,7 +193,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ### 内容类型 / Content Type
 
-- **来源**: 券商研报, brokerage-report, 公众号, 学术, 华泰金工, 中金固收, 东北金工, 开源金工, 国泰君安配置团队, 华创金工, 中银量化, 光大金工, 华安金工, 广发金工
+- **来源**: 券商研报, brokerage-report, 公众号, 学术, 华泰金工, 中金固收, 东北金工, 开源金工, 国泰君安配置团队, 华创金工, 中银量化, 光大金工, 华安金工, 广发金工, 东方证券
 - **深度**: 入门, 定义, 实战, 深度研究, deep-research, 教程, 案例, 观点
 - **元**: 比较, python, 无监督学习
 
