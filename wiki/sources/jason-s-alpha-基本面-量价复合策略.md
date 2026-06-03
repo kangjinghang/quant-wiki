@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202311211716]JASONsalpha基本面量价复合策略.md"
 review_by: ""
-raw_hash: "7dba5af94a14cc70dfc8dd9c5d803dd685bbdcc28eea5b6b327f49d01e68e8e7"
+raw_hash: "95db38e048081884cf2850747ec7eee2a9d1603fa703cf6c53dbc310a1a1f462"
 ---
 ## 核心内容
 

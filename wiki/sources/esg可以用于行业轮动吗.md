@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202105291122]ESG可以用于行业轮动吗.md"
 review_by: ""
-raw_hash: "e3a4fc637f12626626b703710856777a35740d9ec4d40f8894860763c59e5be1"
+raw_hash: "8bf0b28968b879f19e6daada0c699d6e3c3c479a7e06650bf8b594f7dbd8e508"
 ---
 ## 核心内容
 

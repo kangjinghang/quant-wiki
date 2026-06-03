@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202110241426]中金固收可转债低噪声下的转债强化策略及Python实现.md"
 review_by: ""
-raw_hash: "d6256e1be67ad96597a7e312403b1960f747fc35accb478447826ac44a5cf93f"
+raw_hash: "81c453b04f2979d994a6f010c8c9bb67cbc62597c302bb51b1764b4c965c7080"
 ---
 ## 核心方法
 

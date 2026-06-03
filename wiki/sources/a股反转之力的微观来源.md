@@ -12,7 +12,7 @@ source_type: "券商研报"
 source_language: "中文"
 raw_path: "raw/articles/[201912231258]A股反转之力的微观来源.md"
 review_by: ""
-raw_hash: "71b4c82299821e9cc3e3c323d7c61293b0fee4e30c018a6082844200e53c1df3"
+raw_hash: "195fab62f26fd4cf619a086e1b9a217807ae6ed9218494ca8d22c429b2183e3e"
 ---
 
 # A股反转之力的微观来源

@@ -1,5 +1,4 @@
 ---
-
 title: "Dickinson现金流法"
 title_zh: 
 type: entity

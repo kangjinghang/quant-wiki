@@ -5,19 +5,18 @@ Strategy:
 1. Reverse-index source page wikilinks (source -> concept/entity)
 2. Map extract JSONs to source pages via title matching, then extract concept/entity names
 3. Scan concept/entity page bodies for wikilinks to source pages
-4. Combine all maps and populate empty sources fields
+4. Keyword search for remaining unfixable pages
 
 Usage:
-    python scripts/fix_empty_sources.py .
+    python scripts/fix_empty_sources.py <wiki-root>
 """
 
-import os
+import json
 import re
 import sys
-import json
-import glob
+from pathlib import Path
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from merge_frontmatter import parse_frontmatter, _extract_existing_list_items, merge_array_field
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
@@ -26,139 +25,108 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 
-def slugify(text):
+def slugify(text: str) -> str:
     """Slugify text for matching."""
     s = text.strip().lower()
-    s = re.sub(r'[：:—\-–、，。？！""''（）()\[\]【】《》·\.\?\!\,\;]', '', s)
+    s = re.sub(r'[：:—\-–、，。？！“”‘’（）()\[\]【】《》·\.\?\!\,\;]', '', s)
     s = re.sub(r'[\s_]+', '-', s)
-    s = re.sub(r'[^\w\u4e00-\u9fff-]', '', s)
+    s = re.sub(r'[^\w一-鿿-]', '', s)
     return s
 
 
-def fix_frontmatter_blanks(wiki_root):
+def fix_frontmatter_blanks(wiki_root: Path) -> int:
     """Fix pages with extra blank lines after the opening --- delimiter."""
     fixed = 0
-    for d in ["wiki/concepts", "wiki/entities", "wiki/sources", "wiki/syntheses"]:
-        full_dir = os.path.join(wiki_root, d)
-        if not os.path.isdir(full_dir):
+    for d in ("wiki/concepts", "wiki/entities", "wiki/sources", "wiki/syntheses"):
+        full_dir = wiki_root / d
+        if not full_dir.is_dir():
             continue
-        for f in os.listdir(full_dir):
-            if not f.endswith(".md"):
-                continue
-            full_path = os.path.join(wiki_root, d, f)
-            with open(full_path, "r", encoding="utf-8") as fh:
-                text = fh.read()
-            # Fix: ---\n\n\n... -> ---\n...
+        for f in full_dir.glob("*.md"):
+            text = f.read_text(encoding="utf-8")
             new_text = re.sub(r"^---\n\n+", "---\n", text)
             if new_text != text:
-                with open(full_path, "w", encoding="utf-8") as fh:
-                    fh.write(new_text)
+                f.write_text(new_text, encoding="utf-8")
                 fixed += 1
     return fixed
 
 
-def build_wikilink_reverse_map(wiki_root):
+def build_wikilink_reverse_map(wiki_root: Path) -> dict[str, set[str]]:
     """Build reverse map from source page wikilinks."""
-    concept_pages = {}
-    for d in ["wiki/concepts", "wiki/entities"]:
-        full_dir = os.path.join(wiki_root, d)
-        if not os.path.isdir(full_dir):
+    concept_pages: dict[str, str] = {}
+    for d in ("wiki/concepts", "wiki/entities"):
+        full_dir = wiki_root / d
+        if not full_dir.is_dir():
             continue
-        for f in os.listdir(full_dir):
-            if f.endswith(".md"):
-                name = f[:-3]
-                concept_pages[name] = os.path.join(d, f)
+        for f in full_dir.glob("*.md"):
+            concept_pages[f.stem] = str(Path(d) / f.name)
 
-    reverse_map = {}
-    sources_dir = os.path.join(wiki_root, "wiki/sources")
-    for f in glob.glob(os.path.join(sources_dir, "*.md")):
-        source_name = os.path.basename(f)[:-3]
-        with open(f, "r", encoding="utf-8") as fh:
-            content = fh.read()
+    reverse_map: dict[str, set[str]] = {}
+    sources_dir = wiki_root / "wiki" / "sources"
+    for f in sources_dir.glob("*.md"):
+        source_name = f.stem
+        content = f.read_text(encoding="utf-8")
         links = re.findall(r"\[\[([^\]]+)\]\]", content)
         for link in links:
             link = link.split("|")[0].strip()
             if link in concept_pages:
                 fp = concept_pages[link]
-                if fp not in reverse_map:
-                    reverse_map[fp] = set()
-                reverse_map[fp].add(source_name)
+                reverse_map.setdefault(fp, set()).add(source_name)
     return reverse_map
 
 
-def build_extract_reverse_map(wiki_root):
+def build_extract_reverse_map(wiki_root: Path) -> dict[str, set[str]]:
     """Build reverse map from extract JSON files."""
-    # concept/entity name-slug -> relative path
-    name_to_file = {}
-    for d in ["wiki/concepts", "wiki/entities"]:
-        full_dir = os.path.join(wiki_root, d)
-        if not os.path.isdir(full_dir):
+    name_to_file: dict[str, str] = {}
+    for d in ("wiki/concepts", "wiki/entities"):
+        full_dir = wiki_root / d
+        if not full_dir.is_dir():
             continue
-        for f in os.listdir(full_dir):
-            if f.endswith(".md"):
-                name_to_file[f[:-3]] = os.path.join(d, f)
+        for f in full_dir.glob("*.md"):
+            name_to_file[f.stem] = str(Path(d) / f.name)
 
-    # source title-slug -> source page name
-    source_title_map = {}
-    sources_dir = os.path.join(wiki_root, "wiki/sources")
-    for f in sorted(os.listdir(sources_dir)):
-        if not f.endswith(".md"):
-            continue
-        with open(os.path.join(sources_dir, f), "r", encoding="utf-8") as fh:
-            text = fh.read()
+    source_title_map: dict[str, str] = {}
+    sources_dir = wiki_root / "wiki" / "sources"
+    for f in sorted(sources_dir.glob("*.md")):
+        text = f.read_text(encoding="utf-8")
         fm, _, _ = parse_frontmatter(text)
         if fm:
             title = fm.get("title", "").strip('"').strip("'")
             title_slug = slugify(title)
-            source_name = f[:-3]
-            source_title_map[title_slug] = source_name
+            source_title_map[title_slug] = f.stem
 
-    reverse_map = {}
-    meta_dir = os.path.join(wiki_root, "wiki/meta")
-    for ef in glob.glob(os.path.join(meta_dir, "extract-*.json")):
-        with open(ef, "r", encoding="utf-8") as fh:
-            data = json.load(fh)
-
+    reverse_map: dict[str, set[str]] = {}
+    meta_dir = wiki_root / "wiki" / "meta"
+    for ef in meta_dir.glob("extract-*.json"):
+        data = json.loads(ef.read_text(encoding="utf-8"))
         title = data.get("title", "")
         title_slug = slugify(title)
         source_match = source_title_map.get(title_slug)
         if not source_match:
             continue
 
-        for item_list in [data.get("concepts", []), data.get("entities", [])]:
+        for item_list in (data.get("concepts", []), data.get("entities", [])):
             for item in item_list:
                 name = item.get("name", "")
                 name_slug = slugify(name)
                 if name_slug in name_to_file:
                     fp = name_to_file[name_slug]
-                    if fp not in reverse_map:
-                        reverse_map[fp] = set()
-                    reverse_map[fp].add(source_match)
+                    reverse_map.setdefault(fp, set()).add(source_match)
 
     return reverse_map
 
 
-def build_body_wikilink_map(wiki_root):
+def build_body_wikilink_map(wiki_root: Path) -> dict[str, set[str]]:
     """Build map by scanning concept/entity page bodies for source page wikilinks."""
-    source_names = set(
-        f[:-3]
-        for f in os.listdir(os.path.join(wiki_root, "wiki/sources"))
-        if f.endswith(".md")
-    )
+    source_names = {f.stem for f in (wiki_root / "wiki" / "sources").glob("*.md")}
 
-    body_map = {}
-    for d in ["wiki/concepts", "wiki/entities"]:
-        full_dir = os.path.join(wiki_root, d)
-        if not os.path.isdir(full_dir):
+    body_map: dict[str, set[str]] = {}
+    for d in ("wiki/concepts", "wiki/entities"):
+        full_dir = wiki_root / d
+        if not full_dir.is_dir():
             continue
-        for f in os.listdir(full_dir):
-            if not f.endswith(".md"):
-                continue
-            rel_path = os.path.join(d, f)
-            full_path = os.path.join(wiki_root, rel_path)
-
-            with open(full_path, "r", encoding="utf-8") as fh:
-                text = fh.read()
+        for f in full_dir.glob("*.md"):
+            rel_path = str(Path(d) / f.name)
+            text = f.read_text(encoding="utf-8")
 
             # Only scan body (after frontmatter)
             parts = text.split("---", 2)
@@ -167,7 +135,7 @@ def build_body_wikilink_map(wiki_root):
             body = parts[2]
 
             links = re.findall(r"\[\[([^\]]+)\]\]", body)
-            found_sources = set()
+            found_sources: set[str] = set()
             for link in links:
                 link = link.split("|")[0].strip()
                 if link in source_names:
@@ -179,24 +147,20 @@ def build_body_wikilink_map(wiki_root):
     return body_map
 
 
-def build_keyword_reverse_map(wiki_root, remaining_pages):
+def build_keyword_reverse_map(
+    wiki_root: Path, remaining_pages: list[str],
+) -> dict[str, set[str]]:
     """Build map by searching source page bodies for page titles/keywords."""
-    # Load all source page bodies
-    sources = {}
-    sources_dir = os.path.join(wiki_root, "wiki/sources")
-    for f in os.listdir(sources_dir):
-        if not f.endswith(".md"):
-            continue
-        with open(os.path.join(sources_dir, f), "r", encoding="utf-8") as fh:
-            sources[f[:-3]] = fh.read()
+    sources_dir = wiki_root / "wiki" / "sources"
+    sources: dict[str, str] = {}
+    for f in sources_dir.glob("*.md"):
+        sources[f.stem] = f.read_text(encoding="utf-8")
 
-    reverse_map = {}
+    reverse_map: dict[str, set[str]] = {}
     for rel_path in remaining_pages:
-        full_path = os.path.join(wiki_root, rel_path)
-        with open(full_path, "r", encoding="utf-8") as fh:
-            text = fh.read()
+        full_path = wiki_root / rel_path
+        text = full_path.read_text(encoding="utf-8")
 
-        # Extract title from frontmatter
         parts = text.split("---", 2)
         if len(parts) < 3:
             continue
@@ -212,15 +176,17 @@ def build_keyword_reverse_map(wiki_root, remaining_pages):
             continue
 
         # Search source bodies for exact title match
-        matches = set()
+        matches: set[str] = set()
         for sname, content in sources.items():
             if re.search(re.escape(title), content, re.IGNORECASE):
                 matches.add(sname)
 
-        # If no exact match, try splitting title into words and searching for each
+        # If no exact match, try splitting title into parts
         if not matches:
-            # Split on Chinese/English boundary and common separators
-            title_parts = re.split(r'(?<=[\u4e00-\u9fff])(?=[A-Za-z])|(?<=[A-Za-z])(?=[\u4e00-\u9fff])|[·\-—]', title)
+            title_parts = re.split(
+                r'(?<=[一-鿿])(?=[A-Za-z])|(?<=[A-Za-z])(?=[一-鿿])|[·\-—]',
+                title,
+            )
             title_parts = [p.strip() for p in title_parts if len(p.strip()) >= 2]
             for sname, content in sources.items():
                 for part in title_parts:
@@ -234,8 +200,21 @@ def build_keyword_reverse_map(wiki_root, remaining_pages):
     return reverse_map
 
 
-def main(wiki_root):
-    wiki_root = os.path.abspath(wiki_root)
+def _inject_sources(raw_fm: str, source_names: list[str]) -> str:
+    """Inject sources into frontmatter, creating the field if needed."""
+    new_sources = [f"[[{s}]]" for s in source_names]
+    has_sources_field = bool(re.search(r"^sources:", raw_fm, re.MULTILINE))
+    if has_sources_field:
+        return merge_array_field(raw_fm, "sources", new_sources)
+    # Inject sources field before 'origin:' or at end
+    sources_block = "sources:\n" + "\n".join(f'  - "{s}"' for s in new_sources)
+    if "origin:" in raw_fm:
+        return re.sub(r"(\norigin:)", f"\n{sources_block}\\1", raw_fm)
+    return raw_fm.rstrip() + "\n" + sources_block
+
+
+def main(wiki_root: str) -> None:
+    wiki_root = Path(wiki_root).resolve()
 
     # Step 0: Fix malformed frontmatter
     fm_fixed = fix_frontmatter_blanks(wiki_root)
@@ -248,31 +227,24 @@ def main(wiki_root):
     body_map = build_body_wikilink_map(wiki_root)
 
     # Merge: combine all sources
-    combined = {}
-    for src_map in [wikilink_map, extract_map, body_map]:
+    combined: dict[str, set[str]] = {}
+    for src_map in (wikilink_map, extract_map, body_map):
         for fp, sources in src_map.items():
-            if fp not in combined:
-                combined[fp] = set()
-            combined[fp].update(sources)
+            combined.setdefault(fp, set()).update(sources)
 
     # First pass: fix what we can with strategies 1-3
     fixed = 0
     skipped_has_sources = 0
     skipped_seed = 0
-    unfixable = []
+    unfixable: list[str] = []
 
-    for d in ["wiki/concepts", "wiki/entities"]:
-        full_dir = os.path.join(wiki_root, d)
-        if not os.path.isdir(full_dir):
+    for d in ("wiki/concepts", "wiki/entities"):
+        full_dir = wiki_root / d
+        if not full_dir.is_dir():
             continue
-        for f in sorted(os.listdir(full_dir)):
-            if not f.endswith(".md"):
-                continue
-            rel_path = os.path.join(d, f)
-            full_path = os.path.join(wiki_root, rel_path)
-
-            with open(full_path, "r", encoding="utf-8") as fh:
-                text = fh.read()
+        for f in sorted(full_dir.glob("*.md")):
+            rel_path = str(Path(d) / f.name)
+            text = f.read_text(encoding="utf-8")
 
             fm, body, raw_fm = parse_frontmatter(text)
             if fm is None:
@@ -285,7 +257,7 @@ def main(wiki_root):
                 skipped_seed += 1
                 continue
 
-            if len(existing_sources) > 0:
+            if existing_sources:
                 skipped_has_sources += 1
                 continue
 
@@ -294,23 +266,10 @@ def main(wiki_root):
                 continue
 
             source_names = sorted(combined[rel_path])
-            new_sources = [f"[[{s}]]" for s in source_names]
-
-            # Check if sources field exists in frontmatter
-            has_sources_field = bool(re.search(r"^sources:", raw_fm, re.MULTILINE))
-            if has_sources_field:
-                new_raw_fm = merge_array_field(raw_fm, "sources", new_sources)
-            else:
-                # Inject sources field before 'origin:' or at end
-                sources_block = "sources:\n" + "\n".join(f'  - "{s}"' for s in new_sources)
-                if "origin:" in raw_fm:
-                    new_raw_fm = re.sub(r"(\norigin:)", f"\n{sources_block}\\1", raw_fm)
-                else:
-                    new_raw_fm = raw_fm.rstrip() + "\n" + sources_block
+            new_raw_fm = _inject_sources(raw_fm, source_names)
             new_content = f"---\n{new_raw_fm}\n---{body}"
 
-            with open(full_path, "w", encoding="utf-8") as fh:
-                fh.write(new_content)
+            f.write_text(new_content, encoding="utf-8")
             fixed += 1
 
     print(f"Fixed (strategies 1-3): {fixed}")
@@ -319,16 +278,15 @@ def main(wiki_root):
     if unfixable:
         keyword_map = build_keyword_reverse_map(wiki_root, unfixable)
         kw_fixed = 0
-        still_unfixable = []
+        still_unfixable: list[str] = []
 
         for rel_path in unfixable:
             if rel_path not in keyword_map:
                 still_unfixable.append(rel_path)
                 continue
 
-            full_path = os.path.join(wiki_root, rel_path)
-            with open(full_path, "r", encoding="utf-8") as fh:
-                text = fh.read()
+            full_path = wiki_root / rel_path
+            text = full_path.read_text(encoding="utf-8")
 
             fm, body, raw_fm = parse_frontmatter(text)
             if fm is None:
@@ -336,21 +294,10 @@ def main(wiki_root):
                 continue
 
             source_names = sorted(keyword_map[rel_path])
-            new_sources = [f"[[{s}]]" for s in source_names]
-
-            has_sources_field = bool(re.search(r"^sources:", raw_fm, re.MULTILINE))
-            if has_sources_field:
-                new_raw_fm = merge_array_field(raw_fm, "sources", new_sources)
-            else:
-                sources_block = "sources:\n" + "\n".join(f'  - "{s}"' for s in new_sources)
-                if "origin:" in raw_fm:
-                    new_raw_fm = re.sub(r"(\norigin:)", f"\n{sources_block}\\1", raw_fm)
-                else:
-                    new_raw_fm = raw_fm.rstrip() + "\n" + sources_block
+            new_raw_fm = _inject_sources(raw_fm, source_names)
             new_content = f"---\n{new_raw_fm}\n---{body}"
 
-            with open(full_path, "w", encoding="utf-8") as fh:
-                fh.write(new_content)
+            full_path.write_text(new_content, encoding="utf-8")
             kw_fixed += 1
 
         print(f"Fixed (keyword strategy): {kw_fixed}")
