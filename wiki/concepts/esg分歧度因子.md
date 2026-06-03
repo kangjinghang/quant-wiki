@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "衡量不同评级机构对同一上市公司ESG评分差异程度的因子，通常取评级分位数两两配对标准差的均值。"
 tags: [esg, ai应用, 指数增强, 华泰金工, 券商研报, 另类数据, 深度学习, 多因子模型]
-sources: []
+sources:
   - "[[esg分歧度因子和ai量价增强策略]]"
 origin: agent-compiled
 status: seed
@@ -26,10 +26,10 @@ ESG分歧度因子（ESG Disagreement Factor）是指利用不同ESG评级机构
 ## 相关概念
 
 - [[esg综合因子]]
-- [[esg评级]]
+- ESG评级
 - [[另类数据]]
 - [[因子挖掘]]
 
 ## 来源
 
-- [[华泰金工-esg分歧度因子和ai量价增强策略]]
+- [[esg分歧度因子和ai量价增强策略]]

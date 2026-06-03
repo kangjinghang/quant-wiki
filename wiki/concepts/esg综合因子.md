@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "将ESG评级因子与ESG分歧度因子等权结合构建的复合因子，旨在同时捕捉企业的ESG水平及评级一致性。"
 tags: [esg, ai应用, 指数增强, 华泰金工, 券商研报, 另类数据, 深度学习, 多因子模型]
-sources: []
+sources:
   - "[[esg分歧度因子和ai量价增强策略]]"
 origin: agent-compiled
 status: seed
@@ -25,10 +25,10 @@ ESG综合因子（ESG Composite Factor）是将传统的ESG评级因子与新构
 ## 相关概念
 
 - [[esg分歧度因子]]
-- [[esg评级]]
+- ESG评级
 - [[多因子模型]]
 - [[因子合成与组合优化目标错配]]
 
 ## 来源
 
-- [[华泰金工-esg分歧度因子和ai量价增强策略]]
+- [[esg分歧度因子和ai量价增强策略]]
