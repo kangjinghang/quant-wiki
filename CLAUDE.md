@@ -168,7 +168,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 ### 策略 / Strategies
 
 - **因子投资**: 因子投资, factor-investing, 因子, 量化, 指数增强, ai应用, 量化基本面, 多因子模型, 分析师预期因子, 反转因子, 高频量价因子, 聪明钱因子, 聪明贝塔, 宏观因子, 行业景气度, 基本面量化, 因子挖掘, 量价因子
-- **策略类型**: 策略, momentum, 动量, mean-reversion, portfolio-optimization, 套利, 打新, 行业轮动, 风格轮动, 因子择时, 金股组合, 拥挤度复合因子, 大小盘风格轮动, 成长价值风格轮动, 事件驱动策略, 概念主题投资, 业绩超预期
+- **策略类型**: 策略, momentum, 动量, mean-reversion, portfolio-optimization, 套利, 打新, 行业轮动, 风格轮动, 因子择时, 金股组合, 拥挤度复合因子, 大小盘风格轮动, 成长价值风格轮动, 事件驱动策略, 概念主题投资, 业绩超预期, 景气度
 - **投资风格**: 价值投资, 成长投资, 主动基金
 - **资产配置**: 资产配置, 组合管理, 组合优化, 调仓, 建仓, 股债轮动, 风险平价, black-litterman模型, 均值方差模型
 
