@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于GPT和多智能体系统构建的端到端量价因子挖掘框架，通过FactorGPT、CodeGPT和EvalGPT三个角色实现因子的自动构建、代码生成、回测与优化。"
 tags: [华泰金工, 券商研报, 深度研究, 机器学习, 大语言模型, 因子挖掘, 量价因子, 高频量价因子, ai应用, python, 高频因子, 基本面, 指数增强策略, 多智能体系统, lightgbm模型]
-sources: []
+sources:
   - "[[华泰金工-gpt因子工厂-多智能体与因子挖掘]]"
   - "[[华泰金工-gpt因子工厂2-0-基本面与高频因子挖掘]]"
 origin: agent-compiled
