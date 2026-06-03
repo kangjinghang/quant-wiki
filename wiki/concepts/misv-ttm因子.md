@@ -17,7 +17,7 @@ updated: 2026-06-03
 
 ## 定义 / Definition
 
-[[MISV_TTM因子]]（Mispricing based on TTM earnings）是基于一阶段[[剩余收益模型]]，使用过去12个月（TTM）滚动净利润替代分析师[[一致预期]]，计算股票合理估值与当前PB差异比例的基本面因子。
+[[misv-ttm因子]]（Mispricing based on TTM earnings）是基于一阶段[[剩余收益模型]]，使用过去12个月（TTM）滚动净利润替代分析师[[一致预期]]，计算股票合理估值与当前PB差异比例的基本面因子。
 
 ## 方法/机制 / Methodology
 
@@ -30,6 +30,6 @@ updated: 2026-06-03
 ## 相关概念 / Related Concepts
 
 - [[基本面错误定价]]
-- [[MISV_FY1因子]]
+- [[misv-fy1因子]]
 - [[剩余收益模型]]
 - [[价值掘金因子]]
