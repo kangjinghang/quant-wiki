@@ -36,7 +36,7 @@ TD/M因子（Theoretical Dividend-to-Market Value Factor）是理论分红/市�
 - [[理论分红模型]]
 - [[估值因子]]
 - [[指数增强策略]]
-- [[盈余公积]]
+- 盈余公积
 
 ## 来源
 
