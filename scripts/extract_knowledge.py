@@ -62,10 +62,14 @@ def resolve_article_path(wiki_root: Path, *, use_next: bool = False, raw_article
                 if val:  # skip empty raw_path values
                     processed.add(val)
 
-    # Also collect slugs from existing extract JSON files
+    # Also collect slugs from existing extract JSON files (including archived)
     existing_extracts = set()
-    if meta_dir.exists():
-        for extract_file in meta_dir.glob("extract-*.json"):
+    extract_dirs = [meta_dir]
+    archive_dir = meta_dir / "archive"
+    if archive_dir.exists():
+        extract_dirs.append(archive_dir)
+    for d in extract_dirs:
+        for extract_file in d.glob("extract-*.json"):
             existing_extracts.add(extract_file.stem[8:])  # strip "extract-" prefix
 
     # Find first unprocessed article
