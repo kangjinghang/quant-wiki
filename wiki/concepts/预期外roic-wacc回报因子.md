@@ -39,7 +39,7 @@ $$ \text{Factor} = \frac{(ROIC_t - WACC_t) - \text{Mean}(ROIC - WACC)_{t-8}}{\te
 - [[roic因子]]
 - [[wacc因子]]
 - [[基本面因子]]
-- [[预期外盈利]]
+- 预期外盈利
 
 ## 来源
 
