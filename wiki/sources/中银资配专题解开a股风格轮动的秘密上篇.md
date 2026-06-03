@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202109300908]中银资配专题解开A股风格轮动的秘密上篇.md"
 review_by: ""
-raw_hash: "5aa7148dac53b16a059d5556e3f1dc855f701abf60c21a7481ab4918ae381415"
+raw_hash: "39d25dd2fe004bdb5eec333467ea7652ff687375d99382ecc29fa428402bcdf7"
 ---
 ## 核心内容
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202302161501]光大金工构建金融行业ESG评级体系议题选择权重设置如何更具子行业可比性E.md"
 review_by: ""
-raw_hash: "45bef33a7f5233a4436ccc2bbf6333d5c6e829e08f4825655026832093884a2a"
+raw_hash: "5bf77762b9351423a6b72d1a77099942d8135cf43b3b727b42b711fbdf1c0d21"
 ---
 ## 核心内容
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202105040830]A股分层效应的普适规律与底层逻辑开源金工.md"
 review_by: ""
-raw_hash: "dfef23ba27e88a19ed3d4d65182d27d934136a634554c046e4d35494190041b5"
+raw_hash: "07843b5ac02af4c578822380ecb2235e456327cd8de598977dc18fe8779eb2af"
 ---
 ## 核心发现
 

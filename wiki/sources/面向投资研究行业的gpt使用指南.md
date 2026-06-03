@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202304280802]华泰金工面向投资研究行业的GPT使用指南.md"
 review_by: ""
-raw_hash: "7e1b2186f2f026a51f581593a6adc9ac872c0a5b35ea5338c90b097310b509ca"
+raw_hash: "7c8dcffee007e69e0c5a32a24869c3922a876b5456ad028bc577cc54bea33d58"
 ---
 ## 核心内容
 

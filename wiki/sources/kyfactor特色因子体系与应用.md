@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202401051800]KyFactor特色因子体系与应用开源金工.md"
 review_by: ""
-raw_hash: "74699ba382076ae3f3b6dab0e0e3fbcb826120fef82b97efe4bdd537d1f0e3a7"
+raw_hash: "f92bdff6bf7d851c5fb9a6b61c3c5ad49b818bc4208c25023a062da795ae382a"
 ---
 ## 核心内容
 

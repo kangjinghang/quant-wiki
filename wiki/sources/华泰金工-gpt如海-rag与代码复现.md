@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202405081528]华泰金工GPT如海RAG与代码复现.md"
 review_by: ""
-raw_hash: "17f1cbf0d2adaffa3c911468a20069bd822ceb3250aa5c7a566595654c8f8f89"
+raw_hash: "c49775ef8b1e300d6f011dc13fb6e65d0f071556e7fd26bedfc7b6ecce2c0bda"
 ---
 ## 核心内容
 

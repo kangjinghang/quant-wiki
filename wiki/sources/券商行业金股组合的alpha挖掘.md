@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202208111630]券商行业金股组合的alpha挖掘开源金工.md"
 review_by: ""
-raw_hash: "86bb6dd816ed1026a3ca2c51c711e9cce151d6523a37391afd7bb82ceeaf13ad"
+raw_hash: "dab2c7035d80237e21d80468f1d998d27e378c61bdcb2d9e3059007090fe28b4"
 ---
 ## 核心内容
 

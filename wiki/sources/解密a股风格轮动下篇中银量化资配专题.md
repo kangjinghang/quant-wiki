@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202110172030]解密A股风格轮动下篇中银量化资配专题.md"
 review_by: ""
-raw_hash: "5681a61b19418ef12619ba74cec5fcc2e4f1e2820d4f190cf8eaf547c6975a71"
+raw_hash: "204094a05a86958be1cf3c2414ca6e9aa34fc560aac48317b04eee3f490bf5c7"
 ---
 ## 核心观点
 

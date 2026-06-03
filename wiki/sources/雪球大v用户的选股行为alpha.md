@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202311051813]雪球大V用户的选股行为alpha开源金工.md"
 review_by: ""
-raw_hash: "4a30a3419cd6eb32f114cdc8921aca9046e17dc6a32936fe53ce20c9a8656736"
+raw_hash: "02b4466eaffa04e7b322c6b2b3fcccbc40f7eb1c022818f9aa83aa560a57d077"
 ---
 ## 核心内容
 本文深入挖掘了雪球大V用户的投资行为数据，将其分为基本信息、自选股信息、模拟组合信息和发帖文本信息四大类。研究重点考察了自选股事件与模拟组合买入事件的信息含量差异，并构建了针对大V用户的五维评价体系进行风格画像，最终基于历史绩效指标改进了选股策略。

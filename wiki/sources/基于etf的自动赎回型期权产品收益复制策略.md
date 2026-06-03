@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202309080841]广发金融工程基于ETF的自动赎回型期权产品收益复制策略.md"
 review_by: ""
-raw_hash: "873dc5e6db39047ad806f128cd83eaea1764b2caa60a37e57b53d0e4e8c0e77d"
+raw_hash: "5e9d6eb962b4a8a74c20cfe405cc6fd7c0a835478bfc5dec51e59fd27f6072c6"
 ---
 ## 核心内容
 
