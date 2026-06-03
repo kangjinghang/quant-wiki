@@ -3,7 +3,7 @@ title: "Beta离散度"
 title_zh: 
 type: concept
 summary: "衡量市场个股Beta值分布离散程度的指标，常用于评估市场走势的凝聚力，离散度越低市场共识越强。"
-tags: [brokerage-report, deep-research, momentum, mean-reversion, regime-detection, valuation, macro, a-share]
+tags: [brokerage-report, deep-research, momentum, mean-reversion, regime-detection, valuation, a-share, 宏观]
 sources: []
   - "[[多维度择时与风格轮动模型-市场定期跟踪体系介绍]]"
 origin: agent-compiled
