@@ -1,5 +1,5 @@
 ---
-title: "ESG"
+title: "ESG环境社会治理"
 type: concept
 summary: "环境（Environmental）、社会（Social）和公司治理（Governance）三个维度的非财务评估框架，用于衡量企业可持续发展能力和社会责任表现。"
 tags: [esg, 另类数据, 基本面]
