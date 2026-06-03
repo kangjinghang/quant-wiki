@@ -2140,8 +2140,8 @@
 - [[简易神经网络]] — 本文提出的一个基于PyTorch的简易全连接神经网络模型，用于预测当前市场趋势延续或逆转的概率。
 - [[刘哲铭]] — 东北证券研究所首席分析师，主要从事固定收益及资产配置研究。
 - [[刘天宇]] — 东北证券研究所研究助理，参与固定收益及可转债等领域的研究工作。
-- [[jiang-and-zhu]] — Jiang G J和Zhu K X，2017年在Journal of Financial Economics发表"Information Shocks and Short-Term Market Underreaction"，提出了基于互换方差法的股价跳跃识别方法。
-- [[jiang-and-oomen]] — Jiang G J和Oomen R C A，2008年在Journal of Econometrics发表"Testing for jumps when asset prices are observed with noise"，提出了互换方差法（Swap Variance）跳跃检验方法。
+- [[jiang与zhu]] — Jiang G J和Zhu K X，2017年在Journal of Financial Economics发表"Information Shocks and Short-Term Market Underreaction"，提出了基于互换方差法的股价跳跃识别方法。
+- [[jiang与oomen]] — Jiang G J和Oomen R C A，2008年在Journal of Econometrics发表"Testing for jumps when asset prices are observed with noise"，提出了互换方差法（Swap Variance）跳跃检验方法。
 - [[徐龙炳和吴文彬]] — 2023年发表《过度反应、跳跃收益与A股动量策略》，发现A股市场的反转效应主要由股价跳跃所带来的，扣除跳跃后的非跳跃收益呈动量效应。
 
 ## Syntheses

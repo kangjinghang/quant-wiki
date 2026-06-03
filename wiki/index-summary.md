@@ -2057,8 +2057,8 @@
 - [[简易神经网络]]
 - [[刘哲铭]]
 - [[刘天宇]]
-- [[jiang-and-zhu]]
-- [[jiang-and-oomen]]
+- [[jiang与zhu]]
+- [[jiang与oomen]]
 - [[徐龙炳和吴文彬]]
 
 ## Syntheses
