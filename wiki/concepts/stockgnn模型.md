@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种结合图神经网络（GNN）和Doc2Vec方法的模型，用于从财报电话会议记录中提取语义特征并预测股价走势。"
 tags: [文本情感分析, 另类数据, 深度学习, 券商研报, 华安金工]
-sources: []
+sources:
   - "[[上市公司的财报电话会议对股价的影响-学海拾珠-系列之二百零一]]"
 origin: agent-compiled
 status: seed
@@ -20,7 +20,7 @@ StockGNN是一种基于图神经网络（GNN）架构和Doc2Vec方法生成语�
 
 ## 相关概念
 - [[图神经网络]]
-- [[doc2vec]]
+- Doc2Vec
 - [[深度学习]]
 - [[自然语言处理]]
 
