@@ -183,11 +183,11 @@ When deciding whether to create, update, split, or archive a page, follow these 
 ### 分析方法 / Analysis
 
 - **基本面**: 基本面, 估值, valuation, 宏观, 经济周期, 盈余管理, 规模效应
-- **技术面**: 技术面, 趋势跟踪, 择时, 量价关系, 市场微观结构, k线形态学, bollinger带
+- **技术面**: 技术面, 趋势跟踪, 择时, 量价关系, 市场微观结构, k线形态学, bollinger带, 算法交易
 - **回测与风控**: 回测, backtesting, 风险控制, 风险模型, attribution, regime-detection, 波动率交易策略
 - **资金面**: 资金面, 轮动, 北向资金流, 固收量化
 - **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研, 文本情感分析
-- **机器学习**: 机器学习, 集成学习, 深度学习, 神经网络, 大语言模型, xgboost模型, 强化学习, 排序学习, ltr, gru网络, 图神经网络, 注意力机制, 主成分分析, 遗传规划
+- **机器学习**: 机器学习, 集成学习, 深度学习, 神经网络, 大语言模型, xgboost模型, 强化学习, 排序学习, ltr, gru网络, 图神经网络, 注意力机制, 主成分分析, 遗传规划, lstm模型
 - **ESG**: esg
 - **政策法规**: 政策法规
 
