@@ -1,5 +1,5 @@
 ---
-title: "mixtral-8x7b"
+title: "Mixtral-8x7B大语言模型"
 title_zh: 
 type: concept
 summary: "由 Mistral AI 开发的基于混合专家架构的开源大型语言模型，通过门控机制选择性激活专家网络，在保持较高推理效率的同时展现出优异的文本分析能力。"
