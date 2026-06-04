@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种专为金融高频时序数据设计的深度学习架构，采用Patch Embedding + GRU + Transformer结构，结合增量学习机制以高效捕捉局部形态特征与全局长程依赖关系。"
 tags: [高频量价因子, 集成学习, lightgbm模型, gru网络, transformer模型, 深度学习, 回测, 券商研报, 中信建投金工, 市场微观结构, 量价关系]
-sources: []
+sources:
   - "[[逐鹿-alpha专题报告-二十八-分钟因子模型]]"
 origin: agent-compiled
 status: seed
@@ -32,8 +32,8 @@ pegformer模型的核心框架主要由三部分组成：
 - [[gru网络]]
 - [[深度学习]]
 - [[高频数据]]
-- [[增量学习]]
+- 增量学习
 
 ## 来源
 
-- [[逐鹿alpha专题报告二十八分钟因子模型]]
+- [[逐鹿-alpha专题报告-二十八-分钟因子模型]]

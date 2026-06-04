@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Qlib平台中默认的一套因子计算方法，借鉴经典量价因子构建思想，通过引入时间跨度参数从动量、波动率、流动性等多维度刻画股价动态特征。"
 tags: [高频量价因子, 集成学习, lightgbm模型, gru网络, transformer模型, 深度学习, 回测, 券商研报, 中信建投金工, 市场微观结构, 量价关系]
-sources: []
+sources:
   - "[[逐鹿-alpha专题报告-二十八-分钟因子模型]]"
 origin: agent-compiled
 status: seed
@@ -31,4 +31,4 @@ Alpha158因子集通过引入一个时间跨度参数 $d$ （短期取值区间�
 
 ## 来源
 
-- [[逐鹿alpha专题报告二十八分钟因子模型]]
+- [[逐鹿-alpha专题报告-二十八-分钟因子模型]]
