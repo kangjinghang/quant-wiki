@@ -184,7 +184,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 - **基本面**: 基本面, 估值, valuation, 宏观, 经济周期, 盈余管理, 规模效应, 财务风险
 - **技术面**: 技术面, 趋势跟踪, 择时, 量价关系, 市场微观结构, k线形态学, bollinger带, 均线系统, 算法交易, 高频因子, 傅里叶变换, 形态识别
-- **回测与风控**: 回测, backtesting, 风险控制, 风险模型, attribution, regime-detection, 波动率交易策略, 波动率, brinson归因分析
+- **回测与风控**: 回测, backtesting, 风险控制, 风险模型, attribution, regime-detection, 波动率交易策略, 波动率, brinson归因分析, 跟踪误差
 - **资金面**: 资金面, 轮动, 北向资金流, 固收量化, 大单资金流, 小单资金流
 - **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研, 文本情感分析
 - **行为金融**: 行为金融学
