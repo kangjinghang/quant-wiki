@@ -186,7 +186,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 - **技术面**: 技术面, 趋势跟踪, 择时, 量价关系, 市场微观结构, k线形态学, bollinger带, 均线系统, 算法交易, 高频因子, 傅里叶变换, 形态识别, 情绪指标
 - **回测与风控**: 回测, backtesting, 风险控制, 风险模型, attribution, regime-detection, 波动率交易策略, 波动率, brinson归因分析, 跟踪误差
 - **资金面**: 资金面, 轮动, 北向资金流, 固收量化, 大单资金流, 小单资金流
-- **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研, 文本情感分析
+- **另类数据**: 另类数据, high-frequency, alternative-data, 机构调研, 文本情感分析, 高频数据
 - **行为金融**: 行为金融学
 - **机器学习**: 机器学习, 随机森林, 集成学习, 深度学习, 神经网络, 卷积神经网络, 循环神经网络, 大语言模型, transformer模型, 多模态大语言模型, xgboost模型, 强化学习, 排序学习, ltr, gru网络, 图神经网络, 注意力机制, 主成分分析, 遗传规划, lstm模型, 多智能体系统, lightgbm模型, 多频率因子
 - **ESG**: esg
