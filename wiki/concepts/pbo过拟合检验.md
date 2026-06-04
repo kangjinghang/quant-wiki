@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于组合对称交叉验证（CSCV）框架计算策略过拟合概率的方法，用于评估回测结果的稳健性。"
 tags: [华泰金工, 券商研报, 择时, 技术面, 资金面, 期权, 回测, 深度研究]
-sources: []
+sources:
   - "[[华泰金工-再论a股择时-多维度融合]]"
 origin: agent-compiled
 status: seed
@@ -32,4 +32,4 @@ review_by: ""
 
 ## 来源 / Sources
 
-- [[华泰金工-再论a股择时多维度融合]]
+- [[华泰金工-再论a股择时-多维度融合]]
