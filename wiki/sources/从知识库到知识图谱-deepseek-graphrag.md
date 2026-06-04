@@ -44,4 +44,4 @@ raw_hash: "e16d879e4458213333f1421f9921eaaf86606601e1389a6d250ce33c20a8f225"
 - [[知识图谱]]
 
 ## 来源
-- [[从知识库到知识图谱deepseekgraphrag]]
+- [[从知识库到知识图谱-deepseek-graphrag]]
