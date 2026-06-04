@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "即市现率（PCF）的改进指标，使用经营活动产生的现金流量净额除以企业价值（EV），解决了原PCF指标分子分母不匹配的问题。"
 tags: [估值, 基本面量化, 多因子模型, 券商研报, 招商定量任瞳团队, 深度研究, 因子投资, 估值因子]
-sources: []
+sources:
   - "[[估值因子的内涵与逻辑-基本面量化系列研究之一]]"
 origin: agent-compiled
 status: seed
@@ -29,8 +29,8 @@ review_by: ""
 ## 相关概念 / Related Concepts
 
 - [[估值因子]]
-- [[企业价值]]
-- [[自由现金流]]
+- 企业价值（EV）
+- 自由现金流
 - [[综合估值因子]]
 
 ## 来源 / Sources
