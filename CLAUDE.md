@@ -174,7 +174,7 @@ When deciding whether to create, update, split, or archive a page, follow these 
 
 ### 工具与品种 / Instruments
 
-- **权益**: equity, a股, a-share, 股票, 指数基金
+- **权益**: equity, a股, a-share, 股票, 指数基金, 中证500指数
 - **固收**: bond, 债券, 债券市场
 - **基金**: 基金
 - **可转债**: 可转债, convertible-bond
