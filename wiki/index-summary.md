@@ -2382,7 +2382,7 @@
 - [[deepseek深度求索]]
 - [[王西之]]
 - [[殷超]]
-- [[lightrag]]
+- [[lightrag框架]]
 
 ## Syntheses
 - [[业绩超预期因子体系]]
