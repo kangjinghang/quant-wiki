@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202307311610]电子行业ETF投资方法解析指数配置研究系列二.md"
 review_by: ""
-raw_hash: "9d8bc4f41b22ebaed98d4075a0806069523c543f9b71c06e8a33f5ec6ef80c13"
+raw_hash: "4773dff4b51054c132670ff7f8b3088fd5d12238fdb3df86f19542b4c528cdc4"
 ---
 ## 核心内容
 

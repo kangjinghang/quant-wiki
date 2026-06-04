@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202212190800]华泰金工再探文本FADT选股.md"
 review_by: ""
-raw_hash: "7e9a50ed33cf0f210f5fe92df428b652fb3008c62e90c050a2efc234ae684b1d"
+raw_hash: "bcd1d2a875ef68a7c0366d63a6d957a3b3ee03d927bff799659c7595714b28ec"
 ---
 ## 核心内容
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202410170730]华泰金工基于ETF资金流构建行业轮动策略.md"
 review_by: ""
-raw_hash: "45560b6e26021f0df124c0affd5964202251175000fad3cfbc67af66e303b783"
+raw_hash: "f9fec4bddedf628dfbe230c92a9c4780011d6aa141b396c4779d8eb9820f3b62"
 ---
 ## 核心内容
 

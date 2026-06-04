@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202409272228]华泰金工GPT因子工厂20基本面与高频因子挖掘.md"
 review_by: ""
-raw_hash: "d059a451091e4c8bffa66db21f98456fe8a8d334551f0b8c2a3250ab96e1cd1e"
+raw_hash: "f478d066f1c3adb0fbf8c7ea7721a58158790376f81d3bb51c8b73aa17de7a3c"
 ---
 ## 核心内容
 

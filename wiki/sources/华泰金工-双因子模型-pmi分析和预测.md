@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202403220743]华泰金工双因子模型PMI分析和预测.md"
 review_by: ""
-raw_hash: "d396c1b180111f8e047bf2c8fd0fbde7b28afd0ff74d06cad518d0c15f161195"
+raw_hash: "a85f1768a36e9961b4e9f32f10fc4980cbcb2ad3eceb097107cddc3d6ba71b3c"
 ---
 ## 核心内容
 

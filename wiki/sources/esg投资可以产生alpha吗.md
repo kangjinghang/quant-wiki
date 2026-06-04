@@ -12,7 +12,7 @@ source_type: "券商研报"
 source_language: "中文"
 raw_path: "raw/articles/[202104120846]ESG投资可以产生Alpha吗.md"
 review_by: ""
-raw_hash: "664514f76815819ee4d46a6a7bf4b9cade8b10c1f9edeec6f5b7972fb08a561f"
+raw_hash: "ab8838624336bab30d2ab0f3af4ac3435917c477fe85302eec89b5c62c03b929"
 ---
 
 # ESG投资可以产生Alpha吗
