@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202408161157]ROE和CFO效率因子.md"
 review_by: ""
-raw_hash: "614f461ab21465435c255ef7aff1a31d5809b272f8b587054b753db37d99415e"
+raw_hash: "4e79a56e058bab8eec7a452d8cae7faedf7449fe65298267351bef99dc097872"
 ---
 ## 核心内容
 

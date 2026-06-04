@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202408010804]华泰金工ESG分歧度因子和AI量价增强策略.md"
 review_by: ""
-raw_hash: "facf6c928e6b5868dc57a5d60f4081503ddfdaa8162a404aed2652f76f3c352a"
+raw_hash: "9ac54124ec6bba6da4cd090b5957255f73c98111c6be29f45163e51ed378b0f9"
 ---
 ## 核心内容
 

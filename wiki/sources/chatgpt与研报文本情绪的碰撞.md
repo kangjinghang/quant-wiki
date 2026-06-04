@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202308141622]华安金工ChatGPT与研报文本情绪的碰撞量化研究系列报告之十一.md"
 review_by: ""
-raw_hash: "fd58fb1eea93af9d3f1c2be626c34d63d2f1b0978d45f60bd382a33e56fe1946"
+raw_hash: "b3da9639f85296736606574bcdf3e63e022105f854b23d7a447ea2b21b1db53c"
 ---
 ## 核心内容
 本文利用 [[大语言模型]] ChatGPT (gpt-3.5-turbo) 对A股分析师盈余点评标题进行情感评分，并与传统文本分析及 [[bert模型]] 进行对比。研究发现，ChatGPT能够提供更准确、连续且符合人类直观感受的情感评分。

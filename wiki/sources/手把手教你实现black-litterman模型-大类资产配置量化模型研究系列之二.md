@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202304061018]国君配置手把手教你实现BlackLitterman模型大类资产配置量化模.md"
 review_by: ""
-raw_hash: "99c6231d96dc15b80e4f46f013d377bc6e2a40071b56f835baaa22421825e1ae"
+raw_hash: "0269673ec174531ac00fd68cacf39ad7535609da9a6ecbe67fe4adda07f92da0"
 ---
 ## 核心内容
 

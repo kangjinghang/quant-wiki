@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202109012015]光大金工举足轻重的争议数据ESG系列研究之一.md"
 review_by: ""
-raw_hash: "8300cd6808198f7bcde51fe9edcd2e85e20eb4123c7349ec5e89694b532bb202"
+raw_hash: "84cc46a9ad613f1cd8a7ed898ba1a08fb7162a8d0d81bf72f7fc20a2938f5d86"
 ---
 ## 核心观点
 

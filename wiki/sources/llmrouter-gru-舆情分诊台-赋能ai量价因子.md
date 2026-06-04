@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202507180829]华泰金工LLMRouterGRU舆情分诊台赋能AI量价因子.md"
 review_by: ""
-raw_hash: "fc655c504a92666fbe1e87207ad316e0b54a55343b78cb0ad4c38d51c33b93ad"
+raw_hash: "8ac732943901694fa4ea8a1ada84fbcfea620cb05cba5e2b9ea8a1a02bed6966"
 ---
 ## 核心内容
 本研究针对传统AI量价模型难以融合非结构化数据的痛点，提出了基于大模型专家路由的LLMRouter-GRU模型。该模型借鉴LLMoE思想，将预训练大语言模型（如GLM-4-9B、Qwen2-7B等）作为外生路由器，利用其对新闻舆情的情感分析结果构建“舆情分诊台”，动态选择稀疏GRU专家网络进行量价建模。

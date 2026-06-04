@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202404260733]华泰金工AI量价选股模型风控探讨.md"
 review_by: ""
-raw_hash: "b3c72eec788360af856b8c0e07ca0af2f3d3511e5ad971e314d5e4558b463b54"
+raw_hash: "697fb1650d6bf29cc479cf6ee8dee71a07b1f36d3489f1aa07ffd704a1cbfccd"
 ---
 ## 核心内容
 

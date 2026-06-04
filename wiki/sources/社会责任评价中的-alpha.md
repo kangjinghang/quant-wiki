@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202409250901]招商定量深度报告巡礼之二十六社会责任评价中的Alpha.md"
 review_by: ""
-raw_hash: "40f800e652ab053daba7f208bc9cf4f9d5b9a09da57ebf711695af5566e651cd"
+raw_hash: "ad4ecc9d69dfb1a89f676d799c53482681b942bb2c17d415471bdf956de00911"
 ---
 ## 核心内容
 

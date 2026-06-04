@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202107040902]A股风格轮动规律认知与策略实践开源金工.md"
 review_by: ""
-raw_hash: "e134c638a37a23f088fd5eccc9e9900c089ab29d29c204002928da811b736bb6"
+raw_hash: "ac7c31d10b6d182924b0226a29e7ec577a09038055c5c6edf7d3a2ac867b3c92"
 ---
 ## 核心观点
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202307170758]专题研究UMR20风险溢价视角下的动量反转统一框架再升级.md"
 review_by: ""
-raw_hash: "7c0727319cb75ce32386e65eb94ac8c1cfceeae4173876e53cfa0903cbca79b2"
+raw_hash: "f25dc9e78e75bc8716ce8675243c248d8a66a95380931892236d775ddd73335e"
 ---
 ## 核心内容
 

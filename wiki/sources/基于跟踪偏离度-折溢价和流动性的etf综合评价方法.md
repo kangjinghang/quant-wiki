@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202406071642]基于跟踪偏离度折溢价和流动性的ETF综合评价方法.md"
 review_by: ""
-raw_hash: "0bb7ca04a05b85762db5546f7109eabcce48bf22eedd83d73dd7425a94a5e7b5"
+raw_hash: "b1dfd78a058e3aa696659ecc7fac95292ecfc413ced7e063924a9fc2f7993973"
 ---
 ## 核心内容
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202504131421]中金固收智能体1BL模型小模型实践.md"
 review_by: ""
-raw_hash: "3da6d528d1de55cf0a501df95aa16047ba956b085506240c058b357a6cb30d09"
+raw_hash: "3794ce09911b91a357956eb9f1496e6bbfc09215b486dc4ca35eb2391ee0d3c3"
 ---
 ## 核心内容
 

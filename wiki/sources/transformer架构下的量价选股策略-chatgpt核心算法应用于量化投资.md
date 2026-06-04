@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202306011130]Transformer架构下的量价选股策略ChatGPT核心算法应用于量.md"
 review_by: ""
-raw_hash: "006ef5103f43ee9cdd219a86f584dd759fea03474a5ebf96b494a98b03dc0591"
+raw_hash: "3b4a7cb0c76cc94a0e63c510820d6a63cda204beb96b4a76c8f9fcc1630172d4"
 ---
 ## 核心内容
 本报告详细解析了自然语言处理（NLP）领域的Transformer架构及其核心的自注意力机制，并创新性地将其引入量化选股领域。模型选取个股涨跌幅和换手率作为输入特征，通过分类模型预测股票未来的涨跌概率，进而指导月度调仓的量化交易策略。

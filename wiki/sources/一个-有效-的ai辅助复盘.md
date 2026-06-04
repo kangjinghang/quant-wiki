@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202505111421]中金固收可转债一个有效的AI辅助复盘.md"
 review_by: ""
-raw_hash: "a751858aeec9fc2961f1cda15078b518c1bbc903fe4c4ce25734ca5238d9baf6"
+raw_hash: "27c5812bb0b7ba21721c0d676c5fd8b7f0e3f9df7e13089c3171bb6cb5b56236"
 ---
 ## 核心内容
 

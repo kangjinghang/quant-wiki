@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202304071127]广发金融工程再谈SemiBeta因子高频测算多因子Alpha系列报告之四.md"
 review_by: ""
-raw_hash: "beebf77c3db1438c6dc6e1a50c2000596cdee665d79c17b23e0cc2f86ed5eb41"
+raw_hash: "fdb05c03336a021d2f2011c8fcc3e8aefc4ab46745e88d1bf995af30ec1db9e2"
 ---
 ## 核心内容
 

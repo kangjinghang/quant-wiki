@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202411111145]预期外ROICWACC回报因子及相关测试.md"
 review_by: ""
-raw_hash: "678288fdb29531e2bb7bbbe619008543d8c9b52890ff348c120d059d202316e2"
+raw_hash: "2879b25649fd0bf63c545ee64bff5f0029c0a2fd3752443319e201e84ba973bd"
 ---
 ## 核心内容
 
