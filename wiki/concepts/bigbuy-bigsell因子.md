@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于Level2数据提取的大单买卖行为特征构建的量化选股或轮动因子。"
 tags: [etf, 多因子模型, 券商研报, 广发金工, 量化投资, 量价因子, 资金面, 回测]
-sources: []
+sources:
   - "[[基于多因子加权的etf轮动策略]]"
 origin: agent-compiled
 status: seed
@@ -25,7 +25,7 @@ review_by: ""
 - [[大单资金流]]
 - [[高频量价因子]]
 - [[etf轮动策略]]
-- [[level-2数据]]
+- Level2行情数据（逐笔成交数据）
 
 ## 来源 / Sources
 

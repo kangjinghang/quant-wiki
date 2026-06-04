@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种结合资金流与成交额特征，并经过5日移动平均处理的量化因子。"
 tags: [etf, 多因子模型, 券商研报, 广发金工, 量化投资, 量价因子, 资金面, 回测]
-sources: []
+sources:
   - "[[基于多因子加权的etf轮动策略]]"
 origin: agent-compiled
 status: seed
