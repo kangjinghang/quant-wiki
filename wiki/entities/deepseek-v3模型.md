@@ -5,7 +5,7 @@ type: entity
 summary: "深度求索公司推出的高效大语言模型，在多项基准测试中表现优异，广泛应用于金融文本分析和舆情监控等场景。"
 tags: [大语言模型, 深度学习, ai应用]
 sources:
-  - "[[多智能体投资决策框架]]"
+  - "[[多智能体投资决策框架-中信建投]]"
 origin: agent-compiled
 status: seed
 created: 2026-06-04

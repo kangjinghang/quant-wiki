@@ -5,7 +5,7 @@ type: entity
 summary: "OpenAI推出的大语言模型，支持100万个token上下文，在编程、指令理解及长文本处理方面性能卓越。"
 tags: [中信建投金工, 多智能体系统, 大语言模型, 多模态大语言模型, 深度学习, ai应用, 券商研报, 观点]
 sources: []
-  - "[[多智能体投资决策框架]]"
+  - "[[多智能体投资决策框架-中信建投]]"
 origin: agent-compiled
 status: seed
 created: 2026-06-04
