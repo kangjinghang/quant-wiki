@@ -510,6 +510,7 @@
 - [[华泰金工-gpt-kline-mcot与技术分析]]
 - [[从资产配置走向因子配置-中国版全天候增强策略]]
 - [[基于多因子加权的etf轮动策略]]
+- [[llm-fadt-大模型增强文本选股]]
 
 ## Concepts
 - [[业绩超预期]]
@@ -2173,6 +2174,9 @@
 - [[宏观象限]]
 - [[bigbuy-bigsell因子]]
 - [[stock-data-flow2amt-ma5因子]]
+- [[llm-fadt策略]]
+- [[bert-fadt策略]]
+- [[qwen3-8b]]
 
 ## Entities
 - [[华创金工]]
