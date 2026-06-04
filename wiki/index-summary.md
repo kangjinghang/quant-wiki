@@ -2176,7 +2176,7 @@
 - [[stock-data-flow2amt-ma5因子]]
 - [[llm-fadt策略]]
 - [[bert-fadt策略]]
-- [[qwen3-8b]]
+- [[qwen3-8b模型]]
 
 ## Entities
 - [[华创金工]]
