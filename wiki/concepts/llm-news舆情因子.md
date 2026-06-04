@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用大语言模型对个股相关新闻进行情感二分类标注，并通过滚动加权合成的反映市场情绪的另类数据因子。"
 tags: [华泰金工, gru网络, 大语言模型, 深度学习, 文本情感分析, 另类数据, 指数增强策略, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[llmrouter-gru-舆情分诊台-赋能ai量价因子]]"
 origin: agent-compiled
 status: seed
@@ -28,4 +28,4 @@ LLM-News舆情因子是利用大语言模型对海量财经新闻进行情感分
 - [[大语言模型]]：执行情感分类任务的基础工具。
 
 ## 来源
-- [[华泰金工-llmrouter-gru舆情分诊台赋能ai量价因子]]
+- [[llmrouter-gru-舆情分诊台-赋能ai量价因子]]

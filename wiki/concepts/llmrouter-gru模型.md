@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种结合大语言模型情感路由与GRU神经网络的AI量价选股模型，通过“舆情分诊台”实现情绪分域和量价建模。"
 tags: [华泰金工, gru网络, 大语言模型, 深度学习, 文本情感分析, 另类数据, 指数增强策略, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[llmrouter-gru-舆情分诊台-赋能ai量价因子]]"
 origin: agent-compiled
 status: seed
@@ -28,4 +28,4 @@ LLMRouter-GRU的核心在于将传统的混合专家模块中的内生路由替�
 - [[文本情感分析]]：大语言模型在此处执行的核心任务。
 
 ## 来源
-- [[华泰金工-llmrouter-gru舆情分诊台赋能ai量价因子]]
+- [[llmrouter-gru-舆情分诊台-赋能ai量价因子]]

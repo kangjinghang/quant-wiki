@@ -31,4 +31,4 @@ raw_hash: "fc655c504a92666fbe1e87207ad316e0b54a55343b78cb0ad4c38d51c33b93ad"
 - [[另类数据]]
 
 ## 来源
-- [[华泰金工-llmrouter-gru舆情分诊台赋能ai量价因子]]
+- [[llmrouter-gru-舆情分诊台-赋能ai量价因子]]
