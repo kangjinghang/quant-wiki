@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202406131506]华安金工另辟蹊径发掘分析师因子中的另类alpha量化研究系列报告之十七.md"
 review_by: ""
-raw_hash: "e203e8ecc49585e27ee9f6635b1cf4fcab569f9fe4b06f67384cedcfb0796e7b"
+raw_hash: "231f6b0e67edbbf7ec262a5c45ece65a08d486e12813475c9b4cf915498ac2f9"
 ---
 ## 核心内容
 本文探讨了如何从分析师研报数据中挖掘另类alpha因子。研究基于慧博投研数据，除了验证常规的一致预期估值因子（预期BP、预期EP）外，重点从目标价、报告页数和发布时点三个维度构建了新的选股因子。

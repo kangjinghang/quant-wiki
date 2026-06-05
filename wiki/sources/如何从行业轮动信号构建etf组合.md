@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202509180800]如何从行业轮动信号构建ETF组合.md"
 review_by: ""
-raw_hash: "9bbc06d667cafc33199750bf60da040d4f8301daf366ec6507d596c545494c16"
+raw_hash: "c1388b53dc2dee41036e5a6165acd94816890c7396bb127a70a76728922cae5e"
 ---
 ## 核心内容
 

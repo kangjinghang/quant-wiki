@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202509011600]剔除害群之马ROE稳定性视角构建高质量选股组合质量因子新语之系列一.md"
 review_by: ""
-raw_hash: "f883aa15b344961fef0f89c52272c0da18ff92ce80042f51a50d4b626de625da"
+raw_hash: "77df7edec97b5adc178ba23b67911c9d00ccdc0c26e1c64c741c4ae21d1c861d"
 ---
 ## 核心内容
 

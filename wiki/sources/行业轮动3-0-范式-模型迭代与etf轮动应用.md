@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202412091749]行业轮动30范式模型迭代与ETF轮动应用开源金工.md"
 review_by: ""
-raw_hash: "929a1b59d3ec705b36a3815a4e91e92f03bc7a1a7687673f5f557e2be5612696"
+raw_hash: "0443f10d3473f6e4497c8d6f65c1cd9ff39abf93276b35ecdaa1aae7846cc5ca"
 ---
 ## 核心内容
 

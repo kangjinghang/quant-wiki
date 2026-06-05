@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202409090823]广发金工2024精选深度报告系列之七资金流视角下的指数轮动及ETF配置策.md"
 review_by: ""
-raw_hash: "5c6b5984d3691fca7e843f0e4aabc832eb0365d24892dbb1a4567343114453da"
+raw_hash: "b9c44567f777aba28ec83c6248e896b87316cfa7c28fcc673ded842b75d6643c"
 ---
 ## 核心内容
 

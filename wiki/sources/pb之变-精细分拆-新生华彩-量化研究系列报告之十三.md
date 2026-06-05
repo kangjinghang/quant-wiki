@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202312201517]华安金工PB之变精细分拆新生华彩量化研究系列报告之十三.md"
 review_by: ""
-raw_hash: "f7ab98c835a3141aa8102b7a16a3b7fabe10722487a9b658b945816ae1298aa7"
+raw_hash: "bbeb0045e7537ac8de11baa06280387c29fd244d8302efcdc48ac9982b2f421e"
 ---
 ## 核心内容
 

@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202506051121]广发金工基于多因子加权的ETF轮动策略.md"
 review_by: ""
-raw_hash: "4e21b805cf08a6b5d4f86d523b40aef7c9f674fd7230857f6f461f320b8fcf23"
+raw_hash: "a11c72665a52c9bd87b68a92b49fa681c9dcf9e2d650e226ce262b9ceb4e5a1c"
 ---
 ## 核心内容
 

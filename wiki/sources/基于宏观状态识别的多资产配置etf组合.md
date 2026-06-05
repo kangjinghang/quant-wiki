@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202411081900]基于宏观状态识别的多资产配置ETF组合.md"
 review_by: ""
-raw_hash: "0b8883bf76766b1254184e46a98feadc15504977a73f0940879e85ed8babd967"
+raw_hash: "849eadc7def109e37d025735f8c3018713d99f17fbae1240322db97fd9549600"
 ---
 ## 核心内容
 

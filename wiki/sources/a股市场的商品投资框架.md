@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202601241842]A股市场的商品投资框架开源金工.md"
 review_by: ""
-raw_hash: "c7958c1e60131112465ee828aa86dee75a88ce9b849056be9696ed0cb6e9d4d7"
+raw_hash: "f7cf62073eec63b80cd2b27fbd937b1be35b06be24d317c6e37005456c0ff76b"
 ---
 ## 核心内容
 

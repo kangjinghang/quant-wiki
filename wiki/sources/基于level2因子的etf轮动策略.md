@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202501141252]广发金工基于Level2因子的ETF轮动策略.md"
 review_by: ""
-raw_hash: "17a53ed7defce0246e186926a96d23187e94e9f2a94f7feb7298d48287c79df1"
+raw_hash: "995c238e4c8abddcfe08ad3e4cb48c440a8cc4f5b0fe63da52f9fbc0d2b5d3cd"
 ---
 ## 核心内容
 

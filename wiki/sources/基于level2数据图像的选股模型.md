@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202512261502]华泰金工基于level2数据图像的选股模型.md"
 review_by: ""
-raw_hash: "63aac8027973995be3a8eaf1ce2762aa0c06e223702f884d41b8f4bf765b1de9"
+raw_hash: "d718e36185dc2d7e541e98510ef55ff57043ae4c814408fdae35a1712810010d"
 ---
 ## 核心内容
 

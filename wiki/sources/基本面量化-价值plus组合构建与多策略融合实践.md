@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202311211843]基本面量化价值Plus组合构建与多策略融合实践开源金工.md"
 review_by: ""
-raw_hash: "927e39d396fb7ab561c3b231d026d718e8cc883b66aefd7b7a6f44a442b10dbe"
+raw_hash: "8acf7403b64544f7b1a76098fe9eac752b2ffff06c08251dac456c1274ba23e3"
 ---
 ## 核心内容
 

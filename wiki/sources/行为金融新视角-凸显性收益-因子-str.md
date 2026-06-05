@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202409241422]招商定量深度报告巡礼之二十五行为金融新视角凸显性收益因子STR.md"
 review_by: ""
-raw_hash: "68ed78e5e9ff44059b77ca380be6f597fc95379f80ac507b8e39031d364d7166"
+raw_hash: "f277f0dd53a9b3b983dfdf57284d721a1ffb032b78deb83f5743068f39d8e90a"
 ---
 ## 核心内容
 

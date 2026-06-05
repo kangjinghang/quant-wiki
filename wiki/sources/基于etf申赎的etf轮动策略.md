@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202504241203]广发金工基于ETF申赎的ETF轮动策略.md"
 review_by: ""
-raw_hash: "d5860505faa69b309d13b049cfacd43a08bc58a791558cf254e62d7901d06ec0"
+raw_hash: "4e14bd1fd6a4486fd9e65adb1e68041d6c7b0aa40552090ca31a1fb9c703a2f0"
 ---
 ## 核心内容
 

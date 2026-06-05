@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202409210821]成交量择时指标VMACD_MTM.md"
 review_by: ""
-raw_hash: "b963705edc7e6284bd817a13a106d7a789db4c766b6c039a25146abaa83311db"
+raw_hash: "dd200f1e207f87181354d0471da7c3258c19ee59eea03c5f13c2472d1ba5d272"
 ---
 ## 核心内容
 

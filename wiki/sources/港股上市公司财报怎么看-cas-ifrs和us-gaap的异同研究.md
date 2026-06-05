@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202410301955]中金固收信用港股上市公司财报怎么看CASIFRS和USGAAP的异同研究.md"
 review_by: ""
-raw_hash: "efb44a11d1eb8860cec1e58731b552c840cefb3d3ca5331934aaca9095cbbed7"
+raw_hash: "aa85606d287ce827334953bfc23829926f2bc040fa2e8c7d39d0507d4ca12fb9"
 ---
 ## 核心内容
 

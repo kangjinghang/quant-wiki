@@ -12,7 +12,7 @@ source_type: 公众号
 source_language: zh
 raw_path: "raw/articles/[202007230755]开源量化评论A股市场中如何构造动量因子.md"
 review_by: ""
-raw_hash: "615f470feabd23ff4ad84c578239ab2512019352896cc03e9a0e572bc3a1b012"
+raw_hash: "828a818963f421148e14684c11d6da235cc02141010b82ab632c65e0a2eb7c0b"
 ---
 
 # A股市场中如何构造动量因子

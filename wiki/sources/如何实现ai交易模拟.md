@@ -12,7 +12,7 @@ source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202511021436]中金转债如何实现AI交易模拟.md"
 review_by: ""
-raw_hash: "0f1d5b6b6ad7aaf9b60f2bee94416fe2f8b954e1f110bd7095c70e0528ad2d7a"
+raw_hash: "733a4fc24744e1b9b12903f7ff8bd0887c8778c1a3f150f117f63d95bec466c1"
 ---
 ## 核心内容
 
