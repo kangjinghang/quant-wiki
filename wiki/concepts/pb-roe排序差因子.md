@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "通过比较市净率（PB）和净资产收益率（ROE）在截面上的排序差异，寻找估值与盈利能力不匹配（被低估）的股票。"
 tags: [多因子模型, 因子投资, 指数增强策略, 基本面量化, 量价因子, 券商研报, 中银量化]
-sources: []
+sources:
   - "[[中银多因子选股-十-基于公募重仓的-黑白马股-因子专题]]"
 origin: agent-compiled
 status: seed

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由 Mistral AI 开发的基于混合专家架构的开源大型语言模型，通过门控机制选择性激活专家网络，在保持较高推理效率的同时展现出优异的文本分析能力。"
 tags: [大语言模型, 另类数据, 文本情感分析, 市场微观结构, 券商研报, 深度研究, 行业轮动, 择时]
-sources: []
+sources:
   - "[[基于数亿新闻上下文的本地rag系统用于市场择时及行业轮动]]"
 origin: agent-compiled
 status: seed

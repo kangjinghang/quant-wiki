@@ -3,10 +3,10 @@ title: "EasyBall强化策略"
 title_zh: 
 type: concept
 summary: "在EasyBall（双低）策略基础上，叠加DWT降噪后的正股上行趋势形态识别进行二次过滤的转债强化策略，回测显著提升收益并过滤下行趋势品种"
-tags: []
+tags:
   - "可转债"
   - "策略"
-sources: []
+sources:
   - "[[低噪声下的转债强化策略及python实现]]"
   - "[[被遗忘的theta]]"
   - "[[偏债策略不佳之惑与破解尝试]]"

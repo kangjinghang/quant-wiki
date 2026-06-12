@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种结合了Log-signature特征提取器与RNN的深度学习架构，专门用于处理高频时间序列数据，能有效降低时间维度并保留序列中的大部分信息。"
 tags: [机器学习, 深度学习, 高频量价因子, 因子投资, 东北金工, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[基于logsig-rnn的高频数据低频化选股因子-机器学习系列之三]]"
 origin: agent-compiled
 status: seed

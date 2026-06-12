@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于涨跌停效应构建的行业反转因子，通过回归剔除非涨跌停股票的动量影响，具有高显著性和稳定性。"
 tags: [开源金工, 券商研报, 行业轮动, 反转因子, 动量, 量价关系, 回测]
-sources: []
+sources:
   - "[[从涨跌停效应到行业反转]]"
 origin: agent-compiled
 status: seed

@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "美国较早践行ESG投资理念的主动投资公司（成立于1984年），采用负面剔除与优质筛选等ESG整合策略，管理规模超460亿美元。"
 tags: [esg, 深度研究]
-sources: []
+sources:
   - "[[国君配置资产配置研究进入二次成长期长期配置研究思考与展望]]"
 origin: agent-compiled
 status: developing

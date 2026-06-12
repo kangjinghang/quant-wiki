@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "衡量个股涨跌幅对被动资金流变动敏感程度的因子，低敏感度个股未来表现较好。"
 tags: [etf, 资金面, 行业轮动, 因子投资, 动量, 反转因子, 量化投资, 券商研报, 华安金工, 深度研究]
-sources: []
+sources:
   - "[[etf资金流透视-被动化浪潮下行业与个股的演进]]"
 origin: agent-compiled
 status: seed

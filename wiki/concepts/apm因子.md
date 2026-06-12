@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "APM因子（AM/PM Factor）由开源金工魏建榕团队提出，基于股票上午与下午价格行为的差异构建选股因子。核心思想：知情交易者倾向上午交易，上午价格行为蕴含更多信息。进阶版发现2019年上午收益预测性反转，改用隔夜收益（APM_new）显著改善。OVP因子融合W式切割方法。"
 tags: [量化, 因子, a股, high-frequency]
-sources: []
+sources:
   - "[[高频因子单笔成交金额序列中的主力行为刻画开源金工]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "理想反转因子的高阶版，采用日内逐笔成交额13/16分位作为W式切割标准。全区间多空年化收益19.14%，年化IR 2.56，多头年化超额收益8.96%。"
 tags: [因子, 量化, a股, 深度研究]
-sources: []
+sources:
   - "[[理想反转因子的四年总结理想值得坚持么开源金工]]"
 origin: agent-compiled
 status: developing

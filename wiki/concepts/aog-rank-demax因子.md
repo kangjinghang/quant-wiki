@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "改进后的盈余公告超预期因子，通过扣除公告前最大开盘跳空幅度来剔除知情交易者提前透支的影响。"
 tags: [因子投资, 量价因子, 事件驱动策略, 盈余管理, 券商研报, 深度研究, 东方证券]
-sources: []
+sources:
   - "[[盈余公告异象类因子改进与挖掘]]"
 origin: agent-compiled
 status: seed

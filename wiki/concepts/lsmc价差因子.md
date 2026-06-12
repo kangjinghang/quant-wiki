@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于最小二乘蒙特卡洛模拟（LSMC）模型计算转债理论价值，并与市场实际价格作差构建的估值因子，用于挖掘被市场低估的可转债。"
 tags: [可转债, 多因子模型, 回测, 券商研报, 东北金工, 量化]
-sources: []
+sources:
   - "[[可转债定价模型探索与多因子组合策略-可转债量化系列之一]]"
 origin: agent-compiled
 status: seed

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "设定股票/债券风险贡献比例为95%/5%，结合过去三年[[股权风险溢价择时|ERP]]分位数进行加减仓的资产配置方案，适用于[[固收加产品风险分级|均衡型（R3）]]固收+组合。年化收益10.74%，夏普比2.21，所有年份均能取得正收益。"
 tags: []
-sources: []
+sources:
   - "[[固收-组合构建白皮书-大时代的小尝试-中-量化绝对收益之路系列之三]]"
 origin: agent-compiled
 status: developing

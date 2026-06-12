@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "GPT-4推出的一项内置Python运行环境的功能，支持文件上传、代码自动运行与调试，能够将复杂任务分步骤连续执行。"
 tags: [华泰金工, 大语言模型, 深度研究, python, 宏观, 券商研报]
-sources: []
+sources:
   - "[[基于gpt的自动化金融数据分析]]"
 origin: agent-compiled
 status: developing

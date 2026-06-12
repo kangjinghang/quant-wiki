@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种阵列信号处理算法，用于从多个存在噪声和偏差的观测指标中反演出金融经济系统的共有真实周期。"
 tags: [华泰金工, 券商研报, 宏观, 经济周期, 资产配置, 深度研究]
-sources: []
+sources:
   - "[[周期存在的验证]]"
 origin: agent-compiled
 status: seed

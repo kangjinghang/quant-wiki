@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "国泰君安量化配置团队研发的量化行业配置模型，综合行业景气度、业绩超预期和北向资金流三个维度进行行业选择。"
 tags: [行业轮动, 多因子模型, 择时, 券商研报, 深度研究, 量化]
-sources: []
+sources:
   - "[[当量化行业配置插上择时的翅膀-国君配置qia-timing模拟策略介绍]]"
 origin: agent-compiled
 status: developing

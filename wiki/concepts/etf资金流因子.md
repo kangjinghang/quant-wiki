@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "衡量ETF在个股或行业层面资金流入流出情况的指标，主要包括持仓占比变动与资金流入/市值两类，具有显著的负向收益预测能力。"
 tags: [开源金工, 券商研报, etf, 资金面, 行业轮动, 因子, 量价因子, 回测]
-sources: []
+sources:
   - "[[如何使用etf资金流指导投资]]"
 origin: agent-compiled
 status: seed

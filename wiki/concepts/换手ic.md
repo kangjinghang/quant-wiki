@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "因子值与未来一个月换手率的横截面秩相关系数，用于衡量市场对某因子逻辑的交易关注度，是捕捉因子动量效应的有效内生性指标。"
 tags: [因子择时, 指数增强, 多因子模型, 宏观因子, 华安金工, 深度研究]
-sources: []
+sources:
   - "[[破解alpha投资困境-因子择时方案再探索]]"
 origin: agent-compiled
 status: seed

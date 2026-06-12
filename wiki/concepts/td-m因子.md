@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "理论分红/市值因子，通过理论分红模型估算的企业单季度理论分红金额与总市值的比值构建，具有显著的收益预测能力。"
 tags: [华安金工, 券商研报, 因子投资, 基本面量化, 估值因子, 指数增强策略, 企业生命周期, 深度研究]
-sources: []
+sources:
   - "[[企业利润分配策略-短期股东回报与长期价值创造的平衡]]"
 origin: agent-compiled
 status: seed

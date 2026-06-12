@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由Roychowdhury (2006)提出的真实盈余管理计量模型，通过回归残差计算异常经营现金流、异常酌量费用和异常生产成本。"
 tags: [因子投资, 基本面, 回测, 券商研报, 深度研究, 盈余管理]
-sources: []
+sources:
   - "[[基于异常现金流模型的真实盈余管理因子-一-因子选股系列之二]]"
 origin: agent-compiled
 status: developing

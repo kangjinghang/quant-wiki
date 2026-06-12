@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用日内分钟级数据，对尾盘交易量赋予更高权重计算得到的期权PCR择时信号。"
 tags: [期权, etf, 择时, 市场微观结构, 券商研报, 招商定量任瞳团队, 深度研究]
-sources: []
+sources:
   - "[[招商-魔法石-基于期权交易者情绪的市场择时策略]]"
 origin: agent-compiled
 status: seed

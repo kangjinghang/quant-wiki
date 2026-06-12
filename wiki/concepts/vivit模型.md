@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Video Vision Transformer，一种扩展ViT以处理视频数据的模型，通过时空注意力机制捕捉视频序列中的动态模式。"
 tags: [华泰金工, 深度学习, transformer模型, 注意力机制, 高频数据, 市场微观结构, 量价关系, 指数增强, 券商研报, 深度研究, ai应用, 量化投资]
-sources: []
+sources:
   - "[[基于level2数据图像的选股模型]]"
 origin: agent-compiled
 status: seed

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "将深度学习、强化学习或大语言模型应用于投资组合权重分配，实现从收益预测到组合决策的端到端打通与动态调整。"
 tags: [华泰金工, 深度研究, 深度学习, 大语言模型, 机器学习, 强化学习, 多智能体系统, 因子挖掘, 组合优化, 宏观因子, 量价因子, 高频数据, transformer模型, gru网络, 遗传规划, 文本情感分析, 另类数据]
-sources: []
+sources:
   - "[[华泰金工-ai量化的当下与未来]]"
 origin: agent-compiled
 status: seed

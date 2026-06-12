@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "在传统Fama-French三因子Alpha基础上，进一步在横截面上对基金持仓特征（市值、账面市值比）进行回归，剥离特征驱动的业绩，获取更纯粹的双重调整后Alpha。由[[华安金工]]在FOF选基中应用。"
 tags: []
-sources: []
+sources:
   - "[[fof赋能绝对收益基金组合构建实战上量化绝对收益之路系列之二]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "SR Factor（强反转因子），基于分钟单笔成交金额提纯反转效应的选股因子，保留大单对应的累计涨跌幅，Rank IC -0.055/ICIR 2.62，回归理想反转因子后多空IR仍有2.75"
 tags: []
-sources: []
+sources:
   - "[[a股反转之力的微观来源]]"
 origin: agent-compiled
 status: developing

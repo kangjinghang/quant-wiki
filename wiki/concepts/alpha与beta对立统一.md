@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "指在投资研究中，追求个股超额收益的Alpha研究与追求资产相对收益的Beta研究之间既存在局部差异与对立，又在综合投研框架中能够实现优势互补与融合的辩证关系。"
 tags: [资产配置, 组合管理, 券商研报, 深度研究, 观点]
-sources: []
+sources:
   - "[[alpha与beta-鱼与熊掌何以兼得-主动配置研究思考系列]]"
 origin: agent-compiled
 status: developing

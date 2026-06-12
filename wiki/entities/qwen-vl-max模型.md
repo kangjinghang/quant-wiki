@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "通义千问超大规模视觉语言模型，具备强大的视觉推理和指令遵循能力，适用于处理图像与文本的多模态任务。"
 tags: [中信建投金工, 多智能体系统, 大语言模型, 多模态大语言模型, 深度学习, ai应用, 券商研报, 观点]
-sources: []
+sources:
   - "[[多智能体投资决策框架-中信建投]]"
 origin: agent-compiled
 status: seed

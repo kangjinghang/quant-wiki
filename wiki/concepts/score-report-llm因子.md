@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于大模型研报摘要分类的综合评分因子，通过等权合成四类核心因子构建，具备选股与收益预测能力。"
 tags: [大语言模型, 文本情感分析, 因子挖掘, 另类数据, 华安金工, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[让情绪-有结构-大模型如何挖掘研报新价值-量化研究系列报告之二十三]]"
 origin: agent-compiled
 status: seed

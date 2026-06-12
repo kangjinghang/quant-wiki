@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "香港交易所中央结算及交收系统提供的个股托管明细数据，可近乎无损还原南下资金指标并估算各经纪商的资金流向与持仓分布。"
 tags: [另类数据, 聪明钱因子, 港股多因子框架, 开源金工, 券商研报, 深度研究, 量化投资, 组合优化]
-sources: []
+sources:
   - "[[基于港交所ccass数据的港股投资策略]]"
 origin: agent-compiled
 status: seed

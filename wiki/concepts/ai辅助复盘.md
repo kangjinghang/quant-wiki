@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用大语言模型（LLM）结合结构化提示词，对可转债市场的整体走势、结构分化及异动个券进行快速总结与逻辑提炼的复盘方法。"
 tags: [可转债, 大语言模型, 固收量化, 中金固收, 券商研报]
-sources: []
+sources:
   - "[[一个-有效-的ai辅助复盘]]"
 origin: agent-compiled
 status: seed

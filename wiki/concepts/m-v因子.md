@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "市值与公司“真实价值”之比，通过分行业回归估算公司基本面价值，以替代传统PB因子衡量市场定价偏差。"
 tags: [华安金工, 券商研报, 因子投资, 估值, 多因子模型, 指数增强, 深度研究]
-sources: []
+sources:
   - "[[pb之变-精细分拆-新生华彩-量化研究系列报告之十三]]"
 origin: agent-compiled
 status: seed

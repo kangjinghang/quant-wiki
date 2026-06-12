@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于Transformer的深度学习模型，通过学习时间线、Tick线、成交量线等多种K线之间的跨线注意力来预测股票收益。"
 tags: [华泰金工, 深度学习, transformer模型, 高频因子, 量价因子, 深度研究, 券商研报, 指数增强策略, 机器学习, 注意力机制, 市场微观结构]
-sources: []
+sources:
   - "[[基于逐笔成交的深度学习选股模型]]"
 origin: agent-compiled
 status: seed

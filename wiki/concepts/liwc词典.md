@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "语言查询和字数统计词典，用于识别和量化文本中的情感、认知和结构成分。"
 tags: [文本情感分析, 另类数据, 深度学习, 券商研报, 华安金工]
-sources: []
+sources:
   - "[[上市公司的财报电话会议对股价的影响-学海拾珠-系列之二百零一]]"
 origin: agent-compiled
 status: seed

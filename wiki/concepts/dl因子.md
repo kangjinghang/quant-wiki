@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由ND动量因子与NL反转因子合成的复合因子，兼具两者的优点，在不同市场环境下表现优异。"
 tags: [开源金工, 券商研报, 行业轮动, 反转因子, 动量, 量价关系, 回测]
-sources: []
+sources:
   - "[[从涨跌停效应到行业反转]]"
 origin: agent-compiled
 status: seed

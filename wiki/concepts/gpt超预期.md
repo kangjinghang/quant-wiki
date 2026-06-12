@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "指利用ChatGPT对分析师盈余点评标题进行情感评分，将评分大于9分的样本定义为业绩超预期的股票池。"
 tags: [大语言模型, 另类数据, 文本情感分析, 券商研报, 华安金工, 深度研究, 因子投资, 业绩超预期]
-sources: []
+sources:
   - "[[chatgpt与研报文本情绪的碰撞]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种融合了Pearson相关系数（IC）和均方误差（MSE）的损失函数，同时兼顾预测值与真实值的相关性和绝对距离。"
 tags: [机器学习, 集成学习, 深度学习, 指数增强, 量化, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[华泰金工-九坤kaggle量化大赛有哪些启示]]"
 origin: agent-compiled
 status: developing

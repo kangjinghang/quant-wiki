@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种将行业轮动信号落地为ETF产品投资的实战框架，遵循“行业选择（轮动信号）-指数选择（高弹性）-产品选择（高流动性）”的三步流程。"
 tags: [行业轮动, 开源金工, 券商研报, etf, 动量, 资金面, 技术面, 行为金融学, 深度研究]
-sources: []
+sources:
   - "[[行业轮动3-0-范式-模型迭代与etf轮动应用]]"
 origin: agent-compiled
 status: seed

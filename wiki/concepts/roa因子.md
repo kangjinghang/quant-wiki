@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "总资产净利率（Return on Assets, ROA），用于衡量企业利用其总资产产生利润的能力，是传统的盈利能力评价指标。"
 tags: [因子投资, 基本面量化, 东北金工, 深度研究, 多因子模型]
-sources: []
+sources:
   - "[[特质盈利能力因子-因子选股系列之七]]"
 origin: agent-compiled
 status: seed

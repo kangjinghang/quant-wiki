@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于成交量而非时间划分的K线构建方法，能够更准确地反映市场在成交量分布不均匀情况下的真实交易行为。"
 tags: [华泰金工, 深度研究, 深度学习, transformer模型, 大语言模型, 高频量价因子, 指数增强策略, 注意力机制, 市场微观结构, 量化投资]
-sources: []
+sources:
   - "[[多角度改进高频量价选股模型]]"
 origin: agent-compiled
 status: seed

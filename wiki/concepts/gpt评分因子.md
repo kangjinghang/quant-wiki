@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于ChatGPT对分析师研报标题的情感评分构建的量化选股因子，包括等权、指数衰减加权和波动因子，属于新型另类因子。"
 tags: [大语言模型, 另类数据, 文本情感分析, 券商研报, 华安金工, 深度研究, 因子投资, 业绩超预期]
-sources: []
+sources:
   - "[[chatgpt与研报文本情绪的碰撞]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "行为经济学的先驱学者，共同提出了前景理论，Kahneman因此获得2002年诺贝尔经济学奖。"
 tags: [广发金工, 券商研报, 因子, 高频量价因子, 行为金融学, 反转因子, 量化投资]
-sources: []
+sources:
   - "[[资本利得突出量的多频率测算]]"
 origin: agent-compiled
 status: seed

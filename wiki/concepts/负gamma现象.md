@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "指转债在特定平价区间内，因退市风险消退或条款博弈影响，其价格对正股波动的二阶导数（凸性）变为负值，导致越涨弹性越弱的现象。"
 tags: [可转债, 券商研报, 中金固收, 深度研究, python, 技术面]
-sources: []
+sources:
   - "[[反弹开启-转债的-三段反射弧-框架]]"
 origin: agent-compiled
 status: seed

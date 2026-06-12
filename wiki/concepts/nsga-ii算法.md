@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种快速精英多目标遗传算法，通过快速非支配排序和拥挤距离计算来选择子代，有效解决多目标优化问题。"
 tags: [华泰金工, 券商研报, 行业轮动, 遗传规划, 因子挖掘, 机器学习, 量化, 量价因子, 深度研究]
-sources: []
+sources:
   - "[[华泰金工-双目标遗传规划应用于行业轮动]]"
 origin: agent-compiled
 status: seed

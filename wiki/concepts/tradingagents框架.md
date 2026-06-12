@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于LLM的多智能体协作交易框架，模拟专业交易公司的组织结构进行协同决策。"
 tags: [大语言模型, 量化投资, 多智能体系统, 因子挖掘, 强化学习, 算法交易, 风险控制, 深度学习, 文本情感分析, 公众号]
-sources: []
+sources:
   - "[[2025年llm量化交易全解析-技术架构与实战案例]]"
 origin: agent-compiled
 status: seed

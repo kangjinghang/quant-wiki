@@ -3,9 +3,9 @@ title: "Alpha转Beta现象"
 title_zh: 
 type: concept
 summary: "随着市场参与者不断挖掘和认知，过去能够获取超额收益的Alpha因子最终会演变为被广泛认知的结构化Beta。"
-tags: []
+tags:
   - "因子"
-sources: []
+sources:
   - "[[回望激宕20年a股因子收益变迁]]"
 origin: agent-compiled
 status: developing

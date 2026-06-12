@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "从ETF跟踪标的指数视角出发，直接配置跟踪标的指数得分排名靠前20%的ETF构建组合的策略，收益最高但持仓易集中导致稳定性不足。"
 tags: []
-sources: []
+sources:
   - "[[基于etf的行业轮动策略实践]]"
 origin: agent-compiled
 status: developing

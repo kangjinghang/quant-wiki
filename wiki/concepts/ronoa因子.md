@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "净经营性资产收益率，通过剔除非核心经营资产与负债，精准评估企业核心经营活动的盈利能力。"
 tags: [基本面量化, 多因子模型, 估值因子, 盈利因子, 盈余管理, 券商研报, 招商定量任瞳团队, 深度研究]
-sources: []
+sources:
   - "[[企业盈利能力评价指标的演进与优化-基本面量化系列研究之四]]"
 origin: agent-compiled
 status: seed

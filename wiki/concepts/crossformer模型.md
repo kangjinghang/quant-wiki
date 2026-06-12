@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "发表于ICLR 2023的模型，通过维度分段嵌入和两阶段注意力机制，同时捕捉多变量时间序列中跨时间和跨维度的复杂依赖关系。"
 tags: [华泰金工, 深度研究, 深度学习, transformer模型, 大语言模型, 高频量价因子, 指数增强策略, 注意力机制, 市场微观结构, 量化投资]
-sources: []
+sources:
   - "[[多角度改进高频量价选股模型]]"
 origin: agent-compiled
 status: seed

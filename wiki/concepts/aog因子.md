@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "盈余公告次日开盘跳空超额因子，用于衡量市场对盈余公告的认可程度，但近年来存在多头失效现象。"
 tags: [因子投资, 量价因子, 事件驱动策略, 盈余管理, 券商研报, 深度研究, 东方证券]
-sources: []
+sources:
   - "[[盈余公告异象类因子改进与挖掘]]"
 origin: agent-compiled
 status: seed

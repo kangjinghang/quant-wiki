@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "衡量企业当期价值创造能力相对于历史水平的标准化改善程度，定义为(当季ROIC-WACC - 过去8季均值) / 过去8季标准差。"
 tags: [因子投资, 基本面量化, 估值, 东北金工, 深度研究]
-sources: []
+sources:
   - "[[预期外roic-wacc回报因子及相关测试]]"
 origin: agent-compiled
 status: seed

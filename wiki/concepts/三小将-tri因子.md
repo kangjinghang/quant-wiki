@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于早盘集合竞价阶段全撤、部撤和废单三类卖方撤单率等权合成的高频选股因子，在全市场具有优异的多空收益表现。"
 tags: [开源金工, 券商研报, 市场微观结构, 高频量价因子, 量价关系, 因子投资, 深度研究]
-sources: []
+sources:
   - "[[订单流系列-撤单行为规律初探]]"
 origin: agent-compiled
 status: seed

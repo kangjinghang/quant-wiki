@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由DAM-GAT模型生成的预测股票未来5日收益的因子，在全域和各指数域均表现出优秀的选股能力。"
 tags: [华安金工, 深度学习, 神经网络, 图神经网络, 注意力机制, gru网络, 高频量价因子, 因子挖掘, 指数增强策略, 券商研报]
-sources: []
+sources:
   - "[[探索股价动态关联-捕捉属性敏感的动量溢出-量化研究系列报告之十六]]"
 origin: agent-compiled
 status: seed

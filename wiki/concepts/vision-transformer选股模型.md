@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "应用ViT模型对单日Level-2数据图像进行特征学习，预测个股未来超额收益的深度学习选股方法。"
 tags: [华泰金工, 深度学习, transformer模型, 注意力机制, 高频数据, 市场微观结构, 量价关系, 指数增强, 券商研报, 深度研究, ai应用, 量化投资]
-sources: []
+sources:
   - "[[基于level2数据图像的选股模型]]"
 origin: agent-compiled
 status: seed

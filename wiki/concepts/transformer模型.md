@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于自注意力机制的深度学习架构，完全摒弃了RNN和CNN结构，具有极高的并行计算能力，是现代预训练语言模型的基石。"
 tags: [机器学习, 另类数据, 深度研究, 券商研报, 深度学习, 神经网络, 大语言模型, 技术面]
-sources: []
+sources:
   - "[[transformer架构下的量价选股策略-chatgpt核心算法应用于量化投资]]"
 origin: agent-compiled
 status: developing

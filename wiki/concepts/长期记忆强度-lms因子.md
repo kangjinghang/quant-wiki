@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于挂单方向序列1至100阶自相关系数对数回归截距项构建的高频选股因子，反映订单流长期记忆性的绝对水平。"
 tags: [开源金工, 市场微观结构, 量价关系, 高频量价因子, 机器学习, 集成学习, xgboost模型, lstm模型, 算法交易]
-sources: []
+sources:
   - "[[订单流系列-挂单方向长期记忆性的讨论与应用]]"
 origin: agent-compiled
 status: seed

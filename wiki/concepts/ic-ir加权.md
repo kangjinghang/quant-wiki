@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "以因子过去T期的IC均值除以其标准差作为权重的多因子加权方式，同时考虑了因子的有效性和稳定性。"
 tags: []
-sources: []
+sources:
   - "[[使用基本面因子构建中证500指数增强策略初探-权益配置因子研究系列02]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "华泰金工开发的端到端神经网络组合优化模型，旨在打通股票收益预测与组合权重分配的断层。"
 tags: [华泰金工, 深度研究, 深度学习, 大语言模型, 机器学习, 强化学习, 多智能体系统, 因子挖掘, 组合优化, 宏观因子, 量价因子, 高频数据, transformer模型, gru网络, 遗传规划, 文本情感分析, 另类数据]
-sources: []
+sources:
   - "[[华泰金工-ai量化的当下与未来]]"
 origin: agent-compiled
 status: seed

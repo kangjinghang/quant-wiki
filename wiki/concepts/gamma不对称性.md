@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "转债Delta随正股价格变化的幅度，衡量转债"涨多跌少"的不对称回报能力，高估值环境会压低Gamma水平，削弱转债的配置价值。"
 tags: []
-sources: []
+sources:
   - "[[被遗忘的theta]]"
 origin: agent-compiled
 status: developing

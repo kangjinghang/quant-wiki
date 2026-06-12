@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "行业内非涨跌停股票在过去一段时间的平均涨跌幅，表现为弱动量效应。"
 tags: [开源金工, 券商研报, 行业轮动, 反转因子, 动量, 量价关系, 回测]
-sources: []
+sources:
   - "[[从涨跌停效应到行业反转]]"
 origin: agent-compiled
 status: seed

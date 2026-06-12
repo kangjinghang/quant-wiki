@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于大语言模型构建的，能够感知外部环境、调用工具并自主执行复杂投研工作流（如概念股捕捉、自动研报生成）的智能体系统。"
 tags: [华泰金工, 大语言模型, 深度学习, ai应用, 文本情感分析, 另类数据]
-sources: []
+sources:
   - "[[华泰金工-deepseek-投研-大模型应用集锦]]"
 origin: agent-compiled
 status: seed

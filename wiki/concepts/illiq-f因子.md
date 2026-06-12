@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用弹性网络模型预测的下一期股票非流动性指标，作为预期非流动性的代理变量。"
 tags: [因子投资, 量价关系, 回测, 券商研报, 深度研究, 机器学习]
-sources: []
+sources:
   - "[[青出于蓝-系列研究之六-如何对非流动性因子进行改进]]"
 origin: agent-compiled
 status: developing

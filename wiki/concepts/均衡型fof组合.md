@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "以穿越牛熊为目标的FOF组合策略，放宽波动回撤控制，允许一定信用下沉，约束股票/债券风险贡献为95%/5%，引入更大幅度择时，2013年以来年化收益9.03%，是典型固收+产品。"
 tags: []
-sources: []
+sources:
   - "[[fof赋能绝对收益基金组合构建实战上量化绝对收益之路系列之二]]"
 origin: agent-compiled
 status: developing

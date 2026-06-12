@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "芝加哥大学学者，1968年首次提出PEAD（盈余公告后价格漂移）效应，发现超预期盈利的股票在公告后出现明显正收益。"
 tags: []
-sources: []
+sources:
   - "[[基于pead效应的超预期因子选股效果如何-权益配置因子研究系列01]]"
 origin: agent-compiled
 status: developing

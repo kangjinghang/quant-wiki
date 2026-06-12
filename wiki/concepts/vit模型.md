@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Vision Transformer，一种将Transformer架构应用于图像识别的模型，通过将图像分割为图块并学习其注意力关系进行特征提取。"
 tags: [华泰金工, 深度学习, transformer模型, 注意力机制, 高频数据, 市场微观结构, 量价关系, 指数增强, 券商研报, 深度研究, ai应用, 量化投资]
-sources: []
+sources:
   - "[[基于level2数据图像的选股模型]]"
 origin: agent-compiled
 status: seed

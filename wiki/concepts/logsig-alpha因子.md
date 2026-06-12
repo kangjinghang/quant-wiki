@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种利用log-signature特征提取结合因子正交转化模块（MLP架构），将高频成交量序列端到端转化为低相关性选股因子的生成器模型。"
 tags: [东北金工, 券商研报, 深度研究, 高频量价因子, 因子, 机器学习, 深度学习, 回测]
-sources: []
+sources:
   - "[[日内成交量分布因子及logsig-alpha因子生成-因子选股系列之六]]"
 origin: agent-compiled
 status: seed

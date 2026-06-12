@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种通过买入或卖出标的资产来对冲期权头寸中性化风险的交易策略，使投资组合免受标的资产价格小幅变动的影响。"
 tags: [广发金工, 券商研报, 套利, etf, 回测, 深度研究]
-sources: []
+sources:
   - "[[基于etf的自动赎回型期权产品收益复制策略]]"
 origin: agent-compiled
 status: seed

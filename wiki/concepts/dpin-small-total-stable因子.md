@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "衡量日内知情交易概率稳定性的负向因子，负IC占比72.4%，多头相对中证800策略年化收益率为19.2%。"
 tags: []
-sources: []
+sources:
   - "[[日内价量数据因子化研究]]"
 origin: agent-compiled
 status: developing

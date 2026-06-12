@@ -4,7 +4,7 @@ title_zh: 交易所交易基金
 type: concept
 summary: "Exchange-Traded Fund（交易所交易基金），在交易所上市交易的开放式基金，兼具股票和基金的优点，是量化策略中常用的配置工具。"
 tags: [etf]
-sources: []
+sources:
   - "[[电子行业etf投资方法解析-指数配置研究系列二]]"
   - "[[行业轮动模型的etf组合落地方法研究-行业配置研究系列08]]"
 origin: agent-compiled

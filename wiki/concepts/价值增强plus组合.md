@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "在优质低估股票池中，通过合成改进PB-ROE残差、净利润同比环比、预期股息率和长端动量四大因子构建的精选股票组合。"
 tags: [基本面量化, 价值投资, 多因子模型, 券商研报, 开源金工, 金股组合, 风格轮动, 深度研究]
-sources: []
+sources:
   - "[[基本面量化-价值plus组合构建与多策略融合实践]]"
 origin: agent-compiled
 status: seed

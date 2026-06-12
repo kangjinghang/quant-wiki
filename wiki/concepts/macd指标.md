@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种用于判断价格趋势方向和强弱的经典技术指标，通过快速均线与慢速均线的聚合与分离来发出交易信号。"
 tags: [技术面, 量价关系, 择时, 东北金工, 券商研报]
-sources: []
+sources:
   - "[[成交量择时指标-vmacd-mtm]]"
 origin: agent-compiled
 status: seed

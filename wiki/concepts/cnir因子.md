@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于广义主力资金并经过MOD修正法处理的净流入率因子，具有高IR、低回撤和独立Alpha源的特征。"
 tags: [资金面, 因子, 量化, 深度研究, 券商研报, 开源金工, 量价关系, 市场微观结构, 大单资金流, 小单资金流]
-sources: []
+sources:
   - "[[大小单重定标与资金流因子改进]]"
   - "[[资金流与交易行为-因子失效原因与讨论]]"
 origin: agent-compiled

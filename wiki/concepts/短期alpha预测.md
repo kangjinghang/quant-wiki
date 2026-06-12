@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Short Alpha，用于A-VWAP算法和日内交易的短期价格方向判断，每3秒（1个Snapshot）给出方向预测，n=30时获取约14bps超额收益。"
 tags: []
-sources: []
+sources:
   - "[[张红庆高频交易成交数据的挖掘与基于机器学习的策略优化]]"
 origin: agent-compiled
 status: developing

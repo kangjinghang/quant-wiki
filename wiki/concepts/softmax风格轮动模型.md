@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "采用交叉熵损失函数的多分类逻辑回归模型，利用宏观基本面慢变量（PMI、M1-M2、十年国债利率等）预测未来一个季度大小盘及成长价值四类风格指数的占优概率"
 tags: []
-sources: []
+sources:
   - "[[解密a股风格轮动下篇中银量化资配专题]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "指公募基金重仓股中，持仓占比时序极高（白马股）和极低（黑马股）的股票组合均能产生显著超额收益的非线性现象。"
 tags: [多因子模型, 因子投资, 指数增强策略, 基本面量化, 量价因子, 券商研报, 中银量化]
-sources: []
+sources:
   - "[[中银多因子选股-十-基于公募重仓的-黑白马股-因子专题]]"
 origin: agent-compiled
 status: seed

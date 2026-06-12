@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由国君配置团队开发的主动行业配置模型，融合6个中观维度打分、宏观周期动态权重及技术分析仓位管理。"
 tags: [行业轮动, 多因子模型, 宏观, 择时, 券商研报, 深度研究, 动量, momentum, 资产配置]
-sources: []
+sources:
   - "[[行业轮动-何为趋势投资的正确打开方式-aia-timing策略中动量因子为何重要及如何把握]]"
 origin: agent-compiled
 status: developing

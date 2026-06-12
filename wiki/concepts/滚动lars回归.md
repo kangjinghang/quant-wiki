@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种使用最小角回归（LARS）算法进行滚动变量选择的方法，用于从众多宏观变量中筛选出对目标变量具有稳定预测效果的变量组合。"
 tags: [固收量化, 资产配置, 债券, 券商研报, 开源金工, 深度研究, 回测]
-sources: []
+sources:
   - "[[债券预期收益框架与久期择时策略]]"
 origin: agent-compiled
 status: seed

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "自由现金流资本投入回报率，基于收付实现制构建，能有效削弱盈余管理对盈利指标的扭曲。"
 tags: [基本面量化, 多因子模型, 估值因子, 盈利因子, 盈余管理, 券商研报, 招商定量任瞳团队, 深度研究]
-sources: []
+sources:
   - "[[企业盈利能力评价指标的演进与优化-基本面量化系列研究之四]]"
 origin: agent-compiled
 status: seed

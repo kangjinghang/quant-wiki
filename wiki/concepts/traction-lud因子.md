@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于涨跌停外溢关联网络构建的牵引因子，通过将反转基准从全市场缩小至高关联股票，刻画局域反转逻辑下的补涨空间。"
 tags: [开源金工, 券商研报, 量价因子, 市场微观结构, 量价关系, 多因子模型, 指数增强策略, 深度研究]
-sources: []
+sources:
   - "[[从涨跌停外溢行为到股票关联网络]]"
 origin: agent-compiled
 status: seed

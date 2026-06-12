@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "将高频逐笔成交与逐笔委托数据转换为15×8×8的三维图像格式，以通道对应订单类型、宽高对应价格与量区间，用于深度学习模型特征提取。"
 tags: [华泰金工, 深度学习, transformer模型, 注意力机制, 高频数据, 市场微观结构, 量价关系, 指数增强, 券商研报, 深度研究, ai应用, 量化投资]
-sources: []
+sources:
   - "[[基于level2数据图像的选股模型]]"
 origin: agent-compiled
 status: seed

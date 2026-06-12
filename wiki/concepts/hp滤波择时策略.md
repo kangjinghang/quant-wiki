@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用HP滤波技术对资产价格序列进行去噪平滑，根据平滑后序列的趋势方向生成持仓期约一年的中期择时信号。"
 tags: [华泰金工, 券商研报, 择时, 趋势跟踪, 均线系统, bollinger带, 经济周期, 多策略叠加, 深度研究]
-sources: []
+sources:
   - "[[华泰金工-多期限择时策略的构建与组合增强]]"
 origin: agent-compiled
 status: seed

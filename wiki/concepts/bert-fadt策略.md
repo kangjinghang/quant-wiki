@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "华泰金工前期提出的文本选股策略，利用FinBERT提取研报文本语义向量，并通过XGBoost模型学习其中的超额收益信息。"
 tags: [华泰金工, 大语言模型, 文本情感分析, xgboost模型, 深度学习, 券商研报, 深度研究, ai应用, 量化投资, 指数增强策略]
-sources: []
+sources:
   - "[[llm-fadt-大模型增强文本选股]]"
 origin: agent-compiled
 status: seed

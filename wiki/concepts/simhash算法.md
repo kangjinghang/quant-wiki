@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种由 Google 提出的局部敏感哈希算法，通过将高维特征向量映射为低维二进制签名并计算海明距离，用于快速检测和去除高度相似的重复文本。"
 tags: [大语言模型, 另类数据, 文本情感分析, 市场微观结构, 券商研报, 深度研究, 行业轮动, 择时]
-sources: []
+sources:
   - "[[基于数亿新闻上下文的本地rag系统用于市场择时及行业轮动]]"
 origin: agent-compiled
 status: seed

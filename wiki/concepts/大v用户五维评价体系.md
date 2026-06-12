@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "开源金工构建的用于评估雪球大V用户投资能力的五个维度：收益能力、收益稳定性、交易能力、黑马能力、白马能力。"
 tags: [另类数据, 事件驱动策略, 开源金工, 深度研究, 券商研报]
-sources: []
+sources:
   - "[[雪球大v用户的选股行为alpha]]"
 origin: agent-compiled
 status: seed

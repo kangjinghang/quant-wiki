@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于逐笔交易数据，结合日内反向交易特征、过度自信心理和筹码历史盈亏状态对积极灵活筹码（AFH）进行改进后得到的复合选股因子。"
 tags: [招商定量任瞳团队, 量价因子, 高频因子, 市场微观结构, 因子挖掘, 深度研究]
-sources: []
+sources:
   - "[[基于逐笔数据的afh改进因子]]"
 origin: agent-compiled
 status: seed

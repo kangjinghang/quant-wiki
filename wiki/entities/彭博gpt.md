@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "由彭博社开发的专门针对金融领域的大型语言模型。"
 tags: [大语言模型, 量化投资, 多智能体系统, 因子挖掘, 强化学习, 算法交易, 风险控制, 深度学习, 文本情感分析, 公众号]
-sources: []
+sources:
   - "[[2025年llm量化交易全解析-技术架构与实战案例]]"
 origin: agent-compiled
 status: seed

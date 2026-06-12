@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种作为路径或数据流自然特征集的数学工具，具有唯一性，能够通过高阶项的线性组合表示复杂关系，常用于提取高频序列特征。"
 tags: [机器学习, 深度学习, 高频量价因子, 因子投资, 东北金工, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[基于logsig-rnn的高频数据低频化选股因子-机器学习系列之三]]"
 origin: agent-compiled
 status: seed

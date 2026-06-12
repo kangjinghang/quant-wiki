@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用大语言模型（LLM）作为决策引擎，通过自然语言处理市场数据并输出交易指令的自动化回测与交易框架。"
 tags: [大语言模型, 可转债, 算法交易, 回测, 中金固收, 深度研究]
-sources: []
+sources:
   - "[[如何实现ai交易模拟]]"
 origin: agent-compiled
 status: seed

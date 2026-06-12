@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于ETF一级市场申购赎回数据构建的量化因子，涵盖ETF产品、跟踪指数和明细成分股三个维度，总体呈现反转特征。"
 tags: [etf, 资金面, 回测, 广发金工, 券商研报, 量化投资, 反转因子]
-sources: []
+sources:
   - "[[基于etf申赎的etf轮动策略]]"
 origin: agent-compiled
 status: seed

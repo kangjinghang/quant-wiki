@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由华泰金工团队构建的智能化、自动化K线技术分析平台，结合多模态思维链（MCoT）与大模型工具调用能力，实现技术分析全流程自动化。"
 tags: [华泰金工, 大语言模型, 多模态大语言模型, 技术面, k线形态学, 深度研究, ai应用]
-sources: []
+sources:
   - "[[华泰金工-gpt-kline-mcot与技术分析]]"
 origin: agent-compiled
 status: seed

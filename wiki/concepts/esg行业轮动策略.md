@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "根据行业ESG得分从高到低排序，选择排名靠前的行业构建等权组合的轮动策略。一级行业年化超额4.45%，二级行业年化超额10.52%，二级行业近5年年度胜率100%。"
 tags: []
-sources: []
+sources:
   - "[[举足轻重的争议数据esg系列研究之一]]"
 origin: agent-compiled
 status: developing

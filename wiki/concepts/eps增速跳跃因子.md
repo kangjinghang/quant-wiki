@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "衡量单季度EPS同比增速相对于历史均衡水平发生跳跃（加速）程度的基本面正向因子。"
 tags: [多因子模型, 基本面量化, 量价关系, 券商研报, 东北金工, 深度研究, 因子]
-sources: []
+sources:
   - "[[jason-s-alpha-基本面-量价复合策略]]"
 origin: agent-compiled
 status: seed

@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "国际主流ESG评级机构，其评级体系持续监测争议事件，并通过扣减关键事项得分来反映企业的ESG风险管理能力。"
 tags: []
-sources: []
+sources:
   - "[[举足轻重的争议数据esg系列研究之一]]"
 origin: agent-compiled
 status: developing

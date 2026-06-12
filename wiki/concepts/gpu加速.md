@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用图形处理器(GPU)的大规模并行计算能力来加速通用计算任务，特别适用于海量金融数据的合并、聚合与统计。"
 tags: [python, 机器学习, 华创金工, 券商研报, 实战]
-sources: []
+sources:
   - "[[并行计算在金融上的应用]]"
 origin: agent-compiled
 status: seed

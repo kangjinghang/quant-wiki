@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "一款国产开源大语言模型，其推理版本DeepSeek R1在复杂逻辑推理任务上表现突出，引发了金融领域对其应用潜力的探讨。"
 tags: [可转债, 大语言模型, 券商研报, 中金固收, 深度研究, 深度学习, 强化学习, 多智能体系统, 文本情感分析, 广发金工, ai应用]
-sources: []
+sources:
   - "[[转债实践deepseek前后的差别暨本月十大转债]]"
   - "[[如何使用deepseek提高投研效率]]"
 origin: agent-compiled

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "指在雪球股票投资交流平台上粉丝数量超过500的活跃用户，其投资观点和行为具有较高信息含量。"
 tags: [另类数据, 事件驱动策略, 开源金工, 深度研究, 券商研报]
-sources: []
+sources:
   - "[[雪球大v用户的选股行为alpha]]"
 origin: agent-compiled
 status: seed

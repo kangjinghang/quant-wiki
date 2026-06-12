@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用人工智能（如GRU模型）从日K线、周K线及分钟K线等不同频段量价数据中提取特征并合成预测信号的选股模型。"
 tags: [华泰金工, 深度研究, 机器学习, gru网络, 风险控制, 回测, 量价因子, 指数增强策略]
-sources: []
+sources:
   - "[[ai量价选股模型风控探讨]]"
 origin: agent-compiled
 status: seed

@@ -3,11 +3,11 @@ title: "Wind万得"
 title_zh: 
 type: entity
 summary: "Wind万得，中国领先的金融数据服务商，提供Level 2数据、资金流向计算等金融数据服务。"
-tags: []
+tags:
   - "债券"
   - "可转债"
   - "量化"
-sources: []
+sources:
   - "[[如何高频识别债基的信用踩雷情况]]"
   - "[[转债数据库规范与统计案例-python实践]]"
 origin: agent-compiled

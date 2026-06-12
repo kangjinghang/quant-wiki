@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由英伟达推出的统一计算设备架构，允许开发者利用C语言或Python在GPU上编写通用并行计算程序。"
 tags: [python, 机器学习, 华创金工, 券商研报, 实战]
-sources: []
+sources:
   - "[[并行计算在金融上的应用]]"
 origin: agent-compiled
 status: seed

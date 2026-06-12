@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "结合EasyBall低估值粗选与正股动量因子的可转债进阶策略，旨在实现攻防一体的收益表现。"
 tags: [可转债, 量化, 动量, xgboost模型, 券商研报, 中金固收, 深度研究, python]
-sources: []
+sources:
   - "[[详解进阶策略-希腊字母与easyball-plus]]"
 origin: agent-compiled
 status: developing

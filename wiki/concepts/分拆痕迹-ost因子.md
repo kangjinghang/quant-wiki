@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于傅里叶变换将挂单方向时域信息转为频域特征，并提取小额委托频域强度峰度构建的因子。"
 tags: [开源金工, 市场微观结构, 量价关系, 高频量价因子, 机器学习, 集成学习, xgboost模型, lstm模型, 算法交易]
-sources: []
+sources:
   - "[[订单流系列-挂单方向长期记忆性的讨论与应用]]"
 origin: agent-compiled
 status: seed

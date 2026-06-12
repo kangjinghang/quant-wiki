@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由Google提出的一组相关模型，用于生成词向量，通过简化的神经网络架构（CBOW和Skip-gram）高效地将词语映射到高维向量空间。"
 tags: [机器学习, 另类数据, 深度研究, 券商研报]
-sources: []
+sources:
   - "[[nlp综述-勾勒ai语义理解的轨迹]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "股利贴现模型（DDM）框架，通过分子端的盈利预期（Alpha因素）与分母端的贴现率与风险偏好（Beta因素）的拆解，实现基本面研究与资产配置研究的有机融合。"
 tags: [资产配置, 组合管理, 券商研报, 深度研究, 观点]
-sources: []
+sources:
   - "[[alpha与beta-鱼与熊掌何以兼得-主动配置研究思考系列]]"
 origin: agent-compiled
 status: developing

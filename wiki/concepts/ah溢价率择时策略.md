@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于恒生AH股溢价指数（HSAHP.HI）的跨市场交易策略，在溢价率高于150时增配港股，低于130时减配港股。"
 tags: [资产配置, 宏观, 策略, a股, equity, 回测, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[择木而栖-a股和港股轮动规律研究-大类资产轮动系列]]"
 origin: agent-compiled
 status: developing

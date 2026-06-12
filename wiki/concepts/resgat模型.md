@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种带残差连接的图注意力网络，通过分别挖掘股票间的关联收益和特有收益来进行选股预测。"
 tags: [ai应用, 量化, 深度研究, 券商研报]
-sources: []
+sources:
   - "[[机器学习发展历程与量化投资的展望-机器学习系列之一]]"
 origin: agent-compiled
 status: developing

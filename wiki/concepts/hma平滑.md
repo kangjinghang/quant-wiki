@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "赫尔移动平均线，一种旨在减少滞后性并提供更平滑信号的移动平均技术，常用于量化择时指标的处理。"
 tags: [技术面, 择时, 券商研报, 华泰金工]
-sources: []
+sources:
   - "[[形态学研究之二-如何利用形态信号进行市场择时]]"
 origin: agent-compiled
 status: developing

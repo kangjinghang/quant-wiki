@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于龙头效应与趋势一致性设计的行业轮动因子，用于刻画行业景气度在筑底或爬升过程中，业绩预期改善在行业内从龙头向全行业扩散的过程。"
 tags: [广发金工, 行业轮动, 多因子模型, 量化投资, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[龙头扩散效应行业轮动之三-双驱优选组合构建]]"
 origin: agent-compiled
 status: seed

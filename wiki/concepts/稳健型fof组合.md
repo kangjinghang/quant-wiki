@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "以'稳增长'为目标的FOF组合策略，剔除高风险基金，严控债基信用评级与久期，约束股票/债券风险贡献为80%/20%，引入小幅择时，2013年以来年化收益6.55%，可作为银行理财产品替代。"
 tags: []
-sources: []
+sources:
   - "[[fof赋能绝对收益基金组合构建实战上量化绝对收益之路系列之二]]"
 origin: agent-compiled
 status: developing

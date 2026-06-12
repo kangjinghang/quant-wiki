@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种高效的BERT微调技术，通过在Transformer层中插入少量参数的Adapter模块，将微调参数量从上亿降至数百万，同时基本保持模型性能。"
 tags: [机器学习, 另类数据, 深度研究, 券商研报, ai应用, 量化]
-sources: []
+sources:
   - "[[再探文本fadt选股]]"
 origin: agent-compiled
 status: developing

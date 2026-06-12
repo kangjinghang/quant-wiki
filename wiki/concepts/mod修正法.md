@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种通过截面回归剥离资金流与同期涨跌幅相关性（反转效应）以提纯资金流Alpha的因子修正方法。"
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
-sources: []
+sources:
   - "[[大小单重定标与资金流因子改进]]"
 origin: agent-compiled
 status: developing

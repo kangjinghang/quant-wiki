@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由Cohen等(2020)提出的修正真实盈余管理模型，引入了经营现金流等变量对收入变化方向的非线性反应机制。"
 tags: [因子投资, 基本面, 回测, 券商研报, 深度研究, 盈余管理]
-sources: []
+sources:
   - "[[基于异常现金流模型的真实盈余管理因子-一-因子选股系列之二]]"
 origin: agent-compiled
 status: developing

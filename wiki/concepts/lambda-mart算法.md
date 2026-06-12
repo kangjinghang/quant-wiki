@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "结合LambdaRank梯度函数和MART（GBDT）的排序学习算法，通过决策树对梯度进行建模。"
 tags: [华创金工, 券商研报, 排序学习, ltr, 机器学习, 集成学习, 量价关系, 回测, 深度研究]
-sources: []
+sources:
   - "[[基于价量数据的排序学习选股模型]]"
 origin: agent-compiled
 status: seed

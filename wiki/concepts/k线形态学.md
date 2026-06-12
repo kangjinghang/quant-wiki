@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "研究股票价格在下跌、盘整、上升过程中的价格轨迹图形、形态及特征的理论，其本质是多空双方资金博弈留下的轨迹。"
 tags: [技术面, 趋势跟踪, 券商研报, 入门, 华泰金工, 择时]
-sources: []
+sources:
   - "[[形态学研究之二-如何利用形态信号进行市场择时]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "标准化的单季度营业收入超预期因子，用于衡量企业市场份额抢占能力，在消费板块内选股IR大于1"
 tags: []
-sources: []
+sources:
   - "[[大消费板块的轮动与选股]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "通过引入行业哑变量和PE_M分域对传统PB-ROE框架进行修正后提取的残差因子，用于更精准地识别低估值股票。"
 tags: [基本面量化, 价值投资, 多因子模型, 券商研报, 开源金工, 金股组合, 风格轮动, 深度研究]
-sources: []
+sources:
   - "[[基本面量化-价值plus组合构建与多策略融合实践]]"
 origin: agent-compiled
 status: seed

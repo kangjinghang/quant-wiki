@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "学者，在2018年发表论文《Geographic Lead-Lag Effects》，提出地理关联公司的概念。"
 tags: [因子投资, 多因子模型, 量化, 因子, 另类数据, 深度研究, 券商研报, 回测, backtesting, equity, a股]
-sources: []
+sources:
   - "[[基于地理关联度因子研究-多因子alpha系列报告之-四十三]]"
 origin: agent-compiled
 status: developing

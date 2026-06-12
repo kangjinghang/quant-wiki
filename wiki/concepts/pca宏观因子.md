@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用主成分分析（PCA）从大类资产收益序列中提取出的具有明确经济学含义（如经济增长、通货膨胀、利率水平）的隐性宏观因子。"
 tags: [资产配置, 风险平价, 均值方差模型, 主成分分析, 宏观因子, 券商研报, 东北金工, 深度研究]
-sources: []
+sources:
   - "[[量化资产配置模型初探与策略优化]]"
 origin: agent-compiled
 status: seed

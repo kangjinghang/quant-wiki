@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "微软开源的基于决策树算法的分布式梯度提升框架，能学习因子与收益间的非线性关系，具有训练快、内存占用低的特点。"
 tags: []
-sources: []
+sources:
   - "[[使用基本面因子构建中证500指数增强策略初探-权益配置因子研究系列02]]"
 origin: agent-compiled
 status: developing

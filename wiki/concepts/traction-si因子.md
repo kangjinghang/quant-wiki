@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于小单资金流关联网络构建的牵引因子，通过放大高关联股票涨跌幅权重重构个股预期收益基准，提取真实收益与预期收益的预期差。RankIC均值3.98%，多空年化收益13.91%，与Traction-F因子合成后年化收益达18.48%。"
 tags: []
-sources: []
+sources:
   - "[[从小单资金流行为到股票关联网络]]"
 origin: agent-compiled
 status: developing

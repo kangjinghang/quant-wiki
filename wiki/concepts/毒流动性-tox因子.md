@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于高频撤单数量占比构建的流动性因子，用于识别机构做市商提供的“有毒”流动性，因子值越高预示未来收益补偿越高。"
 tags: [开源金工, 券商研报, 市场微观结构, 高频量价因子, 量价关系, 因子投资, 深度研究]
-sources: []
+sources:
   - "[[订单流系列-撤单行为规律初探]]"
 origin: agent-compiled
 status: seed

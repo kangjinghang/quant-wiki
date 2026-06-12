@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种根据公司的基本面特征（如价值、成长等）将股票分层，并对每层采用差异化评价体系进行打分的量化选股模型。"
 tags: [华泰金工, 券商研报, 基本面量化, 因子投资, 多策略叠加, 因子择时, 深度研究]
-sources: []
+sources:
   - "[[华泰金工-基本面量化的当下和未来-策略篇]]"
 origin: agent-compiled
 status: seed

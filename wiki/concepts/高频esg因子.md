@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "结合传统年度ESG评分与高频更新的争议数据得分（按3:1比例加权）构建的选股因子，引入争议数据后在中证500多头端年化收益率提升至10.09%，夏普比率提升至0.98。"
 tags: []
-sources: []
+sources:
   - "[[举足轻重的争议数据esg系列研究之一]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种利用大语言模型（如Qwen3-8b）对分析师文本进行多角度重构，并结合FinBERT与XGBoost构建的增强型文本选股策略。"
 tags: [华泰金工, 大语言模型, 文本情感分析, xgboost模型, 深度学习, 券商研报, 深度研究, ai应用, 量化投资, 指数增强策略]
-sources: []
+sources:
   - "[[llm-fadt-大模型增强文本选股]]"
 origin: agent-compiled
 status: seed

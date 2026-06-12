@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Signature的对数表示，含有与Signature同样的信息但更为简洁，维数更低，对缺失数据更加稳健，但缺乏普适性，需搭配非线性模型使用。"
 tags: [机器学习, 深度学习, 高频量价因子, 因子投资, 东北金工, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[基于logsig-rnn的高频数据低频化选股因子-机器学习系列之三]]"
 origin: agent-compiled
 status: seed

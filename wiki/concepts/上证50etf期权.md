@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "国内首只场内权益类期权，也是本报告中构建PCR择时策略的主要数据来源和标的。"
 tags: [期权, etf, 择时, 市场微观结构, 券商研报, 招商定量任瞳团队, 深度研究]
-sources: []
+sources:
   - "[[招商-魔法石-基于期权交易者情绪的市场择时策略]]"
 origin: agent-compiled
 status: seed

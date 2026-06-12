@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于指数增强型ETF每日申购赎回清单（PCF）中披露的持仓与基准指数权重之差（超低配比例）构建的选股因子，旨在追踪主动基金经理的配置偏好。"
 tags: [广发金工, 券商研报, 因子挖掘, 指数增强策略, 另类数据, 量化投资, 深度研究]
-sources: []
+sources:
   - "[[追踪聪明基金经理-的因子研究]]"
 origin: agent-compiled
 status: seed

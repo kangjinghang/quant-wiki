@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "平均趋向指数，用于衡量市场趋势的强度而不体现方向，常用于判断市场是否处于明显的趋势行情中。"
 tags: [华泰金工, 券商研报, 择时, 技术面, 趋势跟踪, 量价关系, 波动率, 回测]
-sources: []
+sources:
   - "[[a股择时之技术打分体系]]"
 origin: agent-compiled
 status: seed

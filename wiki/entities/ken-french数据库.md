@@ -4,7 +4,7 @@ title_zh:
 type: entity
 summary: "学术界广泛使用的金融市场基准数据库，提供美股及全球市场从1927年至今的因子收益率、规模、价值等核心数据。"
 tags: []
-sources: []
+sources:
   - "[[动量为什么会阶段性失效]]"
 origin: agent-compiled
 status: developing

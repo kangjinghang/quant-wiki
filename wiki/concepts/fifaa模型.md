@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于因子的灵活非决定性资产配置框架，通过融合历史量化风险载荷与主观前瞻观点进行多资产组合优化。"
 tags: [资产配置, 宏观因子, 组合优化, 券商研报, 东北金工, 量化投资]
-sources: []
+sources:
   - "[[量化与主观灵活资产配置方案-量化资产配置系列之四]]"
 origin: agent-compiled
 status: seed

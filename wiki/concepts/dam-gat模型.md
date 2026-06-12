@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种动态属性敏感图注意力网络，用于处理股票间属性敏感的动量溢出并自动学习公司间的动态关联网络。"
 tags: [华安金工, 深度学习, 神经网络, 图神经网络, 注意力机制, gru网络, 高频量价因子, 因子挖掘, 指数增强策略, 券商研报]
-sources: []
+sources:
   - "[[探索股价动态关联-捕捉属性敏感的动量溢出-量化研究系列报告之十六]]"
 origin: agent-compiled
 status: seed

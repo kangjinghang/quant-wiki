@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "渐进式分层提取模型，采用多层专家和门控网络设计，提升多任务学习中的特征表征能力。"
 tags: [华泰金工, 深度研究, 机器学习, 深度学习, gru网络, 指数增强策略, 多任务学习, 组合优化]
-sources: []
+sources:
   - "[[华泰金工-多任务学习选股模型的改进]]"
 origin: agent-compiled
 status: seed

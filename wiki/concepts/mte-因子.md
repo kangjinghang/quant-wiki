@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "MTE Factor（主力交易情绪因子），基于分钟单笔成交金额与收盘价相关性构造的选股因子，Rank IC -0.039/ICIR 3.34，反映主力资金参与交易的相对价位"
 tags: []
-sources: []
+sources:
   - "[[apm因子模型的进阶版]]"
   - "[[a股分层效应的普适规律与底层逻辑]]"
   - "[[a股反转之力的微观来源]]"

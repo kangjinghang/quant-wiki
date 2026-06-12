@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "指由日内分钟收益率在时间轴上的涨跌分布位置差异所蕴含的选股信息，其本质是收益率结构和低波效应的综合。"
 tags: [high-frequency, factor-investing]
-sources: []
+sources:
   - "[[日内分钟收益率的时序特征-逻辑讨论与因子增强]]"
 origin: agent-compiled
 status: developing

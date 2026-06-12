@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "结合成分股运行一致性的动量因子，通过区间收益率除以市值加权的CSAD（个股收益与指数收益偏差绝对值和的均值）计算得出。"
 tags: [momentum, 行业轮动, 量价关系, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[行业轮动五-如何更好的描述行业趋势]]"
 origin: agent-compiled
 status: developing

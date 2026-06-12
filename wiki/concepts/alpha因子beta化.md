@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "指原本具有稳定选股能力的Alpha因子，随着市场演变和参与者增多，其收益逐渐变得不稳定，呈现出风险因子（Beta）的特征。"
 tags: [因子择时, 指数增强, 多因子模型, 宏观因子, 华安金工, 深度研究]
-sources: []
+sources:
   - "[[破解alpha投资困境-因子择时方案再探索]]"
 origin: agent-compiled
 status: seed

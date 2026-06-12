@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "通过行业截面回归剥离ROE、费用管理和应计周转影响后，提取的反映单位净资产产生超额经营现金流的选股因子。"
 tags: [因子投资, 基本面量化, 东北金工, 深度研究, 多因子模型, 估值因子, 回测]
-sources: []
+sources:
   - "[[roe和cfo效率因子]]"
 origin: agent-compiled
 status: seed

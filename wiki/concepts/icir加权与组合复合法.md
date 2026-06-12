@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "对空头单调的因子进行ICIR加权合成，对空头尾部有效的因子进行组合复合法合成，最后取交集构建最终空头组合的负向因子合成方法。"
 tags: []
-sources: []
+sources:
   - "[[高质量股票池构造体系Ⅱ事件型风险研究]]"
 origin: agent-compiled
 status: developing

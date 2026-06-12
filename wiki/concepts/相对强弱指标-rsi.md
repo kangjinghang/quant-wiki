@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由威尔斯·威尔德创制的技术指标，通过比较一段时期内的平均收盘涨数和跌数来分析市场买卖盘的意向和实力。"
 tags: [券商研报, 择时, 市场微观结构, 情绪指标, 期权, 量价关系, 技术面, 深度研究]
-sources: []
+sources:
   - "[[从结构化视角全新打造市场情绪择时模型-申万金工量化择时策略研究系列之一]]"
 origin: agent-compiled
 status: seed

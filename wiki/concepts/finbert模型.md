@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "由熵简科技开源的、在大规模金融领域语料上预训练的中文BERT模型，在金融情绪分类等下游任务中性能优于原版BERT。"
 tags: [机器学习, 另类数据, 深度研究, 券商研报, ai应用, 量化, 华泰金工, 大语言模型, 文本情感分析, xgboost模型, 深度学习, 量化投资, 指数增强策略]
-sources: []
+sources:
   - "[[再探文本fadt选股]]"
   - "[[llm-fadt-大模型增强文本选股]]"
 origin: agent-compiled

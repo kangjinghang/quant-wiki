@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "自回归积分滑动平均模型，一种用于时间序列预测的经典统计模型，结合了自回归(AR)、差分(I)和移动平均(MA)。"
 tags: [华泰金工, 大语言模型, 深度研究, python, 宏观, 券商研报]
-sources: []
+sources:
   - "[[基于gpt的自动化金融数据分析]]"
 origin: agent-compiled
 status: developing

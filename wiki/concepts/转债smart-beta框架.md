@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于股市牛熊状态与行情分化程度，动态切换低价防御、希腊字母和EasyBall Plus等转债基础策略的配置框架。"
 tags: [可转债, 策略, 动量, 量化, 回测]
-sources: []
+sources:
   - "[[浅谈策略适用性与smartbeta]]"
 origin: agent-compiled
 status: developing

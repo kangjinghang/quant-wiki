@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "通过计算当期因子暴露与下期股票收益的Pearson或Spearman相关系数，来考察因子收益预测的有效性。"
 tags: []
-sources: []
+sources:
   - "[[使用基本面因子构建中证500指数增强策略初探-权益配置因子研究系列02]]"
   - "[[因子模型理论与实践及因子检验的实证-因子选股系列之一]]"
 origin: agent-compiled

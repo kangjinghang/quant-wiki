@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "MTS Factor（主力交易强度因子），基于分钟单笔成交金额与分钟成交额相关性构造的选股因子，Rank IC 0.065/ICIR 3.18，反映主力资金对成交节奏的主导能力"
 tags: []
-sources: []
+sources:
   - "[[apm因子模型的进阶版]]"
   - "[[a股分层效应的普适规律与底层逻辑]]"
   - "[[a股反转之力的微观来源]]"

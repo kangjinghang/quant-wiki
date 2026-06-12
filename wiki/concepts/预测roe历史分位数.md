@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "衡量当前分析师预测ROE在过去一段时间序列中所处位置的指标，分位数越高代表当前盈利能力处于相对历史高位，在行业轮动中表现出很好的预测效果。"
 tags: [行业轮动, 多因子模型, 分析师预期因子, 量化, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[如何基于分析师预测数据构建行业轮动策略-行业配置研究系列06]]"
 origin: agent-compiled
 status: developing

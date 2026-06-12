@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "大程上下行跳跃波动不对称因子的归一化指标，反映大幅跳跃中多空方向的不对称性。"
 tags: [high-frequency, factor-investing, a股, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[基于股价跳跃模型的因子研究-高频数据因子研究系列九]]"
 origin: agent-compiled
 status: developing

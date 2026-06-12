@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种利用截面风险因子构建注意力权重矩阵，并在此矩阵上传播和聚合行情时序特征的深度学习因子挖掘模型。"
 tags: [深度学习, 注意力机制, 图神经网络, 因子挖掘, 券商研报, 东方证券, gru网络, 风险模型]
-sources: []
+sources:
   - "[[基于风险注意力的因子挖掘模型]]"
 origin: agent-compiled
 status: seed

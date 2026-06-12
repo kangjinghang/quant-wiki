@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "即加权平均资本成本，用于评估公司或项目的资本要求回报率及未来现金流折现率，本文通过严谨处理债权与股权成本进行计算。"
 tags: [因子投资, 基本面量化, 估值, 东北金工, 深度研究]
-sources: []
+sources:
   - "[[预期外roic-wacc回报因子及相关测试]]"
 origin: agent-compiled
 status: seed

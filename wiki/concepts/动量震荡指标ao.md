@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Awesome Oscillator，威廉斯提出的动量指标，计算方法为5周期SMA减去34周期SMA。刻画市场价格变化速度，若AO连续3个交易日上行说明市场加速上涨，可作为加仓信号。在鳄鱼线策略中作为第一位辅助判断指标。"
 tags: [技术面, 趋势跟踪, 择时, 量价关系, 券商研报, 招商定量任瞳团队, 股债轮动, 行业轮动, 深度研究]
-sources: []
+sources:
   - "[[基于鳄鱼线的指数择时及轮动策略]]"
 origin: agent-compiled
 status: seed

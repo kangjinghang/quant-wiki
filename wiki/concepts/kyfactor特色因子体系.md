@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "开源金工团队构建的涵盖交易行为、资金流、基本面和关联网络四个维度的特色因子库，包含18个细分因子。"
 tags: [开源金工, 券商研报, 因子投资, 多因子模型, 指数增强, 因子择时, 深度研究]
-sources: []
+sources:
   - "[[kyfactor特色因子体系与应用]]"
 origin: agent-compiled
 status: seed

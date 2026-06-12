@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Alpha因子与风险因子并非互斥，当Alpha因子被过度交易时容易转变为风险因子，而当风险因子的风险释放后也可重新转化为Alpha因子。"
 tags: []
-sources: []
+sources:
   - "[[因子模型理论与实践及因子检验的实证-因子选股系列之一]]"
 origin: agent-compiled
 status: developing

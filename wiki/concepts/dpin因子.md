@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于日内高频量价数据构建的动态知情交易概率因子，通过分析信息优势交易者的反转交易行为，从均值、标准差和稳定性三个维度刻画个股的微观交易结构。"
 tags: []
-sources: []
+sources:
   - "[[日内价量数据因子化研究]]"
 origin: agent-compiled
 status: developing

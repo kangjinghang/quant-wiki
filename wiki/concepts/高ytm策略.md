@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "选择到期收益率（YTM）最高的若干可转债持仓，作为高等级信用债的底仓替代策略。属于债券替代策略的一种，核心思路是利用转债的期权保护和流动性优势进行信用挖掘。"
 tags: []
-sources: []
+sources:
   - "[[转债策略设计-可转债框架系列之进阶篇-三]]"
 origin: agent-compiled
 status: developing

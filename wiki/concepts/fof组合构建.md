@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "自上而下分为资产配置、行业/风格轮动、选股/选债三个层面的金字塔型FOF组合管理框架，管理人可根据能力圈在不同层面赋能。由[[华安金工]]在量化绝对收益之路系列中提出。"
 tags: []
-sources: []
+sources:
   - "[[基于宏观视角与技术视角的资产配置框架]]"
 origin: agent-compiled
 status: developing

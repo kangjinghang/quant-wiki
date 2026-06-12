@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "将MACD指标计算公式中的价格数据替换为成交量数据，用于反映近期成交量变动趋势的方向和强弱的技术指标。"
 tags: [技术面, 量价关系, 择时, 东北金工, 券商研报]
-sources: []
+sources:
   - "[[成交量择时指标-vmacd-mtm]]"
 origin: agent-compiled
 status: seed

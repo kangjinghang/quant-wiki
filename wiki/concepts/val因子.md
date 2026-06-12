@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "结合截面估值偏差（M/V）与时序增长潜力（Vts/B）重塑的新估值因子，剔除了行业时序估值波动的干扰。"
 tags: [华安金工, 券商研报, 因子投资, 估值, 多因子模型, 指数增强, 深度研究]
-sources: []
+sources:
   - "[[pb之变-精细分拆-新生华彩-量化研究系列报告之十三]]"
 origin: agent-compiled
 status: seed

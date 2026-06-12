@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "在市场基准收益为负而股票收益为正的交易日样本内计算得到的半贝塔因子，反映个股在市场下行时的对冲特征，在A股市场表现出显著的负IC和较强的选股能力。"
 tags: [多因子模型, 因子, 回测, 指数增强, 量化, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[基于semibeta的因子研究-多因子alpha系列报告之-四十五]]"
 origin: agent-compiled
 status: developing

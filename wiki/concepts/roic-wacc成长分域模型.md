@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "根据企业ROIC与WACC的关系将股票划分为价值创造与价值毁损域，并分别应用NOPLAT增速或ROIC增速进行分域选股的模型。"
 tags: [因子投资, 基本面量化, 估值, 东北金工, 深度研究]
-sources: []
+sources:
   - "[[预期外roic-wacc回报因子及相关测试]]"
 origin: agent-compiled
 status: seed

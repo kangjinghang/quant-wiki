@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种整合了图结构和双级检索策略的知识增强语言模型技术，旨在提高信息检索与生成的准确性和效率。"
 tags: [华泰金工, 大语言模型, 深度学习, ai应用, 文本情感分析, 另类数据]
-sources: []
+sources:
   - "[[华泰金工-deepseek-投研-大模型应用集锦]]"
 origin: agent-compiled
 status: seed

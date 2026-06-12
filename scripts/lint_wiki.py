@@ -30,6 +30,7 @@ Checks:
   19. Cross-directory slug collisions — same filename in different wiki subdirectories
   20. Thin pages — pages with fewer than 15 words of body content
   21. Non-seed empty sources — concept/entity pages with status != seed but sources empty
+  22. YAML array conflicts — `field: []` followed by indented list items (breaks Obsidian rendering)
 
 Exit codes:
   0 — no issues found
@@ -806,6 +807,72 @@ def lint(root: str) -> int:
         issues += len(empty_sources_non_seed)
     else:
         print("✅ No non-seed pages with empty sources")
+
+    # ── Pass 22: YAML array conflicts (field: [] + list items) ────────────
+    yaml_array_conflicts: list[tuple[str, int, str]] = []  # (rel_path, lineno, field)
+    for md_file in all_wiki_files:
+        if md_file.name in ("index.md", "overview.md"):
+            continue
+        text = md_file.read_text(encoding="utf-8")
+        lines = text.split("\n")
+        in_fm = False
+        for i, line in enumerate(lines):
+            stripped = line.strip()
+            if stripped == "---":
+                if not in_fm:
+                    in_fm = True
+                    continue
+                else:
+                    break  # end of frontmatter
+            if in_fm and re.match(r'^[a-z_]+:\s*\[\]\s*$', stripped):
+                if i + 1 < len(lines) and re.match(r'^\s+-\s', lines[i + 1]):
+                    field = stripped.split(":")[0]
+                    yaml_array_conflicts.append(
+                        (str(md_file.relative_to(root_path)), i + 1, field)
+                    )
+    if yaml_array_conflicts:
+        print(f"\n🟡 YAML array conflicts — field: [] followed by list items ({len(yaml_array_conflicts)}):")
+        print("   Fix: run `python scripts/lint_wiki.py . --fix` or remove `[]` manually.")
+        for path, lineno, field in yaml_array_conflicts[:20]:
+            print(f"   {path}:{lineno} — {field}: [] followed by list")
+        if len(yaml_array_conflicts) > 20:
+            print(f"   ... and {len(yaml_array_conflicts) - 20} more")
+        # Auto-fix if --fix flag is set
+        if "--fix" in sys.argv:
+            fixed_fm = 0
+            for md_file in all_wiki_files:
+                if md_file.name in ("index.md", "overview.md"):
+                    continue
+                text = md_file.read_text(encoding="utf-8")
+                lines = text.split("\n")
+                in_fm2 = False
+                changed = False
+                new_lines = []
+                i = 0
+                while i < len(lines):
+                    stripped = lines[i].strip()
+                    if stripped == "---":
+                        if not in_fm2:
+                            in_fm2 = True
+                        else:
+                            in_fm2 = False
+                    if in_fm2 and re.match(r'^[a-z_]+:\s*\[\]\s*$', stripped):
+                        if i + 1 < len(lines) and re.match(r'^\s+-\s', lines[i + 1]):
+                            field_name = stripped.split(":")[0]
+                            new_lines.append(field_name + ":\n")
+                            changed = True
+                            i += 1
+                            continue
+                    new_lines.append(lines[i])
+                    i += 1
+                if changed:
+                    md_file.write_text("".join(new_lines), encoding="utf-8")
+                    fixed_fm += 1
+            if fixed_fm:
+                print(f"\n🔧 Auto-fixed YAML array conflicts in {fixed_fm} file(s)")
+        issues += len(yaml_array_conflicts)
+    else:
+        print("✅ No YAML array conflicts")
 
     # ── Summary ─────────────────────────────────────────────────────────────
     print(f"\n{'─'*40}")

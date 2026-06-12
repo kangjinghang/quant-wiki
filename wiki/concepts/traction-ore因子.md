@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于隔夜价格关联网络构建的牵引因子，通过提纯隔夜涨跌样本（剔除缺口回补影响），刻画股票的局域反转补涨逻辑。"
 tags: [开源金工, 量价关系, 因子, 回测, 深度研究]
-sources: []
+sources:
   - "[[从隔夜价格行为到股票关联网络]]"
 origin: agent-compiled
 status: seed

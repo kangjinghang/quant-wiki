@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种基于成交量变动趋势的动量择时指标，通过对VMACD指标进行Z-score标准化并计算其N日累计变动值来生成交易信号。"
 tags: [技术面, 量价关系, 择时, 东北金工, 券商研报]
-sources: []
+sources:
   - "[[成交量择时指标-vmacd-mtm]]"
 origin: agent-compiled
 status: seed

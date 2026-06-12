@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "A股新股发行定价机制，经历了审批制（行政定价）、核准制（23倍市盈率或行业孰低）到注册制（市场化询价）三个阶段，制度变迁直接决定了新股发行估值水平和打新收益空间。"
 tags: []
-sources: []
+sources:
   - "[[新股上市如何表现-制度-影响因素与策略意义-量化打新系列报告之二]]"
 origin: agent-compiled
 status: developing

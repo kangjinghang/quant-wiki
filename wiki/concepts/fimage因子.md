@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "广发金工团队基于卷积神经网络（CNN）提取的价量选股因子，通过与Level2资金流因子结合可有效提升ETF轮动组合的边际收益。"
 tags: [广发金工, 券商研报, etf, 高频因子, 量价关系, 深度学习, 卷积神经网络, 行业轮动]
-sources: []
+sources:
   - "[[基于level2因子的etf轮动策略]]"
 origin: agent-compiled
 status: seed

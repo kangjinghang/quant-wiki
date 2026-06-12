@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "基于凸显理论构建的选股因子，通过计算个股日收益率凸显性权重与收益率的协方差，衡量投资者心理偏差导致的股票错误定价程度。"
 tags: [行为金融学, 因子, 量化投资, 券商研报, 招商定量任瞳团队]
-sources: []
+sources:
   - "[[行为金融新视角-凸显性收益-因子-str]]"
 origin: agent-compiled
 status: seed

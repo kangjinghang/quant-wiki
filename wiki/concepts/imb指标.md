@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "即买入卖出金额比，用作资金流动力学中衡量主力资金买卖不平衡程度的代理变量。"
 tags: [资金面, 因子, 量化, 深度研究, 券商研报]
-sources: []
+sources:
   - "[[大小单重定标与资金流因子改进]]"
 origin: agent-compiled
 status: developing

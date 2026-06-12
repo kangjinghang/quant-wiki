@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种用于修正协方差矩阵中特征组合波动率预测偏差的统计调整方法，能够显著改善对小方差组合波动的低估现象。"
 tags: [可转债, 多因子模型, 风险控制, 组合优化, 东北金工, 深度研究, backtesting]
-sources: []
+sources:
   - "[[可转债风险模型构建与应用-可转债量化系列之二]]"
 origin: agent-compiled
 status: seed

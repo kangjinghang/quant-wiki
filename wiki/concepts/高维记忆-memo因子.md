@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "利用自相关系数分布的峰度和偏度合成的选股因子，用于刻画订单流长期记忆性的高维特征。"
 tags: [开源金工, 市场微观结构, 量价关系, 高频量价因子, 机器学习, 集成学习, xgboost模型, lstm模型, 算法交易]
-sources: []
+sources:
   - "[[订单流系列-挂单方向长期记忆性的讨论与应用]]"
 origin: agent-compiled
 status: seed

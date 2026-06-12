@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "英文“Adaptive Boosting”（自适应增强）的缩写，是一种串行集成学习算法，通过调整样本权重和弱学习器权重来构建强学习器。"
 tags: [多因子模型, 机器学习, 集成学习, 因子投资, 量化, 无监督学习, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[如何基于-集成学习-技术优化多因子复合框架]]"
 origin: agent-compiled
 status: developing

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种用于控制股票市值等特征、剥离市场基准收益以计算个股真实超额收益的量化模型。"
 tags: [华创金工, 券商研报, 估值因子, 基本面量化, 价值投资, 指数增强策略, 深度研究]
-sources: []
+sources:
   - "[[估值因子研究-拙能胜巧]]"
 origin: agent-compiled
 status: seed

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Google提出的基于Transformer的双向编码器表征模型，通过MLM和NSP任务进行预训练，在多项NLP任务中取得了突破性进展。"
 tags: [机器学习, 另类数据, 深度研究, 券商研报]
-sources: []
+sources:
   - "[[chatgpt与研报文本情绪的碰撞]]"
   - "[[nlp综述-勾勒ai语义理解的轨迹]]"
 origin: agent-compiled

@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一套针对中国银行业和证券业构建的，兼顾子行业差异性与评分可比性的本土化ESG评价框架。"
 tags: [esg, 券商研报, 深度研究, 基本面]
-sources: []
+sources:
   - "[[构建金融行业esg评级体系-议题选择-权重设置如何更具子行业可比性-esg系列研究之四]]"
 origin: agent-compiled
 status: developing

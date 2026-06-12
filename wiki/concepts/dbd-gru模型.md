@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "结合因子切割论与GRU神经网络的双分支差异网络模型，用于提取切割后变量的差异化深度特征。"
 tags: [因子投资, 因子挖掘, 深度学习, gru网络, 开源金工, 券商研报, 深度研究]
-sources: []
+sources:
   - "[[因子切割论与深度学习的结合应用]]"
 origin: agent-compiled
 status: seed

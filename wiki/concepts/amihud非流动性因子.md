@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "Amihud非流动性因子（Amihud_illiq），衡量价格冲击成本。是唯一正Alpha收益与负Alpha收益接近的高频因子，扣除交易成本后多头年化超额收益达17.28%。"
 tags: [high-frequency, factor-investing]
-sources: []
+sources:
   - "[[青出于蓝-系列研究之六-如何对非流动性因子进行改进]]"
 origin: agent-compiled
 status: developing

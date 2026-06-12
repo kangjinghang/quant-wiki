@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种根据底层大类资产（如纯债、转债、权益、对冲产品）的估值指标历史分位数动态调整FOF投资权重的策略。"
 tags: [多策略叠加, 资产配置, fof组合构建, 固收+策略, 券商研报, 广发金工, 深度研究]
-sources: []
+sources:
   - "[[基于多策略配置框架的绝对收益公募产品探讨]]"
 origin: agent-compiled
 status: seed

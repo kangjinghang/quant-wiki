@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "开源金工利用ICIR加权方法合成WTR（加权预期收益率）、MTR（调整预期收益率）和CTR（关注度修正预期收益率）三个单因子构建的分析师目标价选股因子，多空年化收益14.9%，信息比率1.401，月度胜率67.4%。"
 tags: [因子, 量化, 另类数据, 深度研究]
-sources: []
+sources:
   - "[[分析师目标价的alpha信息开源金工]]"
 origin: agent-compiled
 status: developing

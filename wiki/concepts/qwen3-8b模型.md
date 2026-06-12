@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "通义千问团队推出的开源大语言模型，支持快慢思考模式，本文中用于对金融文本进行多角度重构。"
 tags: [华泰金工, 大语言模型, 文本情感分析, xgboost模型, 深度学习, 券商研报, 深度研究, ai应用, 量化投资, 指数增强策略]
-sources: []
+sources:
   - "[[llm-fadt-大模型增强文本选股]]"
 origin: agent-compiled
 status: seed

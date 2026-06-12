@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种结合企业实质性表现得分与信息披露透明度得分的ESG评价方法，旨在鼓励企业提升披露质量。"
 tags: [esg, 券商研报, 深度研究, 基本面]
-sources: []
+sources:
   - "[[构建金融行业esg评级体系-议题选择-权重设置如何更具子行业可比性-esg系列研究之四]]"
 origin: agent-compiled
 status: developing

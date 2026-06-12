@@ -4,7 +4,7 @@ title_zh:
 type: concept
 summary: "一种通过计算国家队持仓市值与宽基指数自由流通市值比的滚动Zscore斜率，来判断国家队资金入场或退出状态的择时方法。"
 tags: [中银量化, 券商研报, 多因子模型, 因子择时, 资金面, 指数增强策略, 量化投资, 回测]
-sources: []
+sources:
   - "[[如何追踪-国家队-构建股票优选组合-中银量化多因子选股系列专题]]"
 origin: agent-compiled
 status: seed
