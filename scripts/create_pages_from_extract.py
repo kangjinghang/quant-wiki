@@ -498,7 +498,7 @@ def main() -> int:
         result = _create_page(
             wiki_root, template_dir, "source", title,
             summary=summary, content=source_content,
-            raw_path=raw_path, compute_hash=True,
+            tags=tags, raw_path=raw_path, compute_hash=True,
         )
         if result:
             created_pages.append(f"source: {result.name}")

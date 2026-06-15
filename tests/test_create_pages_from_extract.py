@@ -2,8 +2,12 @@
 
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SCRIPT = REPO_ROOT / "scripts" / "create_pages_from_extract.py"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
@@ -319,3 +323,67 @@ class TestIndexEntriesSlugified:
         assert entries["concept"] == []
         assert entries["entity"] == []
         assert len(entries["source"]) == 1
+
+
+class TestSourcePageInheritsTags:
+    """source 页面应继承 extract JSON 的顶层 tags。
+
+    回归 bug：main() 建 source 页面时漏传 tags=tags，导致 frontmatter tags: []。
+    """
+
+    TEMPLATE_SOURCE = (
+        "---\n"
+        'title: ""\n'
+        'title_zh: ""\n'
+        "type: source\n"
+        'summary: ""\n'
+        "tags: []\n"
+        "origin: agent-compiled\n"
+        "status: seed\n"
+        "created: {date}\n"
+        "updated: {date}\n"
+        'source_type: ""\n'
+        'source_language: ""\n'
+        'raw_path: ""\n'
+        'review_by: ""\n'
+        "---\n"
+        "# {title}\n\n## 核心内容\n\n"
+    )
+
+    def _make_wiki(self, tmp_path, title, tags):
+        wiki = tmp_path / "wiki-root"
+        (wiki / "_templates").mkdir(parents=True)
+        (wiki / "wiki" / "sources").mkdir(parents=True)
+        (wiki / "raw" / "articles").mkdir(parents=True)
+        (wiki / "_templates" / "source.md").write_text(self.TEMPLATE_SOURCE, encoding="utf-8")
+        raw_file = wiki / "raw" / "articles" / f"[202301010000]{title}.md"
+        raw_file.write_text("source body", encoding="utf-8")
+        extract = wiki / f"extract-{title}.json"
+        extract.write_text(json.dumps({
+            "title": title,
+            "tags": tags,
+            "summary": "可转债多因子测试摘要",
+            "source_content": "## 核心内容\n\n正文。\n",
+            "concepts": [],
+            "entities": [],
+            "relations": [],
+        }, ensure_ascii=False), encoding="utf-8")
+        return wiki, extract
+
+    def test_source_page_gets_top_level_tags(self, tmp_path):
+        """建出的 source 页面 frontmatter 应含顶层 tags（含 可转债）。"""
+        wiki, extract = self._make_wiki(
+            tmp_path, "可转债多因子研究", ["可转债", "回测", "券商研报"]
+        )
+        proc = subprocess.run(
+            [sys.executable, str(SCRIPT), str(wiki), str(extract)],
+            capture_output=True, text=True,
+        )
+        assert proc.returncode == 0, proc.stderr
+
+        sources = list((wiki / "wiki" / "sources").glob("*.md"))
+        assert len(sources) == 1, f"expected 1 source, got {[s.name for s in sources]}"
+        text = sources[0].read_text(encoding="utf-8")
+        # 模板默认 tags: []；传入后应为 tags: [可转债, 回测, 券商研报]
+        assert "tags: [可转债" in text
+        assert "tags: []" not in text
