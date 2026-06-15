@@ -3,7 +3,7 @@ title: "面向投资研究行业的GPT使用指南"
 title_zh: 
 type: source
 summary: "本文由华泰金工发布，探讨了以GPT为代表的大语言模型在投资研究行业的应用前景。文章通过量化分析、网页抓取、文字摘要和行情复盘四个具体案例，展示了如何利用ChatGPT提升投研效率，并总结了代码编写与文本处理任务中的Prompt提示词技巧。"
-tags: []
+tags: [机器学习, 深度学习, 大语言模型, python, 券商研报, 另类数据, 技术面]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

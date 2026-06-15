@@ -3,7 +3,7 @@ title: "成交量择时指标——VMACD_MTM"
 title_zh: 
 type: source
 summary: "本文由东北金工研究发布，提出了一种基于成交量变动趋势的择时指标VMACD_MTM。该指标通过对VMACD进行Z-score标准化并计算其动量，有效刻画了市场放量与缩量的势头，并在宽基指数与行业指数的回测中展现出显著的超额收益与普适性。"
-tags: []
+tags: [技术面, 量价关系, 择时, 东北金工, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

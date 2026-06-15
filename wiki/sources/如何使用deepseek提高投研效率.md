@@ -3,7 +3,7 @@ title: "如何使用DeepSeek提高投研效率"
 title_zh: 
 type: source
 summary: "本文系统梳理了以DeepSeek为代表的大语言模型（LLMs）在金融投研领域的应用框架与前景。文章不仅回顾了DeepSeek、GPT、BERT等通用大模型及BloombergGPT、FinBERT等金融大模型的发展脉络，还结合具体实例，详细探讨了LLMs在语言任务、情感分析、时序分析、金融推理及多智能体建模等五大金融场景中的落地潜力与挑战。"
-tags: []
+tags: [大语言模型, 深度学习, 强化学习, 多智能体系统, 文本情感分析, 广发金工, 券商研报, 深度研究, ai应用]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

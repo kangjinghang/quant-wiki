@@ -3,7 +3,7 @@ title: "日内成交量分布因子及Logsig-Alpha因子生成——因子选股
 title_zh: 
 type: source
 summary: "本报告从人工构造与算法生成两个角度全面解析日内成交量分布，通过高频数据低频化方法构造选股因子。人工层面分四个维度（对数成交量分布、时间分布、收益率分布、价格分布）构建了多类因子；算法层面提出了Logsig-Alpha因子生成器，利用log-signature提取序列特征并生成低相关性基础因子，其合成的Logsig-Alpha-v因子表现优异。"
-tags: []
+tags: [东北金工, 券商研报, 深度研究, 高频量价因子, 因子, 机器学习, 深度学习, 回测]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

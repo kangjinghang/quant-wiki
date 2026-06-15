@@ -3,7 +3,7 @@ title: "固收+智能体(1)：BL模型+小模型实践"
 title_zh: 
 type: source
 summary: "本文探讨了如何以Black-Litterman（BL）模型为框架，结合Gradient Boosting Regressor等机器学习小模型，构建“固收+”智能体。通过将量化模型的预测结果作为主观观点输入BL模型，并引入仓位约束、换手率限制和杠杆调节，该框架在保持收益稳定的同时有效降低了组合回撤和波动。"
-tags: []
+tags: [固收+策略, black-litterman模型, 资产配置, 组合优化, 机器学习, 集成学习, 券商研报, 中金固收]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

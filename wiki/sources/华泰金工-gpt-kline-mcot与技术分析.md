@@ -3,7 +3,7 @@ title: "华泰金工 | GPT-Kline：MCoT与技术分析"
 title_zh: 
 type: source
 summary: "华泰金工团队深入探索了多模态思维链（MCoT）在K线技术分析中的应用，构建了名为GPT-Kline的智能化、自动化技术分析平台。该平台结合大模型工具调用能力，实现了从K线绘图、走势分析、指标标注到报告输出的全流程自动化，测试表明其能进行精准的形态标注并输出逻辑连贯的分析报告。"
-tags: []
+tags: [华泰金工, 大语言模型, 多模态大语言模型, 技术面, k线形态学, 深度研究, ai应用]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

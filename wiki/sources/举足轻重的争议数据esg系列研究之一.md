@@ -3,7 +3,7 @@ title: "举足轻重的争议数据ESG系列研究之一"
 title_zh: 
 type: source
 summary: "光大金工（祁嫣然、王威）ESG系列研究首篇，探讨争议数据在ESG评级体系中的重要性，实证构建高频ESG因子（传统评分:争议数据=3:1），中证500多头年化10.09%/夏普0.98。"
-tags: []
+tags: [esg, valuation, alternative-data, backtesting]
 origin: agent-compiled
 status: seed
 created: 2026-05-26

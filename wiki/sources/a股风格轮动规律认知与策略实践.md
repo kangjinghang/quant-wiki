@@ -3,7 +3,7 @@ title: "A股风格轮动规律认知与策略实践"
 title_zh: 
 type: source
 summary: "开源金工（魏建榕、张翔）2021年7月研究报告，系统探讨A股成长价值风格轮动的规律、形成机制与宏观微观驱动力，基于PB-ROE框架动态划分行业风格，结合四维行业轮动信号构建多空年化15.6%的风格轮动策略。"
-tags: []
+tags: [策略, 轮动, 量化, a股, 深度研究, 券商研报, 调仓, 比较]
 origin: agent-compiled
 status: seed
 created: 2026-05-26

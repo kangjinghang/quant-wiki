@@ -3,7 +3,7 @@ title: "一个“有效”的AI辅助复盘"
 title_zh: 
 type: source
 summary: "本文由中金固收团队提出了一种基于大语言模型（LLM）的转债市场高效复盘框架。该框架通过结构化提示词引导AI生成市场概览，并结合决策树模型挖掘市场异动线索与潜在交易机会，最后对当前转债市场给出了高YTM与股性动量品种均衡配置的策略建议。"
-tags: []
+tags: [可转债, 大语言模型, 固收量化, 中金固收, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

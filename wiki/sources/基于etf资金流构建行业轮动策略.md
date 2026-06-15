@@ -3,7 +3,7 @@ title: "基于ETF资金流构建行业轮动策略"
 title_zh: 
 type: source
 summary: "华泰金工研究报告指出，ETF资金流是有效的反向指标，部分机构投资者的非信息性交易会带来短期供需不平衡和价格扭曲。基于行业ETF资金净流入的历史分位数构建的周频行业轮动策略，样本内年化收益率超过20%，Sharpe超过1。"
-tags: []
+tags: [华泰金工, 券商研报, 行业轮动, etf, 资金面, 市场微观结构, 回测, 量化投资]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

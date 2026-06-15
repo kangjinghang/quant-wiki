@@ -2,13 +2,15 @@
 """backfill_source_tags.py — 用 extract JSON 顶层 tags 回填空 tags 的 source 页面。
 
 历史 bug（create_pages_from_extract.py 建 source 页面时漏传 tags，已修复）导致
-大量 source 页面 frontmatter `tags: []`。本脚本一次性回填存量：遍历
-wiki/meta/extract-*.json，对 tags 为空且 origin 非 self-written 的 source 页面，
-写入 JSON 顶层 tags。
+大量 source 页面 frontmatter `tags: []`。本脚本一次性回填存量：扫描
+wiki/meta/ 与 wiki/meta/archive/ 下的 extract-*.json，按 title 规范化匹配
+（文件名 slug 不一致也能命中），对 tags 为空且 origin 非 self-written 的
+source 页面写入 JSON 顶层 tags。
 
 护栏：
   - origin: self-written 的页面永不触碰
   - tags 已非空的页面不覆盖（只补空 tags）
+  - 非 taxonomy 的 tag 过滤掉
 
 用法:
     python scripts/backfill_source_tags.py <wiki-root> [--dry-run]
@@ -20,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -30,7 +33,6 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from slug_utils import slugify
 from create_page import fill_fm_field
 from lint_wiki import load_tag_taxonomy
 from merge_frontmatter import parse_frontmatter
@@ -48,10 +50,16 @@ def _tags_empty(fm: dict) -> bool:
     return False
 
 
+def _norm_title(title: str) -> str:
+    """规范化 title：去标点/空格/破折号并小写，用于跨文件名与归档目录匹配。"""
+    return re.sub(r"[\s\-—：:，,。.（()）【】、·]+", "", title).lower()
+
+
 def backfill(wiki_root: Path, dry_run: bool = False) -> dict:
     """回填空 tags 的 source 页面，返回统计字典。"""
     meta_dir = wiki_root / "wiki" / "meta"
     sources_dir = wiki_root / "wiki" / "sources"
+    archive_dir = meta_dir / "archive"
     stats = {
         "filled": 0, "skip_self_written": 0, "skip_nonempty": 0,
         "no_tags_in_json": 0, "no_valid_tags": 0, "no_source_page": 0, "bad": 0,
@@ -60,11 +68,35 @@ def backfill(wiki_root: Path, dry_run: bool = False) -> dict:
 
     taxonomy = load_tag_taxonomy(wiki_root)
 
-    if not meta_dir.is_dir():
-        print(f"ERROR: {meta_dir} not found", file=sys.stderr)
+    if not sources_dir.is_dir():
+        print(f"ERROR: {sources_dir} not found", file=sys.stderr)
         return stats
 
-    for ej in sorted(meta_dir.glob("extract-*.json")):
+    # 1. 建 tags-empty source 索引: norm_title -> path（只含待回填的页面）。
+    #    origin=self-written / tags 已非空 的页面不进索引，天然受保护。
+    empty_sources: dict[str, Path] = {}
+    for sp in sorted(sources_dir.glob("*.md")):
+        text = sp.read_text(encoding="utf-8")
+        fm, _body, _raw_fm = parse_frontmatter(text)
+        if fm is None:
+            continue
+        origin = str(fm.get("origin", "")).strip().strip('"').strip("'")
+        if origin == "self-written":
+            stats["skip_self_written"] += 1
+            continue
+        if not _tags_empty(fm):
+            stats["skip_nonempty"] += 1
+            continue
+        title = str(fm.get("title", "")).strip().strip('"').strip("'")
+        if title:
+            empty_sources[_norm_title(title)] = sp
+
+    # 2. 扫 meta/ 与 meta/archive/ 的 extract JSON（按 title 规范化匹配 source）。
+    json_files = sorted(meta_dir.glob("extract-*.json"))
+    if archive_dir.is_dir():
+        json_files += sorted(archive_dir.glob("extract-*.json"))
+
+    for ej in json_files:
         try:
             data = json.loads(ej.read_text(encoding="utf-8"))
         except Exception as e:
@@ -91,30 +123,14 @@ def backfill(wiki_root: Path, dry_run: bool = False) -> dict:
                 stats["no_valid_tags"] += 1
                 continue
 
-        source_page = sources_dir / f"{slugify(title)}.md"
-        if not source_page.exists():
+        # pop 去重：同 title 的 JSON（meta + archive 各一份）只填一次。
+        source_page = empty_sources.pop(_norm_title(title), None)
+        if source_page is None:
             stats["no_source_page"] += 1
             continue
 
+        # fill_fm_field 整行替换 tags，格式与 fill_template（concept/entity）一致。
         text = source_page.read_text(encoding="utf-8")
-        fm, _body, _raw_fm = parse_frontmatter(text)
-        if fm is None:
-            stats["bad"] += 1
-            print(f"  unparseable, skip: {source_page.name}", file=sys.stderr)
-            continue
-
-        origin = str(fm.get("origin", "")).strip().strip('"').strip("'")
-        if origin == "self-written":
-            stats["skip_self_written"] += 1
-            continue
-        if not _tags_empty(fm):
-            stats["skip_nonempty"] += 1
-            continue
-
-        # merge_array_field mishandles empty inline `tags: []` (its inline regex
-        # needs `.+` inside []). These source pages all have empty tags, so use
-        # fill_fm_field to replace the whole line — same function fill_template
-        # uses for concept/entity pages, keeping frontmatter format consistent.
         tags_str = "[" + ", ".join(tags) + "]"
         new_text = fill_fm_field(text, "tags", tags_str)
         verb = "WOULD FILL" if dry_run else "FILLED"

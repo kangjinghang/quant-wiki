@@ -3,7 +3,7 @@ title: "社会责任评价中的 Alpha"
 title_zh: 
 type: source
 summary: "本报告由招商定量任瞳团队发布，聚焦于ESG投资中的社会责任（S）细分领域。报告利用秩鼎公司提供的底层指标，根据企业利益相关者重新构建了包含五个维度的社会责任评价指标体系，并证实该综合因子在控制经典定价因子后仍具有显著的选股Alpha能力。"
-tags: []
+tags: [esg, 因子投资, 量化投资, 券商研报, 招商定量任瞳团队, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

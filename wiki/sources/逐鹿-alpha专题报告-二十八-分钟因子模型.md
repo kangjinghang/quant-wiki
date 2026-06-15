@@ -3,7 +3,7 @@ title: "“逐鹿”Alpha专题报告（二十八）——分钟因子模型"
 title_zh: 
 type: source
 summary: "本文基于A股市场日内微观结构特征，构建了一个基于分钟频因子的隔夜交易策略。策略采用集成学习框架，融合了LightGBM在截面数据上的优势与自研pegformer模型在时序数据上的捕捉能力，在样本外测试中取得了显著的年化超额收益。"
-tags: []
+tags: [高频量价因子, 集成学习, lightgbm模型, gru网络, transformer模型, 深度学习, 回测, 券商研报, 中信建投金工, 市场微观结构, 量价关系]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

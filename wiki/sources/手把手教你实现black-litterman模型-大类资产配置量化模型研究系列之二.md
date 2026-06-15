@@ -3,7 +3,7 @@ title: "手把手教你实现Black-Litterman模型——大类资产配置量化
 title_zh: 
 type: source
 summary: "本文作为Black-Litterman（BL）模型的入门教程，详细介绍了其基础理论、计算步骤及Python编程实现。报告通过将资产最近一个月收益率作为主观观点，构建了一个适用于“固收+”产品的资产配置策略，回测表明BL模型在年化收益和最大回撤上均优于传统的均值-方差模型（MVO）和固定比例模型。"
-tags: []
+tags: [资产配置, black-litterman模型, 均值方差模型, 券商研报, 入门, python, 固收量化]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

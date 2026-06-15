@@ -3,7 +3,7 @@ title: "LLMRouter-GRU：“舆情分诊台”赋能AI量价因子"
 title_zh: 
 type: source
 summary: "华泰金工提出LLMRouter-GRU神经网络，创新性地将大语言模型（LLM）对新闻舆情的情感分析能力作为“智能分诊台”，引入AI量价模型的混合专家模块中。该模型采用稀疏路由机制实现“情绪分域，量价建模”，在不改变基础Alpha预测算法的前提下，有效融合了另类舆情数据与量价数据，显著提升了沪深300、中证500等宽基指数增强组合的年化超额收益。"
-tags: []
+tags: [华泰金工, gru网络, 大语言模型, 深度学习, 文本情感分析, 另类数据, 指数增强策略, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

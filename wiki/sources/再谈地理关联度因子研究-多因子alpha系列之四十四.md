@@ -3,7 +3,7 @@ title: "再谈地理关联度因子研究-多因子Alpha系列之四十四"
 title_zh: 
 type: source
 summary: "本文承接广发金工多因子Alpha系列第四十三篇，基于“领先滞后效应”，将地理关联度因子的构建逻辑拓展至行业关联维度，构建了5种行业相关系数类因子。实证表明，INDUCORR与INDUCORRP因子在全市场及中证1000股票池内均表现出显著的选股能力，能够提供传统因子外的增量Alpha信息。"
-tags: []
+tags: [因子投资, 多因子模型, 量化, brokerage-report, deep-research]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

@@ -3,7 +3,7 @@ title: "从知识库到知识图谱：DeepSeek&GraphRAG"
 title_zh: 
 type: source
 summary: "广发金工团队探讨了如何将DeepSeek大语言模型与微软开源的GraphRAG框架结合，应用于金融投研领域的知识图谱构建。报告详细介绍了DeepSeek的本地部署方法、GraphRAG相较于传统RAG在全局推理上的优势，并通过券商研报的实证测试，验证了该框架在提取实体关系、梳理投资逻辑和产业链分析方面的卓越表现。"
-tags: []
+tags: [大语言模型, 深度学习, ai应用, 券商研报, 广发金工]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

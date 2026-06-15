@@ -3,7 +3,7 @@ title: "K线形态学研究系列之七：停顿线"
 title_zh: 
 type: source
 summary: "本文由华创金工发布，深入研究了三日K线形态中的看空形态“停顿线”。报告指出，停顿线结合均线（如MA30/MA60）等技术指标在A股市场具有显著的风险提示效果，并在特定个股上能获得超过60%的胜率。"
-tags: []
+tags: [技术面, 华创金工, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

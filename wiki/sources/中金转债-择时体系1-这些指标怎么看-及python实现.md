@@ -3,7 +3,7 @@ title: "中金转债｜择时体系1：这些指标怎么看，及Python实现"
 title_zh: 
 type: source
 summary: "本文系统梳理并总结了可转债市场的9个核心择时指标，涵盖估值、情绪与结构等多个维度，并提供了相应的Python实现代码。文章指出转债择时应避免依赖线性直觉，需建立基于客观可验证数据的体系，并建议使用决策树模型对多指标进行可解释的混合测试。"
-tags: []
+tags: [可转债, 择时, python, 券商研报, 中金固收]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

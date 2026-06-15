@@ -3,7 +3,7 @@ title: "基于多因子加权的ETF轮动策略"
 title_zh: 
 type: source
 summary: "广发金工研究报告探讨了如何将多因子选股模型映射并应用于ETF轮动策略。报告对比了单因子在选股与ETF轮动中的效果差异，提出了基于成分股等权映射和持仓相似度剔除的框架优化方案，并实证了IC/ICIR加权多因子ETF轮动策略的有效性。"
-tags: []
+tags: [etf, 多因子模型, 券商研报, 广发金工, 量化投资, 量价因子, 资金面, 回测]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

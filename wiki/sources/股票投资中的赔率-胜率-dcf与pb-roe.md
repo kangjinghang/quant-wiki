@@ -3,7 +3,7 @@ title: "股票投资中的赔率/胜率/DCF与PB-ROE"
 title_zh: 
 type: source
 summary: "本文探讨了股票投资中赔率与胜率的本质，指出静态估值并非赔率的理想代理变量，而预期估值（如PB_FY1）更具参考价值。文章结合现金流折现模型（DCF）和PB-ROE框架，论证了高预期ROE与低PB的组合能够同时实现高胜率与高赔率，从而打破传统投资中的“不可能三角”。"
-tags: []
+tags: [估值, 基本面, 价值投资, 成长投资, 券商研报, 东北金工, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

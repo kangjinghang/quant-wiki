@@ -3,7 +3,7 @@ title: "华泰金工 | “GPT如海”：RAG与代码复现"
 title_zh: 
 type: source
 summary: "本文探索大语言模型在量化研究领域中进行代码复现的实际应用。基于GPT-4系列多模态大模型和RAG（检索增强生成）技术，华泰金工构建了一个名为“GPT如海”的代码复现框架，能够根据输入的图片或PDF文档准确提取因子或AI量化策略信息并自动化生成Python代码。"
-tags: []
+tags: [华泰金工, 大语言模型, 深度学习, python, ai应用]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

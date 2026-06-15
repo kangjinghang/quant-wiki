@@ -3,7 +3,7 @@ title: "预期外ROIC-WACC回报因子及相关测试"
 title_zh: 
 type: source
 summary: "本文由东北金工研究发布，详细规范了ROIC（投入资本回报率）和WACC（加权平均资本成本）的计算流程，并据此构建了“预期外ROIC-WACC回报因子”。测试表明，该因子在全市场及各宽基指数中均表现出稳定且显著的超额收益。此外，文章还探讨了根据ROIC-WACC状态进行成长分域的选股策略。"
-tags: []
+tags: [因子投资, 基本面量化, 估值, 东北金工, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

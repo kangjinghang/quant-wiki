@@ -3,7 +3,7 @@ title: "行业轮动：何为趋势投资的正确打开方式——AIA-Timing�
 title_zh: 
 type: source
 summary: "本文探讨了在AIA-Timing行业轮动策略中动量因子的重要作用，指出在2023年以复苏为主的宏观周期环境下，趋势性因子将获得更多表现机会。文章对比了基于夏普比（SR）和信息比（IR）构建的两类动量因子，发现长期来看基于IR的动量因子表现更稳健，但短期内基于SR的因子更具弹性，建议短期沿用SR因子，长期引入IR因子进行框架升级。"
-tags: []
+tags: [行业轮动, 动量, momentum, 资产配置, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

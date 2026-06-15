@@ -3,7 +3,7 @@ title: "从RNN到ChatGPT：大模型的发展与应用（上）"
 title_zh: 
 type: source
 summary: "本文由东北金工研究发布，系统回顾了自然语言处理（NLP）领域从早期循环神经网络（RNN）到大语言模型（LLM）的技术演进历程。文章详细解析了注意力机制、Transformer架构、预训练语言模型（如BERT、GPT）的核心原理，并深入探讨了大语言模型的“智能涌现”现象及其背后的关键训练技术，如提示学习、指令微调和基于人类反馈的强化学习（RLHF）。"
-tags: []
+tags: [大语言模型, 深度学习, 机器学习, 东北金工, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

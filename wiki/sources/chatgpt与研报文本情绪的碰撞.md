@@ -3,7 +3,7 @@ title: "ChatGPT与研报文本情绪的碰撞"
 title_zh: 
 type: source
 summary: "本文探讨了ChatGPT在金融文本情感分析中的应用，使用GPT-3.5对分析师盈余点评标题进行1-10分的连续情感评分。实证表明，基于GPT评分筛选的“GPT超预期”股票池及构建的JOR因子组合，其收益表现显著优于传统文本分析方法，证实了ChatGPT在金融文本情绪评分方面的优越性和实用价值。"
-tags: []
+tags: [大语言模型, 另类数据, 文本情感分析, 券商研报, 华安金工, 深度研究, 因子投资, 业绩超预期]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

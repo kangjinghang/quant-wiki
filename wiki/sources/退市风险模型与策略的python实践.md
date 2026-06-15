@@ -3,7 +3,7 @@ title: "退市风险模型与策略的Python实践"
 title_zh: 
 type: source
 summary: "本文针对可转债正股退市风险，分别从市场因素和财务因素两个维度构建了量化测算模型。市场因素方面利用股价、市值及波动率计算退市概率；财务因素方面选取多维度财务指标，利用随机森林模型预测隐含评级。测试表明，将退市风险剔除条件引入低价、高YTM及EasyBall策略中，能有效降低最大回撤并提升卡玛比率。"
-tags: []
+tags: [可转债, python, 机器学习, 回测, 风险控制, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

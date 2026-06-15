@@ -3,7 +3,7 @@ title: "LLM-FADT：大模型增强文本选股"
 title_zh: 
 type: source
 summary: "本文基于开源大模型Qwen3-8b对BERT-FADT策略进行增强，构建了LLM-FADT策略。该策略利用大模型对原始分析师文本进行多角度重构生成增量信息，并通过“先训练后合成”方案构建选股因子。测试结果显示，LLM增强后的因子表现显著优于增强前，并在沪深300指增和医药行业增强组合中取得优异业绩。"
-tags: []
+tags: [华泰金工, 大语言模型, 文本情感分析, xgboost模型, 深度学习, 券商研报, 深度研究, ai应用, 量化投资, 指数增强策略]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

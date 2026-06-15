@@ -3,7 +3,7 @@ title: "另辟蹊径：发掘分析师因子中的另类alpha"
 title_zh: 
 type: source
 summary: "本文基于慧博分析师预期数据，从目标价、报告页数和发布时点三个另类角度挖掘增量alpha。研究发现，基于慧博数据的一致预期估值因子表现优异，而合成的另类分析师因子在各个选股域中均有稳健表现，且与传统alpha因子相关性较低。"
-tags: []
+tags: [券商研报, 华安金工, 分析师预期因子, 因子挖掘, 量化投资, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

@@ -3,7 +3,7 @@ title: "华泰金工 | Deepseek+投研：大模型应用集锦"
 title_zh: 
 type: source
 summary: "本文探讨了DeepSeek大模型在金融投研领域的六大常规应用（个股技术分析、报告梳理汇总、基金季报信息提取、新闻舆情分析、研报观点融合、报告自动生成）及两大Agent应用（DeepSeek犀照、DeepSeek-Researcher）。文章指出，在后GPT时代，以DeepSeek为代表的“后训练+开源”模型凭借高性价比和可本地部署的优势，有望在信息提取、检索、融合、分析、生成等投研场景中带来显著的效率提升。"
-tags: []
+tags: [华泰金工, 大语言模型, 深度学习, ai应用, 文本情感分析, 另类数据]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

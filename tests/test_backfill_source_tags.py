@@ -13,10 +13,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 from backfill_source_tags import backfill
 
 
-def _write_source(path: Path, tags_line: str, origin: str = "agent-compiled") -> None:
+def _write_source(path: Path, title: str, tags_line: str, origin: str = "agent-compiled") -> None:
     path.write_text(
         "---\n"
-        'title: "T"\n'
+        f'title: "{title}"\n'
         f"{tags_line}\n"
         f"origin: {origin}\n"
         "---\nbody\n",
@@ -24,14 +24,17 @@ def _write_source(path: Path, tags_line: str, origin: str = "agent-compiled") ->
     )
 
 
-def _make(tmp_path, title, tags, source_tags_line="tags: []", origin="agent-compiled"):
+def _make(tmp_path, title, tags, source_tags_line="tags: []", origin="agent-compiled", in_archive=False):
     # wiki_root = tmp_path; the script looks for wiki_root/wiki/{sources,meta}
     root = tmp_path
     (root / "wiki" / "sources").mkdir(parents=True)
-    (root / "wiki" / "meta").mkdir(parents=True)
+    meta = root / "wiki" / "meta"
+    meta.mkdir(parents=True)
     src = root / "wiki" / "sources" / f"{title}.md"
-    _write_source(src, source_tags_line, origin)
-    ej = root / "wiki" / "meta" / f"extract-{title}.json"
+    _write_source(src, title, source_tags_line, origin)
+    ej_dir = meta / "archive" if in_archive else meta
+    ej_dir.mkdir(parents=True, exist_ok=True)
+    ej = ej_dir / f"extract-{title}.json"
     ej.write_text(json.dumps({
         "title": title, "tags": tags,
         "source_content": "x", "concepts": [], "entities": [],
@@ -78,3 +81,24 @@ class TestBackfillSourceTags:
         assert "回测" in text
         assert "非法tag" not in text
         assert "tags: []" not in text
+
+    def test_scans_archive_subdir(self, tmp_path):
+        """extract JSON 归档到 meta/archive/ 后仍能回填。"""
+        wiki, src = _make(tmp_path, "alpha", ["可转债", "回测"], in_archive=True)
+        backfill(wiki, dry_run=False)
+        assert "tags: [可转债" in src.read_text(encoding="utf-8")
+
+    def test_matches_source_by_title_not_filename(self, tmp_path):
+        """source 文件名 slug 与 JSON 不一致时，按 title 规范化匹配。"""
+        root = tmp_path
+        (root / "wiki" / "sources").mkdir(parents=True)
+        (root / "wiki" / "meta").mkdir(parents=True)
+        src = root / "wiki" / "sources" / "some-other-slug.md"
+        _write_source(src, "可转债研究", "tags: []")
+        ej = root / "wiki" / "meta" / "extract-different-slug.json"
+        ej.write_text(json.dumps({
+            "title": "可转债研究", "tags": ["可转债"],
+            "source_content": "x", "concepts": [], "entities": [],
+        }, ensure_ascii=False), encoding="utf-8")
+        backfill(root, dry_run=False)
+        assert "tags: [可转债" in src.read_text(encoding="utf-8")

@@ -3,7 +3,7 @@ title: "基于Logsig-RNN的高频数据低频化选股因子——机器学习�
 title_zh: 
 type: source
 summary: "本报告由东北证券金融工程组发布，主要探讨了利用Logsig-RNN模型处理高频量价数据并将其转化为低频（周频）选股因子的方法。报告详细介绍了Signature与Log-signature在路径特征提取中的作用，并基于此构建了深度学习因子LogsigRNN_week。测试表明，该因子表现优异，与传统因子相关性低，能为国证2000增强策略提供显著的增量信息。"
-tags: []
+tags: [机器学习, 深度学习, 高频量价因子, 因子投资, 东北金工, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

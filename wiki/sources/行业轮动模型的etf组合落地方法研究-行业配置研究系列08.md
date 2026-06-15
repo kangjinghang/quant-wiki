@@ -3,7 +3,7 @@ title: "行业轮动模型的ETF组合落地方法研究——行业配置研究
 title_zh: 
 type: source
 summary: "本文旨在建立一个将行业轮动策略转化为ETF投资组合的“两步法”通用框架：首先建立行业指数与ETF基金的映射关系，其次通过等权配置或组合优化的方法确定ETF基金的配置权重。在该框架下，对AIA-Timing及QIA-Timing行业配置模型进行了实证检验，最终确定“收益率匹配+跟踪误差优化”法是一个较为优秀的行业配置模型落地方案。"
-tags: []
+tags: [行业轮动, etf, 组合优化, 券商研报, 华泰金工]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

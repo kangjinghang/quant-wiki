@@ -3,7 +3,7 @@ title: "基于ETF申赎的ETF轮动策略"
 title_zh: 
 type: source
 summary: "广发金工团队基于ETF独特的双层交易机制，利用一级市场申赎导致的资金流数据，从ETF产品、跟踪指数和明细成分股三个维度构建了资金流因子。研究发现，ETF资金流相关因子总体呈现反转特征，其中剔除宽基ETF后基于个股维度构建的stock_flow2amt_ma5因子表现最优，多头组合年化收益达15.3%。"
-tags: []
+tags: [etf, 资金面, 回测, 广发金工, 券商研报, 量化投资, 反转因子]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

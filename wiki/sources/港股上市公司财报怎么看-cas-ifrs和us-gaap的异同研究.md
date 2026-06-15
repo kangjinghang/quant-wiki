@@ -3,7 +3,7 @@ title: "港股上市公司财报怎么看：CAS、IFRS和US GAAP的异同研究"
 title_zh: 
 type: source
 summary: "本文系统对比了港股上市公司常用的《中国企业会计准则》(CAS)、《国际财务报告准则》(IFRS)和《美国通用会计准则》(US GAAP)在报表列报、确认计量及信息披露方面的异同。文章指出，IFRS更倾向于公允价值计量且赋予企业更大灵活性，而CAS和US GAAP相对更为审慎和规则导向。最后，文章总结了在跨准则进行财务报表分析时需要关注的利润口径、现金流分类及资产计量等核心关注点。"
-tags: []
+tags: [券商研报, 中金固收, 基本面, 估值, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-04

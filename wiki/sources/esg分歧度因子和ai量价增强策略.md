@@ -3,7 +3,7 @@ title: "ESG分歧度因子和AI量价增强策略"
 title_zh: 
 type: source
 summary: "本文针对ESG评级数据口径不统一的特点，构建了ESG分歧度因子，并与ESG评级因子结合生成ESG综合因子。研究发现，该综合因子在有效性和稳定性上优于单一的ESG评级因子。进一步地，文章以高ESG个股为底仓，结合AI量价因子构建了沪深300指数增强策略，实现了年化10.55%的超额收益。"
-tags: []
+tags: [esg, ai应用, 指数增强, 华泰金工, 券商研报, 另类数据, 深度学习, 多因子模型]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

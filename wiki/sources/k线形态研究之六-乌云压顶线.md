@@ -3,7 +3,7 @@ title: "K线形态研究之六：乌云压顶线"
 title_zh: 
 type: source
 summary: "本文由华创金工发布，深入研究了二日看空K线形态“乌云压顶线”。报告指出，单一形态结合均线（如MA60）等技术指标可显著提升风险提示的胜率，并构建了年化收益达16.87%的风险提示回测策略。"
-tags: []
+tags: [技术面, 华创金工, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

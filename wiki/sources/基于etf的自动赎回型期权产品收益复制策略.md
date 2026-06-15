@@ -3,7 +3,7 @@ title: "基于ETF的自动赎回型期权产品收益复制策略"
 title_zh: 
 type: source
 summary: "广发金工研究报告提出了一种基于Delta对冲原理的自动赎回型期权产品（如雪球产品）收益复制策略。通过蒙特卡洛模拟估算Delta值并对标的ETF进行动态调仓，研究发现单路径策略具有高收益高胜率但厚尾的特征，而多路径合并建仓策略能有效平滑收益波动，实现稳健的绝对收益。"
-tags: []
+tags: [广发金工, 券商研报, 套利, etf, 回测, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

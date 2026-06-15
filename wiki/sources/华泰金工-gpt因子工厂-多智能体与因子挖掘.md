@@ -3,7 +3,7 @@ title: "华泰金工 | GPT因子工厂：多智能体与因子挖掘"
 title_zh: 
 type: source
 summary: "本文提出了一种基于GPT和多智能体系统的端到端量价因子挖掘框架，即“GPT因子工厂”。该系统通过FactorGPT、CodeGPT和EvalGPT三个智能体的分工合作，实现了因子构建、代码生成、回测检验与自动优化的全流程闭环。测试表明，该系统挖掘出的因子表现较好且相关性较低，优化后的因子在各项指标上有显著提升。"
-tags: []
+tags: [华泰金工, 券商研报, 深度研究, 机器学习, 大语言模型, 因子挖掘, 量价因子, 高频量价因子, ai应用, python]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

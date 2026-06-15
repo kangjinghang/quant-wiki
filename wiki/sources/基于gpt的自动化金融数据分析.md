@@ -3,7 +3,7 @@ title: "基于GPT的自动化金融数据分析"
 title_zh: 
 type: source
 summary: "本文由华泰金工发布，主要测试了GPT-4最新的Code Interpreter功能在自动化金融数据分析中的应用。文章以月度PPI数据为例，展示了如何引导GPT绘制走势图、识别经济周期拐点并采用ARIMA模型预测未来趋势。此外，文章还跟踪汇报了AI中证1000增强、机构调研选股等多个量化策略的近期表现。"
-tags: []
+tags: [华泰金工, 大语言模型, 深度研究, python, 宏观, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

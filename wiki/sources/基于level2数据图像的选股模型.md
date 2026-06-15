@@ -3,7 +3,7 @@ title: "基于level2数据图像的选股模型"
 title_zh: 
 type: source
 summary: "华泰金工提出了一种基于图像识别的全新选股模型，将高频逐笔成交与逐笔委托数据转换为15×8×8的三维图像格式，并应用Vision Transformer（ViT）及Video Vision Transformer（ViViT）进行模式识别。实证表明，该图像模型能提取传统时序模型无法覆盖的差异化Alpha信号，在中证1000指数增强组合中实现了年化17.44%的超额收益。"
-tags: []
+tags: [华泰金工, 深度学习, transformer模型, 注意力机制, 高频数据, 市场微观结构, 量价关系, 指数增强, 券商研报, 深度研究, ai应用, 量化投资]
 origin: agent-compiled
 status: seed
 created: 2026-06-05

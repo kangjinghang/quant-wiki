@@ -3,7 +3,7 @@ title: "华泰金工 | GPT＋量化投资＝？"
 title_zh: 
 type: source
 summary: "本文由华泰金工团队撰写，深入探讨了GPT及大语言模型对量化投资的潜在影响。文章指出，短期内GPT难以直接应用于低信噪比的金融预测，但长期来看，大模型的耦合与涌现能力将解放量化投资的生产力。此外，文章详细解析了ChatGPT的原理，并探讨了GAN、VAE、扩散模型等生成模型在金融数据生成中的应用前景。"
-tags: []
+tags: [深度学习, 机器学习, 强化学习, 券商研报, 观点]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

@@ -3,7 +3,7 @@ title: "久期测算的探索细节处理与python实践"
 title_zh: 
 type: source
 summary: "中金固收团队提出基于分步过滤和波动比较的债基久期测算方法，通过滚动窗口加总、寻找最优指数、KMeans聚类降维及有效波动比矫正，实现稳定性与时效性兼顾，并建议使用扩散指标观察市场情绪。"
-tags: []
+tags: [债券, 基金, 量化, 回测, 实战, 教程, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-05-25

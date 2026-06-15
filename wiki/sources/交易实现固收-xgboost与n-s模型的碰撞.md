@@ -3,7 +3,7 @@ title: "交易实现固收+：XGBoost与N-S模型的碰撞"
 title_zh: 
 type: source
 summary: "本文提出了一种基于Nelson-Siegel (N-S) 模型与 XGBoost 机器学习算法相结合的债券收益率曲线预测与交易框架。通过提取收益率曲线的水平、斜率和曲率特征，并引入量价因子进行滚动预测，同时结合模型误差分布计算策略赔率与回撤约束，实现了对纯债及红利固收+组合的久期动态择时与增强。"
-tags: []
+tags: [xgboost模型, 固收量化, 债券市场, 券商研报, 中金固收, 深度研究, python, 资产配置, 机器学习]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

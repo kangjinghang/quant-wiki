@@ -3,7 +3,7 @@ title: "AI量价选股模型风控探讨"
 title_zh: 
 type: source
 summary: "本文以华泰AI量价选股模型为分析对象，深入探讨了2024年1月底至2月初量化Alpha策略大面积回撤的原因及应对方案。研究指出，市值下沉带来的Beta风险与策略同质化导致的Alpha衰减是回撤主因，并建议通过约束非线性市值或市值高阶矩来有效控制组合的尾部风险。"
-tags: []
+tags: [华泰金工, 深度研究, 机器学习, gru网络, 风险控制, 回测, 量价因子, 指数增强策略]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

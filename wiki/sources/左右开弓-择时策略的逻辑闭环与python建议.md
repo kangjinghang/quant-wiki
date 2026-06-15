@@ -3,7 +3,7 @@ title: "左右开弓，择时策略的逻辑闭环与Python建议"
 title_zh: 
 type: source
 summary: "本文是中金转债择时体系报告的第四篇，旨在结合左侧估值指标与右侧趋势分析，利用强化学习模型构建一个逻辑闭环的转债统一择时框架。文章详细探讨了如何精简左侧指标、引入右侧趋势代理变量，并提出了通过微调预训练模型来吸纳最新市场经验的方法。"
-tags: []
+tags: [可转债, 强化学习, 择时, python, 中金固收, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

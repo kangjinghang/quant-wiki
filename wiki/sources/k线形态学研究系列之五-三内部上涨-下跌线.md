@@ -3,7 +3,7 @@ title: "K线形态学研究系列之五：三内部上涨\下跌线"
 title_zh: 
 type: source
 summary: "本文深入研究了三日K线模式——三内部上涨/下跌线，并探讨了其作为反转信号在A股市场中的应用效果。报告指出，单一的K线形态结合均线、基本面等多指标能够显著提升胜率，并构建了结合Fscore的周度调仓策略，取得了5.86%的年化收益。"
-tags: []
+tags: [技术面, 华创金工, 券商研报, 深度研究, 回测]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

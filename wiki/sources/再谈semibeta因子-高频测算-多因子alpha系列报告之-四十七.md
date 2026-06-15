@@ -3,7 +3,7 @@ title: "再谈SemiBeta因子：高频测算——多因子Alpha系列报告之(�
 title_zh: 
 type: source
 summary: "广发金融工程团队在前期低频SemiBeta因子研究的基础上，进一步利用A股日内高频数据（1分钟/5分钟级）构建高频SemiBeta因子。实证表明，在周频和月频调仓下，该因子在全市场选股中表现出显著的负IC特征，尤其是MN（市场跌、个股涨）系列因子在周频调仓下具有突出的多空收益表现。"
-tags: []
+tags: [券商研报, 因子投资, 高频量价因子, 多因子模型, 深度研究, 回测]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

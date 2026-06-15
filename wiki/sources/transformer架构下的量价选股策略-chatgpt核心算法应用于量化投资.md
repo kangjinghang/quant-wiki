@@ -3,7 +3,7 @@ title: "Transformer架构下的量价选股策略：ChatGPT核心算法应用于
 title_zh: 
 type: source
 summary: "本报告由广发金融工程研究发布，探讨了将ChatGPT的核心算法Transformer应用于量化投资策略。通过输入个股涨跌幅和换手率等量价面板数据，利用Transformer模型预测股票未来涨跌概率，构建月度调仓的选股策略。测试结果显示，在中证500、沪深300和全市场均获得了良好的相对收益与回撤控制能力。"
-tags: []
+tags: [深度学习, 神经网络, 大语言模型, 技术面, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

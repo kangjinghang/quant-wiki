@@ -3,7 +3,7 @@ title: "PB之变：精细分拆，新生华彩——量化研究系列报告之�
 title_zh: 
 type: source
 summary: "华安金工团队发布量化研究报告，通过深度拆解传统PB因子，构建公司“真实价值”估计模型，剔除行业时序估值波动的干扰，重塑全新的估值因子VAL。新因子在全A及各指数域的指增策略中均产生了显著的边际增量Alpha。"
-tags: []
+tags: [华安金工, 券商研报, 因子投资, 估值, 多因子模型, 指数增强, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

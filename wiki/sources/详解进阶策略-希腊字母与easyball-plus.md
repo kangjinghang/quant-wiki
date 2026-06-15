@@ -3,7 +3,7 @@ title: "详解进阶策略：希腊字母与EasyBall Plus"
 title_zh: 
 type: source
 summary: "本文详细介绍了两种可转债进阶量化策略：EasyBall Plus与希腊字母策略。EasyBall Plus通过结合EasyBall粗选与动量因子，实现了攻防一体的高性价比回报；希腊字母策略则基于Black-Scholes偏微分方程，利用XGBoost预测波动率来拆解转债驱动力，提供了一个更具可塑性的定量择券框架。"
-tags: []
+tags: [可转债, 量化, 动量, xgboost模型, 券商研报, 中金固收, 深度研究, python]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

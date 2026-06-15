@@ -3,7 +3,7 @@ title: "K线形态学研究系列之四：母子线"
 title_zh: 
 type: source
 summary: "本文深入研究了二日K线模式“母子线”的基本性质及其在A股市场的应用。研究发现，母子线结合MA60等指标能有效提升风险提示胜率，并在历史回测中展现出较好的空头风险提示效果与超额收益。"
-tags: []
+tags: [技术面, 回测, 华创金工, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-02

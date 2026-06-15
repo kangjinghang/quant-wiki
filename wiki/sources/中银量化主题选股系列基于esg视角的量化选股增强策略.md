@@ -3,7 +3,7 @@ title: "中银量化主题选股系列基于ESG视角的量化选股增强策略
 title_zh: 
 type: source
 summary: "中银量化团队基于秩鼎ESG底层数据，探索ESG量化选股增强策略。ESG综合评价得分因子IC均值>0.03，基于该因子构建的全市场正面筛选、沪深300与中证500指数增强及专精特新ESG整合策略均获稳定超额收益。"
-tags: []
+tags: [esg, 因子, 指数增强, 量化, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

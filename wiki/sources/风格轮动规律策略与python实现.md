@@ -3,7 +3,7 @@ title: "风格轮动规律策略与python实现"
 title_zh: 
 type: source
 summary: "中金固收（杨冰、房铎、罗凡、陈健恒）2022.4，A股风格轮动趋势与边界并存特征分析，40日窗口正负20%为关键边际值，2020年后演变为四象限运动，转债风格轮动策略年化16.6%，固收+策略年化7.46%"
-tags: []
+tags: [风格轮动, 可转债, 策略, 回测, python, a股, 价值投资, 成长投资]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

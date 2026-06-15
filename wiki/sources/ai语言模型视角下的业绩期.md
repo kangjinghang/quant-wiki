@@ -3,7 +3,7 @@ title: "AI语言模型视角下的业绩期"
 title_zh: 
 type: source
 summary: "本文探讨了如何利用大语言模型（LLM）高效提取和处理可转债正股年报中的海量文本信息，实现业绩归因与行业特征的批量分析。文章还结合退市新规，分析了转债市场中小微盘及财务风险标的在业绩期的潜在风险与情绪修复机会。"
-tags: []
+tags: [大语言模型, 可转债, 基本面, 券商研报, 中金固收, ai应用]
 origin: agent-compiled
 status: seed
 created: 2026-06-03

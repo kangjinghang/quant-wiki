@@ -3,7 +3,7 @@ title: "如何快速分辨趋势Python实现趋势分析及债市中的适应性
 title_zh: 
 type: source
 summary: "中金固收（杨冰、房铎、罗凡、陈健恒）2022.02，基于利弗莫尔趋势理论构建固收资产趋势识别Python框架，通过回撤阈值与突破边际值参数化识别利率债/信用债/可转债趋势，论证各资产对趋势交易的适应性差异。"
-tags: []
+tags: [债券, 可转债, 技术面, 趋势跟踪, python, 实战, 公众号]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

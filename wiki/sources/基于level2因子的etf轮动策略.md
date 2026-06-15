@@ -3,7 +3,7 @@ title: "基于Level2因子的ETF轮动策略"
 title_zh: 
 type: source
 summary: "广发金工团队探讨了将基于Level 2逐笔订单数据构建的高频选股因子（如大小单、长短单因子）应用于ETF轮动策略的可行性。研究通过“个股汇总至指数，再映射至ETF”的逻辑，在周频和月频维度进行了实证分析，发现月频调仓下因子表现更为突出，其中bigbuy_bigsell等复合因子的Top5组合年化收益可达16.8%以上。此外，将Level2因子与基于卷积神经网络的fimage因子结合，能有效降低相关性并进一步提升组合收益。"
-tags: []
+tags: [广发金工, 券商研报, etf, 高频因子, 量价关系, 深度学习, 卷积神经网络, 行业轮动]
 origin: agent-compiled
 status: seed
 created: 2026-06-04
