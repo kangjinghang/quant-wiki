@@ -3,7 +3,7 @@ title: "解密A股风格轮动下篇中银量化资配专题"
 title_zh: 
 type: source
 summary: "中银量化（郭策）2021.10，风格轮动下篇，构建基于宏观慢变量的Softmax多分类风格轮动预测模型，采用滚动预测回测框架，2009-2021样本外年化超额收益约9%，季度胜率67%"
-tags: []
+tags: [风格轮动, 量化投资, 回测, 券商研报, 中银量化]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

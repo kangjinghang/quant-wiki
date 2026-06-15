@@ -3,7 +3,7 @@ title: "FOF赋能绝对收益基金组合构建实战上量化绝对收益之路
 title_zh: 
 type: source
 summary: "华安金工'量化绝对收益之路'系列第二篇，探讨如何通过FOF组合形式结合量化手段实现不同风险等级的绝对收益。报告提出了系统化的FOF组合构建流程，分别构造了年化收益6.55%的稳健型FOF组合和年化收益9.03%的均衡型FOF组合。"
-tags: []
+tags: [fof组合构建, 资产配置, 风险预算模型, 固收+策略, 券商研报, 华安金工, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-05-28

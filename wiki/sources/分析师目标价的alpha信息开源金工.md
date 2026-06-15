@@ -3,7 +3,7 @@ title: "分析师目标价的alpha信息开源金工"
 title_zh: 
 type: source
 summary: "开源金工基于朝阳永续分析师预期数据库，剖析分析师目标价Alpha来源（信息领先、预测非对称、关注效应），从正负向偏差、时效性和关注度三个维度改进构造WTR、MTR和CTR因子，合成TR_ICIR因子多空年化收益14.9%，信息比率1.401。"
-tags: []
+tags: [分析师预期因子, 一致预期, 因子投资, 券商研报, 开源金工, 行为金融学, 另类数据]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

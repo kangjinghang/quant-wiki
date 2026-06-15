@@ -3,7 +3,7 @@ title: "简单策略的一加一大于二及Python实现"
 title_zh: 
 type: source
 summary: "中金固收团队提出在特定约束条件（最大回撤、波动率）下构建转债策略组合的Python程序框架，通过策略分仓（低相关性策略组合）和策略叠加（二次过滤）两种方式降低组合波动与回撤，可拓展至固收+产品资产配置。"
-tags: []
+tags: [可转债, 固收+策略, python, 组合优化, 回测, 中金固收, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-05-26
