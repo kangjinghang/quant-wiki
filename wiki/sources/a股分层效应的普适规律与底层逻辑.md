@@ -3,7 +3,7 @@ title: "A股分层效应的普适规律与底层逻辑"
 title_zh: 
 type: source
 summary: "开源金工提出A股市场的振幅分层效应：按股价振幅分域时，价量类因子有效性随振幅单调增强，基本面因子呈先衰弱后增强的U型曲线。构建双因素模型解释底层逻辑，并在沪深300上提出分层组合方案，显著提升IR并改善回撤。"
-tags: []
+tags: [量化, 因子, 技术面, 基本面, a股, 深度研究, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-05-25

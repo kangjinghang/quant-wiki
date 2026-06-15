@@ -3,7 +3,7 @@ title: "转债数据库规范与统计案例：Python实践"
 title_zh: 
 type: source
 summary: "中金固收提出基于Python的定制化转债数据库构建规范，利用OOP设计集成变量封装日频及面板数据，并提供异常样本过滤和矩阵化统计运算的实践代码。"
-tags: []
+tags: [可转债, python, 量化, 实战]
 origin: agent-compiled
 status: seed
 created: 2026-05-28

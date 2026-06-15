@@ -3,7 +3,7 @@ title: "基于ETF的行业轮动策略实践"
 title_zh: 
 type: source
 summary: "招商定量团队基于"预期共振"行业轮动模型，提出六种以行业ETF为投资工具的落地配置策略，包括ETF简单打分法、ETF聚类打分法、得分映射行业法及行业权重优化法。"
-tags: []
+tags: [行业轮动, etf, portfolio-optimization, 券商研报, 实战]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

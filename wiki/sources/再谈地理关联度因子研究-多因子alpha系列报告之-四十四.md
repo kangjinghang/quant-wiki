@@ -3,7 +3,7 @@ title: "再谈地理关联度因子研究-多因子Alpha系列报告之(四十�
 title_zh: 
 type: source
 summary: "本报告由广发金融工程团队发布，承接前作《基于地理关联度因子研究》，进一步探讨了基于行业关联度的因子构建。报告利用半贝塔拆解思路，构建了5种行业相关系数类因子，实证表明INDUCORR与INDUCORRP因子在A股市场具有显著的选股能力，能提供传统因子外的增量信息。"
-tags: []
+tags: [因子投资, 多因子模型, 量化, 深度研究, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

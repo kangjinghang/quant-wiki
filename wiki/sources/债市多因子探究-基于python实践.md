@@ -3,7 +3,7 @@ title: "债市多因子探究-基于python实践"
 title_zh: 
 type: source
 summary: "中金固收团队借鉴Fama-French-Carhart四因子模型，构建了包含期限、信用和动量三大因子的中国债市多因子框架。报告基于中债各财富指数，利用Python实现了因子计算、债基风险归因以及期限择时、动量控制和信用增强三类量化策略的回测。"
-tags: []
+tags: [债券, 量化, 回测, 因子, 债券市场, 券商研报, 深度研究, python]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

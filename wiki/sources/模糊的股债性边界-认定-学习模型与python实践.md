@@ -3,7 +3,7 @@ title: "模糊的股债性边界：认定、学习模型与Python实践"
 title_zh: 
 type: source
 summary: "本文针对可转债市场估值分化导致的传统股债性划分失效问题，提出了一种基于实际波动率、最大回撤及Beta等事后指标构建的股债性定量评价体系。同时，文章利用PyTorch构建了简单的神经网络学习模型，实现了对转债股债性的事前预测与动态分类。"
-tags: []
+tags: [可转债, 机器学习, python, 深度学习]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

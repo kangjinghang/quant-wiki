@@ -3,7 +3,7 @@ title: "ESG可以用于行业轮动吗"
 title_zh: 
 type: source
 summary: "招商定量任瞳团队《ESG投资研究系列之五》，基于嘉实ESG评分数据，将股票ESG因子按流通市值加权合成为行业ESG因子，验证其在行业轮动中的应用效果。ESG得分与社会得分在中信一级行业和二级行业均具有显著IC值，构建的多头行业轮动策略获取显著超额收益。"
-tags: []
+tags: [esg, 行业轮动, 量化, 因子, a股, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-05-26

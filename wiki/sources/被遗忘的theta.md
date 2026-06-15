@@ -3,7 +3,7 @@ title: "被遗忘的Theta"
 title_zh: 
 type: source
 summary: "中金固收2021年11月关于可转债高估值环境下时间损耗（Theta）与不对称性（Gamma）深度分析的报告。报告指出，常态化高估值会显著增加转债的自然耗散成本并压低不对称回报，建议在高估值环境下减少平衡性品种配置，并提供了基于Theta和Gamma的Python量化择券策略。"
-tags: []
+tags: [可转债, convertible-bond, 回测, backtesting, python, 实战, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

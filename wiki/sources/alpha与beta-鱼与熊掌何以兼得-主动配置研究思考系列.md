@@ -3,7 +3,7 @@ title: "Alpha与Beta：鱼与熊掌何以兼得——主动配置研究思考系
 title_zh: 
 type: source
 summary: "本文系统梳理了A股投资中Alpha（超额收益）与Beta（市场收益）之间的辩证关系，将投资者分为追求Alpha的“挖掘者”、把握Beta的“配置者”以及兼顾两者的“综合者”。文章指出，尽管Alpha与Beta研究在视角、理念和操作上存在局部对立，但在综合者的完整投研框架中（如国泰君安DDM模型），两者能够实现优势互补与统一，从而提升组合的风险收益表现。"
-tags: []
+tags: [资产配置, 组合管理, 券商研报, 深度研究, 观点]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

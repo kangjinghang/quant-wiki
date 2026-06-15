@@ -3,7 +3,7 @@ title: "业绩超预期Plus组合的构建"
 title_zh: 
 type: source
 summary: "开源金工（魏建榕、胡亮勇、盛少成）2021年7月报告，提出多报告融合的SUE因子和PCT因子，在超预期股票池内融合SUE、OER、JUMP、理想反转和小单残差五大因子构建超预期Plus组合，持仓30只多头年化43.13%，对冲夏普3.6。"
-tags: []
+tags: [股票, 策略, 量化, 因子, 基本面, a股, 实战, 深度研究, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-05-26

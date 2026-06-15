@@ -3,7 +3,7 @@ title: "再探文本FADT选股"
 title_zh: 
 type: source
 summary: "本文是华泰金工关于分析师研报文本挖掘的第三篇报告，核心在于使用针对金融领域预训练的FinBERT模型替代传统的词频向量，对研报文本进行语义编码。升级后的forecast_adj_txt_bert因子相比原版在多头端年化收益提升了近5个百分点，且与传统Barra因子相关性低，具有显著的Alpha特异性。"
-tags: []
+tags: [机器学习, 另类数据, 深度研究, 券商研报, ai应用, 量化]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

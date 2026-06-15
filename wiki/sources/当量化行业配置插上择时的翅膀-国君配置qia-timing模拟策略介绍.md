@@ -3,7 +3,7 @@ title: "当量化行业配置插上择时的翅膀——国君配置QIA-Timing�
 title_zh: 
 type: source
 summary: "国君配置团队借鉴股票多因子模型，研发了量化行业配置模型（QIA），综合景气度、业绩超预期和北向资金流三个维度进行行业选择。在此基础上，团队叠加了以技术分析和量化“黑科技”为核心的择时体系，构建了“行业配置+择时”的复合模拟策略（QIA-Timing），显著提升了组合的超额收益。"
-tags: []
+tags: [行业轮动, 多因子模型, 择时, 券商研报, 深度研究, 量化]
 origin: agent-compiled
 status: seed
 created: 2026-05-28

@@ -3,7 +3,7 @@ title: "大单与小单资金流的alpha能力"
 title_zh: 
 type: source
 summary: "开源金工团队深入剖析了A股市场大单与小单资金流的alpha来源，指出大单资金流的正向alpha源于其预见性，而小单的负向alpha源于大单的'挤出效应'。报告提出了'净流入金额绝对值'标准化方法，并通过横截面回归剥离涨跌幅影响，构造出残差资金流强度因子（大单IR 3.96）和残差反转因子（小单IR 2.26）。"
-tags: []
+tags: [量化, 因子, 技术面, 资金面, a股, 深度研究, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-05-26

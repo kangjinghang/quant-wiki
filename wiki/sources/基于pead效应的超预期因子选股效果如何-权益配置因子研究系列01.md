@@ -3,7 +3,7 @@ title: "基于PEAD效应的超预期因子选股效果如何——权益配置�
 title_zh: 
 type: source
 summary: "国泰君安量化配置团队基于PEAD（盈余公告后价格漂移）效应，构建了6大类超预期因子，在沪深300、中证500和全市场股票池中进行单因子测试与复合因子回测。超预期复合因子在全市场组合优化后年化超额收益达21.85%，信息比率3.23。"
-tags: []
+tags: [因子, 量化, 回测, backtesting, 券商研报, 深度研究, 指数基金]
 origin: agent-compiled
 status: seed
 created: 2026-05-28

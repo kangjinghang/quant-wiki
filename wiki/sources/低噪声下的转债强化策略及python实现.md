@@ -3,7 +3,7 @@ title: "低噪声下的转债强化策略及Python实现"
 title_zh: 
 type: source
 summary: "中金固收（杨冰、房铎、罗凡、陈健恒）2021.10，基于DWT小波降噪的转债正股趋势识别，叠加EasyBall策略强化选券，回测显著提升收益并过滤下行趋势品种"
-tags: []
+tags: [可转债, 技术面, 趋势跟踪, python, 实战]
 origin: agent-compiled
 status: seed
 created: 2026-05-27

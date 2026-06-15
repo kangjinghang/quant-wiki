@@ -3,7 +3,7 @@ title: "NLP综述：勾勒AI语义理解的轨迹"
 title_zh: 
 type: source
 summary: "本文是华泰金工人工智能系列文本挖掘主题下的理论介绍篇，系统回顾了自然语言处理（NLP）的发展历史，并将其划分为传统统计语言模型、Word2Vec词向量时代和以BERT为代表的预训练语言模型三个阶段。文章详细解析了各阶段的代表模型（如N-gram, NNLM, Word2Vec, ELMo, GPT, BERT, XLNet）的原理及演进逻辑，旨在帮助量化投资者更好地理解文本挖掘技术，从而充分利用金融文本数据中的Alpha。"
-tags: []
+tags: [机器学习, 另类数据, 深度研究, 券商研报]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

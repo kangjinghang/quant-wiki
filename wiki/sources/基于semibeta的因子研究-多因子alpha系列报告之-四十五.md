@@ -3,7 +3,7 @@ title: "基于SemiBeta的因子研究——多因子Alpha系列报告之(四十�
 title_zh: 
 type: source
 summary: "广发金融工程基于Bollerslev（2021）的研究，将传统Beta因子拆解为4个SemiBeta因子，并在A股市场进行实证检验。研究发现，反映市场下行时具备对冲特征的fBeta_MN系列因子表现最佳，与传统市值、动量因子相关性低，据此构建的沪深300、中证500和中证1000指数增强策略均取得了显著的年化超额收益。"
-tags: []
+tags: [多因子模型, 因子, 回测, 指数增强, 量化, 券商研报, 深度研究]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

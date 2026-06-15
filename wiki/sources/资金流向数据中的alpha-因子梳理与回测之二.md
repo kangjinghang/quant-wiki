@@ -3,7 +3,7 @@ title: "资金流向数据中的Alpha——因子梳理与回测之二"
 title_zh: 
 type: source
 summary: "光大金工基于Wind资金流向数据，从大单与小单、主动与被动、早盘与尾盘三个维度构建了10个资金流因子。研究发现大单具有正向Alpha属性，超大单和小单具有负向Alpha，且使用净流入绝对值进行标准化效果最佳。综合回测结果，推荐了包括动量调整大单净流入、极端单净流入等7个具有显著选股能力的因子。"
-tags: []
+tags: [资金面, 量价关系, 回测, 券商研报, 深度研究, a-share, equity]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

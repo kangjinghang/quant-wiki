@@ -3,7 +3,7 @@ title: "基于地理关联度因子研究--多因子Alpha系列报告之（四�
 title_zh: 
 type: source
 summary: "本报告基于Parsons和Sabbatucci(2018)提出的地理关联度概念，通过改进地理关联度指标，构造了6种地理相关系数因子。实证表明，GEOGCORRP因子整体表现较好，IC均值为0.069，多头相对中证500指数年化超额收益率为13.98%，能够挖掘传统因子外的增量信息。"
-tags: []
+tags: [因子投资, 多因子模型, 量化, 因子, 另类数据, 深度研究, 券商研报, 回测, backtesting, equity, a股]
 origin: agent-compiled
 status: seed
 created: 2026-05-29

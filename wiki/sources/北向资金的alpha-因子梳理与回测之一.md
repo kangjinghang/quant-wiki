@@ -3,7 +3,7 @@ title: "北向资金的Alpha——因子梳理与回测之一"
 title_zh: 
 type: source
 summary: "光大金工基于北向资金持股数据，构建了静态持仓、动态流入、特殊时段表现及席位拆解四大类共14个因子。回测发现北向资金数据具备Alpha挖掘潜力，因子收益多由多头端贡献，在沪深300和流动性1500股票池内表现较优。综合推荐北向资金持股市值、持股占比等7个核心因子。"
-tags: []
+tags: [brokerage-report, factor-investing, alternative-data, backtesting, a-share]
 origin: agent-compiled
 status: seed
 created: 2026-06-01

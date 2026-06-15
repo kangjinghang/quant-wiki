@@ -3,7 +3,7 @@ title: "打造“一站式”主动行业配置体系——国君配置加权AIA
 title_zh: 
 type: source
 summary: "本文介绍了国泰君安配置团队构建的加权AIA-Timing主动行业配置体系。该体系通过融合策略、宏观、量化和技术分析思想，从6个中观维度（景气度、相对估值、夏普比、拥挤度、产业资本、北向资金）建立行业打分表，并经历了从等权AIA到加权AIA，再到结合仓位管理的加权AIA-Timing两轮优化，显著提升了多空组合的对冲收益。"
-tags: []
+tags: [行业轮动, 资产配置, 多因子模型, 券商研报, 深度研究, 择时]
 origin: agent-compiled
 status: seed
 created: 2026-05-28

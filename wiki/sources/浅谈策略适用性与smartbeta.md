@@ -3,7 +3,7 @@ title: "浅谈策略适用性与SmartBeta"
 title_zh: 
 type: source
 summary: "本文探讨了可转债市场中常见增强策略（如EasyBall、希腊字母策略、动量与弹性因子）的适用期与失效期。文章指出转债估值因子具有最高优先级，并基于股市状态（牛熊与结构/Beta行情）构建了一个转债Smart Beta框架，以实现不同基础策略的动态切换与物尽其用。"
-tags: []
+tags: [可转债, 策略, 动量, 量化, 回测]
 origin: agent-compiled
 status: seed
 created: 2026-06-01
