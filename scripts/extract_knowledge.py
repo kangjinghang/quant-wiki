@@ -90,6 +90,14 @@ def _first(*values: str | None) -> str | None:
     return next((v for v in values if v), None)
 
 
+# /api/anthropic 端点（通用 anthropic 兼容接口）支持的 model；不含 Claude Code
+# 专用的 glm-5.2[1m]（那是 coding/paas/v4 端点的，普通 API key 调不动会 405）。
+_ANTHROPIC_COMPATIBLE_MODELS = {
+    "glm-4.6", "glm-4.5", "glm-5.1", "glm-4.5-air", "glm-4.5-flash", "glm-4.5-airx",
+}
+_DEFAULT_EXTRACT_MODEL = "glm-5.1"
+
+
 def load_api_config(settings_path: Path) -> dict | None:
     """Load API config from environment variables, falling back to settings.json.
 
@@ -131,6 +139,19 @@ def load_api_config(settings_path: Path) -> dict | None:
 
     if not api_key or not base_url or not model:
         return None
+
+    # 解耦 Claude Code 的 model：/api/anthropic 端点不认 Claude Code 专用的 model
+    # （如 glm-5.2[1m]，那是 coding/paas/v4 端点的）。优先 WIKI_EXTRACT_MODEL 覆盖；
+    # 否则当 base_url 是 /api/anthropic 且 model 不兼容时，fallback 到默认。
+    extract_model = _first(
+        os.environ.get("WIKI_EXTRACT_MODEL"),
+        file_env.get("WIKI_EXTRACT_MODEL"),
+    )
+    if extract_model:
+        model = extract_model
+    elif "api/anthropic" in base_url and model not in _ANTHROPIC_COMPATIBLE_MODELS:
+        model = _DEFAULT_EXTRACT_MODEL
+
     return {"api_key": api_key, "base_url": base_url, "model": model}
 
 

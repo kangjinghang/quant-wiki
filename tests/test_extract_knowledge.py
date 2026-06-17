@@ -145,6 +145,32 @@ class TestLoadApiConfig:
         assert config is not None
         assert config["api_key"] == "env-key"
 
+    def test_anthropic_endpoint_incompatible_model_falls_back(self, tmp_path, monkeypatch):
+        """/api/anthropic 端点不认 Claude Code 的 glm-5.2[1m]，自动 fallback 到 glm-5.1。"""
+        monkeypatch.delenv("WIKI_EXTRACT_MODEL", raising=False)
+        settings = {"env": {
+            "ANTHROPIC_AUTH_TOKEN": "k",
+            "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+            "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.2[1m]",
+        }}
+        sp = tmp_path / "settings.json"
+        sp.write_text(json.dumps(settings), encoding="utf-8")
+        config = load_api_config(sp)
+        assert config["model"] == "glm-5.1"
+
+    def test_wiki_extract_model_overrides(self, tmp_path, monkeypatch):
+        """WIKI_EXTRACT_MODEL 优先于其他 model 配置（手动指定）。"""
+        settings = {"env": {
+            "ANTHROPIC_AUTH_TOKEN": "k",
+            "ANTHROPIC_BASE_URL": "https://open.bigmodel.cn/api/anthropic",
+            "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-5.2[1m]",
+        }}
+        sp = tmp_path / "settings.json"
+        sp.write_text(json.dumps(settings), encoding="utf-8")
+        monkeypatch.setenv("WIKI_EXTRACT_MODEL", "glm-4.6")
+        config = load_api_config(sp)
+        assert config["model"] == "glm-4.6"
+
 
 class TestExtractClaudeMdSections:
     def test_extracts_required_sections(self):
