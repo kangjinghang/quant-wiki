@@ -3,11 +3,11 @@ title: "债市研究智能体：“Prompt+”与多Agent协同"
 title_zh: 
 type: source
 summary: "本文探讨了如何利用大语言模型（LLM）重塑固收研究价值链，提出通过优化提示词、搭建多Agent协同系统、结合RAG本地知识库以及使用Socratic-Prompt与Self-Check削弱模型幻觉等进阶方法，提升投研效率与质量。文章还结合转债正股基本面分析和信用债资质分析等实战案例，展示了AI在固收量化领域的具体应用。"
-tags: [大语言模型, 多智能体系统, 固收量化, 券商研报, 华泰固收-金工, 深度研究]
+tags: [大语言模型, 多智能体系统, 固收量化, 券商研报, 华泰固收-金工, 深度研究, 可转债]
 origin: agent-compiled
 status: seed
 created: 2026-06-04
-updated: 2026-06-04
+updated: 2026-06-18
 source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202505140721]华泰固收债市研究智能体Prompt与多Agent协同固收量化系列报告.md"

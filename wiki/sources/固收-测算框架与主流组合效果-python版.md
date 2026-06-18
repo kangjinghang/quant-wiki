@@ -3,11 +3,11 @@ title: "固收+测算框架与主流组合效果：Python版"
 title_zh: 
 type: source
 summary: "本文介绍了一个兼容多资产（纯债、转债、股票）的固收+组合回测测算框架，该框架将择券策略与资产配置策略分离，并引入了交易成本与流动性限制（规模约束）以贴近实务。报告进一步测算了双债增强、基本面优选、低估值、红利量化及事件驱动等主流固收+策略的实证效果，指出固收+择时的重要性高于择券。"
-tags: [固收量化, 回测, python, 组合优化, 风险控制, 券商研报, 中金固收]
+tags: [固收量化, 回测, python, 组合优化, 风险控制, 券商研报, 中金固收, 可转债]
 origin: agent-compiled
 status: seed
 created: 2026-06-03
-updated: 2026-06-03
+updated: 2026-06-18
 source_type: ""
 source_language: ""
 raw_path: "raw/articles/[202404141422]中金固收固收测算框架与主流组合效果Python版.md"
