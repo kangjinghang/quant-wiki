@@ -50,21 +50,21 @@
 | `sentiment-alternative-data` | 情绪/另类数据(可得部分) | [卡片](cards/sentiment-alternative-data.md) | 混合：新闻舆情/概念热度可做；招聘/卫星/股吧转🔴 |
 | `fund-selection-fof` | 基金优选/FOF | [卡片](cards/fund-selection-fof.md) | 股基FOF🟡可做；债基踩雷依赖中债估值❌转🔴 |
 
-### 🔴 不适合我（5 张，保留+理由）
+### 🔴 暂不可做（5 张，如实记录缺什么）
 
-| slug | 方向 | 卡片 | 为什么不适合 |
+| slug | 方向 | 卡片 | 现在缺什么 |
 |---|---|---|---|
-| `supply-chain-centrality` | 供应链/网络中心性 | [卡片](cards/supply-chain-centrality.md) | 核心依赖数库科技SAM商业数据❌；粗版降级🟡投入产出比低 |
-| `ml-heavy-mining` | 重ML因子挖掘 | [卡片](cards/ml-heavy-mining.md) | 触红线(重ML)，但**划清边界**：附哪些轻ML可接受 |
-| `high-frequency-l2` | 高频/L2逐笔交易 | [卡片](cards/high-frequency-l2.md) | L2逐笔付费❌+日内低延迟执行❌ |
-| `options-derivatives` | 期权/衍生品 | [卡片](cards/options-derivatives.md) | 交易型🔴(Greeks对冲门槛)；信号型🔵(PCR/IV可做辅助) |
-| `futures-cta` | 期货/CTA | [卡片](cards/futures-cta.md) | 商品CTA需期货实盘账户(未开通)❌；股指期货信号🔵可做辅助 |
+| `supply-chain-centrality` | 供应链/网络中心性 | [卡片](cards/supply-chain-centrality.md) | 核心依赖数库科技SAM商业数据，无等价免费替代 |
+| `ml-heavy-mining` | 重ML因子挖掘 | [卡片](cards/ml-heavy-mining.md) | 触"不碰重ML"约束；**划清边界**：附哪些轻ML可接受 |
+| `high-frequency-l2` | 高频/L2逐笔交易 | [卡片](cards/high-frequency-l2.md) | L2数据现在没开权限(QMT有接口，开权限可取)；执行端QMT非高频通道 |
+| `options-derivatives` | 期权/衍生品 | [卡片](cards/options-derivatives.md) | 交易型需期权实盘账户(门槛高)；信号型(PCR/IV)可做辅助 |
+| `futures-cta` | 期货/CTA | [卡片](cards/futures-cta.md) | 商品CTA需期货实盘账户(未开通)；股指期货信号可做辅助 |
 
 ---
 
 ## 统计
 - 🟢 立即可做：22
 - 🟡 需补数据/研究：7
-- 🔴 不适合我：5
+- 🔴 暂不可做：5
 - 合计：34
 - 最近更新：2026-07-01（L1 全部完成）
