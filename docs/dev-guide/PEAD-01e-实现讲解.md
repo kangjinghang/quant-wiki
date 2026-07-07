@@ -163,35 +163,38 @@ dReport 想量的不是"两个日期差了多少天"，而是：
 
 > ⚠️ **这是策略里最容易翻车的地方**。直接相减会多出 365 天，全市场排序时方向会反掉——"提前最多"的好公司因为差值≈357 被排到最后，当成最差的。这不是理论错，是工程实现错。
 
-### 4.3 代码逐行讲：`_align_year` 和 `_dreport`
+### 4.3 代码逐行讲：`_shift_to_this_year`
+
+年份对齐由一个辅助函数完成，实际代码里叫 `_shift_to_this_year`：
 
 ```python
-def _align_year(d, target_year):
-    """
-    把日期 d 拉到 target_year 的同月同日。
+from datetime import date, timedelta
+
+def _shift_to_this_year(target, ref_year):
+    """把 target 平移到 ref_year 同一天（保持月/日）。
+
     用途：让"今年披露日"和"去年披露日"处在同一个年份里，才能正确相减。
 
-    边界处理：2/29（闰日）在非闰年不存在，退化为 2/28。
+    边界处理：2/29（闰日）在平年不存在，回退到 2/28。
     这种情况在 A 股极少见（披露日很少卡在 2/29），但写代码要稳妥。
     """
     try:
-        return d.replace(year=target_year)
+        return target.replace(year=ref_year)
     except ValueError:
-        # 只有 2/29 在非闰年会抛 ValueError，退到 2/28
-        return d.replace(month=2, day=28, year=target_year)
+        # 仅 2/29 在平年会抛 ValueError，回退到 2/28
+        # 写法上用「3/1 减 1 天」保证永远是当月最后一天，不用关心闰年判定
+        return target.replace(year=ref_year, month=3, day=1) - timedelta(days=1)
+```
 
+**注意：实际代码里没有一个单独的 `_dreport` 函数**——dReport 的减法是**内联**在主函数 `compute_dreport_for_rebalance` 里直接算的（见第 4.5 节）。这里为了讲清楚，先把"单只股票的 dReport"怎么算单独拎出来看，实际写的时候是这样三行：
 
-def _dreport(this_year_date, prev_year_date):
-    """
-    算单只股票的 dReport（同比披露日变化，天数）。
-
-    负值 = 提前披露（好），正值 = 延后披露（差）。
-
-    参数都是 date 对象，但年份可能不同（跨年）。
-    """
-    # 关键一步：把去年日期对齐到今年的年份，再相减
-    prev_aligned = _align_year(prev_year_date, this_year_date.year)
-    return (this_year_date - prev_aligned).days
+```python
+# 单只股票的 dReport 计算逻辑（内联在主函数的 apply 里）
+this_year_date = date(2025, 3, 28)              # 今年披露日
+prev_year_date = date(2024, 4, 3)               # 去年披露日
+prev_shifted = _shift_to_this_year(prev_year_date, this_year_date.year)  # → 2025-04-03
+dreport = (this_year_date - prev_shifted).days  # → -6
+# 结果 -6，表示提前 6 天，是好信号 ✅
 ```
 
 **代入茅台的例子验证**：
@@ -200,8 +203,8 @@ def _dreport(this_year_date, prev_year_date):
 this_year_date = date(2025, 3, 28)   # 茅台今年披露日
 prev_year_date = date(2024, 4, 3)    # 茅台去年披露日
 
-prev_aligned = _align_year(date(2024,4,3), 2025)  # → date(2025, 4, 3)
-dreport = (date(2025,3,28) - date(2025,4,3)).days  # → -6
+prev_shifted = _shift_to_this_year(date(2024,4,3), 2025)  # → date(2025, 4, 3)
+dreport = (date(2025,3,28) - date(2025,4,3)).days          # → -6
 # 结果 -6，表示提前 6 天，是好信号 ✅
 ```
 
@@ -211,8 +214,8 @@ dreport = (date(2025,3,28) - date(2025,4,3)).days  # → -6
 this_year_date = date(2025, 4, 25)   # 暴雷公司今年披露日
 prev_year_date = date(2024, 3, 20)   # 暴雷公司去年披露日
 
-prev_aligned = _align_year(date(2024,3,20), 2025)  # → date(2025, 3, 20)
-dreport = (date(2025,4,25) - date(2025,3,20)).days  # → +36
+prev_shifted = _shift_to_this_year(date(2024,3,20), 2025)  # → date(2025, 3, 20)
+dreport = (date(2025,4,25) - date(2025,3,20)).days          # → +36
 # 结果 +36，表示延后 36 天，是差信号 ❌
 ```
 
@@ -340,8 +343,10 @@ def compute_dreport_for_rebalance(df, as_of, current_report, prev_report):
         return pd.DataFrame(columns=["symbol", "dreport", "this_year_date", "prev_year_date"])
 
     # 算 dReport（第 4.3 节讲的，含年份对齐）
+    # 实际代码里这一步是内联的，没有单独的 _dreport 函数
     merged["dreport"] = merged.apply(
-        lambda r: _dreport(r["this_year_date"], r["prev_year_date"]), axis=1
+        lambda r: (r["this_year_date"] - _shift_to_this_year(r["prev_year_date"], r["this_year_date"].year)).days,
+        axis=1,
     )
     return merged[["symbol", "dreport", "this_year_date", "prev_year_date"]]
 ```
@@ -395,13 +400,13 @@ symbol     this_year_date   prev_year_date
 **Step 4：算 dReport（含年份对齐）**
 
 ```
-茅台: _dreport(date(2025,3,28), date(2024,4,3))
-      = 对齐 → date(2025,4,3)
-      = (2025-03-28) - (2025-04-03) = -6 天   ← 提前 6 天 ✅
+茅台: 先把去年披露日平移到今年
+      _shift_to_this_year(date(2024,4,3), 2025) → date(2025,4,3)
+      (2025-03-28) - (2025-04-03) = -6 天   ← 提前 6 天 ✅
 
-平安: _dreport(date(2025,4,25), date(2024,3,20))
-      = 对齐 → date(2025,3,20)
-      = (2025-04-25) - (2025-03-20) = +36 天  ← 延后 36 天 ❌
+平安: 先把去年披露日平移到今年
+      _shift_to_this_year(date(2024,3,20), 2025) → date(2025,3,20)
+      (2025-04-25) - (2025-03-20) = +36 天  ← 延后 36 天 ❌
 ```
 
 **Step 5：排序选股**
