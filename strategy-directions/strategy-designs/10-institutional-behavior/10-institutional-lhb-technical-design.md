@@ -1,6 +1,6 @@
 # #10 机构行为 · 龙虎榜配方A — QMT 落地技术设计
 
-> **定位**：本文是 [`10-institutional-behavior.md`](../strategy-playbooks/10-institutional-behavior.md) 配方A（龙虎榜机构席位+私募营业部）的**代码级落地设计**，不是策略手册。策略原理、绩效口径、原文佐证见 playbook；本文只解决"怎么把它跑起来"。
+> **定位**：本文是 [`10-institutional-behavior.md`](../../strategy-playbooks/10-institutional-behavior.md) 配方A（龙虎榜机构席位+私募营业部）的**代码级落地设计**，不是策略手册。策略原理、绩效口径、原文佐证见 playbook；本文只解决"怎么把它跑起来"。
 >
 > **数据源现实（必读）**：QMT 的 `xtquant` 接口**不含龙虎榜数据**（只有行情/财务/板块，见 [QMT数据能力.md](../reference/QMT数据能力.md)）。playbook 里写的"东财✅已有"指的是**外部东财 API**。因此本设计采用**三层分离架构**：数据层走 akshare（拉东财龙虎榜）→ 信号层走 Python（算候选池）→ 下单层走 QMT xtquant（批量建仓）。
 >

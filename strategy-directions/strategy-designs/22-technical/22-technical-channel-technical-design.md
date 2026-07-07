@@ -1,6 +1,6 @@
 # #22 技术分析 · 通道/打分 — QMT 落地技术设计
 
-> **定位**：本文是 [`22-technical-channel.md`](../strategy-playbooks/22-technical-channel.md) 的**代码级落地设计**。**本文档的核心定位与 #10 不同**——#22 不是独立满仓主力（单配方回撤 40%+，playbook §一明确"最佳用法是辅助信号/择时层"），而是作为 **#10 龙虎榜等选股策略的入场触发器**。两者双向增益：#22 给 #10 买卖时点，#10 给 #22 高质量选股域。
+> **定位**：本文是 [`22-technical-channel.md`](../../strategy-playbooks/22-technical-channel.md) 的**代码级落地设计**。**本文档的核心定位与 #10 不同**——#22 不是独立满仓主力（单配方回撤 40%+，playbook §一明确"最佳用法是辅助信号/择时层"），而是作为 **#10 龙虎榜等选股策略的入场触发器**。两者双向增益：#22 给 #10 买卖时点，#10 给 #22 高质量选股域。
 >
 > **数据优势**：日线 OHLCV 是所有方向中数据成本最低的，**QMT xtquant `get_market_data_ex(period="1d")` 直接覆盖**，不必依赖 akshare（akshare `stock_zh_a_hist` 作为回测/无 QMT 环境的备选）。
 >

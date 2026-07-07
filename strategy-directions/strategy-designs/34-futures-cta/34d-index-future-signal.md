@@ -1,6 +1,6 @@
 # #34d 股指期货信号（基差+会员持仓） — 详细实现
 
-> **定位**：本文是 [`34-futures-cta.md`](../strategy-playbooks/34-futures-cta.md) §四股指期货信号的**详细实现**——介于 playbook 与代码之间的中间层。读完本文，任何人都能照着写出代码，但本文不陷入代码细节。
+> **定位**：本文是 [`34-futures-cta.md`](../../strategy-playbooks/34-futures-cta.md) §四股指期货信号的**详细实现**——介于 playbook 与代码之间的中间层。读完本文，任何人都能照着写出代码，但本文不陷入代码细节。
 >
 > **角色**：34 家族里的**时机信号辅助**。不独立构成完整策略，而是作为 [18-宏观择时](../strategy-designs/18-shared-macro-timing-infrastructure.md)/[20-仓位管理](../strategy-designs/20-shared-position-risk-infrastructure.md) 的**输入信号**——基差异常时调仓位，会员多空比异常时预警。**全程只看数据不下单，不需期货账户。**
 >
