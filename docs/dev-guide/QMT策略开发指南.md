@@ -249,9 +249,15 @@ params = {
 
 **分页**：响应里有 `result.pages`（总页数），循环到最后一页。
 **限速**：每页 `time.sleep(random.uniform(0.5, 1.0))`，避免被封。
-**TLS 绕过**：`push2.eastmoney.com` 域名需要 `curl_cffi` + `impersonate="chrome120"`；`datacenter-web` 域名普通 requests 即可（复用 `safe_request` 自动判断）。
 
-### 5.2 已验证的接口
+**域名可用性（2026-07-07 服务器实测，重要）**：
+
+| 域名 | 状态 | 说明 |
+|---|---|---|
+| `datacenter-web.eastmoney.com` | ✅ 稳定 | 披露日/财务类报表，普通 requests 即可，无需 TLS 绕过 |
+| `push2.eastmoney.com` / `push2his.eastmoney.com` | ⚠️ **被封** | 整个 push2 域名族对该云服务器 IP 返回 `RemoteDisconnected`（IP 级封禁），**curl_cffi + chrome120 指纹也绕不过**——不是 TLS 指纹问题，是 IP 封禁 |
+
+⚠️ **修正原 5.1 表述**：曾认为 push2 域名是 TLS 指纹检测、可用 curl_cffi 绕过。实测发现是 **IP 级封禁**，curl_cffi 无效。push2 系列接口（实时行情 clist、K线 kline）在该服务器上**完全不可用**。需要 K 线/行情数据时走 QMT 自带行情（`get_market_data_ex`）或其他数据源（如新浪 klc）。
 
 #### 预约披露时间（PEAD 01e 用）
 - **reportName**: `RPT_PUBLIC_BS_APPOIN`（⚠️ 不是 RPT_PUBLIC_OP_PREDICTDATE）
@@ -353,6 +359,12 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && del <文件> &&
 - **坑**：`db.create_all()` 建表后，`flask db migrate` 报 "No changes in schema detected"（因为表已存在）
 - **解决**：手写迁移脚本 + `flask db stamp <revision>` 登记版本（不重复建表）
 
+### 8.9 交易日历数据源连环失效
+- **坑**：`trade_calendar` 表建了但一直 0 行，因为采集函数依赖的新浪 `klc_kd.js` 早已 404；改用东财 push2his 指数日线反推，结果整个 push2 域名族对服务器 IP 被封
+- **教训**：数据源会随时间失效，**不能相信代码里写死的旧 URL，必须实测当前可用性**
+- **解决**：用 akshare 最新版的稳定源——新浪 `klc_td_sh.txt`（私有编码，需 `py_mini_racer` + `sina_klc_decode.js` 解码，覆盖 1990-至今含未来到年底）
+- **脚本**：`scripts/backfill_trade_calendar.py`（已落库 8797 行）
+
 ---
 
 ## 九、快速命令速查
@@ -393,9 +405,10 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set FLASK_APP=a
 
 > 2026-07-07 服务器核实后的实际状态。
 
-- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——回测前需先完成下面两项环境准备
+- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——回测前需先完成下面一项环境准备
 - [x] **QMT 装 pymysql**（✅ 2026-07-07 已装 PyMySQL 1.0.2，实测连通 quant_voyager）
-- [ ] **`trade_calendar` 空表填数据**（实测 0 行）：调东财或用 QuantVoyager 既有交易日历补抓
+- [x] **`trade_calendar` 补数据**（✅ 2026-07-07 已补 8797 行，1990-12-19 ~ 2026-12-31，无周末，用新浪 klc_td_sh.txt）
+- [ ] **`stock_core_indicator` 全量补抓**（实测仅 342 行，远小于 A 股规模；01e 小中盘划分需要全量）
 - [ ] **`stock_core_indicator` 全量补抓**（实测仅 342 行，远小于 A 股规模；01e 小中盘划分需要全量）
 - [ ] PEAD 01d AOG 量价策略：复用本套数据层，仅新增开盘价处理
 - [ ] 考虑把 `strategy/qmt/qmt_common/` 沉淀成更通用的策略工具包（因子基类、回测净值计算、过滤器）
