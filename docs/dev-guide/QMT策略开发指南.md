@@ -112,7 +112,7 @@ QMT 装在 `C:\QMT`，内置 Python **3.6.8**（`C:\QMT\bin.x64\pythonw.exe`，�
 | walrus `:=`（3.8+）等新语法不能用 | 写 QMT 策略代码必须 3.6 兼容；f-string 在 3.6.8 实测可用，但建议统一用 `%`，避免 QMT 升级换解释器翻车 |
 | 自带 pandas **0.22.0**（很老）| 不用额外装，但 API 受限——避免用新 pandas 的参数/方法 |
 
-**QMT 内置 Python 装 pymysql**（⚠️ 2026-07-07 实测：服务器当前**尚未安装**，01e 回测前必做）：
+**QMT 内置 Python 装 pymysql**（✅ 2026-07-07 已装，PyMySQL 1.0.2，3.6.8 兼容；实测可连 quant_voyager + 查 disclosure_yysj + 读中文无乱码）：
 ```cmd
 C:\QMT\bin.x64\pythonw.exe -m pip install pymysql
 ```
@@ -393,8 +393,8 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set FLASK_APP=a
 
 > 2026-07-07 服务器核实后的实际状态。
 
-- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——回测前需先完成下面三项环境准备
-- [ ] **QMT 装 pymysql**（实测当前未装）：`C:\QMT\bin.x64\pythonw.exe -m pip install pymysql`
+- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——回测前需先完成下面两项环境准备
+- [x] **QMT 装 pymysql**（✅ 2026-07-07 已装 PyMySQL 1.0.2，实测连通 quant_voyager）
 - [ ] **`trade_calendar` 空表填数据**（实测 0 行）：调东财或用 QuantVoyager 既有交易日历补抓
 - [ ] **`stock_core_indicator` 全量补抓**（实测仅 342 行，远小于 A 股规模；01e 小中盘划分需要全量）
 - [ ] PEAD 01d AOG 量价策略：复用本套数据层，仅新增开盘价处理
