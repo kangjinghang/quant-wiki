@@ -6,6 +6,8 @@
 > - 流程方法：`docs/superpowers/specs/` + `docs/superpowers/plans/`
 > - QMT API：`docs/inner_Python/`（内置 Python）、`docs/XtQuant/`（外部 miniQMT）
 > - 首个范例：[PEAD 01e 设计](../superpowers/specs/2026-07-07-pead-01e-disclosure-qmt-design.md) + [实现计划](../superpowers/plans/2026-07-07-pead-01e-disclosure-qmt.md)
+>
+> **核实状态**：2026-07-07 已在服务器（152.136.15.72）实地复核全文——Python 环境、依赖、路径、MySQL 表行数、QMT 路径与版本，并据实修正了原文与服务器不符之处（QMT 路径、f-string 兼容性）。最新缺口见第十节「后续待办」。
 
 ---
 
@@ -101,19 +103,18 @@ ssh Administrator@152.136.15.72 "mysql -uroot -p123456 -h 127.0.0.1 --protocol=T
 
 ### 2.4 QMT
 
-QMT 内置 Python **3.6 版本**，与服务器 pyenv 的 3.10/3.11 完全独立。
+QMT 装在 `C:\QMT`，内置 Python **3.6.8**（`C:\QMT\bin.x64\pythonw.exe`，⚠️ 只有 `pythonw.exe` 无控制台版、**没有 `python.exe`**），与服务器 pyenv 的 3.10/3.11 完全独立。
 
 | 限制 | 影响 |
 |---|---|
 | 不能装 akshare（要求 3.8+）| 所以数据走 MySQL，不直接抓 |
 | 不能装 SQLAlchemy 2.0 | 用 pymysql 直连（纯 Python，可装）|
-| 语法受限 | **不能用 f-string、walrus `:=`、3.7+ 特性**——写 QMT 策略代码必须 3.6 兼容 |
-| 自带 pandas | 不用额外装 |
+| walrus `:=`（3.8+）等新语法不能用 | 写 QMT 策略代码必须 3.6 兼容；f-string 在 3.6.8 实测可用，但建议统一用 `%`，避免 QMT 升级换解释器翻车 |
+| 自带 pandas **0.22.0**（很老）| 不用额外装，但 API 受限——避免用新 pandas 的参数/方法 |
 
-**QMT 内置 Python 装 pymysql**：
+**QMT 内置 Python 装 pymysql**（⚠️ 2026-07-07 实测：服务器当前**尚未安装**，01e 回测前必做）：
 ```cmd
-:: 找到 QMT 的 python.exe（通常在安装目录的 Python 子目录）
-<D:\国信QMT\bin.x64\Python\python.exe> -m pip install pymysql
+C:\QMT\bin.x64\pythonw.exe -m pip install pymysql
 ```
 
 ---
@@ -344,8 +345,9 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && del <文件> &&
 - **教训**：用 Python + `ensure_ascii=False` 查，别信 cmd 终端的中文显示
 
 ### 8.7 QMT 策略代码必须 Python 3.6 兼容
-- **坑**：用了 f-string / walrus 在 QMT 里跑不了
+- **坑**：用了 walrus `:=`（3.8+）等新语法在 QMT 里跑不了
 - **教训**：写 `strategy/qmt/` 下的代码全程用 `%` 格式化，不用 3.7+ 语法
+- **补充**：f-string 在 QMT 的 3.6.8 实测**可用**（3.6.0 起引入），但建议仍统一用 `%`——QMT 客户端升级可能换解释器，统一风格最稳
 
 ### 8.8 Alembic create_all 与 migrate 的关系
 - **坑**：`db.create_all()` 建表后，`flask db migrate` 报 "No changes in schema detected"（因为表已存在）
@@ -389,7 +391,11 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set FLASK_APP=a
 
 ## 十、后续待办
 
-- [ ] PEAD 01e：QMT 回测验证（对标招商原文绩效，预期 8-9 折）
+> 2026-07-07 服务器核实后的实际状态。
+
+- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——回测前需先完成下面三项环境准备
+- [ ] **QMT 装 pymysql**（实测当前未装）：`C:\QMT\bin.x64\pythonw.exe -m pip install pymysql`
+- [ ] **`trade_calendar` 空表填数据**（实测 0 行）：调东财或用 QuantVoyager 既有交易日历补抓
+- [ ] **`stock_core_indicator` 全量补抓**（实测仅 342 行，远小于 A 股规模；01e 小中盘划分需要全量）
 - [ ] PEAD 01d AOG 量价策略：复用本套数据层，仅新增开盘价处理
-- [ ] `stock_core_indicator` 全量补抓（当前可能只有几百只快照，01e 小中盘划分需要全量）
 - [ ] 考虑把 `strategy/qmt/qmt_common/` 沉淀成更通用的策略工具包（因子基类、回测净值计算、过滤器）
