@@ -110,11 +110,38 @@ QMT 装在 `C:\QMT`，内置 Python **3.6.8**（`C:\QMT\bin.x64\pythonw.exe`，�
 | 不能装 akshare（要求 3.8+）| 所以数据走 MySQL，不直接抓 |
 | 不能装 SQLAlchemy 2.0 | 用 pymysql 直连（纯 Python，可装）|
 | walrus `:=`（3.8+）等新语法不能用 | 写 QMT 策略代码必须 3.6 兼容；f-string 在 3.6.8 实测可用，但建议统一用 `%`，避免 QMT 升级换解释器翻车 |
-| 自带 pandas **0.22.0**（很老）| 不用额外装，但 API 受限——避免用新 pandas 的参数/方法 |
+| 自带 pandas **0.22.0**（很老）| 不用额外装，但 API 受限——避免用新 pandas 的参数/方法；**`date - Timestamp` 会报 TypeError**（新版 pandas 能减，0.22 不能，见 §8.12A），涉及日期运算一律先 `.date()` 转成 `datetime.date` 再算；`isinstance(x, date)` 会把 Timestamp/datetime 误判为 True（继承链），判类型用 `type(x) is date` |
 
 **QMT 内置 Python 装 pymysql**（✅ 2026-07-07 已装，PyMySQL 1.0.2，3.6.8 兼容；实测可连 quant_voyager + 查 disclosure_yysj + 读中文无乱码）：
 ```cmd
 C:\QMT\bin.x64\pythonw.exe -m pip install pymysql
+```
+
+**QMT 怎么加载策略代码（重要，决定 qmt_common 怎么部署）**：
+
+QMT 没有"打开本地 .py 文件"的入口。加载策略只有三种方式，对照 inner_Python 文档核实过：
+
+| 方式 | 机制 | 能用吗 |
+|---|---|---|
+| ① 编辑器内粘贴源码 | 代码存进 QMT 内部数据库 | ✅ 主流方式 |
+| ② 导入加密策略（`.rzrk` 格式） | QMT 自己的加密格式，只能由 QMT 导出产生 | ❌ 我们生成不了 |
+| ③ 独立 Python 进程 | 勾选后代码作为 `__main__` 脚本跑 | ❌ **不触发 init/handlebar**，策略跑不起来 |
+
+**结论**：实际只能走方式 ① ——在 QMT 编辑器新建模型、粘贴主策略文件内容。代码进了 QMT 内部存储后，`pead_01e_disclosure.py` 第 20-21 行那段 `sys.path.insert(__file__...)` 会失效（粘贴模式下没有真实的 `__file__`），退回 `os.getcwd()`（= QMT 安装目录），**找不到项目里的 `qmt_common/`**。
+
+**所以 `qmt_common` 必须拷到 QMT 的 site-packages**（✅ 2026-07-08 已部署）：
+```powershell
+# 服务器执行（源在 C:\workspace\QuantVoyager，不在 E 盘）
+New-Item -ItemType Directory -Force -Path 'C:\QMT\bin.x64\Lib\site-packages\qmt_common'
+Copy-Item 'C:\workspace\QuantVoyager\strategy\qmt\qmt_common\*.py' `
+          'C:\QMT\bin.x64\Lib\site-packages\qmt_common\' -Force
+```
+⚠️ **排除 `__pycache__`**——那是开发机 Python 3.13 的字节码，拷过去和 QMT 的 3.6.8 冲突。只拷 `.py`。
+⚠️ **以后改了 `qmt_common` 任一文件，必须重新拷一次**——QMT 加载的是 site-packages 那份副本，不是项目里的原件。改完不拷，QMT 跑的还是旧代码。
+
+验证：
+```cmd
+C:\QMT\bin.x64\pythonw.exe -c "from qmt_common import db_reader, dreport, filters, rebalance; print('OK')"
 ```
 
 ---
@@ -366,6 +393,38 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && del <文件> &&
 - **解决**：用 akshare 最新版的稳定源——新浪 `klc_td_sh.txt`（私有编码，需 `py_mini_racer` + `sina_klc_decode.js` 解码，覆盖 1990-至今含未来到年底）
 - **脚本**：`scripts/backfill_trade_calendar.py`（已落库 8797 行）
 
+### 8.10 QMT 找不到 qmt_common（粘贴模式无 `__file__`）
+- **坑**：策略代码里写了 `sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))` 想让 QMT 找到同目录的 `qmt_common/`。但 QMT 加载策略时是把代码粘进编辑器、存进内部数据库，**没有真实的 `__file__`**，这行退回 `os.getcwd()`（= QMT 安装目录），结果 `from qmt_common import ...` 报 `ModuleNotFoundError`
+- **教训**：QMT 没有"加载本地 .py"的入口（导入只认 `.rzrk` 加密格式；"独立 Python 进程"模式又不触发 init/handlebar），所以外部依赖包必须放进 QMT Python 能找到的路径——即 `C:\QMT\bin.x64\Lib\site-packages\`
+- **解决**：把 `qmt_common/*.py` 拷到 `C:\QMT\bin.x64\Lib\site-packages\qmt_common\`（排除 `__pycache__`）。详见 §2.4
+- **⚠️ 后续维护**：改了 `qmt_common` 任一文件必须重新拷，QMT 跑的是 site-packages 那份副本
+
+### 8.11 QMT 策略必须 GBK 编码（UTF-8 报 SyntaxError）
+- **坑**：把 UTF-8 + 中文注释的 `pead_01e_disclosure.py` 粘进 QMT 编辑器点回测，报 `SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xb3 in position 0: invalid start byte`。QMT 把粘贴的代码存成自己目录下的文件、按 GBK 解析，UTF-8 的中文字节解码失败
+- **教训**：inner_Python 文档"快速开始"明确要求"编写策略时，首先需要在代码的最前一行写上 `#coding:gbk`"。QMT 内置 Python 3.6.8 在 Windows 中文环境默认 GBK，且粘贴模式下没法保留原文件的 coding 声明
+- **解决**：用 `strategy/qmt/gen_gbk.py` 把 UTF-8 原件转成 GBK 副本（`#coding:gbk` 声明 + 替换 GBK 编不了的字符如 `⚠️`→`!!`、数学减号 `−`→`-`，均在注释里不影响逻辑），粘贴 GBK 副本进 QMT
+- **注意**：`qmt_common` 模块不用转——它们自带 `# -*- coding: UTF-8 -*-` 声明，Python import 时按各自声明解码，UTF-8 源码在 QMT 里能正常 import（已实测）
+
+### 8.12 pandas Timestamp 减法在 QMT 0.22 崩溃（首跑必踩，两个连环坑）
+
+回测首跑暴露了两个问题，记录如下：
+
+**坑 A：`date - Timestamp` 报 TypeError**
+- **现象**：回测跑到 2020-10-15 调仓日崩溃，报 `TypeError: descriptor '__sub__' requires a 'datetime.datetime' object but received a 'datetime.date'`，栈顶在 `filters.py` 的 `(bar_date - d).days`
+- **根因**：Python 继承陷阱——`pandas.Timestamp` 是 `datetime.datetime` 的子类，`datetime.datetime` 又是 `datetime.date` 的子类，所以 `isinstance(Timestamp, date)` 为 **True**。旧版 `_to_date` 用 `isinstance(v, date)` 判断，把 Timestamp 直接 return 没转成 date，结果 `date - Timestamp` 在 QMT 的 pandas **0.22.0** 报错
+- **教训**：开发机新版 pandas 能做 `date - Timestamp`，单测抓不到；QMT 自带 pandas 0.22.0 很老，行为不同（§8.7 警告过 API 受限，这里再验证一次）。判断类型用 `type(v) is date` 严格匹配，不要用 `isinstance`——因为 Timestamp 是 date 子类会误判
+- **解决**：`_to_date` 改用 `type(v) is date` 判断；新增 `test_filter_listed_days_handles_pandas_timestamp` 回归测试（显式构造 Timestamp 输入）
+
+**坑 B：dReport 为空（披露数据缺 2018 年）**
+- **现象**：2020 年前三个调仓日日志打印 `[01e] dReport 为空，跳过`
+- **根因**：2020-01-08 调仓需要 `prev_report=2018-09-30`，但 `backfill_disclosure.py` 当初只抓了 2019-2026，2018 年没数据。dReport 要同比（今年 vs 去年），缺去年数据就全空
+- **教训**：回测 N 年，披露日数据要抓 **N+2 年**（回测区间 + 同比基线多 1 年 + 调仓日报告期错位再 1 年余量）。原脚本注释写的"多抓 1 年同比基线"少算了调仓日的报告期错位
+- **解决**：补抓 2017-2018 共 25757 条（东财 `RPT_PUBLIC_BS_APPOIN` 支持 2016 年起数据）
+
+**坑 C（探测时的教训）：东财接口名不能凭记忆，必须查代码**
+- 探测 2018 数据时我凭记忆用了 `reportName=RPT_PUBLIC_OP_PREDICTDATE`（旧 akshare 接口名），结果全报"报表配置不存在"，一度误以为东财不支持 2018 数据。实际查 `data_collector.py` 的 `stock_yysj_em` 才发现正确的 reportName 是 `RPT_PUBLIC_BS_APPOIN`、过滤字段是 `REPORT_DATE`（带下划线）不是 `REPORTDATE`
+- **教训**：探测数据源前先 grep 项目里的现有实现，别凭记忆写接口名。这和 §4.3"字段名确认后再写 mapper"、§8.1"接口名不能信文档"是同一类教训
+
 ---
 
 ## 九、快速命令速查
@@ -404,11 +463,15 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set FLASK_APP=a
 
 ## 十、后续待办
 
-> 2026-07-07 服务器核实后的实际状态。
+> 2026-07-08 更新：QMT 回测环境全部就绪，首跑已验证策略能启动（init 成功、股票池加载、调仓日触发），踩的坑（GBK 编码、Timestamp 崩溃、2018 数据缺失）均已修复，等待重跑出净值。
 
-- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——✅ 环境准备三项已全部完成，可开始回测
+- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——环境 + 数据 + 代码全部就绪，历史日线已下载（SH 28023 文件 / SZ 25942 文件），首跑问题已修，待重跑
 - [x] **QMT 装 pymysql**（✅ 2026-07-07 已装 PyMySQL 1.0.2，实测连通 quant_voyager）
 - [x] **`trade_calendar` 补数据**（✅ 2026-07-07 已补 8797 行，1990-12-19 ~ 2026-12-31，无周末，用新浪 klc_td_sh.txt）
-- [x] **`stock_core_indicator` 全量补抓**（✅ 2026-07-08 已补，5207 行覆盖沪深 A 股，流通市值 100% 非空；北交所 315 只因腾讯源不支持而缺失，对 01e 无影响——01e 选股不按市值过滤）
+- [x] **`stock_core_indicator` 全量补抓**（✅ 2026-07-08 已补，5207 行覆盖沪深 A 股，流通市值 100% 非空；北交所已按 td_mkt_code 排除）
+- [x] **`disclosure_yysj` 补 2017-2018**（✅ 2026-07-08 已补 25757 条，修正 2020 年调仓日 dReport 为空问题；现覆盖 2017-03-31 ~ 2026-06-30 共 161604 条）
+- [x] **`qmt_common` 部署到 QMT site-packages**（✅ 2026-07-08，5 个 .py 已拷，import 验证通过）
+- [x] **QMT 策略 GBK 编码**（✅ 2026-07-08，gen_gbk.py + GBK 副本，解决 SyntaxError）
+- [x] **首跑崩溃修复**（✅ 2026-07-08，filters.py Timestamp bug，§8.12A）
 - [ ] PEAD 01d AOG 量价策略：复用本套数据层，仅新增开盘价处理
 - [ ] 考虑把 `strategy/qmt/qmt_common/` 沉淀成更通用的策略工具包（因子基类、回测净值计算、过滤器）
