@@ -816,9 +816,26 @@ dReport 因子计算（PEAD 01e 核心因子）。
 
 dReport = 今年披露日 − 去年同期披露日（天数）
   负值 = 提前披露（好）  正值 = 延迟披露（差）
+
+⚠️ 关键实现点：为得到"同比提前/延后天数"，必须先把去年披露日平移到今年
+（+1 自然年）再相减。若直接跨年相减，结果恒为 ~365，会失去因子意义、
+排序方向也会反掉（详见 docs/dev-guide/PEAD-01e-实现讲解.md §4.2）。
 """
-from datetime import date
+from datetime import date, timedelta
 import pandas as pd
+
+
+def _shift_to_this_year(target, ref_year):
+    """把 target 平移到 ref_year 同一天（保持月/日）。
+
+    用于把去年披露日归一到今年，便于和今年披露日做"同比早晚"比较。
+    2-29 在平年不存在，回退到当月最后一天（3-1 减 1 天 = 2-28）。
+    """
+    try:
+        return target.replace(year=ref_year)
+    except ValueError:
+        # 仅 2-29 在平年会走到这里，回退到 2-28
+        return target.replace(year=ref_year, month=3, day=1) - timedelta(days=1)
 
 
 def _pick_disclosure_date(row, as_of):
@@ -881,8 +898,10 @@ def compute_dreport_for_rebalance(df, as_of, current_report, prev_report):
         return pd.DataFrame(columns=["symbol", "dreport", "this_year_date", "prev_year_date"])
 
     # dReport = 今年披露日 − 去年同期披露日（天数差）
+    # ⚠️ 必须先把去年披露日平移到今年再相减，否则跨年相减恒为 ~365 天
     merged["dreport"] = merged.apply(
-        lambda r: (r["this_year_date"] - r["prev_year_date"]).days, axis=1
+        lambda r: (r["this_year_date"] - _shift_to_this_year(r["prev_year_date"], r["this_year_date"].year)).days,
+        axis=1,
     )
     return merged[["symbol", "dreport", "this_year_date", "prev_year_date"]]
 ```
