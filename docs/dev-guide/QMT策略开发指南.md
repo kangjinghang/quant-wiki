@@ -248,13 +248,14 @@ params = {
 ```
 
 **分页**：响应里有 `result.pages`（总页数），循环到最后一页。
-**限速**：每页 `time.sleep(random.uniform(0.5, 1.0))`，避免被封。
+**限速**：按域名区分——东财 `datacenter-web` 每页 `sleep(0.5~1.0)`；腾讯 `proxy.finance.qq.com` 风控宽松，逐只 `sleep(0.1~0.2)` 即可（实测单只接口往返仅 ~0.17s，过度限速是浪费时间）。
 
 **域名可用性（2026-07-07 服务器实测，重要）**：
 
 | 域名 | 状态 | 说明 |
 |---|---|---|
 | `datacenter-web.eastmoney.com` | ✅ 稳定 | 披露日/财务类报表，普通 requests 即可，无需 TLS 绕过 |
+| `proxy.finance.qq.com`（腾讯） | ✅ 稳定 | 个股核心指标，风控宽松，逐只抓可低延迟 |
 | `push2.eastmoney.com` / `push2his.eastmoney.com` | ⚠️ **被封** | 整个 push2 域名族对该云服务器 IP 返回 `RemoteDisconnected`（IP 级封禁），**curl_cffi + chrome120 指纹也绕不过**——不是 TLS 指纹问题，是 IP 封禁 |
 
 ⚠️ **修正原 5.1 表述**：曾认为 push2 域名是 TLS 指纹检测、可用 curl_cffi 绕过。实测发现是 **IP 级封禁**，curl_cffi 无效。push2 系列接口（实时行情 clist、K线 kline）在该服务器上**完全不可用**。需要 K 线/行情数据时走 QMT 自带行情（`get_market_data_ex`）或其他数据源（如新浪 klc）。
