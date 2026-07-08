@@ -474,6 +474,47 @@ Timestamp 和 sys.modules 坑都解决后，回测能跑了但**每个调仓日�
 
 **修复**：commit `b58d308`，`_filter_universe` 和 `_execute_live` 所有 `get_market_data_ex` 都加 `subscribe=False`，日期改 `strftime("%Y%m%d")`
 
+### 8.15 order_target_percent 的 ContextInfo 是位置参数（C++ 绑定不认关键字）
+
+- **现象**：回测选出 60 只后崩溃 `ArgumentError: order_target_percent(str, float) did not match C++ signature`
+- **根因**：用 `order_target_percent(sym, weight, ContextInfo=C)`——关键字传法。但这是 Boost.Python 绑定，`ContextInfo` 是位置参数，关键字 `ContextInfo=` 不被识别，只匹配到 `(str, float)` 两参重载 → 报错
+- **解决**：改位置参数 `order_target_percent(sym, weight, C)`
+- **教训**：**QMT 所有 C++ 绑定函数的参数都用位置传，不用关键字**。文档签名 `order_target_percent(stockcode, tar_percent[, style, price], ContextInfo[, accId])` + 示例 `order_target_percent('000002.SZ', 0.051, ContextInfo, '600000248')` 都是位置参数
+
+### 8.16 get_market_data_ex 全池取行情极慢（3000 只 2.5 分钟/调仓日）
+
+- **现象**：`_filter_universe` 对 3000+ 只全量取当日行情判断一字涨跌停，每个调仓日耗时 2.5 分钟，21 个调仓日 ≈ 1 小时
+- **根因**：大部分候选股票本地没下载历史数据，`get_market_data_ex(subscribe=False)` 对未下载品种阻塞等待
+- **解决**：把一字涨跌停过滤从"全池先过滤"改成"选股后过滤"——`_select_with_limit_check` 只对 dReport 排序头部 2 倍备选（120 只）逐只取行情。从 2.5 分钟降到秒级
+- **教训**：**回测里 `get_market_data_ex` 的传参数量直接决定速度**。3000 只 → 慢，60 只 → 快。能晚取就晚取（先选股再过滤），不要对全池取行情
+
+### 8.17 order_target_percent 逐只调用资金线性递减（回测无法满仓建仓）
+
+- **现象**：回测跑通但大量"资金不足"拒绝订单，100 万买 60 只只能成交约 58 只
+- **根因**：`order_target_percent(sym, 1/60)` 逐只调用，每只买入后可用现金减少。第 1 只买 1/60≈1.67 万占用现金，到第 59 只可用现金 < 1.67 万 → 拒绝。可用现金线性递减，买不齐 60 只。更糟：`G.prev_holding` 存的是 target 不是实际持仓，清仓时"无可卖"（想清的没买进，实际持有的没人清）→ 资金被占死
+- **解决**：弃用 `order_target_percent`，改用 `passorder` 按股数下单 + "先卖后买 + 可用资金/剩余只数均分"逻辑。查实际持仓（`get_trade_detail_data(POSITION)`）清仓，不依赖 target 记忆
+- **教训**：**`order_target_percent` 适合调少数几只，不适合多股票等权组合**。多股票组合用 `passorder` 按股数 + 资金均分，自己控制先卖后买顺序
+
+### 8.18 get_trade_detail_data 每 bar 调用导致回测尾部卡死
+
+- **现象**：每 bar 调 `get_trade_detail_data(ACCOUNT)` 记净值，回测确定性卡在 2024-02-20（第 1001 行附近），CPU 3% 阻塞。两次复现
+- **根因**：`get_trade_detail_data` 在回测每根 bar 调用不靠谱——引擎在尾部某根 bar 上该调用阻塞（非调仓日的 bar 也调，累积触发）
+- **解决**：净值**只在调仓日记录**（`_execute_backtest` 里复用调仓已查的 ACCOUNT 数据），非调仓日完全不调 `get_trade_detail_data`
+- **教训**：**`get_trade_detail_data` 不要在每个 handlebar 调用**。只在需要时（调仓日）调。日频净值记录要么用别的 API（待研究），要么接受调仓日频率
+
+### 8.19 GBK 副本必须重新粘贴到 QMT 编辑器（改了主策略）
+
+- **现象**：改了主策略代码 + nav_logger.py，说"init 热重载不用重新粘贴 GBK"，但净值一行都没写——因为 QMT 跑的还是旧版主策略
+- **根因**：§8.13 的热重载只对 `qmt_common`（site-packages 模块）有效。**主策略是粘贴进 QMT 编辑器、存进内部数据库的**，改了主策略源码必须重新粘贴 GBK 副本，否则 QMT 跑的是它内部存的旧版。我误以为"只改了 qmt_common 就不用粘贴"，但实际主策略也改了
+- **解决**：改主策略后必须重新粘贴 GBK 副本到 QMT 编辑器。或直接 `copy /Y ...gbk.py C:\qmt\python\PEAD_01E_DISCLOSURE.py`（QMT 回测时从这个文件加载）
+- **教训**：**改了什么就对应更新什么**——qmt_common → 拷 site-packages；主策略 → 重新粘贴 GBK 副本。两者独立，别混淆
+
+### 8.20 nav_logger 内存 buffer 在调仓日模式下永不满（一条都不写）
+
+- **现象**：nav_logger 用 `FLUSH_EVERY=250` 内存攒 + 批量写，但调仓日才 ~21 个点，永远攒不满 250 → 从不自动 flush；回测尾部卡住导致最后一根 bar 的 flush 也没触发 → 一行都没写
+- **解决**：改成立即写——`record_bar` 每次直接 upsert 单行，不用 buffer。21 次单行写开销可忽略，且即使回测中途卡住/崩溃，已记录的净值不丢
+- **教训**：**buffer 批量写的前提是"数据量大"**。调仓日模式点数少（~21），buffer 永远不满，必须立即写。设计 buffer 机制时要考虑数据频率
+
 ---
 
 ## 九、快速命令速查
@@ -506,21 +547,121 @@ ssh Administrator@152.136.15.72 "mysql -uroot -p123456 -h 127.0.0.1 --protocol=T
 
 # Alembic 迁移
 ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set FLASK_APP=app.py && $PYTHON -m flask db <命令>"
-```
+
+# 读 QMT 策略日志（不用手动复制日志！直接远程读）
+ssh Administrator@152.136.15.72 "findstr /I \"<关键词>\" C:\qmt\userdata\log\XtClient_FormulaOutput_<日期>.log"
+# 日期格式 YYYYMMDD，如 XtClient_FormulaOutput_20260708.log
+
+# 拷最新 GBK 副本到 QMT（改了主策略后执行，省去手动粘贴）
+ssh Administrator@152.136.15.72 "copy /Y C:\workspace\QuantVoyager\strategy\qmt\pead_01e_disclosure_gbk.py C:\qmt\python\PEAD_01E_DISCLOSURE.py"
+
+# 拷 qmt_common 到 site-packages（改了 qmt_common 后执行 + 重跑回测）
+ssh Administrator@152.136.15.72 "powershell -Command \"Copy-Item 'C:\workspace\QuantVoyager\strategy\qmt\qmt_common\*.py' 'C:\qmt\bin.x64\Lib\site-packages\qmt_common\' -Force; rmdir -Force -Recurse 'C:\qmt\bin.x64\Lib\site-packages\qmt_common\__pycache__' -ErrorAction SilentlyContinue\""
+
+# 跑绩效脚本（回测完直接出年化/夏普/回撤 + 对标原文）
+ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set PYTHONIOENCODING=utf-8 && $PYTHON scripts\calc_perf.py <策略名>"
+# 示例：scripts\calc_perf.py pead_01e（取最新 run_id）
+#       scripts\calc_perf.py pead_01e pead_01e_20260708_182713（取指定 run_id）
+````
 
 ---
 
 ## 十、后续待办
 
-> 2026-07-08 更新：QMT 回测环境全部就绪，已验证策略能启动、调仓日触发、选股出候选。此前踩的坑（GBK 编码、Timestamp 崩溃、2018 数据缺失、sys.modules 缓存、get_market_data_ex 订阅上限）均已修复并沉淀进 §8.11–8.14。等待回测跑完整段出净值，对标招商原文绩效。
+> 2026-07-08 更新：PEAD 01e 回测完整跑通 2020-2024，净值自动写入 MySQL，绩效脚本一键出结果（年化 8.09% / 夏普 0.39 / 回撤 -24%）。整套"回测→净值记录→绩效计算"基础设施已就绪，所有策略复用。此前踩的坑（GBK 编码、Timestamp、sys.modules、subscribe、order_target_percent、全池取行情慢、每 bar API 卡死、buffer 永不满、GBK 副本没更新）均已修复并沉淀进 §8.11–8.20。
 
-- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——环境 + 数据 + 代码全部就绪，历史日线已下载（SH 28023 文件 / SZ 25942 文件），此前所有崩溃/空候选问题已全部修复（§8.12A Timestamp、§8.13 sys.modules 缓存、§8.14 subscribe=False + 日期格式），待重跑出净值
+- [x] **PEAD 01e：QMT 回测验证**（✅ 2026-07-08 完整跑通，年化 8.09%，原文 4-5 折。低于预期 8-9 折，待优化：一字板过滤简化、ST 近似、等权 vs 加权、选股域差异）
+- [x] **回测净值记录 + 绩效计算基础设施**（✅ 2026-07-08，backtest_nav 表 + nav_logger.py + calc_perf.py，详见 §十一）
 - [x] **QMT 装 pymysql**（✅ 2026-07-07 已装 PyMySQL 1.0.2，实测连通 quant_voyager）
 - [x] **`trade_calendar` 补数据**（✅ 2026-07-07 已补 8797 行，1990-12-19 ~ 2026-12-31，无周末，用新浪 klc_td_sh.txt）
 - [x] **`stock_core_indicator` 全量补抓**（✅ 2026-07-08 已补，5207 行覆盖沪深 A 股，流通市值 100% 非空；北交所已按 td_mkt_code 排除）
 - [x] **`disclosure_yysj` 补 2017-2018**（✅ 2026-07-08 已补 25757 条，修正 2020 年调仓日 dReport 为空问题；现覆盖 2017-03-31 ~ 2026-06-30 共 161604 条）
-- [x] **`qmt_common` 部署到 QMT site-packages**（✅ 2026-07-08，5 个 .py 已拷，import 验证通过）
+- [x] **`qmt_common` 部署到 QMT site-packages**（✅ 2026-07-08，6 个 .py 已拷含 nav_logger，import 验证通过）
 - [x] **QMT 策略 GBK 编码**（✅ 2026-07-08，gen_gbk.py + GBK 副本，解决 SyntaxError）
 - [x] **首跑崩溃修复**（✅ 2026-07-08，filters.py Timestamp bug，§8.12A）
+- [ ] **PEAD 01e 绩效优化**：分析年化偏低原因（一字板过滤简化、ST 近似、选股域、加权方式），对标原文 8-9 折
 - [ ] PEAD 01d AOG 量价策略：复用本套数据层，仅新增开盘价处理
 - [ ] 考虑把 `strategy/qmt/qmt_common/` 沉淀成更通用的策略工具包（因子基类、回测净值计算、过滤器）
+
+---
+
+## 十一、回测净值记录与绩效计算（通用基础设施）
+
+> 目的：策略跑完回测后**自动**出绩效（年化/夏普/回撤/对标原文），不用手动截图念数字。所有 QMT 策略复用。
+
+### 11.1 架构
+
+```
+QMT 回测（每个调仓日）           MySQL quant_voyager        服务器脚本
+handlebar                         backtest_nav 表            scripts/calc_perf.py
+  └─ nav_logger.record_bar  ──→  (strategy,run_id,date,      ──→  读净值 → 算绩效
+      立即写单行                    total_asset,nav,cash)          → 终端输出 + 对标原文
+```
+
+三件套（均已实现，新策略零成本复用）：
+- **`backtest_nav` 表**：通用，所有策略共用，靠 `strategy` 列区分
+- **`nav_logger.py`**（qmt_common）：pymysql 立即写单行，QMT 3.6 兼容
+- **`calc_perf.py`**（scripts）：读净值算绩效，服务器 pyenv 3.10 跑
+
+### 11.2 表结构（`backtest_nav`）
+
+| 字段 | 类型 | 说明 |
+|---|---|---|
+| strategy | VARCHAR(60) | 策略名 如 pead_01e |
+| run_id | VARCHAR(40) | 回测批次（策略名+时间戳，区分多次运行）|
+| trade_date | DATE | 交易日 |
+| total_asset | FLOAT | 总资产（m_dBalance）|
+| nav | FLOAT | 单位净值（相对首日归一）|
+| cash | FLOAT | 可用资金（m_dAvailable，诊断用）|
+| holding_count | INT | 当日持仓股票数（诊断用）|
+
+唯一索引 `uniq_run_date (run_id, trade_date)`——同一次回测同一天只留最新值。
+
+### 11.3 新策略接入（3 行代码）
+
+在策略文件里加三处（策略逻辑不动）：
+
+```python
+# 1. init 里：开启回测记录
+G.run_id = nav_logger.new_run(conn, STRATEGY_NAME, 1000000)
+
+# 2. _execute_backtest 里（调仓后）：记录调仓日净值
+acct = get_trade_detail_data(BACKTEST_ACCT, "STOCK", "ACCOUNT")[0]
+nav_logger.record_bar(G.conn, G.run_id, bar_date, acct.m_dBalance, acct.m_dAvailable, holding_count)
+
+# 3. handlebar 末尾（最后一根 bar）：flush（立即写模式下 flush 是空操作，保留兼容）
+if C.is_last_bar() and is_backtest:
+    nav_logger.flush(G.conn)
+```
+
+⚠️ **只在调仓日记录，不要每 bar 调 `get_trade_detail_data`**——会导致回测尾部卡死（§8.18）。代价是净值点数少（~21 个/5年），夏普粗糙，但年化/回撤准确。
+
+### 11.4 跑绩效
+
+```bash
+# 回测跑完后，远程一键出绩效（不用手动操作 QMT）
+ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set PYTHONIOENCODING=utf-8 && C:\Users\Administrator\.pyenv\pyenv-win\versions\3.10.11\python.exe scripts\calc_perf.py pead_01e"
+```
+
+输出示例：
+```
+  回测区间     : 2020-01-08 ~ 2024-10-14 (20 调仓日, 4.77 年)
+  年化收益     : 8.09%
+  夏普比率     : 0.392
+  最大回撤     : -24.12%
+  对标原文：小盘多头 原文 19.29% | 实测 8.09% | 4.2 折
+```
+
+### 11.5 关键设计决策
+
+1. **调仓日记录而非每交易日**——`get_trade_detail_data` 每 bar 调用会卡死（§8.18）。调仓日复用调仓已查的 ACCOUNT 数据，零额外 API 调用
+2. **立即写而非 buffer**——调仓日才 ~21 个点，buffer 攒不满永不写（§8.20）。立即写单行，即使回测中途崩溃也不丢数据
+3. **年化用实际日历天数**——调仓日间隔不均（季度），不能按点数/244 年化。用首尾日期实际天数/365.25
+4. **nav 以首日 total_asset 归一**——不依赖传入的 init_capital，用实际首日总资产
+5. **run_id 区分多次回测**——同策略多次跑不互相覆盖，可对比不同参数/版本的效果
+
+### 11.6 待优化
+
+- **日频净值**：当前只有调仓日（~21 点），夏普粗糙。需找到不调 `get_trade_detail_data` 的方式拿每 bar 总资产（可能用 `ContextInfo` 属性，待研究）
+- **绩效对标自动化**：目前原文基准硬编码在 `calc_perf.py` 的 `BENCHMARK` 字典。新策略要手动加
+- **净值曲线可视化**：目前只终端表格，如需画图可加 matplotlib 导出 PNG
