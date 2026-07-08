@@ -138,6 +138,7 @@ Copy-Item 'C:\workspace\QuantVoyager\strategy\qmt\qmt_common\*.py' `
 ```
 ⚠️ **排除 `__pycache__`**——那是开发机 Python 3.13 的字节码，拷过去和 QMT 的 3.6.8 冲突。只拷 `.py`。
 ⚠️ **以后改了 `qmt_common` 任一文件，必须重新拷一次**——QMT 加载的是 site-packages 那份副本，不是项目里的原件。改完不拷，QMT 跑的还是旧代码。
+⚠️ **拷完还要重启 QMT 客户端**——光拷文件不够。QMT 进程里的 Python 解释器在首次 `import qmt_common` 时就把模块对象缓存进 `sys.modules` 了，之后磁盘上的 `.py` 怎么改、`__pycache__` 怎么重建，已运行的进程都感知不到。必须**完全退出 `XtItClient.exe` 再重开**（不是只停回测），让解释器重新 import。详见 §8.13。inner_Python 文档《使用须知》第二节"下载 python 库后不要忘记重启客户端"、《常见问题》"module 'pandas' has no attribute 'core' → 重启客户端即可"说的都是同一件事。
 
 验证：
 ```cmd
@@ -397,7 +398,7 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && del <文件> &&
 - **坑**：策略代码里写了 `sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))` 想让 QMT 找到同目录的 `qmt_common/`。但 QMT 加载策略时是把代码粘进编辑器、存进内部数据库，**没有真实的 `__file__`**，这行退回 `os.getcwd()`（= QMT 安装目录），结果 `from qmt_common import ...` 报 `ModuleNotFoundError`
 - **教训**：QMT 没有"加载本地 .py"的入口（导入只认 `.rzrk` 加密格式；"独立 Python 进程"模式又不触发 init/handlebar），所以外部依赖包必须放进 QMT Python 能找到的路径——即 `C:\QMT\bin.x64\Lib\site-packages\`
 - **解决**：把 `qmt_common/*.py` 拷到 `C:\QMT\bin.x64\Lib\site-packages\qmt_common\`（排除 `__pycache__`）。详见 §2.4
-- **⚠️ 后续维护**：改了 `qmt_common` 任一文件必须重新拷，QMT 跑的是 site-packages 那份副本
+- **⚠️ 后续维护**：改了 `qmt_common` 任一文件必须**先重新拷、再重启 QMT 客户端**（只拷不重启，进程里的 `sys.modules` 还是旧模块——见 §8.13）
 
 ### 8.11 QMT 策略必须 GBK 编码（UTF-8 报 SyntaxError）
 - **坑**：把 UTF-8 + 中文注释的 `pead_01e_disclosure.py` 粘进 QMT 编辑器点回测，报 `SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xb3 in position 0: invalid start byte`。QMT 把粘贴的代码存成自己目录下的文件、按 GBK 解析，UTF-8 的中文字节解码失败
@@ -424,6 +425,17 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && del <文件> &&
 **坑 C（探测时的教训）：东财接口名不能凭记忆，必须查代码**
 - 探测 2018 数据时我凭记忆用了 `reportName=RPT_PUBLIC_OP_PREDICTDATE`（旧 akshare 接口名），结果全报"报表配置不存在"，一度误以为东财不支持 2018 数据。实际查 `data_collector.py` 的 `stock_yysj_em` 才发现正确的 reportName 是 `RPT_PUBLIC_BS_APPOIN`、过滤字段是 `REPORT_DATE`（带下划线）不是 `REPORTDATE`
 - **教训**：探测数据源前先 grep 项目里的现有实现，别凭记忆写接口名。这和 §4.3"字段名确认后再写 mapper"、§8.1"接口名不能信文档"是同一类教训
+
+### 8.13 改了 qmt_common 拷过去还不够——还要重启 QMT 客户端（sys.modules 缓存）
+
+这是 §8.12A 修复后的**连环坑**，最隐蔽的一个：
+
+- **现象**：`filters.py` 的 Timestamp bug 已修（`isinstance(v, date)` → `type(v) is date`），新版源码已拷到 `C:\QMT\bin.x64\Lib\site-packages\qmt_common\filters.py`，md5 已对（`1b1f4e3e...`），`__pycache__` 也重建过了。但重跑回测**还是报同一个 TypeError**，栈顶 `filters.py line 64` 的行号映射和当前源码对不上（当前源码 lambda 在 line 70、`return v` 在 line 64，旧版这两个挤在 line 64 附近）
+- **根因**：Python 的 import 机制——模块**首次** `import` 时从磁盘读源码、编译字节码、把模块对象存进 `sys.modules`；之后再次 `import` 直接命中 `sys.modules` 缓存，**不再读磁盘**。QMT 客户端进程（`XtItClient.exe`）在 01:12 启动，远早于 filters.py 在 01:31 的修复部署；进程启动时已把**旧版** filters 编译进 `sys.modules['qmt_common.filters']`。之后无论磁盘文件怎么覆盖、`.pyc` 怎么重建，已运行的进程感知不到，`handlebar → filter_listed_days` 调的始终是内存里的旧对象
+- **判别特征**：报错栈的**行号与磁盘源码对不上**（源码已更新但行号映射还是旧的）= 100% 是模块缓存问题
+- **解决**：完全退出 QMT 客户端（`taskkill /F /IM XtItClient.exe` 或 GUI 退出）再重开，让解释器重新 import 新版。**光停回测不够**——回测只是触发 handlebar 的子任务，`sys.modules` 在进程级，必须退整个客户端
+- **官方佐证**：inner_Python《使用须知》第二节"下载 python 库后，不要忘记重启客户端"、《常见问题》"`AttributeError: module 'pandas' has no attribute 'core'` → 重启客户端即可"——官方早把"改了环境/库要重启客户端"列为标准操作，我们这里踩的是同一个机制的变种（改的是自己的 qmt_common 而非第三方库）
+- **教训**：部署 qmt_common 的完整动作是**两步**——① 拷 `.py` 到 site-packages ② 重启 QMT 客户端。两步缺一不可，记进 §2.4 和 §8.10 的后续维护提醒
 
 ---
 
@@ -463,9 +475,9 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set FLASK_APP=a
 
 ## 十、后续待办
 
-> 2026-07-08 更新：QMT 回测环境全部就绪，首跑已验证策略能启动（init 成功、股票池加载、调仓日触发），踩的坑（GBK 编码、Timestamp 崩溃、2018 数据缺失）均已修复，等待重跑出净值。
+> 2026-07-08 更新：QMT 回测环境全部就绪，首跑已验证策略能启动并跑通（init 成功、股票池加载、调仓日触发、不再崩溃）。此前踩的坑（GBK 编码、Timestamp 崩溃、2018 数据缺失、sys.modules 缓存）均已修复并沉淀进 §8.11–8.13。等待回测跑完整段出净值，对标招商原文绩效。
 
-- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——环境 + 数据 + 代码全部就绪，历史日线已下载（SH 28023 文件 / SZ 25942 文件），首跑问题已修，待重跑
+- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——环境 + 数据 + 代码全部就绪，历史日线已下载（SH 28023 文件 / SZ 25942 文件），首跑崩溃问题已全部修复（§8.12A Timestamp、§8.13 sys.modules 缓存），待跑完出净值
 - [x] **QMT 装 pymysql**（✅ 2026-07-07 已装 PyMySQL 1.0.2，实测连通 quant_voyager）
 - [x] **`trade_calendar` 补数据**（✅ 2026-07-07 已补 8797 行，1990-12-19 ~ 2026-12-31，无周末，用新浪 klc_td_sh.txt）
 - [x] **`stock_core_indicator` 全量补抓**（✅ 2026-07-08 已补，5207 行覆盖沪深 A 股，流通市值 100% 非空；北交所已按 td_mkt_code 排除）
