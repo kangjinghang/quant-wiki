@@ -437,6 +437,24 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && del <文件> &&
 - **官方佐证**：inner_Python《使用须知》第二节"下载 python 库后，不要忘记重启客户端"、《常见问题》"`AttributeError: module 'pandas' has no attribute 'core'` → 重启客户端即可"——官方早把"改了环境/库要重启客户端"列为标准操作，我们这里踩的是同一个机制的变种（改的是自己的 qmt_common 而非第三方库）
 - **教训**：部署 qmt_common 的完整动作是**两步**——① 拷 `.py` 到 site-packages ② 重启 QMT 客户端。两步缺一不可，记进 §2.4 和 §8.10 的后续维护提醒
 
+### 8.14 get_market_data_ex 必须传 subscribe=False（回测取全市场行情）+ end_time 日期格式
+
+Timestamp 和 sys.modules 坑都解决后，回测能跑了但**每个调仓日都"过滤后无候选"**——空跑一整段不出净值。
+
+**坑 A：subscribe 默认 True，订阅数上限 500 只**
+- **现象**：`_filter_universe` 取 3000+ 只股票当日行情判断一字涨跌停，结果 `valid` 列表为空，所有候选被过滤掉。pyenv 3.10 复现正常（那一步没走到——没有 QMT 的 `C`），单测覆盖不到
+- **根因**：`get_market_data_ex` 的 `subscribe` 参数默认 `True`（订阅模式），官方文档《完整示例》明确：**`subscribe=True` 订阅股票数量不能超过 500**。传 3000+ 只超限 → 返回空/不全 → 全部判为"取不到行情"丢弃
+- **解决**：加 `subscribe=False`——从本地行情文件读，**不受订阅数限制**（回测专用，《快速开始》回测示例、`init` 限制都印证：init 里只取本地数据；《完整示例》`subscribe=False` 该模式下接口从本地行情文件获取数据，不受订阅数限制，但需要提前下载数据）
+- **教训**：**回测里所有 `get_market_data_ex` 调用都加 `subscribe=False`**。凡是取股票池（而非单只主图品种）的行情，必然涉及多只，默认订阅模式一定会踩上限
+
+**坑 B：end_time 日期格式必须 %Y%m%d（不带横线）**
+- **坑**：原来用 `bar_date.isoformat()` 得到 `"2020-01-08"`（带横线），文档要求 `%Y%m%d`（`"20200108"`）
+- **依据**：inner_Python《系统函数》get_market_data_ex 参数表——`start_time`/`end_time` "格式为 %Y%m%d 或 %Y%m%d%H%M%S"；《快速开始》回测示例 `bar_date = timetag_to_datetime(..., '%Y%m%d%H%M%S')` 也是不带横线
+- **解决**：改用 `bar_date.strftime("%Y%m%d")`
+- **教训**：QMT 行情接口的日期参数一律 `%Y%m%d`，不要用 `isoformat()`（带横线）。这是 QMT API 约定，和数据库层的 ISO 格式不一样
+
+**修复**：commit `b58d308`，`_filter_universe` 和 `_execute_live` 所有 `get_market_data_ex` 都加 `subscribe=False`，日期改 `strftime("%Y%m%d")`
+
 ---
 
 ## 九、快速命令速查
@@ -475,9 +493,9 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set FLASK_APP=a
 
 ## 十、后续待办
 
-> 2026-07-08 更新：QMT 回测环境全部就绪，首跑已验证策略能启动并跑通（init 成功、股票池加载、调仓日触发、不再崩溃）。此前踩的坑（GBK 编码、Timestamp 崩溃、2018 数据缺失、sys.modules 缓存）均已修复并沉淀进 §8.11–8.13。等待回测跑完整段出净值，对标招商原文绩效。
+> 2026-07-08 更新：QMT 回测环境全部就绪，已验证策略能启动、调仓日触发、选股出候选。此前踩的坑（GBK 编码、Timestamp 崩溃、2018 数据缺失、sys.modules 缓存、get_market_data_ex 订阅上限）均已修复并沉淀进 §8.11–8.14。等待回测跑完整段出净值，对标招商原文绩效。
 
-- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——环境 + 数据 + 代码全部就绪，历史日线已下载（SH 28023 文件 / SZ 25942 文件），首跑崩溃问题已全部修复（§8.12A Timestamp、§8.13 sys.modules 缓存），待跑完出净值
+- [ ] **PEAD 01e：QMT 回测验证**（对标招商原文绩效，预期 8-9 折）——环境 + 数据 + 代码全部就绪，历史日线已下载（SH 28023 文件 / SZ 25942 文件），此前所有崩溃/空候选问题已全部修复（§8.12A Timestamp、§8.13 sys.modules 缓存、§8.14 subscribe=False + 日期格式），待重跑出净值
 - [x] **QMT 装 pymysql**（✅ 2026-07-07 已装 PyMySQL 1.0.2，实测连通 quant_voyager）
 - [x] **`trade_calendar` 补数据**（✅ 2026-07-07 已补 8797 行，1990-12-19 ~ 2026-12-31，无周末，用新浪 klc_td_sh.txt）
 - [x] **`stock_core_indicator` 全量补抓**（✅ 2026-07-08 已补，5207 行覆盖沪深 A 股，流通市值 100% 非空；北交所已按 td_mkt_code 排除）
