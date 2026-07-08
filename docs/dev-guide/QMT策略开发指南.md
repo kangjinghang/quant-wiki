@@ -570,7 +570,7 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set PYTHONIOENC
 
 > 2026-07-08 更新：PEAD 01e 回测完整跑通 2020-2024，净值自动写入 MySQL，绩效脚本一键出结果（年化 8.09% / 夏普 0.39 / 回撤 -24%）。整套"回测→净值记录→绩效计算"基础设施已就绪，所有策略复用。此前踩的坑（GBK 编码、Timestamp、sys.modules、subscribe、order_target_percent、全池取行情慢、每 bar API 卡死、buffer 永不满、GBK 副本没更新）均已修复并沉淀进 §8.11–8.20。
 
-- [x] **PEAD 01e：QMT 回测验证**（✅ 2026-07-08 完整跑通，年化 8.09%，原文 4-5 折。低于预期 8-9 折，待优化：一字板过滤简化、ST 近似、等权 vs 加权、选股域差异）
+- [x] **PEAD 01e：QMT 回测验证**（✅ 2026-07-08 完整跑通，年化 8.09%。⚠️ 此数字偏低且净值失真，详见[绩效诊断报告](./PEAD-01e-绩效诊断报告.md)）
 - [x] **回测净值记录 + 绩效计算基础设施**（✅ 2026-07-08，backtest_nav 表 + nav_logger.py + calc_perf.py，详见 §十一）
 - [x] **QMT 装 pymysql**（✅ 2026-07-07 已装 PyMySQL 1.0.2，实测连通 quant_voyager）
 - [x] **`trade_calendar` 补数据**（✅ 2026-07-07 已补 8797 行，1990-12-19 ~ 2026-12-31，无周末，用新浪 klc_td_sh.txt）
@@ -579,7 +579,8 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set PYTHONIOENC
 - [x] **`qmt_common` 部署到 QMT site-packages**（✅ 2026-07-08，6 个 .py 已拷含 nav_logger，import 验证通过）
 - [x] **QMT 策略 GBK 编码**（✅ 2026-07-08，gen_gbk.py + GBK 副本，解决 SyntaxError）
 - [x] **首跑崩溃修复**（✅ 2026-07-08，filters.py Timestamp bug，§8.12A）
-- [ ] **PEAD 01e 绩效优化**：分析年化偏低原因（一字板过滤简化、ST 近似、选股域、加权方式），对标原文 8-9 折
+- [x] **PEAD 01e 绩效诊断**（✅ 2026-07-09，已完成根因调查。结论：偏低主因是①对标基准不现实（时间段 2020-2024 vs 原文 2009-2020）②因子超额在当前样本期大幅衰减 ③QMT 净值本身失真。详见[绩效诊断报告](./PEAD-01e-绩效诊断报告.md)）
+- [ ] **PEAD 01e 后续**：①算 dReport 相对小盘基准的真实超额（拉中证1000/国证2000）②修 QMT 净值失真（建仓买不满 60 只）③扩展到 2009-2020 验证原文能否复现
 - [ ] PEAD 01d AOG 量价策略：复用本套数据层，仅新增开盘价处理
 - [ ] 考虑把 `strategy/qmt/qmt_common/` 沉淀成更通用的策略工具包（因子基类、回测净值计算、过滤器）
 
@@ -651,6 +652,8 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set PYTHONIOENC
   最大回撤     : -24.12%
   对标原文：小盘多头 原文 19.29% | 实测 8.09% | 4.2 折
 ```
+
+⚠️ **不要拿这个 4.2 折当真**。经独立复算，QMT 实测的 8.09% 本身失真（建仓买不满 60 只），且原文 19.29% 是 2009-2020 样本（含 2014-2015 小盘大牛市），与 2020-2024 不可比。完整诊断见 [PEAD-01e 绩效诊断报告](./PEAD-01e-绩效诊断报告.md)。
 
 ### 11.5 关键设计决策
 
