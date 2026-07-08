@@ -515,6 +515,21 @@ Timestamp 和 sys.modules 坑都解决后，回测能跑了但**每个调仓日�
 - **解决**：改成立即写——`record_bar` 每次直接 upsert 单行，不用 buffer。21 次单行写开销可忽略，且即使回测中途卡住/崩溃，已记录的净值不丢
 - **教训**：**buffer 批量写的前提是"数据量大"**。调仓日模式点数少（~21），buffer 永远不满，必须立即写。设计 buffer 机制时要考虑数据频率
 
+### 8.21 `is_last_bar()` 回测里永远 False——"回测结束"打印是死代码
+
+- **现象**：回测跑完，日志停在最后一个调仓日的「卖出/买入」行，没有「回测结束，净值已写入」的收尾确认。但 DB 里数据是完整的（每个调仓日都有净值）。
+- **根因**：QMT 的 `is_last_bar()` 是**实盘专用**——判断「当前是不是正在形成的最新一根 K 线」。回测遍历的是历史 K 线，引擎眼里没有任何一根是"最后一根"，**`is_last_bar()` 在回测里恒为 False**（官方《使用须知》：「从第一根 K 线开始依次调用 handlebar，直至最后一根」；实盘跑到最新那根才 True）。所以代码里 `if C.is_last_bar() and is_backtest:` 包裹的「回测结束」打印**永远不会执行**。
+- **判别**：日志停在调仓动作、缺收尾提示，但 DB 数据完整 → 基本就是这个
+- **解决**：**不要依赖 `is_last_bar()` 做回测收尾**。改在 `record_bar` 每次 commit 成功后打一行确认日志（`[nav] <date> 净值已写入 1.6559（总资产 1655893）`），每调仓日一行，最后一行即终值，一眼可确认数据落库。20 个调仓日多 20 行日志，值得。
+- **教训**：**`is_last_bar()` 只能用于"区分回测 vs 实盘的下单分支"**（回测走虚拟撮合、实盘走 passorder），**不能用来做回测收尾**——回测没有"最后一根 bar"这个生命周期事件。需要收尾确认就放在每次成功操作之后，不要攒到最后。
+
+### 8.22 nav_logger 从 run_id 反推 strategy 名——下划线会切错
+
+- **现象**：`calc_perf.py pead_01e` 报「策略 pead_01e 无回测记录」，但 DB 里明明有数据。查 DB 发现 strategy 列存的是 `pead` 不是 `pead_01e`；calc_perf 配置的原文基准也因此匹配不上，输出「未配置基准，跳过对标」。
+- **根因**：`record_bar` 里 `strategy = run_id.split("_")[0]`——run_id 格式是 `<strategy>_<时间戳>`（如 `pead_01e_20260708_232802`），按 `_` split 取首段得 `pead`，**丢了 `_01e` 后缀**。策略名本身含下划线（`pead_01e`、`momentum_02`）时必踩。
+- **解决**：`new_run` 本来就接收了正确的 strategy 名参数，把它存到模块级变量 `_STRATEGY`，`record_bar` 直接用，**彻底删掉 `split("_")[0]` 反推**。
+- **教训**：**能传参就别反推**。run_id 是给人/日志看的复合字符串，从它反推结构化字段天然脆弱（分隔符冲突）。组件需要的状态应显式传递/存储，不要靠字符串解析。
+
 ---
 
 ## 九、快速命令速查
@@ -630,12 +645,12 @@ G.run_id = nav_logger.new_run(conn, STRATEGY_NAME, 1000000)
 acct = get_trade_detail_data(BACKTEST_ACCT, "STOCK", "ACCOUNT")[0]
 nav_logger.record_bar(G.conn, G.run_id, bar_date, acct.m_dBalance, acct.m_dAvailable, holding_count)
 
-# 3. handlebar 末尾（最后一根 bar）：flush（立即写模式下 flush 是空操作，保留兼容）
-if C.is_last_bar() and is_backtest:
-    nav_logger.flush(G.conn)
+# 3. record_bar 内部已即时写库 + 打确认日志，无需额外 flush
+#    （nav_logger.flush 是空操作，保留只为兼容旧调用；is_last_bar 在回测里恒 False，别靠它收尾——§8.21）
 ```
 
 ⚠️ **只在调仓日记录，不要每 bar 调 `get_trade_detail_data`**——会导致回测尾部卡死（§8.18）。代价是净值点数少（~21 个/5年），夏普粗糙，但年化/回撤准确。
+⚠️ **strategy 名带下划线时（如 `pead_01e`）**：`new_run` 已把 strategy 存到模块级变量，`record_bar` 直接用，不要从 run_id 反推（`split("_")[0]` 会切错——§8.22）。
 
 ### 11.4 跑绩效
 
@@ -662,6 +677,8 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && set PYTHONIOENC
 3. **年化用实际日历天数**——调仓日间隔不均（季度），不能按点数/244 年化。用首尾日期实际天数/365.25
 4. **nav 以首日 total_asset 归一**——不依赖传入的 init_capital，用实际首日总资产
 5. **run_id 区分多次回测**——同策略多次跑不互相覆盖，可对比不同参数/版本的效果
+6. **strategy 名显式传递，不从 run_id 反推**——`new_run` 接收 strategy 参数并存模块级变量，`record_bar` 直接用。run_id 是 `<strategy>_<时间戳>` 复合串，按 `_` split 反推会切错含下划线的策略名（`pead_01e` → `pead`，§8.22）
+7. **record_bar 每次打确认日志**——commit 成功后 print 一行 `[nav] <date> 净值已写入 <nav>`，每调仓日一行。不依赖 `is_last_bar()` 做回测收尾（它在回测里恒 False，§8.21）
 
 ### 11.6 待优化
 
