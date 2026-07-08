@@ -138,7 +138,9 @@ Copy-Item 'C:\workspace\QuantVoyager\strategy\qmt\qmt_common\*.py' `
 ```
 ⚠️ **排除 `__pycache__`**——那是开发机 Python 3.13 的字节码，拷过去和 QMT 的 3.6.8 冲突。只拷 `.py`。
 ⚠️ **以后改了 `qmt_common` 任一文件，必须重新拷一次**——QMT 加载的是 site-packages 那份副本，不是项目里的原件。改完不拷，QMT 跑的还是旧代码。
-⚠️ **拷完还要重启 QMT 客户端**——光拷文件不够。QMT 进程里的 Python 解释器在首次 `import qmt_common` 时就把模块对象缓存进 `sys.modules` 了，之后磁盘上的 `.py` 怎么改、`__pycache__` 怎么重建，已运行的进程都感知不到。必须**完全退出 `XtItClient.exe` 再重开**（不是只停回测），让解释器重新 import。详见 §8.13。inner_Python 文档《使用须知》第二节"下载 python 库后不要忘记重启客户端"、《常见问题》"module 'pandas' has no attribute 'core' → 重启客户端即可"说的都是同一件事。
+⚠️ **拷完还要让 QMT 重载新代码**——光拷文件不够。QMT 进程里的 Python 解释器在首次 `import qmt_common` 时就把模块对象缓存进 `sys.modules` 了，之后磁盘上的 `.py` 怎么改、`__pycache__` 怎么重建，已运行的进程都感知不到。两个方案：
+- **重启 QMT 客户端**（简单粗暴）：完全退出 `XtItClient.exe` 再重开，让解释器重新 import 新版
+- **代码热重载**（推荐，不用重启）：`init` 开头清理 `sys.modules` 里 `qmt_common.*` 并重新 import（`pead_01e_disclosure.py` 已内置），改完拷到 site-packages 后重跑回测即生效。详见 §8.13
 
 验证：
 ```cmd
@@ -433,9 +435,26 @@ ssh Administrator@152.136.15.72 "cd C:\workspace\QuantVoyager && del <文件> &&
 - **现象**：`filters.py` 的 Timestamp bug 已修（`isinstance(v, date)` → `type(v) is date`），新版源码已拷到 `C:\QMT\bin.x64\Lib\site-packages\qmt_common\filters.py`，md5 已对（`1b1f4e3e...`），`__pycache__` 也重建过了。但重跑回测**还是报同一个 TypeError**，栈顶 `filters.py line 64` 的行号映射和当前源码对不上（当前源码 lambda 在 line 70、`return v` 在 line 64，旧版这两个挤在 line 64 附近）
 - **根因**：Python 的 import 机制——模块**首次** `import` 时从磁盘读源码、编译字节码、把模块对象存进 `sys.modules`；之后再次 `import` 直接命中 `sys.modules` 缓存，**不再读磁盘**。QMT 客户端进程（`XtItClient.exe`）在 01:12 启动，远早于 filters.py 在 01:31 的修复部署；进程启动时已把**旧版** filters 编译进 `sys.modules['qmt_common.filters']`。之后无论磁盘文件怎么覆盖、`.pyc` 怎么重建，已运行的进程感知不到，`handlebar → filter_listed_days` 调的始终是内存里的旧对象
 - **判别特征**：报错栈的**行号与磁盘源码对不上**（源码已更新但行号映射还是旧的）= 100% 是模块缓存问题
-- **解决**：完全退出 QMT 客户端（`taskkill /F /IM XtItClient.exe` 或 GUI 退出）再重开，让解释器重新 import 新版。**光停回测不够**——回测只是触发 handlebar 的子任务，`sys.modules` 在进程级，必须退整个客户端
-- **官方佐证**：inner_Python《使用须知》第二节"下载 python 库后，不要忘记重启客户端"、《常见问题》"`AttributeError: module 'pandas' has no attribute 'core'` → 重启客户端即可"——官方早把"改了环境/库要重启客户端"列为标准操作，我们这里踩的是同一个机制的变种（改的是自己的 qmt_common 而非第三方库）
-- **教训**：部署 qmt_common 的完整动作是**两步**——① 拷 `.py` 到 site-packages ② 重启 QMT 客户端。两步缺一不可，记进 §2.4 和 §8.10 的后续维护提醒
+- **解决（二选一）**：
+  - **方案 A：重启 QMT 客户端**（官方推荐做法）——完全退出 `XtItClient.exe`（`taskkill /F /IM XtItClient.exe` 或 GUI 退出）再重开，让解释器重新 import 新版。**光停回测不够**——回测只是触发 handlebar 的子任务，`sys.modules` 在进程级，必须退整个客户端
+  - **方案 B：代码热重载**（无需重启）——在 `init` 开头主动清理 `sys.modules` 里 `qmt_common.*` 并重新 import。Python 标准机制，改了 qmt_common 拷到 site-packages 后**重跑回测即生效**。`pead_01e_disclosure.py` 的 `init` 已内置此逻辑（开发机验证 `id` 不同 = 重载成功）。详见下方代码
+- **官方佐证**：inner_Python《使用须知》第二节"下载 python 库后，不要忘记重启客户端"、《常见问题》"`AttributeError: module 'pandas' has no attribute 'core'` → 重启客户端即可"——官方早把"改了环境/库要重启客户端"列为标准操作。方案 B 是用 Python 标准机制绕开重启，适用于**自己的 qmt_common**（第三方库如 pandas 改不了源码，仍需重启）
+- **教训**：
+  - 改 **qmt_common** → 拷到 site-packages，重跑回测生效（init 热重载，**不用重启 QMT**）
+  - 改 **主策略文件** → 重新粘贴 GBK 副本进编辑器即生效（QMT 会重新编译，**不用重启 QMT**）
+  - 改 **第三方库**（装 pymysql 等）→ 必须重启 QMT 客户端
+
+**热重载代码**（已内置在 `pead_01e_disclosure.py` 的 `init`）：
+```python
+def init(C):
+    global db_reader, dreport, filters, rebalance
+    for _m in list(sys.modules):
+        if _m == "qmt_common" or _m.startswith("qmt_common."):
+            del sys.modules[_m]
+    from qmt_common import db_reader, dreport, filters, rebalance
+    # ... 后续逻辑
+```
+⚠️ `global` 声明不可省——init 执行时模块顶部 `from qmt_common import ...` 已绑定旧对象到本模块作用域，清理 sys.modules 后必须 global 重新绑定，否则 init 里用的还是旧的
 
 ### 8.14 get_market_data_ex 必须传 subscribe=False（回测取全市场行情）+ end_time 日期格式
 
